@@ -1,5 +1,9 @@
-# hippie
-HIPPIE is an recursive acronym for "Hippie Impersonates Passive Propulsing Interface Elements"
+# HIPPIE
 
-# Use
-pull, compile, pull pull. Stroke.
+## USE
+
+Copy the source folder to your projects style folder.
+
+Compile the SCSS files, for example like a so `sass --watch source/:./`.
+
+Load the screen.css file within the head section of your HTML document. `<link rel="stylesheet" type="text/css" media="all" href="./{your projects style folder}/screen.css"/>`
