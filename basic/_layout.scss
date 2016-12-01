@@ -1,0 +1,224 @@
+// Basic styles
+// ------------------------------------------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $basic_background_color;
+}
+
+img {
+  vertical-align: top;
+}
+
+.center_50 {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+.center_25 {
+  margin-right: 37.5%;
+  margin-left: 37.5%;
+}
+
+.width_full {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.clear {
+  clear: both;
+  &::before,
+  &::after {
+    clear: both;
+  }
+}
+.float_left {
+  float: left;
+  margin-right: $space_3;
+}
+.overflow {
+  overflow: auto;
+}
+
+
+// Layout structure
+// ------------------------------------------------------------------------------
+
+// Simulate new body element
+.div_body {
+  width: $basic_width;
+  @media screen and (orientation: landscape) {
+    @media (min-width: $screen_small) {
+      width: $width_2;
+    }
+    @media (min-width: $screen_medium) {
+      width: $width_3;
+    }
+    @media (min-width: $screen_large) {
+      width: $width_4;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    @media (min-width: $screen_small) {
+      width: $width_2;
+    }
+  }
+  margin: 0 auto;
+  border-top-width: $border_width_8;
+  border-top-style: solid;
+  border-color: $basic_border_color;
+  padding-top: $space_3;
+}
+
+// Fixed elements
+.relative {
+  position: relative;
+}
+.div_fix {
+  position: fixed;
+}
+.bottom {
+  bottom: 0;
+}
+
+
+// Layout elements
+// ------------------------------------------------------------------------------
+
+// Tabellen
+table {
+  margin-top: $space_2;
+  margin-bottom: $space_2;
+  border: $basic_border;
+}
+th, td {
+  padding: $half_space;
+}
+th {
+  border: $basic_border_width dotted $basic_border_color;
+  border-bottom: $basic_border;
+}
+.precol {
+  border-right: $basic_border;
+}
+td {
+  border: $basic_border_width dotted $basic_border_color;
+}
+.table_blank {
+  border: $basic_border_width solid transparent;
+  th, td {
+    border: $basic_border_width solid transparent;
+  }
+}
+.table_free {
+  border: $basic_border_width solid transparent;
+}
+.table_stripe {
+  td {
+    border-top: 0;
+    border-bottom: 0;
+  }
+  tr:nth-child(even) td {
+    background-color: rgba($white,.1);
+  }
+}
+.table_fix {
+  table-layout: fixed;
+}
+
+// Freiraum
+.space_box {
+  float: left;
+  display: table;
+  width: $space_4;
+  text-align: center;
+  vertical-align: middle;
+  span {
+    display: table-cell;
+  }
+}
+
+.div_placeholder {
+  width: 100%;
+  height: $space_4;
+  border: $border_width_4 solid rgba($black,.1);
+  border-radius: $basic_corner;
+  padding: $basic_space;
+  background-color: rgba($black,.1);
+  svg {
+    vertical-align: top;
+  }
+}
+.div_placeholder_bkg {
+  width: 100%;
+  height: $space_4;
+  border: $border_width_4 solid rgba($black,.1);
+  border-radius: $basic_corner;
+  padding: $basic_space;
+  /*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
+  background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
+  background-color: rgba($black,.1);
+}
+
+.div_info {
+  padding: $space_2 $basic_indent;
+  border-right: $basic_space solid rgba($echo_color, .6);
+  background-color: rgba($echo_color, .1) !important;
+}
+
+// Print
+.div_print {
+  margin: $space_3 auto;
+  padding: 1.2cm 0.6cm 0.6cm 2.4cm;
+  background-color: $white;
+}
+
+.dina5 {
+  width: 14.8cm;
+  height: 21.0cm;
+}
+
+.test {
+  li:after {
+    content: "";
+    display: block;
+    height: 16px;
+  }
+}
+.front_color_1 { color: $alpha_color; &:after { background-color: $alpha_color; } }
+.front_color_2 { color: $bravo_color; &:after { background-color: $bravo_color; }  }
+.front_color_3 { color: $charlie_color; &:after { background-color: $charlie_color; }  }
+.front_color_4 { color: $delta_color; &:after { background-color: $delta_color; }  }
+.front_color_5 { color: $echo_color; &:after { background-color: $echo_color; }  }
+
+.back_color_1 { background-color: $alpha_color;}
+.back_color_2 { background-color: $bravo_color;}
+.back_color_3 { background-color: $charlie_color;}
+.back_color_4 { background-color: $delta_color;}
+.back_color_5 { background-color: $echo_color;}
+
+%label {
+  padding: 0 $half_space;
+}
+.label_1 {
+  @extend %label;
+  @extend .back_color_1;
+}
+.label_2 {
+  @extend %label;
+  @extend .back_color_2;
+}
+.label_3 {
+  @extend %label;
+  @extend .back_color_3;
+}
+

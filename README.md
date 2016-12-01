@@ -1,6 +1,8 @@
 # HIPPIE
 
-## USE
+## USE (work in progress)
+
+Clone the repo `https://github.com/sthag/hippie.git`.
 
 Copy the source folder to your projects style folder.
 
