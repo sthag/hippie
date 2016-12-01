@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------------------
 
 %basic {
-  font-family: $secondary_font_family;
+  font-family: $primary_font_family;
   font-size: $text_size_1;
   line-height: $text_line_1;
 }
@@ -51,8 +51,10 @@
 // ------------------------------------------------------------------------------
 
 body {
+  font-family: $primary_font_family;
   font-size: $basic_size;
   line-height: $basic_line;
+  color: $basic_font_color;
 }
 
 // Grouping
