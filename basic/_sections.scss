@@ -33,12 +33,25 @@ section {
 
 }
 
+aside.left + section {
+	margin-left: calc(#{$basic_aside_width} + #{$basic_space});
+}
+
 nav {
 
 }
 
 aside {
-
+	width: $basic_aside_width;
+	&.left {
+		float: left;
+	}
+	&.right {
+		float: right;
+	}
+	*:first-child {
+		margin-top: 0;
+	}
 }
 
 header {
@@ -52,7 +65,7 @@ footer {
 // Headings
 // -----------------------------------------------------------------------------
 
-h1, h2, h3, h4, h5. h6 {
+h1, h2, h3, h4, h5, h6 {
 
 }
 
