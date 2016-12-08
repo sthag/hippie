@@ -16,7 +16,7 @@
 
 .card_body {
   .bkg_box {
-    @extend absolute_full;
+    @extend %absolute_full;
       transition-duration: 800ms;
       overflow: hidden;
       vertical-align: top;
