@@ -1,0 +1,58 @@
+// Basic styles
+// -----------------------------------------------------------------------------
+
+%basic {
+	font-family: $primary_font_family;
+	font-size: $text_size_1;
+	line-height: $text_line_1;
+}
+
+%basic_mono {
+	font-family: $third_font_family;
+	font-size: $text_size_1;
+	line-height: $text_line_1;
+}
+
+%head_all {
+	color: $basic_head_color;
+}
+
+%head_1 {
+	font-family: $secondary_font_family;
+	font-size: $head_size_1;
+	font-weight: 300;
+	line-height: $head_line_1;
+}
+
+%head_2 {
+	font-family: $secondary_font_family;
+	font-size: $head_size_2;
+	font-weight: 300;
+	line-height: $head_line_2;
+}
+
+%head_3 {
+	font-family: $secondary_font_family;
+	font-size: $head_size_3;
+	font-weight: 300;
+	line-height: $head_line_3;
+}
+
+%head_4 {
+	font-family: $secondary_font_family;
+	font-size: $head_size_4;
+	font-weight: 300;
+	line-height: $head_line_4;
+}
+
+
+
+// Specific styles
+// -----------------------------------------------------------------------------
+
+.txt_center {
+	text-align: center;
+}
+.txt_right {
+	text-align: right;
+}

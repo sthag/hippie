@@ -1,0 +1,93 @@
+// Document
+// -----------------------------------------------------------------------------
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+
+
+// Basic sections
+// -----------------------------------------------------------------------------
+
+body {
+	font-family: $primary_font_family;
+	font-size: $basic_size;
+	line-height: $basic_line;
+	color: $basic_font_color;
+	background-color: $basic_background_color;
+}
+
+article {
+
+}
+
+section {
+
+}
+
+nav {
+
+}
+
+aside {
+
+}
+
+header {
+
+}
+
+footer {
+
+}
+
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5. h6 {
+
+}
+
+h1 {
+	@extend %head_1;
+	margin: $space_5 0 $space_3;
+}
+
+h2 {
+	@extend %head_2;
+	margin: $space_4 0 $space_3;
+}
+
+h3 {
+	@extend %head_3;
+	margin: $space_2 0 $space_2;
+	text-transform: uppercase;
+}
+
+h4 {
+	@extend %head_3;
+	margin: $space_2 0 $space_2;
+	text-transform: none;
+}
+
+h5 {
+	@extend %head_4;
+	margin: $space_2 0 $basic_space;
+	text-transform: none;
+}
+
+h6 {
+	@extend %basic;
+	margin: $basic_space 0;
+	text-transform: none;
+	font-weight: bold;
+}
+

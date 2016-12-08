@@ -1,0 +1,61 @@
+// Table
+// -----------------------------------------------------------------------------
+
+table {
+	margin-top: $space_2;
+	margin-bottom: $space_2;
+	border: $basic_border;
+}
+
+th, td {
+	@extend %basic;
+	padding: $half_space;
+}
+
+th {
+	border: $basic_border_width dotted $basic_border_color;
+	border-bottom: $basic_border;
+	text-align: left;
+}
+
+.precol {
+	border-right: $basic_border;
+}
+
+td {
+	border: $basic_border_width dotted $basic_border_color;
+}
+
+.table_blank {
+	border: $basic_border_width solid transparent;
+	
+	th, td {
+	border: $basic_border_width solid transparent;
+	}
+}
+
+.table_free {
+	border: $basic_border_width solid transparent;
+}
+
+.table_stripe {
+	td {
+	border-top: 0;
+	border-bottom: 0;
+	}
+
+	tr:nth-child(even) td {
+	background-color: rgba($white,.1);
+	}
+}
+
+.table_fix {
+	table-layout: fixed;
+}
+
+caption {
+	@extend p;
+	padding: $half_space 0;
+	border: $basic_border_width dotted $basic_border_color;
+	text-align: center;
+}

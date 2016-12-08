@@ -1,19 +1,44 @@
-// Add Bourbon and Bitters
-// ------------------------------------------------------------------------------
-// @import "bourbon/bourbon";
-
+/*
+ * # TABLE OF CONTENTS
+ *
+ * - Reset
+ * - Configuration
+ * - Special modules
+ * - Basic styles
+ *   - Sections
+ *   - Typography
+ *   - I/O
+ * - Modules
+ *
+ * - Elements
+ * - Navigation
+ * 	- Links
+ * 	- Menus
+ * - Accessibility
+ * 	- Alignments
+ * 	- Clearings
+ * - Widgets
+ * - Content
+ * 	- Posts and pages
+ * 	- Comments
+ * 	- Infinite scroll
+ * - Media
+ * 	- Captions
+ * 	- Galleries
+ *
+ */
 
 
 // Reset
 // Use a file outside of hippie i.e. other/normalize.css
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 @import "other/normalize.css";
 
 
 
 // Global configuration with default values
 // Adjustments can be made by copying values from default to config
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 @import "default"; // NOTE // do not edit
 @import "config"; // EDIT THIS // copy default values and adjust
 
@@ -21,7 +46,7 @@
 
 // Modules and variables
 // Additional modules can be defined here
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 @import "modules/flexbox";
 @import "modules/vendor";
 //@import modules/all deprecated because of the new vendor mixin
@@ -30,15 +55,22 @@
 
 // Basic styles - this is the core of definitions
 // Individual styles can be added her
-// ------------------------------------------------------------------------------
-@import "basic/typo";
-@import "basic/io";
-@import "basic/layout";
+// -----------------------------------------------------------------------------
+@import "basic/common";
+@import "basic/typography";
+// Following the w3c document element structure 
+// https://w3c.github.io/html/index.html#contents
+@import "basic/sections";
+@import "basic/grouping";
+@import "basic/textlevel";
+@import "basic/embedded";
+@import "basic/tables";
+@import "basic/interactive";
 // ADD HERE // @import "{name}/example";
 
-// Individual  Modules and variables
+// Individual Modules and variables
 // in dependency to other styles
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 @import "modules/card/card_module";
 @import "modules/editor/editor_module";
 @import "modules/explanation/explanation_module";
