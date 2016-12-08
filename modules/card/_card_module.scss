@@ -15,6 +15,7 @@
 }
 
 .card_body {
+  height: 100%;
   .bkg_box {
     @extend %absolute_full;
       transition-duration: 800ms;
