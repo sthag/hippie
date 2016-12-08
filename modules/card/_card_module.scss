@@ -6,24 +6,28 @@
 // Card module styles
 // ------------------------------------------------------------------------------
 
+%absolute_full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .card_body {
-  .bkgBox {
+  .bkg_box {
+    @extend absolute_full;
       transition-duration: 800ms;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       overflow: hidden;
       vertical-align: top;
       z-index: -1;
   }
 
-  .bkgBox > svg {
+  .bkg_box > svg {
       position: relative;
   }
 
-  .wrapperBox {
+  .flex_wrap_center {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -42,7 +46,7 @@
       height: 100%;
   }
 
-  #content {
+  .flex_content {
       position: relative;
       padding: 64px 64px 24px 64px;
       border: 1px solid #FFF;
@@ -53,7 +57,6 @@
   h1 {
       margin: 16px 0;
       color: #1E1E1E;
-      font-family: $primary_font_family;
       font-size: 24px;
       line-height: 1.4em;
       font-weight: normal;
@@ -62,12 +65,11 @@
   p {
       margin-top: 0;
       margin-bottom: 16px;
-      font-family: $primary_font_family;
       font-size: 12px;
       line-height: 1.4em;
   }
 
-  .full {
+/*  .full {
       position: absolute;
       width: 128px;
       height: 128px;
@@ -76,13 +78,13 @@
       background-color: #fff;
   }
 
-  .mark {
+   .mark {
       float: left;
       width: 32px;
       height: 32px;
       margin-top: 16px;
   }
-
+ */
   .marked {
       padding-left: 1em;
       text-indent: -1em;
