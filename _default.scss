@@ -54,9 +54,11 @@ $basic_link_color: $echo_color;
 $basic_highlight_color: $white;
 $basic_action_color: $foxtrot_color;
 
-$basic_border_color: $black;
-
 $basic_background_color: $medium_gray;
+$light_color: lighten($basic_background_color,5%);
+$dark_color: darken($basic_background_color,10%);
+
+$basic_border_color: $black;
 
 // default shadow colors
 // $shadow_color:                         fade-out($medium_gray, 0.5);
@@ -80,10 +82,14 @@ $space_4: $basic_space * 8;
 $space_5: $basic_space * 16;
 
 $basic_corner: 4px;
+
 $basic_border_width: $tiny_space;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;
+$cell_border: $tiny_space solid $dark_color;
+
+$basic_aside_width: 20%;
 
 
 

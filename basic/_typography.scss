@@ -45,7 +45,11 @@
 	line-height: $head_line_4;
 }
 
-
+%short {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis; // vendor
+}
 
 // Specific styles
 // -----------------------------------------------------------------------------
