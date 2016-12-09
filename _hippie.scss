@@ -27,10 +27,11 @@
 
 
 // Global configuration with default values
-// Adjustments can be made by copying values from default to config
+// Adjustments can be made by copying values from _default.scss to _config.scss
+// Be careful though changes will get lost if hippie gets updated
 // -----------------------------------------------------------------------------
-@import "default"; // NOTE // do not edit
-@import "config"; // EDIT THIS // copy default values and adjust
+@import "default"; // DO NOT EDIT
+@import "config"; // EDIT THIS
 
 
 
