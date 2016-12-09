@@ -4,7 +4,7 @@
 // TEXT
 // ------------------------------------------------------------------------------
 
-$basic_size: 15px;
+$basic_size: $default_font_size;
 $size_1: $basic_size * 4;
 
 $basic_line: 1;
@@ -74,7 +74,7 @@ $width_3: 60%;
 $width_4: 48%;
 
 $tiny_space: 1px;
-$basic_space: 8px;
+$basic_space: $default_space;
 $half_space: $basic_space / 2;
 $space_2: $basic_space * 2;
 $space_3: $basic_space * 4;
