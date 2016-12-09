@@ -33,6 +33,10 @@ section {
 
 }
 
+aside.right + section {
+	margin-right: calc(#{$basic_aside_width} + #{$basic_space});
+}
+
 aside.left + section {
 	margin-left: calc(#{$basic_aside_width} + #{$basic_space});
 }

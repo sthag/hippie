@@ -276,6 +276,9 @@ body {
   color: black;
   background-color: gray; }
 
+aside.right + section {
+  margin-right: calc(20% + 8px); }
+
 aside.left + section {
   margin-left: calc(20% + 8px); }
 
