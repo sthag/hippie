@@ -5,6 +5,7 @@
 		height: 16px;
 	}
 }
+
 .front_color_1 { color: $alpha_color; &:after { background-color: $alpha_color; } }
 .front_color_2 { color: $bravo_color; &:after { background-color: $bravo_color; }  }
 .front_color_3 { color: $charlie_color; &:after { background-color: $charlie_color; }  }
@@ -20,14 +21,17 @@
 %label {
 	padding: 0 $half_space;
 }
+
 .label_1 {
 	@extend %label;
 	@extend .back_color_1;
 }
+
 .label_2 {
 	@extend %label;
 	@extend .back_color_2;
 }
+
 .label_3 {
 	@extend %label;
 	@extend .back_color_3;

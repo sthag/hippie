@@ -26,11 +26,11 @@ $head_line_2: $text_line_1;
 $head_line_3: $text_line_1;
 $head_line_4: $text_line_1;
 
-$primary_font_family: #{'Roboto', sans-serif};
+$default_font_family: #{'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+
+$primary_font_family: $default_font_family;
 $secondary_font_family: #{'Roboto', sans-serif};
 $third_font_family: #{'Courier New', monospace};
-
-$alternative_font_family: #{'Trebuchet MS', Helvetica, Arial, sans-serif, sans};
 
 $basic_indent: 2em;
 
