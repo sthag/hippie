@@ -45,11 +45,18 @@
 	line-height: $head_line_4;
 }
 
+%solo {
+	@extend %basic;
+	color: $basic_font_color;
+}
+
 %short {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis; // vendor
 }
+
+
 
 // Specific styles
 // -----------------------------------------------------------------------------

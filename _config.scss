@@ -6,6 +6,10 @@
 
 $default_font_size: 15px !default;
 $basic_size: $default_font_size;
+
+$default_print_font_size: 10pt !default;
+$basic_print_size: $default_print_font_size;
+
 $size_1: $basic_size * 4;
 
 $basic_line: 1;

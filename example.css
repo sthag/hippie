@@ -151,7 +151,7 @@
   margin-right: 0;
   margin-left: 0; }
 
-.div_body {
+.screen_body {
   width: 96%;
   margin: 0 auto;
   border-top-width: 8px;
@@ -159,17 +159,17 @@
   border-color: black;
   padding-top: 32px; }
 @media screen and (orientation: landscape) and (min-width: 1024px) {
-  .div_body {
+  .screen_body {
     width: 80%; } }
 @media screen and (orientation: landscape) and (min-width: 1280px) {
-  .div_body {
+  .screen_body {
     width: 60%; } }
 @media screen and (orientation: landscape) and (min-width: 1920px) {
-  .div_body {
+  .screen_body {
     width: 48%; } }
 
 @media screen and (orientation: portrait) and (min-width: 1024px) {
-  .div_body {
+  .screen_body {
     width: 80%; } }
 
 .relative {
@@ -215,7 +215,7 @@
   border-right: 8px solid rgba(82, 190, 209, 0.6);
   background-color: rgba(82, 190, 209, 0.1) !important; }
 
-h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, .span_solo, th, td, legend, label {
+.span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
   font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
   font-size: 1em;
   line-height: 1.5; }
@@ -225,7 +225,7 @@ pre, code, .code_solo {
   font-size: 1em;
   line-height: 1.5; }
 
-h1, .exp_help_btn .span_solo {
+h1, .exp_help_btn .span_solo, .print_body .page_date, .print_body .page_no {
   font-family: Roboto, sans-serif;
   font-size: 3.1em;
   font-weight: 300;
@@ -248,6 +248,9 @@ h5 {
   font-size: 1.35em;
   font-weight: 300;
   line-height: 1.5; }
+
+.span_solo {
+  color: black; }
 
 .table_link .cell_text .shorten {
   overflow: hidden;
@@ -436,9 +439,6 @@ mark {
 ::selection {
   color: white;
   background-color: black; }
-
-.span_solo {
-  color: black; }
 
 img {
   vertical-align: top; }
@@ -728,19 +728,92 @@ label {
   -o-transition: height 0.5s ease;
   transition: height 0.5s ease; }
 
-.div_print {
-  margin: 32px auto;
+.print_body *[class^="din"] {
   background-color: white; }
 
-.dina4 {
-  width: 21.0cm;
-  height: 29.7cm;
-  padding: 1.2cm 1.2cm 1.2cm 2.4cm; }
-
-.dina5 {
-  width: 14.8cm;
-  height: 21.0cm;
-  padding: 1.2cm 0.6cm 0.6cm 2.4cm; }
+.print_body {
+  font-size: 10pt; }
+@page {
+  .print_body {
+    size: A4;
+    margin: 4cm; } }
+@page :first {
+  .print_body {
+    size: A4;
+    margin: 0; } }
+  .print_body .dina4 {
+    padding-top: 1.2cm;
+    padding-right: 1.2cm;
+    padding-bottom: 1.2cm;
+    padding-left: 2.4cm; }
+    .print_body .dina4 .page_head, .print_body .dina4 .page_foot {
+      right: 1.2cm;
+      left: 2.4cm; }
+    .print_body .dina4 .page_head {
+      top: 1.2cm; }
+    .print_body .dina4 .page_foot {
+      bottom: 1.2cm; }
+  .print_body .dina5 {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 1.2cm; }
+    .print_body .dina5 .page_head, .print_body .dina5 .page_foot {
+      right: 0;
+      left: 1.2cm; }
+    .print_body .dina5 .page_head {
+      top: 0; }
+    .print_body .dina5 .page_foot {
+      bottom: 0; }
+  .print_body .dina6 {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 1.2cm; }
+    .print_body .dina6 .page_head, .print_body .dina6 .page_foot {
+      right: 0;
+      left: 1.2cm; }
+    .print_body .dina6 .page_head {
+      top: 0; }
+    .print_body .dina6 .page_foot {
+      bottom: 0; }
+  .print_body *[class^="din"] {
+    position: relative;
+    overflow: auto;
+    margin: 32px auto; }
+    .print_body *[class^="din"] .page_head, .print_body *[class^="din"] .page_foot {
+      position: absolute; }
+    .print_body *[class^="din"] .page_head {
+      page: cover; }
+    .print_body *[class^="din"] .page_foot {
+      display: flex;
+      flex-direction: row; }
+      .print_body *[class^="din"] .page_foot *:last-child {
+        margin-bottom: 0; }
+      .print_body *[class^="din"] .page_foot p, .print_body *[class^="din"] .page_foot .p_col_2, .print_body *[class^="din"] .page_foot .p_col_3, .print_body *[class^="din"] .page_foot caption {
+        flex: 1 0 auto;
+        font-size: 8pt; }
+      .print_body *[class^="din"] .page_foot .page_no {
+        flex: 1 0 auto;
+        font-size: 20pt;
+        text-align: right; }
+    .print_body *[class^="din"] .page_content {
+      margin-top: 10cm; }
+  .print_body .page_title, .print_body .page_date {
+    font-size: 14pt; }
+  .print_body .page_title {
+    margin: 0; }
+  .print_body .page_date, .print_body .page_no {
+    float: right; }
+  .print_body .page_author {
+    position: absolute;
+    top: 5cm;
+    right: 0;
+    text-align: right; }
+  .print_body .page_recipient {
+    position: absolute;
+    top: 5cm;
+    left: 0; }
 
 .test li:after {
   content: "";

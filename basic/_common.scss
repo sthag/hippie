@@ -44,7 +44,7 @@
 // ------------------------------------------------------------------------------
 
 // Simulate new body element
-.div_body {
+.screen_body {
 	width: $basic_width;
 	@media screen and (orientation: landscape) {
 		@media (min-width: $screen_small) {
