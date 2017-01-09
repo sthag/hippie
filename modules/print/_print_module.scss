@@ -18,6 +18,7 @@ $din: $a4, $a5, $a6;
 
 .print_body {
 	font-size: $basic_print_size;
+	margin: 10vh 20vw;
 
 	@page {
 		size: A4;
@@ -72,17 +73,25 @@ $din: $a4, $a5, $a6;
 
 			p {
 				flex: 1 0 auto;
+				margin: 0;
 				font-size: 8pt;
+				line-height: 10pt;
+				text-align: center;
 			}
 
 			.page_no {
 				flex: 1 0 auto;
 				font-size: 20pt;
+				line-height: 1;
 				text-align: right;
+			}
+			p:first-child {
+				text-align: left;
 			}
 		}
 		.page_content {
 			margin-top: 10cm;
+			margin-bottom: 2cm;
 		}
 		margin: $space_3 auto;
 	}

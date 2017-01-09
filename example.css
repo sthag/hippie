@@ -258,10 +258,13 @@ h5 {
   -o-text-overflow: ellipsis; }
 
 .txt_center {
-  text-align: center; }
+  text-align: center !important; }
 
 .txt_right {
-  text-align: right; }
+  text-align: right !important; }
+
+.txt_left {
+  text-align: left !important; }
 
 html {
   height: 100%;
@@ -732,7 +735,8 @@ label {
   background-color: white; }
 
 .print_body {
-  font-size: 10pt; }
+  font-size: 10pt;
+  margin: 10vh 20vw; }
 @page {
   .print_body {
     size: A4;
@@ -792,13 +796,20 @@ label {
         margin-bottom: 0; }
       .print_body *[class^="din"] .page_foot p, .print_body *[class^="din"] .page_foot .p_col_2, .print_body *[class^="din"] .page_foot .p_col_3, .print_body *[class^="din"] .page_foot caption {
         flex: 1 0 auto;
-        font-size: 8pt; }
+        margin: 0;
+        font-size: 8pt;
+        line-height: 10pt;
+        text-align: center; }
       .print_body *[class^="din"] .page_foot .page_no {
         flex: 1 0 auto;
         font-size: 20pt;
+        line-height: 1;
         text-align: right; }
+      .print_body *[class^="din"] .page_foot p:first-child, .print_body *[class^="din"] .page_foot .p_col_2:first-child, .print_body *[class^="din"] .page_foot .p_col_3:first-child, .print_body *[class^="din"] .page_foot caption:first-child {
+        text-align: left; }
     .print_body *[class^="din"] .page_content {
-      margin-top: 10cm; }
+      margin-top: 10cm;
+      margin-bottom: 2cm; }
   .print_body .page_title, .print_body .page_date {
     font-size: 14pt; }
   .print_body .page_title {
