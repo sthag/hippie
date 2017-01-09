@@ -736,7 +736,7 @@ label {
 @page {
   .print_body {
     size: A4;
-    margin: 4cm; } }
+    margin: 1.2cm; } }
 @page :first {
   .print_body {
     size: A4;

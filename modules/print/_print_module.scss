@@ -1,5 +1,10 @@
-// Print elements
-// -----------------------------------------------------------------------------
+// Custom extends and mixins
+// ------------------------------------------------------------------------------
+@import "mixins";
+@import "extends";
+
+// Print module styles
+// ------------------------------------------------------------------------------
 
 %paper {
 	background-color: $white;
@@ -16,8 +21,9 @@ $din: $a4, $a5, $a6;
 
 	@page {
 		size: A4;
-		margin: 4cm;
+		margin: 1.2cm;
 	}
+
 	@page:first {
 		size: A4;
 		margin: 0;
