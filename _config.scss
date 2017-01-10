@@ -31,10 +31,12 @@ $head_line_3: $text_line_1;
 $head_line_4: $text_line_1;
 
 $default_font_family: #{'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+$print_font_family: #{'Times New Roman', times};
 
 $primary_font_family: $default_font_family;
 $secondary_font_family: #{'Roboto', sans-serif};
 $third_font_family: #{'Courier New', monospace};
+$fourth_font_family: $print_font_family;
 
 $basic_indent: 2em;
 

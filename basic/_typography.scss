@@ -13,6 +13,12 @@
 	line-height: $text_line_1;
 }
 
+%basic_print {
+	font-family: $third_font_family;
+	font-size: $text_size_1;
+	line-height: $text_line_1;
+}
+
 %head_all {
 	color: $basic_head_color;
 }

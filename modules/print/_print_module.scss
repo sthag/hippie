@@ -55,6 +55,10 @@ $din: $a4, $a5, $a6;
 		position: relative;
 		overflow: auto;
 
+		p {
+			@extend %basic_print;
+		}
+
 		.page_head, .page_foot {
 			position: absolute;
 		}

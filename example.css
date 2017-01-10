@@ -225,6 +225,11 @@ pre, code, .code_solo {
   font-size: 1em;
   line-height: 1.5; }
 
+.print_body *[class^="din"] p, .print_body *[class^="din"] .p_col_2, .print_body *[class^="din"] .p_col_3, .print_body *[class^="din"] caption {
+  font-family: Courier New, monospace;
+  font-size: 1em;
+  line-height: 1.5; }
+
 h1, .exp_help_btn .span_solo, .print_body .page_date, .print_body .page_no {
   font-family: Roboto, sans-serif;
   font-size: 3.1em;
