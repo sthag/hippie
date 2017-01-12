@@ -215,7 +215,7 @@
   border-right: 8px solid rgba(82, 190, 209, 0.6);
   background-color: rgba(82, 190, 209, 0.1) !important; }
 
-.span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
+.span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, .input_default label {
   font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
   font-size: 1em;
   line-height: 1.5; }
@@ -551,10 +551,10 @@ fieldset {
 legend {
   padding: 0 4px; }
 
-label {
+.input_default label {
   display: table;
   margin: 4px 0; }
-  label input {
+  .input_default label input {
     display: table-cell;
     margin-left: 8px;
     padding: 4px 5px;
@@ -562,7 +562,7 @@ label {
     border-color: transparent;
     background-color: #404040;
     color: #e6e6e6; }
-    label input:hover {
+    .input_default label input:hover {
       background-color: black;
       color: white; }
 
