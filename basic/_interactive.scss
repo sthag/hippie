@@ -19,8 +19,11 @@ legend {
 
 // Common
 // -----------------------------------------------------------------------------
-.input_default label {
+label {
 	@extend %basic;
+}
+
+.input_default label {
 	display: table;
 	margin: $half_space 0;
 

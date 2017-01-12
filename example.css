@@ -215,7 +215,7 @@
   border-right: 8px solid rgba(82, 190, 209, 0.6);
   background-color: rgba(82, 190, 209, 0.1) !important; }
 
-.span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, .input_default label {
+.span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
   font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
   font-size: 1em;
   line-height: 1.5; }
