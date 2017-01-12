@@ -389,9 +389,12 @@ dd {
   margin-left: 2em; }
 
 ul li {
+  list-style: square; }
+
+.list_dash li {
   list-style: none;
   position: relative; }
-  ul li:before {
+  .list_dash li:before {
     content: "_";
     position: absolute;
     left: -1em; }
