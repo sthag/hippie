@@ -3,14 +3,8 @@
 
 html {
 	height: 100%;
-	box-sizing: border-box;
 }
 
-*,
-::before,
-::after {
-	box-sizing: inherit;
-}
 
 
 
@@ -18,11 +12,18 @@ html {
 // -----------------------------------------------------------------------------
 
 body {
+	box-sizing: border-box;
 	font-family: $primary_font_family;
 	font-size: $basic_size;
 	line-height: $basic_line;
 	color: $basic_font_color;
 	background-color: $basic_background_color;
+	
+	*,
+	::before,
+	::after {
+		box-sizing: inherit;
+	}
 }
 
 article {

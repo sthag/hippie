@@ -272,20 +272,19 @@ h5 {
   text-align: left !important; }
 
 html {
-  height: 100%;
-  box-sizing: border-box; }
-
-*,
-::before,
-::after {
-  box-sizing: inherit; }
+  height: 100%; }
 
 body {
+  box-sizing: border-box;
   font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
   font-size: 15px;
   line-height: 1;
   color: black;
   background-color: gray; }
+  body *,
+  body ::before,
+  body ::after {
+    box-sizing: inherit; }
 
 aside.right + section {
   margin-right: calc(20% + 8px); }
