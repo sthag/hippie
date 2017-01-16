@@ -63,7 +63,8 @@ $basic_link_color: $echo_color;
 $basic_highlight_color: $white;
 $basic_action_color: $foxtrot_color;
 
-$basic_background_color: $medium_gray;
+$default_background_color: $medium_gray !default;
+$basic_background_color: $default_background_color;
 $light_color: lighten($basic_background_color,5%);
 $dark_color: darken($basic_background_color,10%);
 

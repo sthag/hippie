@@ -34,11 +34,12 @@
 
 
 // Global configuration with default values
-// Adjustments can be made by copying values from _default.scss to _config.scss
+// Adjustments can be made by copying values from _config.scss to _override.scss
 // Be careful though changes will get lost if hippie gets updated
 // -----------------------------------------------------------------------------
 @import "default"; // EDIT
 @import "config"; // DO NOT EDIT
+@import "override"; // EDIT
 
 
 
