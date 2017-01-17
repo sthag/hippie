@@ -75,7 +75,7 @@ time {
 // Code
 code {
 	@extend %basic_mono;
-	color: lighten($black, 12%);
+	color: lighten($basic_font_color, 12%);
 	background-color: rgba($white,.1);
 }
 .code_solo {

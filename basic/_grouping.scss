@@ -98,7 +98,7 @@ ul, ol {
 
 li, dt, dd {
 	@extend %basic;
-	color: $black;
+	color: $basic_font_color;
 }
 
 dd {
