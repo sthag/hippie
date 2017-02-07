@@ -40,6 +40,10 @@
 
 %size_content {
 	box-sizing: content-box;
+}
+
+%size_content_wrap {
+	@extend %size_content;
 	
 	*,
 	::before,
