@@ -42,13 +42,13 @@
 	box-sizing: content-box;
 }
 
-%size_content_wrap {
+%size_content_solo {
 	@extend %size_content;
 	
 	*,
 	::before,
 	::after {
-		box-sizing: inherit;
+		box-sizing: border-box;
 	}
 }
 
