@@ -46,7 +46,6 @@
 // Modules and variables
 // Additional modules can be defined here
 // -----------------------------------------------------------------------------
-@import "modules/flexbox";
 @import "modules/vendor";
 //@import modules/all deprecated because of the new vendor mixin
 //@import modules/*/* needs sass-glob
@@ -57,7 +56,7 @@
 // -----------------------------------------------------------------------------
 @import "basic/common";
 @import "basic/typography";
-// Following the w3c document element structure 
+// Following the w3c document element structure
 // https://w3c.github.io/html/index.html#contents
 @import "basic/sections";
 @import "basic/grouping";

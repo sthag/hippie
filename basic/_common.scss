@@ -44,7 +44,7 @@
 
 %size_content_solo {
 	@extend %size_content;
-	
+
 	*,
 	::before,
 	::after {
@@ -93,6 +93,17 @@
 .bottom {
 	bottom: 0;
 }
+
+// Absolute elements
+.fullscreen_body {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: transparentize($alpha_color, .5);;
+}
+
 
 // Space and placeholders
 .space_box {

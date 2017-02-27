@@ -30,12 +30,13 @@ $head_line_2: $text_line_1;
 $head_line_3: $text_line_1;
 $head_line_4: $text_line_1;
 
-$default_font_family: #{'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+$default_font_family: #{'Roboto', 'Trebuchet MS', Helvetica, 'Source Sans', Arial, sans-serif, sans} !default;
 $print_font_family: #{'Times New Roman', times};
+$monospace_font_family: #{'Courier New', monospace};
 
 $primary_font_family: $default_font_family;
-$secondary_font_family: #{'Roboto', sans-serif};
-$third_font_family: #{'Courier New', monospace};
+$secondary_font_family: $default_font_family;
+$third_font_family: $monospace_font_family;
 $fourth_font_family: $print_font_family;
 
 $basic_indent: 2em;
@@ -51,9 +52,9 @@ $delta_color: #b7e0f0;
 $echo_color: #52bed1;
 $foxtrot_color: #0c85ff;
 
-$black: black;
-$white: white;
-$medium_gray: lighten($black, 50%);
+$black: black !default;
+$white: white !default;
+$medium_gray: lighten($black, 50%) !default;
 
 
 $basic_font_color: $black;
@@ -90,11 +91,12 @@ $space_2: $basic_space * 2;
 $space_3: $basic_space * 4;
 $space_4: $basic_space * 8;
 $space_5: $basic_space * 16;
-$tiny_space: 1px;
+$tiny_space: 1px !default;
 
 $basic_corner: 4px;
 
-$basic_border_width: $tiny_space;
+$default_border_width: $tiny_space !default;
+$basic_border_width: $default_border_width;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;

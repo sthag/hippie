@@ -21,98 +21,6 @@
 @import url(other/normalize.css);
 /**
  * @description
- * Generates flexbox properties for a given element
- *
- * @author romamatusevich
- *
- * @link MDN https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes
- * @link css-tricks http://css-tricks.com/snippets/css/a-guide-to-flexbox/
- * @link spec http://www.w3.org/TR/css3-flexbox/
- */
-/**
- * @returns
- *   display: -webkit-box;
- *   display: -moz-box;
- *   display: -ms-flexbox;
- *   display: -webkit-flex;
- *   display: flex;
- *
- * @example
- *   .selector {
- *     @include x-display-flex;
- *   }
- */
-/**
- * @param values
- * @returns
- *   -webkit-box-flex: <values>;
- *      -moz-box-flex: <values>;
- *       -webkit-flex: <values>;
- *           -ms-flex: <values>;
- *               flex: <values>;
- *
- * @example
- *   .selector {
- *     @include x-flex(1 1 auto);
- *   }
- */
-/**
- * @param value
- * @returns
- *   -webkit-box-ordinal-group: <value>;
- *      -moz-box-ordinal-group: <value>;
- *              -ms-flex-order: <value>;
- *               -webkit-order: <value>;
- *                       order: <value>;
- *
- * @example
- *   .selector {
- *     @include x-order(1);
- *   }
- */
-/**
- * @param value
- * @returns
- *    -webkit-flex-wrap: <value>;
- *        -ms-flex-wrap: <value>;
- *            flex-wrap: <value>;
- *
- * @example
- *   .selector {
- *     @include x-flex-wrap(wrap);
- *   }
- */
-/**
- * @param value
- * @returns
- *   -webkit-align-content: <value>;
- *      -moz-align-content: <value>;
- *      -ms-flex-line-pack: <value>;
- *           align-content: <value>;
- * @example
- *   .selector {
- *     @include x-align-content(center);
- *   }
- */
-/**
- * @param value
- * @returns
- *	  -webkit-box-direction: <value>;
- *		 -moz-box-direction: <value>;
- *       -webkit-box-orient: <value>;
- *		    -moz-box-orient: <value>;
- *   -webkit-flex-direction: <value>;
- *      -moz-flex-direction: <value>;
- *       -ms-flex-direction: <value>;
- *           flex-direction: <value>;
- * @example
- *   .selector {
- *     @include x-flex-direction(row-reverse);
- *   }
- */
-/* ToDo: add flex-grow, flex-shrink, flex-basis, flex-flow, align-items, align-self, justify-content mixins */
-/**
- * @description
  * Generates cross-browser-compatible output for a given element with its value.
  *
  * @author sthag
@@ -181,6 +89,14 @@
 .bottom {
   bottom: 0; }
 
+.fullscreen_body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(250, 216, 3, 0.5); }
+
 .space_box {
   float: left;
   display: table;
@@ -216,7 +132,7 @@
   background-color: rgba(82, 190, 209, 0.1) !important; }
 
 .span_solo, h6, p, .p_col_2, .p_col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
-  font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 1em;
   line-height: 1.5; }
 
@@ -231,25 +147,25 @@ pre, code, .code_solo {
   line-height: 1.5; }
 
 h1, .exp_help_btn .span_solo, .print_body .page_date, .print_body .page_no {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 3.1em;
   font-weight: 300;
   line-height: 1.5; }
 
 h2 {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 2.5em;
   font-weight: 300;
   line-height: 1.5; }
 
 h3, h4 {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 1.8em;
   font-weight: 300;
   line-height: 1.5; }
 
 h5 {
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 1.35em;
   font-weight: 300;
   line-height: 1.5; }
@@ -276,7 +192,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-family: Roboto, Trebuchet MS, Helvetica, Source Sans, Arial, sans-serif, sans;
   font-size: 15px;
   line-height: 1;
   color: black;
@@ -576,20 +492,19 @@ legend {
 .card_body {
   height: 100%;
   /*  .full {
-        position: absolute;
-        width: 128px;
-        height: 128px;
-        top: 16px;
-        left: 16px;
-        background-color: #fff;
-    }
-  
-     .mark {
-        float: left;
-        width: 32px;
-        height: 32px;
-        margin-top: 16px;
-    }
+  			position: absolute;
+  			width: 128px;
+  			height: 128px;
+  			top: 16px;
+  			left: 16px;
+  			background-color: #fff;
+  	}
+  		.mark {
+  			float: left;
+  			width: 32px;
+  			height: 32px;
+  			margin-top: 16px;
+  	}
    */ }
   .card_body .bkg_box {
     transition-duration: 800ms;
