@@ -115,7 +115,7 @@ ul {
 	li {
 		list-style: none;
 		position: relative;
-	
+
 		&:before {
 			content: "_";
 			position: absolute;
@@ -144,4 +144,29 @@ main {
 
 div {
 
+}
+
+.screen-box {
+	width: $basic_width;
+	@media screen and (orientation: landscape) {
+		@media (min-width: $screen_small) {
+			width: $width_2;
+		}
+		@media (min-width: $screen_medium) {
+			width: $width_3;
+		}
+		@media (min-width: $screen_large) {
+			width: $width_4;
+		}
+	}
+	@media screen and (orientation: portrait) {
+		@media (min-width: $screen_small) {
+			width: $width_2;
+		}
+	}
+	margin: 0 auto;
+	border-top-width: $border_width_8;
+	border-top-style: solid;
+	border-color: $basic_border_color;
+	padding-top: $space_3;
 }

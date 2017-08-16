@@ -57,30 +57,12 @@
 // Structure attributes
 // ------------------------------------------------------------------------------
 
-// Simulate new body element
-.screen_body {
-	width: $basic_width;
-	@media screen and (orientation: landscape) {
-		@media (min-width: $screen_small) {
-			width: $width_2;
-		}
-		@media (min-width: $screen_medium) {
-			width: $width_3;
-		}
-		@media (min-width: $screen_large) {
-			width: $width_4;
-		}
-	}
-	@media screen and (orientation: portrait) {
-		@media (min-width: $screen_small) {
-			width: $width_2;
-		}
-	}
-	margin: 0 auto;
-	border-top-width: $border_width_8;
-	border-top-style: solid;
-	border-color: $basic_border_color;
-	padding-top: $space_3;
+%full_viewport {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 // Fixed elements
@@ -95,13 +77,18 @@
 }
 
 // Absolute elements
-.fullscreen_body {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background-color: transparentize($alpha_color, .5);;
+.viewport-full-body {
+	@extend %full_viewport;
+	background-color: transparentize($alpha_color, .5);
+}
+
+.viewport-hover-body {
+	@extend %full_viewport;
+	background-color: darken($basic_background_color, 20%);
+	transition: background-color .2s ease-in-out;
+	&:hover {
+		background-color: $basic_background_color;
+	}
 }
 
 

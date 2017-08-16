@@ -1,0 +1,22 @@
+{
+  "name": "hippie",
+  "version": "0.3.3",
+  "description": "Hippie interweaves preeminent personal interface elements",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sthag/hippie.git"
+  },
+  "author": "Interaktionsweise",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sthag/hippie/issues"
+  },
+  "homepage": "https://github.com/sthag/hippie#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

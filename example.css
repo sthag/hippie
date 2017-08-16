@@ -59,26 +59,12 @@
   margin-right: 0;
   margin-left: 0; }
 
-.screen_body {
-  width: 96%;
-  margin: 0 auto;
-  border-top-width: 8px;
-  border-top-style: solid;
-  border-color: black;
-  padding-top: 32px; }
-@media screen and (orientation: landscape) and (min-width: 1024px) {
-  .screen_body {
-    width: 80%; } }
-@media screen and (orientation: landscape) and (min-width: 1280px) {
-  .screen_body {
-    width: 60%; } }
-@media screen and (orientation: landscape) and (min-width: 1920px) {
-  .screen_body {
-    width: 48%; } }
-
-@media screen and (orientation: portrait) and (min-width: 1024px) {
-  .screen_body {
-    width: 80%; } }
+.viewport-full-body, .viewport-hover-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
 
 .relative {
   position: relative; }
@@ -89,13 +75,14 @@
 .bottom {
   bottom: 0; }
 
-.fullscreen_body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+.viewport-full-body {
   background-color: rgba(250, 216, 3, 0.5); }
+
+.viewport-hover-body {
+  background-color: #4d4d4d;
+  transition: background-color .2s ease-in-out; }
+  .viewport-hover-body:hover {
+    background-color: gray; }
 
 .space_box {
   float: left;
@@ -317,6 +304,27 @@ ul li {
 figure {
   margin: 16px 2em; }
 
+.screen-box {
+  width: 96%;
+  margin: 0 auto;
+  border-top-width: 8px;
+  border-top-style: solid;
+  border-color: black;
+  padding-top: 32px; }
+@media screen and (orientation: landscape) and (min-width: 1024px) {
+  .screen-box {
+    width: 80%; } }
+@media screen and (orientation: landscape) and (min-width: 1280px) {
+  .screen-box {
+    width: 60%; } }
+@media screen and (orientation: landscape) and (min-width: 1920px) {
+  .screen-box {
+    width: 48%; } }
+
+@media screen and (orientation: portrait) and (min-width: 1024px) {
+  .screen-box {
+    width: 80%; } }
+
 a {
   color: #52bed1;
   text-decoration: none; }
@@ -491,21 +499,21 @@ legend {
 
 .card_body {
   height: 100%;
-  /*  .full {
-  			position: absolute;
-  			width: 128px;
-  			height: 128px;
-  			top: 16px;
-  			left: 16px;
-  			background-color: #fff;
-  	}
-  		.mark {
-  			float: left;
-  			width: 32px;
-  			height: 32px;
-  			margin-top: 16px;
-  	}
-   */ }
+  	/*  .full {
+  	position: absolute;
+  	width: 128px;
+  	height: 128px;
+  	top: 16px;
+  	left: 16px;
+  	background-color: #fff;
+  }
+  .mark {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-top: 16px;
+  }
+  */ }
   .card_body .bkg_box {
     transition-duration: 800ms;
     overflow: hidden;
