@@ -1,4 +1,6 @@
 # https://gist.github.com/octocat/9257657
+###################
+###################
 
 # Compiled source #
 ###################
@@ -41,6 +43,8 @@ Thumbs.db
 
 
 # https://github.com/github/gitignore
+###################
+###################
 
 # https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
 ###################
@@ -173,13 +177,13 @@ typings/
 # dotenv environment variables file
 .env
 
+# https://github.com/github/gitignore/blob/master/Sass.gitignore
+###################
+.sass-cache/
+*.css.map
+
 
 
 # https://interaktionsweise.de/
-
-# =========================
-# Other files
-# =========================
-
-.sass-cache/
-*.css.map
+###################
+###################

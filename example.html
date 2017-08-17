@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="./example.css"/>
 </head>
 
-<body class="viewport-hover-body">
+<body class="hover_background_change">
 
 	<div class="layer">
 		<div class="exp_overlay_btn exp_help_btn"><span class="span_solo">?</span></div>
@@ -122,7 +122,7 @@
 		<p>Eine sehr klar definierte Gruppierung stellt das Element <code>&lt;main&gt;</code> dar. Es umschließt den hauptsächlichen Inhalt des Dokumentes.</p>
 		<h1 id="textlevel">Textebene</h1>
 		<h2>Verweise</h2>
-		<p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="link_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">table>tbody>tr>td*2^tr>td[colspan=2]</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="link_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
+		<p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="link_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.link_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="link_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
 		<p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="link_line" href="#">unterstrichene Varianten</a> sind möglich.</p>
 		<p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Auf diese Verwendung wird im Folgenden genauer eingegangen <span class="wip_txt">...</span></p>
 		<h2>Formatierungen</h2>
@@ -292,41 +292,40 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="table_link js_pop">
+		<table class="table_fix">
+			<caption>Beschreibung bzw. Zusammenhang der Tabelle</caption>
 			<thead>
 				<tr>
-					<th>&nbsp;</th>
-					<th>Ab / Zy</th>
-					<th> Neu / Alt</th>
+					<th>Kopfzeile</th>
+					<th>1</th>
+					<th>&gt;9000</th>
 				</tr>
 			</thead>
+			<tfoot>
+				<tr>
+					<td>Fußzeile</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+			</tfoot>
 			<tbody>
 				<tr>
-					<td class="cell_icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
-					<td class="cell_link"><a href="" class="link_text" target="_blank">Name</a><a href="" class="link_url" target="_blank">URL</a></td>
-					<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+					<td>Alpha</td>
+					<td>0</td>
+					<td>9000</td>
 				</tr>
 				<tr>
-					<td class="cell_text">
-						<div class="shorten">Beschreibung</div>
-					</td>
-				</tr>
-			</tbody>
-			<tbody>
-				<tr>
-					<td class="cell_icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
-					<td class="cell_link"><a href="" class="link_text" target="_blank">Name</a><a href="" class="link_url" target="_blank">URL</a></td>
-					<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+					<td>Bravo</td>
+					<td>1</td>
+					<td>9001</td>
 				</tr>
 				<tr>
-					<td class="cell_text">
-						<div class="shorten">Beschreibung</div>
-					</td>
+					<td>Charlie</td>
+					<td>0</td>
+					<td>9000</td>
 				</tr>
 			</tbody>
 		</table>
-
-		<div class="exp_pop"><code class="code_solo">table.table_link>thead>tr>th*3^^(tbody>tr>td.cell_icon[rowspan=2]>img[width=16  height=16]^+td.cell_link>a.link_text[target=_blank]+a.link_url[target=_blank]^+td.cell_date[rowspan=2]{YYYY-MM-DD}^tr>td.cell_text>div.shorten)*2</code></div>
 
 		<h1>Formulare</h1>
 		<p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Sie sind in ihrer unveränderten Gestalt, System- bzw. Browser-Abhängig. <span class="wip_txt">(Vielleicht ist das auch scheiße, hier darauf einzugehen) ...</span></p>
@@ -369,6 +368,61 @@
 		<div class="div_placeholder_bkg"></div>
 		<h1>Medien</h1>
 		<h1>Druck</h1>
+
+		<section>
+			<header>
+				<h1>Ende der Einführung</h1>
+			</header>
+			<article>
+				<p>Dies war eine Übersicht der grundlegenden Elemente. Nun folgen weitere Elemente mit besonderen Formatierungen.</p>
+			</article>
+		</section>
+
+		<section>
+			<header>
+				<h1>Einzelene Elemente</h1>
+			</header>
+			<article>
+				<h2>Tabellen</h2>
+				<table class="table-link_list js_pop">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>Ab / Zy</th>
+							<th> Neu / Alt</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cell_icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
+							<td class="cell_link"><a href="" class="link_text" target="_blank">Name</a><a href="" class="link_url" target="_blank">URL</a></td>
+							<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+						</tr>
+						<tr>
+							<td class="cell_text">
+								<div class="shorten">Beschreibung</div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td class="cell_icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
+							<td class="cell_link"><a href="" class="link_text" target="_blank">Name</a><a href="" class="link_url" target="_blank">URL</a></td>
+							<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+						</tr>
+						<tr>
+							<td class="cell_text">
+								<div class="shorten">Beschreibung</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="exp_pop"><code class="code_solo">table.table-link_list>thead>tr>th*3^^(tbody>tr>td.cell_icon[rowspan=2]>img[width=16  height=16]^+td.cell_link>a.link_text[target=_blank]+a.link_url[target=_blank]^+td.cell_date[rowspan=2]{YYYY-MM-DD}^tr>td.cell_text>div.shorten)*2</code></div>
+
+
+			</article>
+		</section>
+
 	</div>
 	<script
 		src="https://code.jquery.com/jquery-3.1.1.min.js"

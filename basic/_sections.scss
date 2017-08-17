@@ -12,13 +12,13 @@ html {
 // -----------------------------------------------------------------------------
 
 body {
-	box-sizing: border-box;
+	box-sizing: $box_sizing;
 	font-family: $primary_font_family;
 	font-size: $basic_size;
 	line-height: $basic_line;
 	color: $basic_font_color;
 	background-color: $basic_background_color;
-	
+
 	*,
 	::before,
 	::after {
@@ -108,4 +108,3 @@ h6 {
 	text-transform: none;
 	font-weight: bold;
 }
-

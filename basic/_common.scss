@@ -48,7 +48,7 @@
 	*,
 	::before,
 	::after {
-		box-sizing: border-box;
+		box-sizing: $box_sizing;
 	}
 }
 
@@ -82,8 +82,7 @@
 	background-color: transparentize($alpha_color, .5);
 }
 
-.viewport-hover-body {
-	@extend %full_viewport;
+.hover_background_change {
 	background-color: darken($basic_background_color, 20%);
 	transition: background-color .2s ease-in-out;
 	&:hover {

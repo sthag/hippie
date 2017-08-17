@@ -43,7 +43,7 @@ tfoot {
 
 .table_blank {
 	border: $basic_border_width solid transparent;
-	
+
 	th, td {
 	border: $basic_border_width solid transparent;
 	}
@@ -73,75 +73,4 @@ caption {
 	padding: $half_space 0;
 	border: $basic_border_width dotted $basic_border_color;
 	text-align: center;
-}
-
-.table_link {
-	width: 100%;
-	border: 0;
-	table-layout: auto;
-
-	tbody {
-		border-bottom: $cell_border;
-
-		&:hover {
-			background-color: $light_color;
-		}
-	}
-
-	th, td {
-		border: 0;
-	}
-
-	.cell_icon {
-		width: 48px;
-		text-align: center;
-		img {
-			vertical-align: text-top;
-		}
-	}
-
-	.cell_link {
-		padding-right: $basic_space;
-		padding-left: $basic_space;
-
-		&:hover {
-			background-color: $foxtrot_color;
-		}
-
-		a {
-			display: block;
-		}
-
-		.link_url {
-			display: none;
-		}
-
-		&:hover .link_url {
-			display: block;
-			color: $basic_highlight_color;
-		}
-
-		&:hover .link_text {
-			display: none;
-		}
-	}
-
-	.cell_date {
-		width: 12%;
-		text-align: center;
-	}
-
-	.cell_text {
-		padding-right: $basic_space;
-		padding-left: $basic_space;
-
-		div {
-			width: 100%;
-		}
-
-		.shorten {
-			@extend %short;
-			max-height: 44px;
-		}
-	}
 }

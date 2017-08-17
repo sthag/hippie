@@ -4,7 +4,7 @@
 // TEXT
 // ------------------------------------------------------------------------------
 
-$default_font_size: 15px !default;
+$default_font_size: 16px !default;
 $basic_size: $default_font_size;
 
 $default_print_font_size: 10pt !default;
@@ -78,6 +78,9 @@ $basic_border_color: $black;
 
 // LAYOUT
 // ------------------------------------------------------------------------------
+
+$default_box_sizing: box-sizing !default;
+$box_sizing: $default_box_sizing;
 
 $basic_width: 96%;
 $width_2: 80%;
@@ -333,4 +336,3 @@ $webkit_ms_support: -webkit- -ms- '';
 // $iv-shadow:                            2;                // inset vertical shaddow settings
 // $is-shadow:                            2;                // inset spread shaddow settings
 // $iblur:                                3;                // inset blur settings
-
