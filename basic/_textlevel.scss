@@ -13,7 +13,7 @@ a {
 	}
 }
 
-.link_line {
+.a__line {
 	border-bottom-width: $tiny_space;
 	border-bottom-style: dotted;
 	border-color: $basic_border_color;
@@ -78,7 +78,7 @@ code {
 	color: lighten($basic_font_color, 12%);
 	background-color: rgba($white,.1);
 }
-.code_solo {
+.code__solo {
 	@extend %basic_mono;
 	padding: $tiny_space $half_space;
 	color: $basic_font_color;
@@ -104,7 +104,7 @@ u {
 mark {
 	background-color: $alpha_color;
 }
-.mark_cursor {
+.mark__cursor {
 	color: $basic_highlight_color;
 	background-color: $black;
 }
@@ -120,7 +120,7 @@ mark {
 span {
 
 }
-.span_solo {
+.span__solo {
 	@extend %solo;
 }
 

@@ -14,13 +14,13 @@
 	<link rel="stylesheet" type="text/css" media="all" href="./example.css"/>
 </head>
 
-<body class="hover_background_change">
+<body class="hover_back_change">
 
 	<div class="layer">
-		<div class="exp_overlay_btn exp_help_btn"><span class="span_solo">?</span></div>
+		<div class="exp_overlay_btn exp_help_btn"><span class="span__solo">?</span></div>
 	</div>
 
-	<div class="screen-box">
+	<div class="box__screen">
 		Dies ist einfach nur Text.<br/>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.
 		<p>Es wirken nur die Eigenschaften des <code>&lt;body&gt;</code> Elements. Dieses Element umschließt den gesamten Inhalt des Dokumentes und kommt daher nur einmal vor. Inhalte sind normalerweise durch Elemente definiert. Grundlegende Elemente teilen das Dokument zunächst in Abschnitte.</p>
 		<h1>Bereiche</h1>
@@ -61,19 +61,19 @@
 		<p>Ein Absatz <code>&lt;p&gt;</code>. Zugegeben ein kurzer.</p>
 		<p>Aus mehreren Absätzen wird ein ganzer Text. Solche Texte haben gelegentlich großen informativen oder unterhaltsamen Charakter.<br/>Einfache Zeilenumbrüche werden darin mit <code>&lt;br&gt;</code> erreicht.</p>
 		<p>Die Unterteilung in Absätze ist eine von vielen Möglichkeiten Texte zu gruppieren und ihnen Struktur zu verleihen. In diesem Dokument flattert Text normalerweise von Links daher. Er ist schwarz und in einer serifenlosen Schrift gesetzt. Zu weiteren Formatierungen, die eher auf einer Ebene der Zeichen einzuordnen ist, wird im Verlauf näher eingegangen. Zunächst die Struktur:</p>
-		<p class="txt_center js_pop">Text sitzt gerne auch mal zentriert.</p><div class="exp_pop"><code class="code_solo">p.txt_center</code></div>
-		<p class="txt_right js_pop">Rechtsbündig ist schon eher eine Ausnahme bzw. Besonderheit.</p><div class="exp_pop"><code class="code_solo">p.txt_right</code></div>
+		<p class="txt_center js_pop">Text sitzt gerne auch mal zentriert.</p><div class="exp_pop"><code class="code__solo">p.txt_center</code></div>
+		<p class="txt_right js_pop">Rechtsbündig ist schon eher eine Ausnahme bzw. Besonderheit.</p><div class="exp_pop"><code class="code__solo">p.txt_right</code></div>
 		<p>Texte können auf verschiedene Arten unterteilt werden. Dafür werden unterschiedlich formatierte <code>&lt;hr&gt;</code> Elemente verwendet. Die horizontale Linie ist die Ausgangsformatierung, daher auch der abgekürzte Name des Elements. Eine Linie ist schwarz und durchgezogen.</p>
 		<hr/>
 		<p>Es ist auch eine unsichtbare Unterteilung möglich:</p>
-		<hr class="hr_hidden js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_hidden</code></div>
+		<hr class="hr__hidden js_pop"/><div class="exp_pop"><code class="code__solo">hr.hr__hidden</code></div>
 		<p>Die Linie darf auch gepunkted sein. Zudem sind verschiedene Längen möglich. Diese sind immer ein Prozentwert der verfügbaren Breite. Hier in gleicher Reihenfolge 100%, 50% und 25%:</p>
-		<hr class="hr_dotted js_pop" emmet/><div class="exp_pop"><code class="code_solo">hr.hr_dotted</code></div><!--hr.hr_dotted-->
-		<hr class="center_50 js_pop"/><div class="exp_pop"><code class="code_solo">hr.center_50</code></div>
-		<hr class="hr_dotted center_25 js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted.center_25</code></div>
-		<p class="p_col_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code_solo">p.p_col_2</code></div>
-		<p class="p_col_3 p_col_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code_solo">p.p_col_3.p_col_line</code></div>
-		<p class="p_col_3 p_col_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br/>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
+		<hr class="hr__dotted js_pop" emmet/><div class="exp_pop"><code class="code__solo">hr.hr__dotted</code></div><!--hr.hr__dotted-->
+		<hr class="center_50 js_pop"/><div class="exp_pop"><code class="code__solo">hr.center_50</code></div>
+		<hr class="hr__dotted center_25 js_pop"/><div class="exp_pop"><code class="code__solo">hr.hr__dotted.center_25</code></div>
+		<p class="p__col_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code__solo">p.p__col_2</code></div>
+		<p class="p__col_3 p__col_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code__solo">p.p__col_3.p__col_line</code></div>
+		<p class="p__col_3 p__col_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br/>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
 		<p>Es gibt die Möglichkeit vorformatierten Text darzustellen <code>&lt;pre&gt;</code>.</p>
 		<pre>Dadurch<br/>	bleiben<br/>		Einrückungen<br/>			durch<br/>				Tabulatoren<br/>					erhalten.</pre>
 		<p>Text bekommt durch Listen besondere optische wie auch inhaltliche Struktur. Es gibt ungeordnete <code>&lt;ul&gt;</code> und geordnete Listen <code>&lt;ol&gt;</code> sowie Beschreibungslisten <code>&lt;dl&gt;</code>. Die beiden ersten Varianten beinhalten das Listenelement <code>&lt;li&gt;</code>. Beschreibungslisten beinhalten jeweils das Paar von Ausdruck <code>&lt;dt&gt;</code> und Beschreibung <code>&lt;dd&gt;</code>. Im Folgenden eine Liste der Listen in ihrer Ausgangskonfiguration:</p>
@@ -81,7 +81,7 @@
 			<li>Ungeordnete</li>
 			<li>Listen</li>
 		</ul>
-		<ul class="list_dash">
+		<ul class="list__dash">
 			<li>Verschiedener</li>
 			<li>Art</li>
 		</ul>
@@ -98,9 +98,9 @@
 		<p>Wird Bezug auf fremde Inhalte genommen, kommt ein Zitat <code>&lt;blockquote&gt;</code> zur Anwendung. Es besteht aus der Aussage und der Quelle.</p>
 		<blockquote class="js_pop" cite="https://de.wikipedia.org/wiki/Zitat/">
 			<p>Ein Zitat (das, lateinisch citatum „Angeführtes, Aufgerufenes“ zu lat. citāre „in Bewegung setzen, vorladen“, vgl. „jemanden vor Gericht zitieren“) ist eine wörtlich übernommene Stelle aus einem Text oder ein Hinweis auf eine bestimmte Textstelle.</p>
-			<p class="quote_source"><a href="https://de.wikipedia.org/wiki/Zitat/">Wikipedia</a></p>
+			<p class="quote__source"><a href="https://de.wikipedia.org/wiki/Zitat/">Wikipedia</a></p>
 		</blockquote>
-		<div class="exp_pop"><code class="code_solo">blockquote>p+p.quote_source</code></div>
+		<div class="exp_pop"><code class="code__solo">blockquote>p+p.quote__source</code></div>
 		<p>Auch Inhalte, die nicht in Textform sind, können durch einen Bezug integriert werden. Wie diese Fahne werden sie mit <code>&lt;figure&gt;</code> umschlossen und tragen eine Bezeichnung.</p>
 		<figure class="js_pop">
 			<figcaption>Fahne</figcaption>
@@ -116,29 +116,29 @@
 				<polygon id="triangle-1" fill="#52BED1" points="0,1200 0,0 370.5,0 "/>
 			</svg>
 		</figure>
-		<div class="exp_pop"><code class="code_solo">figure>figcaption+{element}</code></div>
+		<div class="exp_pop"><code class="code__solo">figure>figcaption+{element}</code></div>
 		<p>Eine von sich aus undefinierte Möglichkeit zur Gruppierung von Text besteht durch <code>&lt;div&gt;</code>. Dieses Element hat, ohne weitere Klassifizierung keine Auswirkungen auf die Erscheinung oder die inhaltliche Aussage. Daher der allgemeine Einsatz.</p>
-		<div class="div_info"><p>Es wird allerdings häufig eingesetzt und bekommt vielfältige Funktionen zugeordnet wie diese hervorgehobene Information zeigt.</p></div>
+		<div class="box__info"><p>Es wird allerdings häufig eingesetzt und bekommt vielfältige Funktionen zugeordnet wie diese hervorgehobene Information zeigt.</p></div>
 		<p>Eine sehr klar definierte Gruppierung stellt das Element <code>&lt;main&gt;</code> dar. Es umschließt den hauptsächlichen Inhalt des Dokumentes.</p>
 		<h1 id="textlevel">Textebene</h1>
 		<h2>Verweise</h2>
-		<p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="link_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.link_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="link_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
-		<p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="link_line" href="#">unterstrichene Varianten</a> sind möglich.</p>
+		<p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a__line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code__solo">a.a__line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a__line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
+		<p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a__line" href="#">unterstrichene Varianten</a> sind möglich.</p>
 		<p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Auf diese Verwendung wird im Folgenden genauer eingegangen <span class="wip_txt">...</span></p>
 		<h2>Formatierungen</h2>
 		<p>Texte, Wörter oder Zeichen können vielfältig formatiert werden. Sie können <b>fett</b> <code>&lt;b&gt;</code> oder <i>kursiv</i> <code>&lt;i&gt;</code> geschrieben sein. <b><i>Auch beides ist möglich!</i>?</b>! Sollen sie nicht nur anders <b>aussehen</b>, sondern auch <i>eine besondere inhaltliche Bedeutung</i> bekommen, werden sie mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code> ausgezeichnet.</p>
 		<p>Gerade bei wörtlichen Zitierungen kommt häufig das Anführungszeichen zum Einsatz. Es kann durch die Formatierung automatisch ergänzt werden.</p>
-		<blockquote class="quote_mark js_pop" cite="">
+		<blockquote class="quote__mark js_pop" cite="">
 			<p>Das kannst du schon so machen aber dann isses halt Kacke.</p>
-			<p class="quote_source">o. V.</p>
+			<p class="quote__source">o. V.</p>
 		</blockquote>
-		<div class="exp_pop"><code class="code_solo">blockquote.quote_mark>p+p.quote_source</code></div>
+		<div class="exp_pop"><code class="code__solo">blockquote.quote__mark>p+p.quote__source</code></div>
 		<p>Ein besonderer inhaltlicher Bezug ist der Titel eines Werkes. Sowas kann mit <code>&lt;cite&gt;</code> ausgezeichnet werden. <cite>Pulp Fiction</cite>, super Film - zum Beispiel.</p>
 		<p>Auch die Auszeichnung <code>&lt;code&gt;</code> wurde bis hier hin schon verwendet. Sie markiert Maschinensprache. Für zusammenhängende Blöcke wird die Auszeichnung oft in Kombination mit dem Element <code>&lt;pre&gt;</code> verwendet:</p>
-		<pre class="pre_code"><code>&lt;html&gt;<br/>  &lt;head&gt;<br/>    &lt;title&gt;Hyper Text Markup Language&lt;/title&gt;<br/>  &lt;/head&gt;<br/>  &lt;body id="root"&gt;<br/>    &lt;!-- Content goes here --&gt;<br/>    &lt;p class="example"&gt;Just like this.&lt;/p&gt;<br/>  &lt;/body&gt;<br/>&lt;/html&gt;</code></pre>
+		<pre class="pre__code"><code>&lt;html&gt;<br/>  &lt;head&gt;<br/>    &lt;title&gt;Hyper Text Markup Language&lt;/title&gt;<br/>  &lt;/head&gt;<br/>  &lt;body id="root"&gt;<br/>    &lt;!-- Content goes here --&gt;<br/>    &lt;p class="example"&gt;Just like this.&lt;/p&gt;<br/>  &lt;/body&gt;<br/>&lt;/html&gt;</code></pre>
 		<p>Dabei bleiben vorhandene Textformatierungen wie Zeilenumbrüche und Einrückung erhalten.</p>
 		<p>Die Zeichen in Absätzen bis hin zu ganzen Texten können, mit einem geeigneten Eingabegerät, markiert werden. Dies stellt sich wie folgt dar:</p>
-		<p class="txt_center">Bei<mark class="mark_cursor">spiel zum mark</mark>ieren ^^.</p>
+		<p class="txt_center">Bei<mark class="mark__cursor">spiel zum mark</mark>ieren ^^.</p>
 		<p>Eine Markierung kann, mittels <code>&lt;mark&gt;</code>, auch durch den Autor geschehen. Diese stellt sich ein wenig anders dar: <mark>Diese Worte sind markiert.</mark></p>
 
 		<h2>Änderungen</h2>
@@ -160,7 +160,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+		<div class="exp_pop"><code class="code__solo">table.width_full>tbody>tr>td*2^tr>td[colspan=2]</code></div>
 		<div class="overflow">
 			<table class="float_left js_pop">
 				<tbody>
@@ -173,7 +173,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="exp_pop"><code class="code_solo">table>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+			<div class="exp_pop"><code class="code__solo">table>tbody>tr>td*2^tr>td[colspan=2]</code></div>
 			<table class="table_blank float_left js_pop">
 				<tbody>
 					<tr>
@@ -185,7 +185,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="exp_pop"><code class="code_solo">table.table_blank>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+			<div class="exp_pop"><code class="code__solo">table.table_blank>tbody>tr>td*2^tr>td[colspan=2]</code></div>
 		</div>
 		<p>Die nächste Tabelle verwendet alle zur Auszeichnung verfügbaren Elemente und hat eine starre Zellverteilung:</p>
 		<table class="width_full table_fix js_pop">
@@ -227,8 +227,8 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full.table_fix>caption+thead>tr>th*3^^tfoot>tr>td*3^^tbody>(tr>td*3)*3</code></div>
-		<hr class="hr_hidden">
+		<div class="exp_pop"><code class="code__solo">table.width_full.table_fix>caption+thead>tr>th*3^^tfoot>tr>td*3^^tbody>(tr>td*3)*3</code></div>
+		<hr class="hr__hidden">
 		<p>Viele weitere Formate sind möglich <span class="wip_txt">...</span></p>
 		<table class="width_full js_pop">
 			<thead>
@@ -260,7 +260,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full>thead>tr>th.precol+th[colspan=2]^^tbody>tr>td.precol+td*2^tr>td.precol+td[colspan=2]</code></div>
+		<div class="exp_pop"><code class="code__solo">table.width_full>thead>tr>th.precol+th[colspan=2]^^tbody>tr>td.precol+td*2^tr>td.precol+td[colspan=2]</code></div>
 		<table class="width_full table_stripe table_free">
 			<thead>
 				<tr>
@@ -358,14 +358,14 @@
 
 
 		<h1>Struktur</h1>
-		<div class="div_placeholder">
+		<div class="box__placeholder">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%">
 				<line x1='0' y1='0' x2='100%' y2='100%' stroke='#000' stroke-width='.5'/>
 				<line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/>
 			</svg>
 		</div>
-		<hr class="hr_hidden"/>
-		<div class="div_placeholder_bkg"></div>
+		<hr class="hr__hidden"/>
+		<div class="box__placeholder_bkg"></div>
 		<h1>Medien</h1>
 		<h1>Druck</h1>
 
@@ -417,7 +417,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<div class="exp_pop"><code class="code_solo">table.table-link_list>thead>tr>th*3^^(tbody>tr>td.cell_icon[rowspan=2]>img[width=16  height=16]^+td.cell_link>a.link_text[target=_blank]+a.link_url[target=_blank]^+td.cell_date[rowspan=2]{YYYY-MM-DD}^tr>td.cell_text>div.shorten)*2</code></div>
+				<div class="exp_pop"><code class="code__solo">table.table-link_list>thead>tr>th*3^^(tbody>tr>td.cell_icon[rowspan=2]>img[width=16  height=16]^+td.cell_link>a.link_text[target=_blank]+a.link_url[target=_blank]^+td.cell_date[rowspan=2]{YYYY-MM-DD}^tr>td.cell_text>div.shorten)*2</code></div>
 
 
 			</article>
@@ -464,6 +464,7 @@
 					);
 
 				// WIP Activates layer with explanation elements
+				// Besser :after oder :before benutzen
 				$(".exp_help_btn").click(function(e){
 					var $wrap, $pop;
 

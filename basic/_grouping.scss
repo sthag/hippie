@@ -13,17 +13,17 @@ p {
 	}
 }
 
-.p_col_line {
+.p__col_line {
 	column-rule: $basic_border_width solid $black;
 }
-.p_col_2, .p_col_3 {
+.p__col_2, .p__col_3 {
 	@extend p;
 }
-.p_col_2 {
+.p__col_2 {
 	column-count: 2;
 	column-gap: $space_3;
 }
-.p_col_3 {
+.p__col_3 {
 	column-count: 3;
 	column-gap: $space_4;
 }
@@ -41,12 +41,12 @@ hr {
 	border-color: $black;
 }
 
-.hr_hidden {
+.hr__hidden {
 	@extend hr;
 	border-color: transparent;
 }
 
-.hr_dotted {
+.hr__dotted {
 	@extend hr;
 	border-style: dotted;
 }
@@ -56,7 +56,7 @@ pre {
 	@extend %basic_mono;
 }
 
-.pre_code {
+.pre__code {
 	border-color: rgba($white,.1);
 	border-style: dotted;
 	border-width:  0 0 0 $border_width_4;
@@ -73,14 +73,14 @@ blockquote {
 	margin: $basic_space $basic_indent;
 }
 
-.quote_mark {
+.quote__mark {
 	p::before {
 		content: "\201E \0020";
 	}
 	p::after {
 		content: "\201C \0020";
 	}
-	.quote_source {
+	.quote__source {
 		&::before, &::after {
 			content: "";
 		}
@@ -111,7 +111,7 @@ ul {
 	}
 }
 
-.list_dash {
+.list__dash {
 	li {
 		list-style: none;
 		position: relative;
@@ -146,7 +146,7 @@ div {
 
 }
 
-.screen-box {
+.box__screen {
 	width: $basic_width;
 	@media screen and (orientation: landscape) {
 		@media (min-width: $screen_small) {
@@ -169,4 +169,44 @@ div {
 	border-top-style: solid;
 	border-color: $basic_border_color;
 	padding-top: $space_3;
+}
+
+.box__info {
+	padding: $space_2 $basic_indent;
+	border-right: $basic_space solid rgba($echo_color, .6);
+	background-color: rgba($echo_color, .1) !important;
+}
+
+// Space and placeholders
+.box__space {
+	float: left;
+	display: table;
+	width: $space_4;
+	text-align: center;
+	vertical-align: middle;
+	span {
+		display: table-cell;
+	}
+}
+
+.box__placeholder {
+	width: 100%;
+	height: $space_4;
+	border: $border_width_4 solid rgba($black,.1);
+	border-radius: $basic_corner;
+	padding: $basic_space;
+	background-color: rgba($black,.1);
+	svg {
+		vertical-align: top;
+	}
+}
+.box__placeholder_bkg {
+	width: 100%;
+	height: $space_4;
+	border: $border_width_4 solid rgba($black,.1);
+	border-radius: $basic_corner;
+	padding: $basic_space;
+	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
+	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
+	background-color: rgba($black,.1);
 }
