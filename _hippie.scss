@@ -70,12 +70,18 @@
 // in dependency to other styles
 // Additional modules can be defined here
 // -----------------------------------------------------------------------------
+@import "modules/navigation/nav_module";
 @import "modules/tables/tables_module";
 @import "modules/card/card_module";
 @import "modules/editor/editor_module";
 @import "modules/explanation/explanation_module";
 @import "modules/print/print_module";
 // @import "modules/YOUR-MODULE/YOUR-FILES";
+
+
+
+// Demonstration
+@import "basic/demo";
 
 
 

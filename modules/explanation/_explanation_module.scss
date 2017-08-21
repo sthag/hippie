@@ -61,7 +61,7 @@
   border: $tiny_space solid $basic_highlight_color;
   border-radius: $basic_size;
   color: $basic_highlight_color;
-  background-color: $black;
+  background-color: $dark_color;
 }
 
 .exp_expose {
@@ -85,16 +85,16 @@
   display: table;
   right: $space_2;
   bottom: $space_2;
-  background-color: rgba($black, .4);
+  background-color: rgba($dark_color, .4);
   &:hover {
-    background-color: $white;
+    background-color: $bright_color;
     > .span__solo {
-      color: $black;
+      color: $dark_color;
     }
   }
   .span__solo {
     display: table-cell;
-    color: rgba($white, .8);
+    color: rgba($bright_color, .8);
 		font-family: $monospace_font_family;
 		font-size: 1.4em;
     text-align: center;

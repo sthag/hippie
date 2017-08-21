@@ -14,7 +14,7 @@ p {
 }
 
 .p__col_line {
-	column-rule: $basic_border_width solid $black;
+	column-rule: $basic_border_width solid $dark_color;
 }
 .p__col_2, .p__col_3 {
 	@extend p;
@@ -38,7 +38,7 @@ hr {
 	margin: $space_3 auto;
 	border-width: $basic_border_width 0 0;
 	border-style: solid;
-	border-color: $black;
+	border-color: $dark_color;
 }
 
 .hr__hidden {
@@ -57,12 +57,13 @@ pre {
 }
 
 .pre__code {
-	border-color: rgba($white,.1);
+	// overflow-x: scroll;
+	border-color: rgba($bright_color,.1);
 	border-style: dotted;
 	border-width:  0 0 0 $border_width_4;
 	border-radius: $basic_corner;
 	padding: $basic_space;
-	background-color: rgba($white,.1);
+	background-color: rgba($bright_color,.1);
 	code {
 		background-color: transparent;
 	}
@@ -124,6 +125,36 @@ ul {
 	}
 }
 
+.list__link {
+	li {
+		margin-bottom: $tiny_space * 2;
+		text-transform: uppercase;
+		a {
+			display: block;
+			padding: $basic_padding;
+			color: $basic_font_color;
+			img {
+				margin-right: $basic_space;
+				padding-bottom: .2em;
+				vertical-align: text-bottom;
+			}
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $basic_action_color;
+				color: $basic_highlight_color;
+			}
+		}
+	}
+}
+
+.list__horizontal {
+	overflow: auto;
+	li {
+		@extend .float_left;
+	}
+}
+
 // Embedded
 figure {
 	margin: $space_2 $basic_indent;
@@ -146,39 +177,35 @@ div {
 
 }
 
-.box__screen {
-	width: $basic_width;
-	@media screen and (orientation: landscape) {
-		@media (min-width: $screen_small) {
-			width: $width_2;
-		}
-		@media (min-width: $screen_medium) {
-			width: $width_3;
-		}
-		@media (min-width: $screen_large) {
-			width: $width_4;
-		}
-	}
-	@media screen and (orientation: portrait) {
-		@media (min-width: $screen_small) {
-			width: $width_2;
-		}
-	}
-	margin: 0 auto;
-	border-top-width: $border_width_8;
-	border-top-style: solid;
-	border-color: $basic_border_color;
-	padding-top: $space_3;
-}
-
 .box__info {
 	padding: $space_2 $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, .6);
 	background-color: rgba($echo_color, .1) !important;
 }
 
+.box__main_indent {
+	margin-left: 25%;
+}
+
+.box__full_width {
+	// position: relative;
+	// overflow: hidden;
+	// width: 100%;
+}
+
+// Inline
+.box__inline_left {
+	@extend .float_left;
+	// padding: $basic_space / 2;
+}
+
 // Space and placeholders
 .box__space {
+	position: relative;
+	width: 100%;
+}
+
+.box__cube {
 	float: left;
 	display: table;
 	width: $space_4;
@@ -192,21 +219,22 @@ div {
 .box__placeholder {
 	width: 100%;
 	height: $space_4;
-	border: $border_width_4 solid rgba($black,.1);
+	border: $border_width_4 solid rgba($dark_color,.1);
 	border-radius: $basic_corner;
 	padding: $basic_space;
-	background-color: rgba($black,.1);
+	background-color: rgba($dark_color,.1);
 	svg {
 		vertical-align: top;
 	}
 }
+
 .box__placeholder_bkg {
 	width: 100%;
 	height: $space_4;
-	border: $border_width_4 solid rgba($black,.1);
+	border: $border_width_4 solid rgba($dark_color,.1);
 	border-radius: $basic_corner;
 	padding: $basic_space;
 	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
 	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
-	background-color: rgba($black,.1);
+	background-color: rgba($dark_color,.1);
 }

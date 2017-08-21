@@ -37,8 +37,8 @@ label {
 		color: $basic_io_font_color;
 
 		&:hover {
-			background-color: $black;
-			color: $white;
+			background-color: $dark_color;
+			color: $bright_color;
 		}
 	}
 }

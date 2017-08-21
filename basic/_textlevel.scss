@@ -3,13 +3,13 @@
 
 a {
 	color: $basic_link_color;
-//  color: lighten($basic_action_color, 20%);
+	//  color: lighten($basic_action_color, 20%);
 	text-decoration: none;
 
 	&:active,
 	&:focus,
 	&:hover {
-	color: $basic_highlight_color;
+		color: $basic_highlight_color;
 	}
 }
 
@@ -24,9 +24,21 @@ a {
 	&:active,
 	&:focus,
 	&:hover {
-	background-color: $basic_action_color;
-	color: $basic_highlight_color;
+		background-color: $basic_action_color;
+		color: $basic_highlight_color;
 	}
+}
+
+.a__button {
+	@extend %default_button;
+}
+
+.a__button_border {
+	@extend %default_button;
+	padding: $wide_padding;
+	background-color: transparent;
+	color: $basic_font_color;
+	border: $cell_border;
 }
 
 
@@ -76,7 +88,7 @@ time {
 code {
 	@extend %basic_mono;
 	color: lighten($basic_font_color, 12%);
-	background-color: rgba($white,.1);
+	background-color: rgba($bright_color,.1);
 }
 .code__solo {
 	@extend %basic_mono;
@@ -106,15 +118,15 @@ mark {
 }
 .mark__cursor {
 	color: $basic_highlight_color;
-	background-color: $black;
+	background-color: $dark_color;
 }
 ::-moz-selection {
 	color: $basic_highlight_color;
-	background-color: $black;
+	background-color: $dark_color;
 }
 ::selection {
 	color: $basic_highlight_color;
-	background-color: $black;
+	background-color: $dark_color;
 }
 
 span {

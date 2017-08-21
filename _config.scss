@@ -14,10 +14,42 @@ $size_1: $basic_size * 4;
 
 $basic_line: 1;
 
-$head_size_1: 3.1em;
-$head_size_2: 2.5em;
-$head_size_3: 1.8em;
-$head_size_4: 1.35em;
+// $i: 1;
+// @while $i < 7 {
+//   %head_#{$i} { width: 2em * $i; }
+//   $i: $i + 1;
+// }
+// $head_sizes: (h1: 3.1em, h2: 2.5em, h3: 1.8em, h4: 1.35em);
+//
+// @each $head, $size in $head_sizes {
+// 	#{$head} {
+// 		font-size: $size;
+// 	}
+// }
+
+// $head_sizes: (
+//   basic: (
+//     'h1': ('font-size': 24),
+//     'h2': ('font-size': 20),
+//     'h3': ('font-size': 19),
+//     'h4': ('font-size': 18),
+//     'h5': ('font-size': 17),
+//     'h6': ('font-size': 16),
+//   ),
+//   print: (
+//     'h1': ('font-size': 48),
+//     'h2': ('font-size': 40),
+//     'h3': ('font-size': 31),
+//     'h4': ('font-size': 25),
+//     'h5': ('font-size': 20),
+//     'h6': ('font-size': 16),
+//   ),
+// );
+
+// $head_size_1: 3.1em;
+// $head_size_2: 2.5em;
+// $head_size_3: 1.8em;
+// $head_size_4: 1.35em;
 
 $text_size_1: 1em;
 $text_size_2: 20;
@@ -45,6 +77,15 @@ $basic_indent: 2em;
 // COLORS
 // ------------------------------------------------------------------------------
 
+$color_palette: (
+  alpha: #fad803,
+  bravo: #d30a51,
+  charlie: #273f8b,
+  delta: #b7e0f0,
+  echo: #52bed1,
+	foxtrot: #0c85ff
+);
+
 $alpha_color: #fad803;
 $bravo_color: #d30a51;
 $charlie_color: #273f8b;
@@ -52,42 +93,44 @@ $delta_color: #b7e0f0;
 $echo_color: #52bed1;
 $foxtrot_color: #0c85ff;
 
-$black: black !default;
-$white: white !default;
-$medium_gray: lighten($black, 50%) !default;
+$dark_color: black !default;
+$bright_color: white !default;
+$medium_color: lighten($dark_color, 50%) !default;
 
-$default_front_color: $black !default;
-$default_back_color: $medium_gray !default;
+$default_front_color: $dark_color !default;
+$default_back_color: $medium_color !default;
 
 $basic_font_color: $default_front_color;
 $basic_head_color: $default_front_color;
 
 $basic_link_color: $echo_color;
-$basic_highlight_color: $white;
+$basic_highlight_color: $bright_color;
 $basic_action_color: $foxtrot_color;
 
 $basic_back_color: $default_back_color;
 
 $light_color: lighten($basic_back_color, 5%);
-$dark_color: darken($basic_back_color, 10%);
+$dark_color_color: darken($basic_back_color, 10%);
 
 $basic_border_color: $default_front_color;
 
 // default shadow colors
-// $shadow_color: fade-out($medium_gray, .5);
+// $shadow_color: fade-out($medium_color, .5);
 
 
 
 // LAYOUT
 // ------------------------------------------------------------------------------
 
-$default_box_sizing: box-sizing !default;
+$default_box_sizing: border-box !default;
 $box_sizing: $default_box_sizing;
 
+$z_top: 1000;
+
 $basic_width: 96%;
-$width_2: 80%;
-$width_3: 60%;
-$width_4: 48%;
+$width_small: 80%;
+$width_medium: 60%;
+$width_large: 48%;
 
 $default_space: 8px !default;
 $basic_space: $default_space;
@@ -98,14 +141,17 @@ $space_4: $basic_space * 8;
 $space_5: $basic_space * 16;
 $tiny_space: 1px !default;
 
-$basic_corner: 4px;
+$basic_padding: calc(#{$basic_space} - 3px) $basic_space;
+$wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2);
+
+$basic_corner: $tiny_space;
 
 $default_border_width: $tiny_space !default;
 $basic_border_width: $default_border_width;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;
-$cell_border: $tiny_space solid $dark_color;
+$cell_border: $tiny_space solid $dark_color_color;
 
 $basic_aside_width: 20%;
 
@@ -114,9 +160,9 @@ $basic_aside_width: 20%;
 // IO
 // ------------------------------------------------------------------------------
 
-$basic_io_font_color: darken($white, 10%);
-$basic_io_back_color: lighten($black, 25%);
-$basic_shadow: inset 0 1px 3px rgba($black, 0.06);
+$basic_io_font_color: darken($bright_color, 10%);
+$basic_io_back_color: lighten($dark_color, 25%);
+$basic_shadow: inset 0 1px 3px rgba($dark_color, 0.06);
 $basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $lightness: -5%, $alpha: -0.3);
 
 
@@ -126,7 +172,6 @@ $basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $l
 
 $basic_duration: 150ms;
 $basic_timing: ease;
-
 
 
 
@@ -263,8 +308,8 @@ $webkit_ms_support: -webkit- -ms- '';
 // $input_disabled_border:         lighten($input_disabled, 50%);
 // $input_disabled_text:           lighten($input_disabled, 50%);
 //
-// $form_field_back_color:   $white;
-// $form_field_focus_color:        $white;
+// $form_field_back_color:   $bright_color;
+// $form_field_focus_color:        $bright_color;
 // $form_field_fail_bkg:           $alpha_color_juliet;
 
 // $form_field_border:             $charlie_gray;
@@ -277,7 +322,7 @@ $webkit_ms_support: -webkit- -ms- '';
 // $instructional_text:            $charlie_gray;
 // $placeholder_text:              $hotel_gray;
 // $inline_alert_bkg_color:        $alpha_color_delta;
-// $inline_alert_text_color:       $white;
+// $inline_alert_text_color:       $bright_color;
 
 // Non-color defaults (currently not represented in the SG view)
 // ---------------------------------------------------------
@@ -298,7 +343,7 @@ $webkit_ms_support: -webkit- -ms- '';
 /////// Config defaults for buttons ///////
 // -----------------------------------------------------------------------------
 // $button-color:  $delta-color;
-// $button-text-color: $white;
+// $button-text-color: $bright_color;
 // $button-line-height: 32;
 // $button-border-radius: 3;
 // $button-padding: 20;

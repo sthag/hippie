@@ -12,6 +12,7 @@ html {
 // -----------------------------------------------------------------------------
 
 body {
+	position: relative;
 	box-sizing: $box_sizing;
 	font-family: $primary_font_family;
 	font-size: $basic_size;
@@ -24,6 +25,11 @@ body {
 	::after {
 		box-sizing: inherit;
 	}
+	&:hover {
+		.trigger__hover {
+			background-color: transparent;
+		}
+	}
 }
 
 article {
@@ -34,13 +40,38 @@ section {
 
 }
 
-aside.right + section {
-	margin-right: calc(#{$basic_aside_width} + #{$basic_space});
+.sec__main_center {
+	width: $basic_width;
+	@media screen and (orientation: landscape) {
+		@media (min-width: $screen_small) {
+			width: $width_small;
+		}
+		@media (min-width: $screen_medium) {
+			width: $width_medium;
+		}
+		@media (min-width: $screen_large) {
+			width: $width_large;
+		}
+	}
+	@media screen and (orientation: portrait) {
+		@media (min-width: $screen_small) {
+			width: $width_small;
+		}
+	}
+	margin: 0 auto;
+	padding-top: $space_3;
 }
 
-aside.left + section {
-	margin-left: calc(#{$basic_aside_width} + #{$basic_space});
+aside {
+	&.right + section {
+		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
+	}
+
+	&.left + section {
+		margin-left: calc(#{$basic_aside_width} + #{$basic_space});
+	}
 }
+
 
 nav {
 
@@ -61,6 +92,10 @@ aside {
 
 header {
 
+}
+
+.header__page {
+	overflow: auto;
 }
 
 footer {

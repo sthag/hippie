@@ -1,4 +1,4 @@
-.table-link_list {
+.table__link {
 	width: 100%;
 	border: 0;
 	table-layout: auto;
@@ -15,7 +15,7 @@
 		border: 0;
 	}
 
-	.cell_icon {
+	.cell__icon {
 		width: 48px;
 		text-align: center;
 		img {
@@ -23,38 +23,36 @@
 		}
 	}
 
-	.cell_link {
+	.cell__link {
 		padding-right: $basic_space;
 		padding-left: $basic_space;
 
 		&:hover {
 			background-color: $foxtrot_color;
+			a:first-child {
+				display: none;
+			}
+			a:last-child {
+				display: block;
+				color: $basic_highlight_color;
+			}
 		}
 
 		a {
 			display: block;
 		}
 
-		.link_url {
-			display: none;
-		}
-
-		&:hover .link_url {
-			display: block;
-			color: $basic_highlight_color;
-		}
-
-		&:hover .link_text {
+		a:last-child {
 			display: none;
 		}
 	}
 
-	.cell_date {
-		width: 12%;
+	th:last-child, .cell__date {
+		width: 16%;
 		text-align: center;
 	}
 
-	.cell_text {
+	.cell__text {
 		padding-right: $basic_space;
 		padding-left: $basic_space;
 

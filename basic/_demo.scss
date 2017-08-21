@@ -1,0 +1,79 @@
+.demo__intro {
+	@extend .sec__main_center;
+	border-top-width: $border_width_8;
+	border-top-style: solid;
+	border-color: $basic_border_color;
+	padding-top: $space_3;
+}
+
+.demo__header {
+	padding: $space_2;
+
+	nav {
+
+		ul {
+			margin: 0;
+		}
+	}
+}
+
+.header__fancy {
+	background-color: transparentize($bravo_color, .4);
+
+	nav {
+
+		a {
+			background-color: transparentize($alpha_color, .4);
+			color: $alpha_color;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: rgba($bright_color, .2);
+				color: $bright_color;
+			}
+		}
+	}
+}
+
+.header__fix {
+	position: relative;
+	top: 0;
+	width: 100%;
+	background-color: transparentize($charlie_color, .4);
+
+	nav {
+
+		a {
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: rgba($bright_color, .2);
+				color: $bright_color;
+			}
+		}
+	}
+}
+
+.demo__footer {
+	width: 100%;
+	height: 128px;
+	background-color: $dark_color;
+	color: $bright_color;
+}
+
+.demo__avatar {
+
+	img {
+		opacity: 1;
+		width: 128px;
+		height: auto;
+		border-radius: 50%;
+		background-color: $delta_color;
+	}
+}
+
+.demo__flag {
+	height: 40vh;
+}
