@@ -58,9 +58,17 @@
 
 .demo__footer {
 	width: 100%;
-	height: 128px;
+	// height: 128px;
+	padding: $space_2 0;
 	background-color: $dark_color;
 	color: $bright_color;
+
+	nav {
+
+		a {
+			color: $bright_color;
+		}
+	}
 }
 
 .demo__avatar {

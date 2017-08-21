@@ -1,90 +1,1014 @@
+@charset "UTF-8";
 /*
-Error: Undefined variable: "$head_size_1".
-        on line 28 of basic/_typography.scss
-        from line 58 of _hippie.scss
-        from line 3 of ./example.scss
+ * # TABLE OF CONTENTS
+ *
+ * - Reset
+ * - Configuration
+ * - Special modules
+ * - Basic styles
+ *   - Common
+ *   - Typography
+ *
+ *   - Sections
+ *   - Grouping
+ *   - Textlevel
+ *   - Embedded
+ *   - Tables
+ *   - Interactive
+ * - Modules
+ *
+ */
+@import url(other/normalize.css);
+/**
+ * @description
+ * Generates cross-browser-compatible output for a given element with its value.
+ *
+ * @author sthag
+ *
+ * @param values
+ * @returns
+ *   -webkit-<name>: <values>
+ *       ...-<name>: <values>
+ *
+ * @example
+ *   .selector
+ *     @include vendor-prefix(hyphens, auto)
+ */
+.magic {
+  display: none; }
 
-Backtrace:
-basic/_typography.scss:28
-_hippie.scss:58
-./example.scss:3
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
-C:/Sachen/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
-C:/Sachen/Ruby23-x64/bin/sass:22:in `load'
-C:/Sachen/Ruby23-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$head_size_1\".\A         on line 28 of basic/_typography.scss\A         from line 58 of _hippie.scss\A         from line 3 of ./example.scss"; }
+.center_50 {
+  margin-right: 25%;
+  margin-left: 25%; }
+
+.center_25 {
+  margin-right: 37.5%;
+  margin-left: 37.5%; }
+
+.width_full {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0; }
+
+.height_basic {
+  height: 1024px; }
+
+.txt_center {
+  text-align: center !important; }
+
+.txt_right {
+  text-align: right !important; }
+
+.txt_left {
+  text-align: left !important; }
+
+.clear {
+  clear: both; }
+  .clear::before, .clear::after {
+    clear: both; }
+
+.float_left, .list__horizontal li, .box__inline_left, .nav__horizontal ul li, .nav__center_old ul li, .header__page nav ul li {
+  float: left;
+  margin-right: 32px; }
+
+.overflow, .nav__horizontal ul, .nav__center_old ul, .header__page nav ul {
+  overflow: auto; }
+
+.x_long {
+  overflow-x: scroll; }
+
+.pos_full_view, .hover_full_view_change {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+
+.pos_full_page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.pos_abs {
+  position: absolute; }
+
+.pos_rel {
+  position: relative; }
+
+.pos_fix {
+  position: fixed; }
+
+.pos_bottom {
+  bottom: 0; }
+
+.pos_full_view {
+  background-color: rgba(250, 216, 3, 0.5); }
+
+.pos_full_page {
+  background-color: rgba(39, 63, 139, 0.25); }
+
+.hover_back_change {
+  background-color: #666666;
+  transition: background-color .2s ease-in-out; }
+  .hover_back_change:hover {
+    background-color: gray; }
+
+.hover_full_view_change {
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color .2s ease-in-out;
+  pointer-events: none; }
+
+.flex, .nav__column ul {
+  display: flex; }
+
+.flex_child, .nav__column ul li {
+  flex: 0 1 auto; }
+
+.txt_light_color {
+  color: #666666; }
+
+.a__button, .a__button_text, .a__button_border {
+  display: inline-block;
+  padding: calc(8px - 3px) 8px;
+  background-color: rgba(82, 190, 209, 0.2);
+  border-radius: 1px; }
+  .a__button:active, .a__button_text:active, .a__button_border:active, .a__button:focus, .a__button_text:focus, .a__button_border:focus, .a__button:hover, .a__button_text:hover, .a__button_border:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: transparent; }
+
+.span__solo, h6, p, .p__col_2, .p__col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 1em;
+  line-height: 1.5; }
+
+pre, code, .code__solo {
+  font-family: Courier New, monospace;
+  font-size: 1em;
+  line-height: 1.5; }
+
+.print_body *[class^="din"] p, .print_body *[class^="din"] .p__col_2, .print_body *[class^="din"] .p__col_3, .print_body *[class^="din"] caption {
+  font-family: Courier New, monospace;
+  font-size: 1em;
+  line-height: 1.5; }
+
+h1, .print_body .page_date, .print_body .page_no {
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 3.1em;
+  font-weight: 300;
+  line-height: 1.5; }
+
+h2 {
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1.5; }
+
+h3, h4 {
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.5; }
+
+h5 {
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 1.35em;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.span__solo {
+  color: black; }
+
+.table__link .cell__text .shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; }
+
+html {
+  height: 100%; }
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
+  font-size: 17px;
+  line-height: 1;
+  color: black;
+  background-color: gray; }
+  body *,
+  body ::before,
+  body ::after {
+    box-sizing: inherit; }
+  body:hover .trigger__hover {
+    background-color: transparent; }
+
+.sec__main_center, .demo__intro {
+  width: 96%;
+  margin: 0 auto;
+  padding-top: 32px; }
+@media screen and (orientation: landscape) and (min-width: 1024px) {
+  .sec__main_center, .demo__intro {
+    width: 80%; } }
+@media screen and (orientation: landscape) and (min-width: 1280px) {
+  .sec__main_center, .demo__intro {
+    width: 60%; } }
+@media screen and (orientation: landscape) and (min-width: 1920px) {
+  .sec__main_center, .demo__intro {
+    width: 48%; } }
+
+@media screen and (orientation: portrait) and (min-width: 1024px) {
+  .sec__main_center, .demo__intro {
+    width: 80%; } }
+
+aside.right + section {
+  margin-right: calc(20% + 8px); }
+aside.left + section {
+  margin-left: calc(20% + 8px); }
+
+aside {
+  width: 20%; }
+  aside.left {
+    float: left; }
+  aside.right {
+    float: right; }
+  aside *:first-child {
+    margin-top: 0; }
+
+.header__page {
+  overflow: auto; }
+
+h1 {
+  margin: 128px 0 32px; }
+
+h2 {
+  margin: 64px 0 32px; }
+
+h3 {
+  margin: 16px 0 16px;
+  text-transform: uppercase; }
+
+h4 {
+  margin: 16px 0 16px;
+  text-transform: none; }
+
+h5 {
+  margin: 16px 0 8px;
+  text-transform: none; }
+
+h6 {
+  margin: 8px 0;
+  text-transform: none;
+  font-weight: bold; }
+
+p, .p__col_2, .p__col_3, caption {
+  margin: 8px 0; }
+  p code, .p__col_2 code, .p__col_3 code, caption code {
+    padding: 1px 4px;
+    font-size: 1em;
+    line-height: 1; }
+
+.p__col_line {
+  column-rule: 1px solid black; }
+
+.p__col_2 {
+  column-count: 2;
+  column-gap: 32px; }
+
+.p__col_3 {
+  column-count: 3;
+  column-gap: 64px; }
+
+hr, .hr__hidden, .hr__dotted {
+  margin: 32px auto;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: black; }
+
+.hr__hidden {
+  border-color: transparent; }
+
+.hr__dotted {
+  border-style: dotted; }
+
+.pre__code {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: dotted;
+  border-width: 0 0 0 4px;
+  border-radius: 1px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1); }
+  .pre__code code {
+    background-color: transparent; }
+
+blockquote {
+  margin: 8px 2em; }
+
+.quote__mark p::before, .quote__mark .p__col_2::before, .quote__mark .p__col_3::before, .quote__mark caption::before {
+  content: "\201E \0020"; }
+.quote__mark p::after, .quote__mark .p__col_2::after, .quote__mark .p__col_3::after, .quote__mark caption::after {
+  content: "\201C \0020"; }
+.quote__mark .quote__source::before, .quote__mark .quote__source::after {
+  content: ""; }
+
+dl, ul, ol {
+  margin: 16px 0 8px; }
+
+ul, ol {
+  padding-left: 2em; }
+
+li, dt, dd {
+  color: black; }
+
+dd {
+  margin-left: 2em; }
+
+ul li {
+  list-style: square; }
+
+.list__dash li {
+  list-style: none;
+  position: relative; }
+  .list__dash li:before {
+    content: "_";
+    position: absolute;
+    left: -1em; }
+
+.list__link li {
+  margin-bottom: 2px;
+  text-transform: uppercase; }
+  .list__link li a {
+    display: block;
+    padding: calc(8px - 3px) 8px;
+    color: black; }
+    .list__link li a img {
+      margin-right: 8px;
+      padding-bottom: .2em;
+      vertical-align: text-bottom; }
+    .list__link li a:active, .list__link li a:focus, .list__link li a:hover {
+      background-color: #0c85ff;
+      color: white; }
+
+.list__horizontal {
+  overflow: auto; }
+
+figure {
+  margin: 16px 2em; }
+
+.box__info {
+  padding: 16px 2em;
+  border-right: 8px solid rgba(82, 190, 209, 0.6);
+  background-color: rgba(82, 190, 209, 0.1) !important; }
+
+.box__main_indent {
+  margin-left: 25%; }
+
+.box__space {
+  position: relative;
+  width: 100%; }
+
+.box__cube {
+  float: left;
+  display: table;
+  width: 64px;
+  text-align: center;
+  vertical-align: middle; }
+  .box__cube span {
+    display: table-cell; }
+
+.box__placeholder {
+  width: 100%;
+  height: 64px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.1); }
+  .box__placeholder svg {
+    vertical-align: top; }
+
+.box__placeholder_bkg {
+  width: 100%;
+  height: 64px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  padding: 8px;
+  /*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
+  background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
+  background-color: rgba(0, 0, 0, 0.1); }
+
+a {
+  color: #52bed1;
+  text-decoration: none; }
+  a:active, a:focus, a:hover {
+    color: white; }
+
+.a__line {
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-color: black;
+  background-color: transparent;
+  color: black;
+  transition: color 150ms ease; }
+  .a__line:active, .a__line:focus, .a__line:hover {
+    background-color: #0c85ff;
+    color: white; }
+
+.a__button_text, .a__button_border {
+  padding: calc(8px - 1px) calc(8px * 2);
+  background-color: transparent;
+  color: black; }
+
+.a__button_border {
+  border: 1px solid #666666; }
+
+i, em {
+  font-style: italic; }
+
+b, strong {
+  font-weight: 500; }
+
+cite {
+  font-style: italic; }
+
+code {
+  color: #1f1f1f;
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.code__solo {
+  padding: 1px 4px;
+  color: black; }
+
+mark {
+  background-color: #fad803; }
+
+.mark__cursor {
+  color: white;
+  background-color: black; }
+
+::-moz-selection {
+  color: white;
+  background-color: black; }
+
+::selection {
+  color: white;
+  background-color: black; }
+
+img {
+  vertical-align: top; }
+
+table {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 1px solid black;
+  border-collapse: collapse; }
+
+th, td {
+  padding: 4px; }
+
+th {
+  border: 1px solid black;
+  text-align: left; }
+
+.precol {
+  border-right: 1px solid black; }
+
+td {
+  border-right: 1px solid #666666;
+  border-bottom: 1px solid #666666; }
+
+td:last-child {
+  border-right: 0; }
+
+tr:last-child td {
+  border-bottom: 0; }
+
+tfoot tr:first-child td {
+  border-top: 1px solid black; }
+
+.table_blank {
+  border: 1px solid transparent; }
+  .table_blank th, .table_blank td {
+    border: 1px solid transparent; }
+
+.table_free {
+  border: 1px solid transparent; }
+
+.table_stripe td {
+  border-top: 0;
+  border-bottom: 0; }
+.table_stripe tr:nth-child(even) td {
+  background-color: #8c8c8c; }
+
+.table_fix {
+  table-layout: fixed; }
+
+caption {
+  padding: 4px 0;
+  border: 1px dotted black;
+  text-align: center; }
+
+fieldset {
+  margin: 8px 0;
+  border: 1px solid black; }
+
+legend {
+  padding: 0 4px; }
+
+.input_default label {
+  display: table;
+  margin: 4px 0; }
+  .input_default label input {
+    display: table-cell;
+    margin-left: 8px;
+    padding: 4px 5px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: #404040;
+    color: #e6e6e6; }
+    .input_default label input:hover {
+      background-color: black;
+      color: white; }
+
+nav ul {
+  padding-left: 0; }
+nav li {
+  margin-bottom: 8px;
+  list-style: none; }
+
+.nav__horizontal ul ul, .nav__center_old ul ul, .header__page nav ul ul {
+  margin: 8px 0; }
+.nav__horizontal ul li, .nav__center_old ul li, .header__page nav ul li {
+  margin-right: 8px;
+  margin-bottom: 0; }
+  .nav__horizontal ul li:last-child, .nav__center_old ul li:last-child, .header__page nav ul li:last-child {
+    margin-right: 0; }
+
+.nav__right {
+  float: right;
+  margin-left: 8px; }
+  .nav__right .align_parent {
+    margin-right: -8px; }
+
+.nav__separate_right {
+  float: right; }
+  .nav__separate_right li {
+    position: relative; }
+    .nav__separate_right li:first-child {
+      padding-left: 17px; }
+      .nav__separate_right li:first-child::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: white;
+        margin: 0 8px; }
+
+.nav__center_old {
+  float: right;
+  position: relative;
+  left: -50%; }
+  .nav__center_old ul {
+    position: relative;
+    left: 50%;
+    text-align: center; }
+
+.nav__column {
+  position: relative;
+  margin: 8px 0; }
+  .nav__column ul {
+    margin: 0 128px; }
+    .nav__column ul li {
+      flex-grow: 1;
+      margin: 0;
+      text-align: center; }
+      .nav__column ul li a {
+        display: block; }
+
+.nav__page_meta {
+  position: fixed;
+  right: 0;
+  bottom: 16px; }
+  .nav__page_meta ul {
+    margin: 8px 0; }
+  .nav__page_meta li {
+    margin-bottom: 0; }
+  .nav__page_meta .a_button_meta {
+    display: inline-block; }
+    .nav__page_meta .a_button_meta:active, .nav__page_meta .a_button_meta:focus {
+      background-color: transparent; }
+    .nav__page_meta .a_button_meta:hover {
+      background-color: #0c85ff; }
+
+.header__page nav a:active, .header__page nav a:focus, .header__page nav a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black; }
+
+.table__link {
+  width: 100%;
+  border: 0;
+  table-layout: auto; }
+  .table__link tbody {
+    border-bottom: 1px solid #666666; }
+    .table__link tbody:hover {
+      background-color: #8c8c8c; }
+  .table__link th, .table__link td {
+    border: 0; }
+  .table__link .cell__icon {
+    width: 48px;
+    text-align: center; }
+    .table__link .cell__icon img {
+      vertical-align: text-top; }
+  .table__link .cell__link {
+    padding-right: 8px;
+    padding-left: 8px; }
+    .table__link .cell__link:hover {
+      background-color: #0c85ff; }
+      .table__link .cell__link:hover a:first-child {
+        display: none; }
+      .table__link .cell__link:hover a:last-child {
+        display: block;
+        color: white; }
+    .table__link .cell__link a {
+      display: block; }
+    .table__link .cell__link a:last-child {
+      display: none; }
+  .table__link th:last-child, .table__link .cell__date {
+    width: 16%;
+    text-align: center; }
+  .table__link .cell__text {
+    padding-right: 8px;
+    padding-left: 8px; }
+    .table__link .cell__text div {
+      width: 100%; }
+    .table__link .cell__text .shorten {
+      max-height: 44px; }
+
+.card_body .bkg_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.card_body {
+  height: 100%;
+  	/*  .full {
+  	position: absolute;
+  	width: 128px;
+  	height: 128px;
+  	top: 16px;
+  	left: 16px;
+  	background-color: #fff;
+  }
+  .mark {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-top: 16px;
+  }
+  */ }
+  .card_body .bkg_box {
+    transition-duration: 800ms;
+    overflow: hidden;
+    vertical-align: top;
+    z-index: -1; }
+  .card_body .bkg_box > svg {
+    position: relative; }
+  .card_body .flex_wrap_center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%; }
+  .card_body .flex_content {
+    position: relative;
+    padding: 64px 64px 24px 64px;
+    border: 1px solid #FFF;
+    background-color: #F5F5F5;
+    z-index: 40; }
+  .card_body h1 {
+    margin: 16px 0;
+    color: #1E1E1E;
+    font-size: 24px;
+    line-height: 1.4em;
+    font-weight: normal; }
+  .card_body p, .card_body .p__col_2, .card_body .p__col_3, .card_body caption {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 1.4em; }
+  .card_body .marked {
+    padding-left: 1em;
+    text-indent: -1em;
+    text-align: center; }
+  .card_body .marked:before {
+    content: "* "; }
+  .card_body .decent {
+    color: #666; }
+  .card_body a {
+    color: #000;
+    text-decoration: none; }
+  .card_body a:hover {
+    color: #F4F9FA;
+    background-color: #0C85FF;
+    text-decoration: none; }
+
+.wip, .wip_txt {
+  border-right: 8px solid rgba(220, 20, 60, 0.8);
+  background-color: rgba(220, 20, 60, 0.1) !important; }
+
+.wip:before, .wip:after {
+  content: "";
+  display: block;
+  height: 48px; }
+
+.exp_expose_pre:after {
+  content: "";
+  display: block;
+  height: 48px;
+  background-color: rgba(183, 224, 240, 0.1) !important; }
+
+.exp_expose_post:before {
+  content: "";
+  display: block;
+  height: 48px;
+  background-color: rgba(183, 224, 240, 0.1) !important; }
+
+.exp_expose:before, .exp_expose:after {
+  content: "";
+  display: block;
+  height: 48px;
+  background-color: rgba(183, 224, 240, 0.1) !important; }
+
+.exp_pop {
+  display: none; }
+
+.exp_wrap {
+  position: relative; }
+
+.exp_pop {
+  position: absolute;
+  z-index: 100;
+  top: 128px;
+  left: 128px;
+  padding: 4px;
+  border: 4px solid gray;
+  border-radius: 4px;
+  background-color: gray;
+  pointer-events: none; }
+
+.exp_marker_pop {
+  position: absolute;
+  top: -12.75px;
+  right: -8.5px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid white;
+  border-radius: 17px;
+  color: white;
+  background-color: black; }
+
+.exp_overlay_btn {
+  position: fixed;
+  width: 3em;
+  height: 2em;
+  cursor: pointer; }
+
+.exp_help_btn {
+  display: table;
+  right: 16px;
+  bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .exp_help_btn:hover {
+    background-color: white; }
+    .exp_help_btn:hover > .span__solo {
+      color: black; }
+  .exp_help_btn .span__solo {
+    display: table-cell;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Courier New, monospace;
+    font-size: 1.4em;
+    text-align: center;
+    vertical-align: middle; }
+
+.expose_height {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(183, 224, 240, 0.1) !important;
+  -webkit-transition: height 0.5s ease;
+  -ms-transition: height 0.5s ease;
+  -moz-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  transition: height 0.5s ease; }
+
+.print_body *[class^="din"] {
+  background-color: white; }
+
+.print_body {
+  font-size: 10pt;
+  margin: 10vh 20vw; }
+@page {
+  .print_body {
+    size: A4;
+    margin: 1.2cm; } }
+@page :first {
+  .print_body {
+    size: A4;
+    margin: 0; } }
+  .print_body .dina4 {
+    padding-top: 1.2cm;
+    padding-right: 1.2cm;
+    padding-bottom: 1.2cm;
+    padding-left: 2.4cm; }
+    .print_body .dina4 .page_head, .print_body .dina4 .page_foot {
+      right: 1.2cm;
+      left: 2.4cm; }
+    .print_body .dina4 .page_head {
+      top: 1.2cm; }
+    .print_body .dina4 .page_foot {
+      bottom: 1.2cm; }
+  .print_body .dina5 {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 1.2cm; }
+    .print_body .dina5 .page_head, .print_body .dina5 .page_foot {
+      right: 0;
+      left: 1.2cm; }
+    .print_body .dina5 .page_head {
+      top: 0; }
+    .print_body .dina5 .page_foot {
+      bottom: 0; }
+  .print_body .dina6 {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 1.2cm; }
+    .print_body .dina6 .page_head, .print_body .dina6 .page_foot {
+      right: 0;
+      left: 1.2cm; }
+    .print_body .dina6 .page_head {
+      top: 0; }
+    .print_body .dina6 .page_foot {
+      bottom: 0; }
+  .print_body *[class^="din"] {
+    position: relative;
+    overflow: auto;
+    margin: 32px auto; }
+    .print_body *[class^="din"] .page_head, .print_body *[class^="din"] .page_foot {
+      position: absolute; }
+    .print_body *[class^="din"] .page_head {
+      page: cover; }
+    .print_body *[class^="din"] .page_foot {
+      display: flex;
+      flex-direction: row; }
+      .print_body *[class^="din"] .page_foot *:last-child {
+        margin-bottom: 0; }
+      .print_body *[class^="din"] .page_foot p, .print_body *[class^="din"] .page_foot .p__col_2, .print_body *[class^="din"] .page_foot .p__col_3, .print_body *[class^="din"] .page_foot caption {
+        flex: 1 0 auto;
+        margin: 0;
+        font-size: 8pt;
+        line-height: 10pt;
+        text-align: center; }
+      .print_body *[class^="din"] .page_foot .page_no {
+        flex: 1 0 auto;
+        font-size: 20pt;
+        line-height: 1;
+        text-align: right; }
+      .print_body *[class^="din"] .page_foot p:first-child, .print_body *[class^="din"] .page_foot .p__col_2:first-child, .print_body *[class^="din"] .page_foot .p__col_3:first-child, .print_body *[class^="din"] .page_foot caption:first-child {
+        text-align: left; }
+    .print_body *[class^="din"] .page_content {
+      margin-top: 10cm;
+      margin-bottom: 2cm; }
+  .print_body .page_title, .print_body .page_date {
+    font-size: 14pt; }
+  .print_body .page_title {
+    margin: 0; }
+  .print_body .page_date, .print_body .page_no {
+    float: right; }
+  .print_body .page_author {
+    position: absolute;
+    top: 5cm;
+    right: 0;
+    text-align: right; }
+  .print_body .page_recipient {
+    position: absolute;
+    top: 5cm;
+    left: 0; }
+
+.demo__intro {
+  border-top-width: 8px;
+  border-top-style: solid;
+  border-color: black;
+  padding-top: 32px; }
+
+.demo__header {
+  padding: 16px; }
+  .demo__header nav ul {
+    margin: 0; }
+
+.header__fancy {
+  background-color: rgba(211, 10, 81, 0.6); }
+  .header__fancy nav a {
+    background-color: rgba(250, 216, 3, 0.6);
+    color: #fad803; }
+    .header__fancy nav a:active, .header__fancy nav a:focus, .header__fancy nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white; }
+
+.header__fix {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: rgba(39, 63, 139, 0.6); }
+  .header__fix nav a:active, .header__fix nav a:focus, .header__fix nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white; }
+
+.demo__footer {
+  width: 100%;
+  padding: 16px 0;
+  background-color: black;
+  color: white; }
+  .demo__footer nav a {
+    color: white; }
+
+.demo__avatar img {
+  opacity: 1;
+  width: 128px;
+  height: auto;
+  border-radius: 50%;
+  background-color: #b7e0f0; }
+
+.demo__flag {
+  height: 40vh; }
+
+.test li:after {
+  content: "";
+  display: block;
+  height: 16px; }
+
+.front_color_1 {
+  color: #fad803; }
+  .front_color_1:after {
+    background-color: #fad803; }
+
+.front_color_2 {
+  color: #d30a51; }
+  .front_color_2:after {
+    background-color: #d30a51; }
+
+.front_color_3 {
+  color: #273f8b; }
+  .front_color_3:after {
+    background-color: #273f8b; }
+
+.front_color_4 {
+  color: #b7e0f0; }
+  .front_color_4:after {
+    background-color: #b7e0f0; }
+
+.front_color_5 {
+  color: #52bed1; }
+  .front_color_5:after {
+    background-color: #52bed1; }
+
+.back_color_1, .label_1 {
+  background-color: #fad803; }
+
+.back_color_2, .label_2 {
+  background-color: #d30a51; }
+
+.back_color_3, .label_3 {
+  background-color: #273f8b; }
+
+.back_color_4 {
+  background-color: #b7e0f0; }
+
+.back_color_5 {
+  background-color: #52bed1; }
+
+.label_1, .label_2, .label_3 {
+  padding: 0 4px; }
+
+
 
 /*# sourceMappingURL=example.css.map */

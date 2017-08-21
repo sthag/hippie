@@ -5,7 +5,6 @@
 p {
 	@extend %basic;
 	margin: $basic_space 0;
-	color: $basic_font_color;
 	code {
 		padding: $tiny_space $half_space;
 		font-size: 1em;

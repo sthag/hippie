@@ -14,10 +14,49 @@ nav {
 	ul {
 		@extend .overflow;
 
+		ul {
+			margin: $basic_space 0;
+		}
+
 		li {
 			@extend .float_left;
 			margin-right: $basic_space;
 			margin-bottom: 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.nav__right {
+	float: right;
+	margin-left: $basic_space;
+
+	.align_parent {
+		margin-right: $basic_space * -1;
+	}
+}
+
+.nav__separate_right {
+	float: right;
+	li {
+		position: relative;
+
+		&:first-child {
+			padding-left: $basic_space * 2 + $tiny_space;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: $tiny_space;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-color: $bright_color;
+				margin: 0 $basic_space;
+			}
 		}
 	}
 }
@@ -32,6 +71,27 @@ nav {
 		position: relative;
 		left: 50%;
 		text-align: center;
+	}
+}
+
+.nav__column {
+	position: relative;
+	margin: $basic_space 0;
+
+	ul {
+		@extend .flex;
+		margin: 0 $space_5;
+
+		li {
+			@extend .flex_child;
+			flex-grow: 1;
+			margin: 0;
+			text-align: center;
+
+			a {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -69,14 +129,6 @@ nav {
 	nav {
 		@extend .nav__horizontal;
 
-		ul {
-			margin: $basic_space 0;
-		}
-
-		li:last-child {
-			margin-right: 0;
-		}
-		
 		a {
 
 			&:active,
@@ -84,37 +136,6 @@ nav {
 			&:hover {
 				background-color: rgba($basic_font_color, .2);
 				color: $basic_font_color;
-			}
-		}
-	}
-
-	.nav__right {
-		float: right;
-		margin-left: $basic_space;
-
-		.align_parent {
-			margin-right: $basic_space * -1;
-		}
-	}
-
-	.nav__separate_right {
-		float: right;
-		li {
-			position: relative;
-
-			&:first-child {
-				padding-left: $basic_space * 2 + $tiny_space;
-
-				&::before {
-					content: "";
-					position: absolute;
-					width: $tiny_space;
-					height: 100%;
-					left: 0;
-					top: 0;
-					background-color: $bright_color;
-					margin: 0 $basic_space;
-				}
 			}
 		}
 	}
