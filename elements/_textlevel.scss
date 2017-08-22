@@ -53,6 +53,11 @@ i, em {
 	font-style: italic;
 }
 
+.i__bright {
+	font-style: normal;
+	color: $brightest_color;
+}
+
 b, strong {
 	font-weight: 500; // TODO maybe bolder
 }
@@ -91,7 +96,7 @@ time {
 code {
 	@extend %basic_mono;
 	color: lighten($basic_font_color, 12%);
-	background-color: rgba($bright_color,.1);
+	background-color: rgba($brightest_color,.1);
 }
 .code__solo {
 	@extend %basic_mono;
@@ -121,15 +126,15 @@ mark {
 }
 .mark__cursor {
 	color: $basic_highlight_color;
-	background-color: $dark_color;
+	background-color: $darkest_color;
 }
 ::-moz-selection {
 	color: $basic_highlight_color;
-	background-color: $dark_color;
+	background-color: $darkest_color;
 }
 ::selection {
 	color: $basic_highlight_color;
-	background-color: $dark_color;
+	background-color: $darkest_color;
 }
 
 span {

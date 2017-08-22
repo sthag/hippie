@@ -1,0 +1,23 @@
+// Main configuration
+// ------------------------------------------------------------------------------
+
+$default_font_size: 17px !default;
+$default_print_font_size: 10pt !default;
+
+$default_line_height: 1.5 !default;
+
+$default_font_family: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+
+$default_darkest_color: black !default;
+$default_medium_color: lighten($default_darkest_color, 50%);
+$default_brightest_color: white !default;
+
+$default_front_color: $default_darkest_color !default;
+$default_back_color: $default_medium_color !default;
+
+$default_box_sizing: border-box !default;
+
+$default_space: 8px !default;
+$default_tiny_space: 1px !default;
+
+$default_border_width: $default_tiny_space !default;

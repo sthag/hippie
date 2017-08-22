@@ -12,7 +12,7 @@
 }
 .wip {
   @extend %wip;
-  &:before, &:after {
+  &::before, &::after {
     content: "";
     display: block;
     height: 48px;

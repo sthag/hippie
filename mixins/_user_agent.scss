@@ -1,0 +1,9 @@
+@mixin overrideUserAgent() {
+  @if $no_agent_focus == true {
+    @each $el in $basic_focus_map {
+      #{$el}:focus {
+        outline: 0;
+      }
+    }
+  }
+}

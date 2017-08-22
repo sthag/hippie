@@ -7,7 +7,7 @@
 // ------------------------------------------------------------------------------
 
 %expose_after {
-  &:after {
+  &::after {
     content: "";
     display: block;
     height: 48px;
@@ -15,7 +15,7 @@
   }
 }
 %expose_before {
-  &:before {
+  &::before {
     content: "";
     display: block;
     height: 48px;
@@ -23,7 +23,7 @@
   }
 }
 %expose {
-  &:before, &:after {
+  &::before, &::after {
     content: "";
     display: block;
     height: 48px;
@@ -61,7 +61,7 @@
   border: $tiny_space solid $basic_highlight_color;
   border-radius: $basic_size;
   color: $basic_highlight_color;
-  background-color: $dark_color;
+  background-color: $darkest_color;
 }
 
 .exp_expose {
@@ -85,16 +85,16 @@
   display: table;
   right: $space_2;
   bottom: $space_2;
-  background-color: rgba($dark_color, .4);
+  background-color: rgba($darkest_color, .4);
   &:hover {
-    background-color: $bright_color;
+    background-color: $brightest_color;
     > .span__solo {
-      color: $dark_color;
+      color: $darkest_color;
     }
   }
   .span__solo {
     display: table-cell;
-    color: rgba($bright_color, .8);
+    color: rgba($brightest_color, .8);
 		font-family: $monospace_font_family;
 		font-size: 1.4em;
     text-align: center;

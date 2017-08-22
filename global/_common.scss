@@ -41,8 +41,6 @@
 	height: 1024px;
 }
 
-
-
 .txt_center {
 	text-align: center !important;
 }
@@ -51,6 +49,10 @@
 }
 .txt_left {
 	text-align: left !important;
+}
+
+.space_right {
+	margin-right: $space_3;
 }
 
 
@@ -138,7 +140,7 @@
 .hover_full_view_change {
 	@extend %full_viewport;
 	z-index: $z_top;
-	background-color: transparentize($dark_color, .5);
+	background-color: transparentize($darkest_color, .5);
 	transition: background-color .2s ease-in-out;
 	pointer-events: none;
 }

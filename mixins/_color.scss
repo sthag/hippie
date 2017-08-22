@@ -1,0 +1,20 @@
+@mixin addDefaultColors() {
+  @if map-has-key($color_palette, alpha) {
+    $alpha_color: map-get($color_palette, alpha) !global;
+  }
+  @if map-has-key($color_palette, bravo) {
+    $bravo_color: map-get($color_palette, bravo) !global;
+  }
+  @if map-has-key($color_palette, charlie) {
+    $charlie_color: map-get($color_palette, charlie) !global;
+  }
+  @if map-has-key($color_palette, delta) {
+    $delta_color: map-get($color_palette, delta) !global;
+  }
+  @if map-has-key($color_palette, echo) {
+    $echo_color: map-get($color_palette, echo) !global;
+  }
+  @if map-has-key($color_palette, foxtrot) {
+    $foxtrot_color: map-get($color_palette, foxtrot) !global;
+  }
+}

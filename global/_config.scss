@@ -1,13 +1,11 @@
 // Default configuration
 // ------------------------------------------------------------------------------
 
+
 // TEXT
 // ------------------------------------------------------------------------------
 
-$default_font_size: 17px !default;
 $basic_size: $default_font_size;
-
-$default_print_font_size: 10pt !default;
 $basic_print_size: $default_print_font_size;
 
 $size_1: $basic_size * 4;
@@ -54,15 +52,12 @@ $head_size_4: 1.35em;
 $text_size_1: 1em;
 $text_size_2: 20;
 
-
-$default_line_height: 1.5 !default;
 $text_line_1: $default_line_height;
 $head_line_1: $text_line_1;
 $head_line_2: $text_line_1;
 $head_line_3: $text_line_1;
 $head_line_4: $text_line_1;
 
-$default_font_family: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
 $print_font_family: #{'Times New Roman', times};
 $monospace_font_family: #{'Courier New', monospace};
 
@@ -86,43 +81,42 @@ $color_palette: (
 	foxtrot: #0c85ff
 );
 
-$alpha_color: #fad803;
-$bravo_color: #d30a51;
-$charlie_color: #273f8b;
-$delta_color: #b7e0f0;
-$echo_color: #52bed1;
-$foxtrot_color: #0c85ff;
+@include addDefaultColors;
 
-$dark_color: black !default;
-$bright_color: white !default;
-$medium_color: lighten($dark_color, 50%) !default;
-
-$default_front_color: $dark_color !default;
-$default_back_color: $medium_color !default;
+$darkest_color: $default_darkest_color;
+$brightest_color: $default_brightest_color;
 
 $basic_font_color: $default_front_color;
 $basic_head_color: $default_front_color;
 
 $basic_link_color: $echo_color;
-$basic_highlight_color: $bright_color;
+$basic_highlight_color: $brightest_color;
 $basic_action_color: $foxtrot_color;
 
+$basic_front_color: $default_front_color;
 $basic_back_color: $default_back_color;
 
-$light_color: lighten($basic_back_color, 5%);
-$dark_color_color: darken($basic_back_color, 10%);
+$dark_color: lighten($darkest_color, 20%);
+$medium_color: lighten($darkest_color, 50%);
+$bright_color: darken($brightest_color, 20%);
 
 $basic_border_color: $default_front_color;
 
 // default shadow colors
 // $shadow_color: fade-out($medium_color, .5);
 
+$basic_color_map: ();
+
+@each $key, $value in $color_palette {
+  $map: ();
+  $map: map-merge($map, ($key: createColorMap($value, 15%, .5)) );
+  $basic_color_map: map-merge($basic_color_map, $map);
+}
 
 
 // LAYOUT
 // ------------------------------------------------------------------------------
 
-$default_box_sizing: border-box !default;
 $box_sizing: $default_box_sizing;
 
 $z_top: 1000;
@@ -132,7 +126,6 @@ $width_small: 80%;
 $width_medium: 60%;
 $width_large: 48%;
 
-$default_space: 8px !default;
 $basic_space: $default_space;
 $half_space: $basic_space / 2;
 $space_2: $basic_space * 2;
@@ -146,25 +139,52 @@ $wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2);
 
 $basic_corner: $tiny_space;
 
-$default_border_width: $tiny_space !default;
 $basic_border_width: $default_border_width;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;
-$cell_border: $tiny_space solid $dark_color_color;
+$cell_border: $tiny_space solid $darkest_color;
 
 $basic_aside_width: 20%;
-
 
 
 // IO
 // ------------------------------------------------------------------------------
 
-$basic_io_font_color: darken($bright_color, 10%);
-$basic_io_back_color: lighten($dark_color, 25%);
-$basic_shadow: inset 0 1px 3px rgba($dark_color, 0.06);
-$basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $lightness: -5%, $alpha: -0.3);
+$basic_text_input_map: 'input[type="color"]',
+                       'input[type="date"]',
+                       'input[type="datetime"]',
+                       'input[type="datetime-local"]',
+                       'input[type="email"]',
+                       'input[type="month"]',
+                       'input[type="number"]',
+                       'input[type="password"]',
+                       'input[type="search"]',
+                       'input[type="tel"]',
+                       'input[type="text"]',
+                       'input[type="time"]',
+                       'input[type="url"]',
+                       'input[type="week"]',
+                       'input:not([type])',
+                       'textarea';
 
+$basic_button_map: 'button',
+                   'input[type="button"]',
+                   'input[type="reset"]',
+                   'input[type="submit"]';
+
+$basic_focus_map: 'a[href]',
+                  'area[href]',
+                  'button:not([disabled])',
+                  'input:not([disabled])',
+                  'select:not([disabled])',
+                  'textarea:not([disabled])',
+                  '*[tabindex]';
+
+$basic_io_font_color: darken($brightest_color, 10%);
+$basic_io_back_color: lighten($darkest_color, 25%);
+$basic_shadow: inset 0 1px 3px rgba($darkest_color, 0.06);
+$basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $lightness: -5%, $alpha: -0.3);
 
 
 // ANIMATIONS
@@ -172,7 +192,6 @@ $basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $l
 
 $basic_duration: 150ms;
 $basic_timing: ease;
-
 
 
 // HARDWARE BREAKPOINTS
@@ -191,7 +210,6 @@ $screen_medium: 1280px;
 $screen_large: 1920px;
 
 
-
 // VENDOR PREFIX
 // ------------------------------------------------------------------------------
 
@@ -203,6 +221,30 @@ $moz_webkit_support: -moz- -webkit- '';
 $moz_ms_support: -moz- -ms- '';
 $webkit_ms_support: -webkit- -ms- '';
 
+
+// SYMBOLS
+// ------------------------------------------------------------------------------
+
+$icons: (
+  glass: "\f000",
+  music: "\f001",
+  search: "\f002",
+  envelope-o: "\f003",
+  heart: "\f004"
+);
+
+@each $name, $icon in $icons {
+  .sym_#{$name}::before {
+    content: $icon;
+  }
+}
+
+// USER AGENT
+// ------------------------------------------------------------------------------
+
+$no_agent_focus: true;
+
+@include overrideUserAgent;
 
 
 // The config file is intended to allow users to quickly redefine core elements of the design
@@ -308,8 +350,8 @@ $webkit_ms_support: -webkit- -ms- '';
 // $input_disabled_border:         lighten($input_disabled, 50%);
 // $input_disabled_text:           lighten($input_disabled, 50%);
 //
-// $form_field_back_color:   $bright_color;
-// $form_field_focus_color:        $bright_color;
+// $form_field_back_color:   $brightest_color;
+// $form_field_focus_color:        $brightest_color;
 // $form_field_fail_bkg:           $alpha_color_juliet;
 
 // $form_field_border:             $charlie_gray;
@@ -322,7 +364,7 @@ $webkit_ms_support: -webkit- -ms- '';
 // $instructional_text:            $charlie_gray;
 // $placeholder_text:              $hotel_gray;
 // $inline_alert_bkg_color:        $alpha_color_delta;
-// $inline_alert_text_color:       $bright_color;
+// $inline_alert_text_color:       $brightest_color;
 
 // Non-color defaults (currently not represented in the SG view)
 // ---------------------------------------------------------
@@ -343,7 +385,7 @@ $webkit_ms_support: -webkit- -ms- '';
 /////// Config defaults for buttons ///////
 // -----------------------------------------------------------------------------
 // $button-color:  $delta-color;
-// $button-text-color: $bright_color;
+// $button-text-color: $brightest_color;
 // $button-line-height: 32;
 // $button-border-radius: 3;
 // $button-padding: 20;

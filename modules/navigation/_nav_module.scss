@@ -39,6 +39,26 @@ nav {
 	}
 }
 
+.nav__separate {
+	li {
+		position: relative;
+		padding-left: $tiny_space;
+
+		&:not(:first-child) {
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: $tiny_space;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-color: $darkest_color;
+			}
+		}
+	}
+}
+
 .nav__separate_right {
 	float: right;
 	li {
@@ -54,7 +74,7 @@ nav {
 				height: 100%;
 				left: 0;
 				top: 0;
-				background-color: $bright_color;
+				background-color: $brightest_color;
 				margin: 0 $basic_space;
 			}
 		}

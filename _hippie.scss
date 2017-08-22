@@ -2,6 +2,7 @@
  * # TABLE OF CONTENTS
  *
  * - Reset
+ * - Global functions and mixins
  * - Configuration
  * - Special modules
  * - Basic styles
@@ -27,6 +28,14 @@
 
 
 
+// Functions and Mixins
+// Important code constructions
+// -----------------------------------------------------------------------------
+@import "functions/all";
+@import "mixins/all";
+
+
+
 // Fonts
 // Use a central file outside of hippie for font definitions with @font-face
 // -----------------------------------------------------------------------------
@@ -38,8 +47,8 @@
 // Adjustments can be made by copying values from _config.scss to _override.scss
 // Be careful though changes will get lost if hippie gets updated
 // -----------------------------------------------------------------------------
-@import "default"; // EDIT
-@import "config"; // DO NOT EDIT
+@import "global/default"; // DO NOT EDIT
+@import "global/config"; // DO NOT EDIT
 @import "override"; // EDIT
 
 
@@ -54,16 +63,16 @@
 // Basic styles - this is the core of definitions
 // Individual styles can be added her
 // -----------------------------------------------------------------------------
-@import "basic/common";
-@import "basic/typography";
+@import "global/common";
+@import "elements/typography";
 // Following the w3c document element structure
 // https://w3c.github.io/html/index.html#contents
-@import "basic/sections";
-@import "basic/grouping";
-@import "basic/textlevel";
-@import "basic/embedded";
-@import "basic/tables";
-@import "basic/interactive";
+@import "elements/sections";
+@import "elements/grouping";
+@import "elements/textlevel";
+@import "elements/embedded";
+@import "elements/tables";
+@import "elements/interactive";
 // @import "YOU-NAME-IT";
 
 // Individual Modules and variables
@@ -81,11 +90,11 @@
 
 
 // Demonstration
-@import "basic/demo";
+@import "modules/demo/demo_module";
 
 
 
 // Not yet sorted
-@import "basic/new";
+@import "elements/new";
 
 // NOTE // No css rules allowed in here

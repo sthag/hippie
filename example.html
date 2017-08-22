@@ -10,6 +10,8 @@
 	<meta name="generator" content="Notepad++, Atom">
 	<meta name="robots" content="noindex">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 	<!--    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" type="text/css" media="all" href="./example.css"/>
 </head>
@@ -338,8 +340,19 @@
 		</table>
 
 		<h1>Formulare</h1>
-		<p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Sie sind in ihrer unveränderten Gestalt, System- bzw. Browser-Abhängig. <span class="wip_txt">(Vielleicht ist das auch scheiße, hier darauf einzugehen) ...</span></p>
-		<input/>
+		<p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Werden sie nicht explizit gestaltet, ist ihre Erscheinung system- bzw. browserabhängig. <span class="wip_txt">(Vielleicht ist das auch scheiße, hier darauf einzugehen) ...</span> Üblicherweise stehen alle Formularelemente innerhalb eines <code>&lt;form&gt;</code> Elementes. Dieses ist notwendig um Angaben zur Kommunikation mit dem Server zu setzen. Es hat normalerweise keine gestalterische Funktion.</p>
+		<p>Grundlegend ist das Element <code>&lt;input&gt;</code>. Es hat viele Attribute um den Typ der Eingabe anzupassen. Ist es undefiniert nimmt es jegliche textbasierte Information auf und erhält eine Standardgröße.</p>
+		<p><input value="Undefiniert"/></p>
+		<p>Ein spezieller Typ des Eingabefeldes verändert seine Funktion zu einer Schaltfläche <code>&lt;input[type="button"]&gt;</code>. Es gibt allerdings auch ein eigenes Element <code>&lt;button&gt;</code> dafür.
+		<p><input type="button" value="Input Button" class="space_right"><button>Button</button></p>
+		<p>Interaktive Elemente können durch das Attribut <code>&lt;readonly&gt;</code> nur lesbar gemacht werden oder mittels <code>&lt;disabled&gt;</code> gänzlich deaktiviert werden.</p>
+		<p><input type="text" value="Read Only Text" readonly class="space_right"><input type="text" value="Disabled Text" disabled class="space_right"><button disabled>Button</button></p>
+		<p>Das Element <code>&lt;label&gt;</code> ergänzt interaktive Elemente um eine Beschriftung.</p>
+		<label for="demo__input">Beschriftung:</label><input type="text" id="demo__input">
+		<p>Zusätzlich zur Beschriftung einzelner Elemente gibt es auch die Möglichkeit Gruppierungen zu schaffen. Diese werden mit <code>&lt;fieldset&gt;</code> realisiert.</p>
+		<fieldset>
+			<label for="demo__output">Beschriftung:</label><input type="text" readonly id="demo__output">
+		</fieldset>
 		<fieldset class="input_default">
 			<legend>Einfache Eingabefelder</legend>
 			<label for="simple_txt">Einfache Texteingabe<input type="text" id="simple_txt" value="Text"/></label>
@@ -491,17 +504,20 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 						</ul>
 					</nav>
 				</header>
-				<footer class="pos_abs pos_bottom demo__footer">
-					<nav class="nav__column">
-						<ul>
-							<li><a href="" class="a__button_text">Alpha</a></li>
-							<li><a href="" class="a__button_text">Bravo</a></li>
-							<li><a href="" class="a__button_text">Charlie</a></li>
-							<li><a href="" class="a__button_text">Delta</a></li>
-						</ul>
-					</nav>
-					<p class="txt_center">👨‍💻 mit ❤ von <a href="https://interaktionsweise.de">Interaktionsweise</a></p>
-				</footer>
+				<div class="pos_abs pos_bottom width_full">
+					<pre class="pre__code"><code>footer.pos_abs.pos_bottom>nav.nav__column>ul>(li>a.a__button_text)*4</code></pre>
+					<footer id="js_demo_stop" class="demo__footer">
+						<nav class="nav__column nav__separate">
+							<ul>
+								<li><a href="" class="a__button_text">Alpha</a></li>
+								<li><a href="" class="a__button_text">Bravo</a></li>
+								<li><a href="" class="a__button_text">Charlie</a></li>
+								<li><a href="" class="a__button_text">Delta</a></li>
+							</ul>
+						</nav>
+						<p class="txt_center demo__credits"><i class="i__bright">👨‍💻</i> mit <i class="i__bright">❤</i> von <a href="https://interaktionsweise.de">Interaktionsweise</a></p>
+					</footer>
+				</div>
 			</div>
 			<div class="flex">
 				<div class="flex_child"></div>
@@ -509,6 +525,13 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 				<div class="flex_child"></div>
 				<div class="flex_child"></div>
 				<div class="flex_child"></div>
+			</div>
+			<div class="box__column">
+				<div class="column"><input value="Undefiniert"/></div>
+				<div class="column"><input type="text" size="8" value="Text"/></div>
+				<div class="column"><input type="text" size="8" value="Deaktiviert" disabled/></div>
+				<div class="column"><input type="button" value="Auswählen"></div>
+				<div class="column"><input type="submit" value="Senden" disabled/></div>
 			</div>
 
 			<h2>Gruppierung</h2>
@@ -620,7 +643,7 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 			);
 
 			// WIP Activates layer with explanation elements
-			// Besser :after oder :before benutzen
+			// Besser ::after oder ::before benutzen
 			$(".exp_help_btn").click(function(e){
 				var $wrap, $pop;
 
@@ -703,7 +726,7 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 
 			// jq-sticky-anything
 			$('#js_demo_fix').stickThis({
-				pushup: '#js_demo_fix + .demo__footer'
+				pushup: '#js_demo_stop'
 			});
 
 
@@ -718,7 +741,7 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 			doc_pos_y = $( document ).scrollTop();
 			// console.log(doc_pos_y);
 			var h = scroll_y_margin;
-			var demo_margin = $('.header__fix');
+			// var demo_margin = $('.header__fix');
 			if (doc_pos_y > h) {
 				$('#js_scrolltop').parent().removeClass('magic');
 			} else {

@@ -3,6 +3,7 @@
  * # TABLE OF CONTENTS
  *
  * - Reset
+ * - Global functions and mixins
  * - Configuration
  * - Special modules
  * - Basic styles
@@ -19,6 +20,42 @@
  *
  */
 @import url(other/normalize.css);
+.sym_glass::before {
+  content: ""; }
+
+.sym_music::before {
+  content: ""; }
+
+.sym_search::before {
+  content: ""; }
+
+.sym_envelope-o::before {
+  content: ""; }
+
+.sym_heart::before {
+  content: ""; }
+
+a[href]:focus {
+  outline: 0; }
+
+area[href]:focus {
+  outline: 0; }
+
+button:not([disabled]):focus {
+  outline: 0; }
+
+input:not([disabled]):focus {
+  outline: 0; }
+
+select:not([disabled]):focus {
+  outline: 0; }
+
+textarea:not([disabled]):focus {
+  outline: 0; }
+
+*[tabindex]:focus {
+  outline: 0; }
+
 /**
  * @description
  * Generates cross-browser-compatible output for a given element with its value.
@@ -61,6 +98,9 @@
 
 .txt_left {
   text-align: left !important; }
+
+.space_right {
+  margin-right: 32px; }
 
 .clear {
   clear: both; }
@@ -121,10 +161,10 @@
   transition: background-color .2s ease-in-out;
   pointer-events: none; }
 
-.flex, .nav__column ul {
+.flex, .box__column, .nav__column ul {
   display: flex; }
 
-.flex_child, .nav__column ul li {
+.flex_child, .box__column .column, .nav__column ul li {
   flex: 0 1 auto; }
 
 .txt_light_color {
@@ -331,7 +371,7 @@ ul li {
 .list__dash li {
   list-style: none;
   position: relative; }
-  .list__dash li:before {
+  .list__dash li::before {
     content: "_";
     position: absolute;
     left: -1em; }
@@ -398,6 +438,9 @@ figure {
   background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
   background-color: rgba(0, 0, 0, 0.1); }
 
+.box__column .column {
+  flex-grow: 1; }
+
 a {
   color: #52bed1;
   text-decoration: none; }
@@ -421,10 +464,14 @@ a {
   color: black; }
 
 .a__button_border {
-  border: 1px solid #666666; }
+  border: 1px solid black; }
 
 i, em {
   font-style: italic; }
+
+.i__bright {
+  font-style: normal;
+  color: white; }
 
 b, strong {
   font-weight: 500; }
@@ -475,8 +522,8 @@ th {
   border-right: 1px solid black; }
 
 td {
-  border-right: 1px solid #666666;
-  border-bottom: 1px solid #666666; }
+  border-right: 1px solid black;
+  border-bottom: 1px solid black; }
 
 td:last-child {
   border-right: 0; }
@@ -499,7 +546,7 @@ tfoot tr:first-child td {
   border-top: 0;
   border-bottom: 0; }
 .table_stripe tr:nth-child(even) td {
-  background-color: #8c8c8c; }
+  background-color: #cccccc; }
 
 .table_fix {
   table-layout: fixed; }
@@ -511,10 +558,16 @@ caption {
 
 fieldset {
   margin: 8px 0;
+  padding: 8px;
   border: 1px solid black; }
 
 legend {
   padding: 0 4px; }
+
+label + input {
+  margin-left: 8px; }
+input + label {
+  margin-left: 8px; }
 
 .input_default label {
   display: table;
@@ -550,6 +603,18 @@ nav li {
   margin-left: 8px; }
   .nav__right .align_parent {
     margin-right: -8px; }
+
+.nav__separate li {
+  position: relative;
+  padding-left: 1px; }
+  .nav__separate li:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: black; }
 
 .nav__separate_right {
   float: right; }
@@ -612,9 +677,9 @@ nav li {
   border: 0;
   table-layout: auto; }
   .table__link tbody {
-    border-bottom: 1px solid #666666; }
+    border-bottom: 1px solid black; }
     .table__link tbody:hover {
-      background-color: #8c8c8c; }
+      background-color: #cccccc; }
   .table__link th, .table__link td {
     border: 0; }
   .table__link .cell__icon {
@@ -716,7 +781,7 @@ nav li {
     padding-left: 1em;
     text-indent: -1em;
     text-align: center; }
-  .card_body .marked:before {
+  .card_body .marked::before {
     content: "* "; }
   .card_body .decent {
     color: #666; }
@@ -732,24 +797,24 @@ nav li {
   border-right: 8px solid rgba(220, 20, 60, 0.8);
   background-color: rgba(220, 20, 60, 0.1) !important; }
 
-.wip:before, .wip:after {
+.wip::before, .wip::after {
   content: "";
   display: block;
   height: 48px; }
 
-.exp_expose_pre:after {
+.exp_expose_pre::after {
   content: "";
   display: block;
   height: 48px;
   background-color: rgba(183, 224, 240, 0.1) !important; }
 
-.exp_expose_post:before {
+.exp_expose_post::before {
   content: "";
   display: block;
   height: 48px;
   background-color: rgba(183, 224, 240, 0.1) !important; }
 
-.exp_expose:before, .exp_expose:after {
+.exp_expose::before, .exp_expose::after {
   content: "";
   display: block;
   height: 48px;
@@ -819,7 +884,7 @@ nav li {
   -o-transition: height 0.5s ease;
   transition: height 0.5s ease; }
 
-.print_body *[class^="din"] {
+.print_body [class^="din"] {
   background-color: white; }
 
 .print_body {
@@ -946,8 +1011,8 @@ nav li {
 .demo__footer {
   width: 100%;
   padding: 16px 0;
-  background-color: black;
-  color: white; }
+  background-color: #333333;
+  color: #cccccc; }
   .demo__footer nav a {
     color: white; }
 
@@ -955,40 +1020,45 @@ nav li {
   opacity: 1;
   width: 128px;
   height: auto;
+  min-width: 128px;
+  min-height: 128px;
   border-radius: 50%;
   background-color: #b7e0f0; }
 
 .demo__flag {
   height: 40vh; }
 
-.test li:after {
+.demo__credits {
+  margin: 32px 0 8px 0; }
+
+.test li::after {
   content: "";
   display: block;
   height: 16px; }
 
 .front_color_1 {
   color: #fad803; }
-  .front_color_1:after {
+  .front_color_1::after {
     background-color: #fad803; }
 
 .front_color_2 {
   color: #d30a51; }
-  .front_color_2:after {
+  .front_color_2::after {
     background-color: #d30a51; }
 
 .front_color_3 {
   color: #273f8b; }
-  .front_color_3:after {
+  .front_color_3::after {
     background-color: #273f8b; }
 
 .front_color_4 {
   color: #b7e0f0; }
-  .front_color_4:after {
+  .front_color_4::after {
     background-color: #b7e0f0; }
 
 .front_color_5 {
   color: #52bed1; }
-  .front_color_5:after {
+  .front_color_5::after {
     background-color: #52bed1; }
 
 .back_color_1, .label_1 {

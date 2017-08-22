@@ -29,8 +29,8 @@
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($bright_color, .2);
-				color: $bright_color;
+				background-color: rgba($brightest_color, .2);
+				color: $brightest_color;
 			}
 		}
 	}
@@ -49,8 +49,8 @@
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($bright_color, .2);
-				color: $bright_color;
+				background-color: rgba($brightest_color, .2);
+				color: $brightest_color;
 			}
 		}
 	}
@@ -66,7 +66,7 @@
 	nav {
 
 		a {
-			color: $bright_color;
+			color: $brightest_color;
 		}
 	}
 }
@@ -77,6 +77,8 @@
 		opacity: 1;
 		width: 128px;
 		height: auto;
+		min-width: 128px;
+		min-height: 128px;
 		border-radius: 50%;
 		background-color: $delta_color;
 	}
@@ -84,4 +86,8 @@
 
 .demo__flag {
 	height: 40vh;
+}
+
+.demo__credits {
+	margin: $space_3 0 $basic_space 0;
 }
