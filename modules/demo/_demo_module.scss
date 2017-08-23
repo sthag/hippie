@@ -7,7 +7,7 @@
 }
 
 .demo__header {
-	padding: $space_2;
+	padding: $double_space;
 
 	nav {
 
@@ -59,7 +59,7 @@
 .demo__footer {
 	width: 100%;
 	// height: 128px;
-	padding: $space_2 0;
+	padding: $double_space 0;
 	background-color: $dark_color;
 	color: $bright_color;
 

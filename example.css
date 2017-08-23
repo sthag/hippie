@@ -180,7 +180,7 @@ textarea:not([disabled]):focus {
     color: white;
     border-color: transparent; }
 
-.span__solo, h6, p, .p__col_2, .p__col_3, caption, li, dt, dd, figcaption, th, td, legend, label {
+.span__solo, h6, p, .p__column_2, .p__column_3, caption, li, dt, dd, figcaption, th, td, legend, label {
   font-family: Roboto, Segoe UI, Liberation Sans, Source Sans, Trebuchet MS, Helvetica, Arial, sans-serif, sans;
   font-size: 1em;
   line-height: 1.5; }
@@ -190,7 +190,7 @@ pre, code, .code__solo {
   font-size: 1em;
   line-height: 1.5; }
 
-.print_body *[class^="din"] p, .print_body *[class^="din"] .p__col_2, .print_body *[class^="din"] .p__col_3, .print_body *[class^="din"] caption {
+.print_body *[class^="din"] p, .print_body *[class^="din"] .p__column_2, .print_body *[class^="din"] .p__column_3, .print_body *[class^="din"] caption {
   font-family: Courier New, monospace;
   font-size: 1em;
   line-height: 1.5; }
@@ -303,21 +303,21 @@ h6 {
   text-transform: none;
   font-weight: bold; }
 
-p, .p__col_2, .p__col_3, caption {
+p, .p__column_2, .p__column_3, caption {
   margin: 8px 0; }
-  p code, .p__col_2 code, .p__col_3 code, caption code {
+  p code, .p__column_2 code, .p__column_3 code, caption code {
     padding: 1px 4px;
     font-size: 1em;
     line-height: 1; }
 
-.p__col_line {
+.p__column_line {
   column-rule: 1px solid black; }
 
-.p__col_2 {
+.p__column_2 {
   column-count: 2;
   column-gap: 32px; }
 
-.p__col_3 {
+.p__column_3 {
   column-count: 3;
   column-gap: 64px; }
 
@@ -346,9 +346,9 @@ hr, .hr__hidden, .hr__dotted {
 blockquote {
   margin: 8px 2em; }
 
-.quote__mark p::before, .quote__mark .p__col_2::before, .quote__mark .p__col_3::before, .quote__mark caption::before {
+.quote__mark p::before, .quote__mark .p__column_2::before, .quote__mark .p__column_3::before, .quote__mark caption::before {
   content: "\201E \0020"; }
-.quote__mark p::after, .quote__mark .p__col_2::after, .quote__mark .p__col_3::after, .quote__mark caption::after {
+.quote__mark p::after, .quote__mark .p__column_2::after, .quote__mark .p__column_3::after, .quote__mark caption::after {
   content: "\201C \0020"; }
 .quote__mark .quote__source::before, .quote__mark .quote__source::after {
   content: ""; }
@@ -775,7 +775,7 @@ nav li {
     font-size: 24px;
     line-height: 1.4em;
     font-weight: normal; }
-  .card_body p, .card_body .p__col_2, .card_body .p__col_3, .card_body caption {
+  .card_body p, .card_body .p__column_2, .card_body .p__column_3, .card_body caption {
     margin-top: 0;
     margin-bottom: 16px;
     font-size: 12px;
@@ -950,7 +950,7 @@ nav li {
       flex-direction: row; }
       .print_body *[class^="din"] .page_foot *:last-child {
         margin-bottom: 0; }
-      .print_body *[class^="din"] .page_foot p, .print_body *[class^="din"] .page_foot .p__col_2, .print_body *[class^="din"] .page_foot .p__col_3, .print_body *[class^="din"] .page_foot caption {
+      .print_body *[class^="din"] .page_foot p, .print_body *[class^="din"] .page_foot .p__column_2, .print_body *[class^="din"] .page_foot .p__column_3, .print_body *[class^="din"] .page_foot caption {
         flex: 1 0 auto;
         margin: 0;
         font-size: 8pt;
@@ -961,7 +961,7 @@ nav li {
         font-size: 20pt;
         line-height: 1;
         text-align: right; }
-      .print_body *[class^="din"] .page_foot p:first-child, .print_body *[class^="din"] .page_foot .p__col_2:first-child, .print_body *[class^="din"] .page_foot .p__col_3:first-child, .print_body *[class^="din"] .page_foot caption:first-child {
+      .print_body *[class^="din"] .page_foot p:first-child, .print_body *[class^="din"] .page_foot .p__column_2:first-child, .print_body *[class^="din"] .page_foot .p__column_3:first-child, .print_body *[class^="din"] .page_foot caption:first-child {
         text-align: left; }
     .print_body *[class^="din"] .page_content {
       margin-top: 10cm;

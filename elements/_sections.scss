@@ -121,19 +121,19 @@ h2 {
 
 h3 {
 	@extend %head_3;
-	margin: $space_2 0 $space_2;
+	margin: $double_space 0 $double_space;
 	text-transform: uppercase;
 }
 
 h4 {
 	@extend %head_3;
-	margin: $space_2 0 $space_2;
+	margin: $double_space 0 $double_space;
 	text-transform: none;
 }
 
 h5 {
 	@extend %head_4;
-	margin: $space_2 0 $basic_space;
+	margin: $double_space 0 $basic_space;
 	text-transform: none;
 }
 

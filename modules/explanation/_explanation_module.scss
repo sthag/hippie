@@ -83,8 +83,8 @@
 }
 .exp_help_btn {
   display: table;
-  right: $space_2;
-  bottom: $space_2;
+  right: $double_space;
+  bottom: $double_space;
   background-color: rgba($darkest_color, .4);
   &:hover {
     background-color: $brightest_color;

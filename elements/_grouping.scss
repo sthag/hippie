@@ -12,17 +12,17 @@ p {
 	}
 }
 
-.p__col_line {
+.p__column_line {
 	column-rule: $basic_border_width solid $darkest_color;
 }
-.p__col_2, .p__col_3 {
+.p__column_2, .p__column_3 {
 	@extend p;
 }
-.p__col_2 {
+.p__column_2 {
 	column-count: 2;
 	column-gap: $space_3;
 }
-.p__col_3 {
+.p__column_3 {
 	column-count: 3;
 	column-gap: $space_4;
 }
@@ -89,7 +89,7 @@ blockquote {
 
 // List
 dl, ul, ol {
-	margin: $space_2 0 $basic_space;
+	margin: $double_space 0 $basic_space;
 }
 
 ul, ol {
@@ -156,7 +156,7 @@ ul {
 
 // Embedded
 figure {
-	margin: $space_2 $basic_indent;
+	margin: $double_space $basic_indent;
 }
 
 figcaption {
@@ -177,7 +177,7 @@ div {
 }
 
 .box__info {
-	padding: $space_2 $basic_indent;
+	padding: $double_space $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, .6);
 	background-color: rgba($echo_color, .1) !important;
 }
