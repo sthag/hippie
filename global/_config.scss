@@ -134,6 +134,9 @@ $space_4: $basic_space * 8;
 $space_5: $basic_space * 16;
 $tiny_space: 1px !default;
 
+$basic_margin: $basic_space 0;
+$high_margin: calc(#{$basic_space} * 2) 0;
+
 $basic_padding: calc(#{$basic_space} - 3px) $basic_space;
 $wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2);
 

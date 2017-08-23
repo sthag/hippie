@@ -353,17 +353,19 @@
 		<fieldset>
 			<label for="demo__output">Beschriftung:</label><input type="text" readonly id="demo__output">
 		</fieldset>
-		<fieldset class="input_default">
+		<p>Sie können mittels <code>&lt;legend&gt;</code> auch eine eigene Beschriftung erhalten.</p>
+		<fieldset>
 			<legend>Einfache Eingabefelder</legend>
-			<label for="simple_txt">Einfache Texteingabe<input type="text" id="simple_txt" value="Text"/></label>
-			<label for="simple_button">Einfacher Knopf<input type="button" id="simple_button" value="Knopf"/></label>
+			<label>Texteingabe<input type="text" placeholder="Text"/></label>
+			<label>Schaltfläche<input type="button" value="Senden"/></label>
 		</fieldset>
-		<fieldset class="input_default">
+		<fieldset>
 			<legend>Weitere Zeicheneingabefelder</legend>
-			<p>Diese Eingabefelder sind zusätzlich aneinander ausgerichtet und gruppiert.</p>
-			<label for="simple_date">Einfache Datumseingabe<input type="date" id="simple_date"/></label>
-			<label for="simple_numer">Einfache Zahleneingabe<input type="number" id="simple_numer"/></label>
+			<p>Innerhalb einer Gruppe können nicht nur Ein- und Ausgabefelder platziert werden. Andere Elemente ergänzen Information oder lockern das Erscheinungsbild auf. Hier nun eine Liste aller möglichen Arten von Eingabefeldern.</p>
+			<pre class="pre__code"><code>ul>(li>label>input[type="text"])</code></pre>
 		</fieldset>
+		<label>Einfache Datumseingabe<input type="date"/></label>
+		<label>Einfache Zahleneingabe<input type="number"/></label>
 		<input type="checkbox"/>
 		<input type="color"/>
 		<input type="datetime"/>
@@ -415,7 +417,7 @@
 
 	<section class="sec__main_center">
 		<header>
-			<h1>Einzelene Elemente</h1>
+			<h1>Einzelne Elemente</h1>
 		</header>
 		<article>
 			<h2>Bereiche</h2>

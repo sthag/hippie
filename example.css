@@ -506,8 +506,7 @@ img {
   vertical-align: top; }
 
 table {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: calc(8px * 2) 0;
   border: 1px solid black;
   border-collapse: collapse; }
 
@@ -557,7 +556,7 @@ caption {
   text-align: center; }
 
 fieldset {
-  margin: 8px 0;
+  margin: calc(8px * 2) 0;
   padding: 8px;
   border: 1px solid black; }
 
@@ -568,13 +567,17 @@ label + input {
   margin-left: 8px; }
 input + label {
   margin-left: 8px; }
+label input {
+  margin-left: 8px; }
+
+.label__table, .input_default label {
+  display: table; }
+  .label__table input, .input_default label input {
+    display: table-cell; }
 
 .input_default label {
-  display: table;
   margin: 4px 0; }
   .input_default label input {
-    display: table-cell;
-    margin-left: 8px;
     padding: 4px 5px;
     border-style: solid;
     border-color: transparent;
