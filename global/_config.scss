@@ -72,14 +72,7 @@ $basic_indent: 2em;
 // COLORS
 // ------------------------------------------------------------------------------
 
-$color_palette: (
-  alpha: #fad803,
-  bravo: #d30a51,
-  charlie: #273f8b,
-  delta: #b7e0f0,
-  echo: #52bed1,
-	foxtrot: #0c85ff
-);
+$color_palette: $default_color_palette;
 
 @include addDefaultColors;
 

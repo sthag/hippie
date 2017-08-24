@@ -8,6 +8,15 @@ $default_line_height: 1.5 !default;
 
 $default_font_family: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
 
+$default_color_palette: (
+  alpha: #fad803,
+  bravo: #d30a51,
+  charlie: #273f8b,
+  delta: #b7e0f0,
+  echo: #52bed1,
+	foxtrot: #0c85ff
+) !default;
+
 $default_darkest_color: black !default;
 $default_medium_color: lighten($default_darkest_color, 50%);
 $default_brightest_color: white !default;
