@@ -98,7 +98,6 @@ ul, ol {
 
 li, dt, dd {
 	@extend %basic;
-	color: $basic_font_color;
 }
 
 li, dd {
