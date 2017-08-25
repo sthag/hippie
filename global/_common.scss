@@ -139,7 +139,7 @@
 
 .hover_full_view_change {
 	@extend %full_viewport;
-	z-index: $z_top;
+	z-index: $z_heaven;
 	background-color: transparentize($darkest_color, .5);
 	transition: background-color .2s ease-in-out;
 	pointer-events: none;
