@@ -112,7 +112,10 @@ $basic_color_map: ();
 
 $box_sizing: $default_box_sizing;
 
-$z_top: 1000;
+$z_heaven: 100;
+$z_top: 10;
+$z_basic: 1;
+$z_earth: -100;
 
 $basic_width: 96%;
 $width_small: 80%;

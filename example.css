@@ -156,7 +156,7 @@ textarea:not([disabled]):focus {
     background-color: gray; }
 
 .hover_full_view_change {
-  z-index: 1000;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
   transition: background-color .2s ease-in-out;
   pointer-events: none; }
