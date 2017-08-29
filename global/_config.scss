@@ -5,8 +5,8 @@
 // TEXT
 // ------------------------------------------------------------------------------
 
-$basic_size: $default_font_size;
-$basic_print_size: $default_print_font_size;
+$basic_size: 17px !default;
+$basic_print_size: 10pt !default;
 
 $size_1: $basic_size * 4;
 
@@ -44,56 +44,63 @@ $basic_line: 1;
 //   ),
 // );
 
-$head_size_1: 3.1em;
-$head_size_2: 2.5em;
-$head_size_3: 1.8em;
-$head_size_4: 1.35em;
+$head_size_1: 3.1em !default;
+$head_size_2: 2.5em !default;
+$head_size_3: 1.8em !default;
+$head_size_4: 1.35em !default;
 
 $text_size_1: 1em;
 $text_size_2: 20;
 
-$text_line_1: $default_line_height;
+$text_line_1: 1.5 !default;
 $head_line_1: $text_line_1;
 $head_line_2: $text_line_1;
 $head_line_3: $text_line_1;
 $head_line_4: $text_line_1;
 
-$print_font_family: #{'Times New Roman', times};
-$monospace_font_family: #{'Courier New', monospace};
+$print_font_family: #{'Times New Roman', times} !default;
+$monospace_font_family: #{'Courier New', monospace} !default;
 
-$primary_font_family: $default_font_family;
-$secondary_font_family: $default_font_family;
-$third_font_family: $monospace_font_family;
-$fourth_font_family: $print_font_family;
+$primary_font_family: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+$secondary_font_family: $primary_font_family !default;
+$third_font_family: $monospace_font_family !default;
+$fourth_font_family: $print_font_family !default;
 
-$basic_indent: 2em;
+$basic_indent: 2em !default;
 
 
 // COLORS
 // ------------------------------------------------------------------------------
 
-$color_palette: $default_color_palette;
+$color_palette: (
+  alpha: #fad803,
+  bravo: #d30a51,
+  charlie: #273f8b,
+  delta: #b7e0f0,
+  echo: #52bed1,
+	foxtrot: #0c85ff
+) !default;
 
 @include addDefaultColors;
 
-$darkest_color: $default_darkest_color;
-$brightest_color: $default_brightest_color;
+$darkest_color: black !default;
+$brightest_color: white !default;
+$medium_color: lighten($darkest_color, 50%) !default;
+$dark_color: lighten($darkest_color, 20%) !default;
+$bright_color: darken($brightest_color, 20%) !default;
 
-$basic_font_color: $default_front_color;
-$basic_head_color: $default_front_color;
+$basic_front_color: $darkest_color !default;
+$basic_back_color: $medium_color !default;
+$basic_font_color: $basic_front_color !default;
+$basic_head_color: $basic_front_color !default;
 
-$basic_link_color: $echo_color;
-$basic_highlight_color: $brightest_color;
-$basic_action_color: $foxtrot_color;
+$basic_link_color: $echo_color !default;
+$basic_highlight_color: $brightest_color !default;
+$basic_action_color: $foxtrot_color !default;
 
-$basic_front_color: $default_front_color;
-$basic_back_color: $default_back_color;
 
-$dark_color: lighten($darkest_color, 20%);
-$medium_color: lighten($darkest_color, 50%);
-$bright_color: darken($brightest_color, 20%);
 
-$basic_border_color: $default_front_color;
+$basic_border_color: $basic_front_color !default;
 
 // default shadow colors
 // $shadow_color: fade-out($medium_color, .5);
@@ -110,35 +117,35 @@ $basic_color_map: ();
 // LAYOUT
 // ------------------------------------------------------------------------------
 
-$box_sizing: $default_box_sizing;
+$box_sizing: border-box !default;
 
-$z_heaven: 100;
-$z_top: 10;
-$z_basic: 1;
-$z_earth: -100;
+$z_heaven: 100 !default;
+$z_top: 10 !default;
+$z_basic: 1 !default;
+$z_earth: -100 !default;
 
-$basic_width: 96%;
-$width_small: 80%;
-$width_medium: 60%;
-$width_large: 48%;
+$basic_width: 96% !default;
+$width_small: 80% !default;
+$width_medium: 60% !default;
+$width_large: 48% !default;
 
-$basic_space: $default_space;
-$half_space: $basic_space / 2;
-$double_space: $basic_space * 2;
+$basic_space: 8px !default;
+$tiny_space: 1px !default;
+$half_space: $basic_space / 2 !default;
+$double_space: $basic_space * 2 !default;
 $space_3: $basic_space * 4;
 $space_4: $basic_space * 8;
 $space_5: $basic_space * 16;
-$tiny_space: 1px !default;
 
-$basic_margin: $basic_space 0;
-$high_margin: calc(#{$basic_space} * 2) 0;
+$basic_margin: $basic_space 0 !default;
+$high_margin: $double_space 0 !default;
 
-$basic_padding: calc(#{$basic_space} - 3px) $basic_space;
-$wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2);
+$basic_padding: calc(#{$basic_space} - 3px) $basic_space !default;
+$wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2) !default;
 
 $basic_corner: $tiny_space;
 
-$basic_border_width: $default_border_width;
+$basic_border_width: $tiny_space !default;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;

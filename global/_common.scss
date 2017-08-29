@@ -147,12 +147,32 @@
 
 .flex {
 	display: flex;
+	background-color: rgba($alpha_color, .1);
 }
 
-.flex_child {
+.flex__wrap {
+	@extend .flex;
+	flex-wrap: wrap;
+}
+
+.flex__row {
+	@extend .flex;
+	flex-direction: column;
+	// align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.flex__child {
 	flex:  0 1 auto;
 }
 
+.flex__child_one {
+	flex:  1;
+}
+
+.flex__child_end {
+	align-self: flex-end;
+}
 
 
 // Colors

@@ -47,8 +47,8 @@
 // Adjustments can be made by copying values from _config.scss to _override.scss
 // Be careful though changes will get lost if hippie gets updated
 // -----------------------------------------------------------------------------
-@import "global/default"; // DO NOT EDIT
-@import "override"; // EDIT
+// @import "global/default"; // DO NOT EDIT
+@import "settings"; // EDIT
 @import "global/config"; // DO NOT EDIT
 
 

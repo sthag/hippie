@@ -103,7 +103,7 @@ nav {
 		margin: 0 $space_5;
 
 		li {
-			@extend .flex_child;
+			@extend .flex__child;
 			flex-grow: 1;
 			margin: 0;
 			text-align: center;

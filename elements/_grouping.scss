@@ -179,6 +179,10 @@ div {
 
 }
 
+.box__page {
+
+}
+
 .box__info {
 	padding: $double_space $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, .6);
@@ -241,12 +245,17 @@ div {
 	background-color: rgba($darkest_color,.1);
 }
 
+// Data
+.box__file_tile {
+	@extend .float_left;
+}
+
 // Flex
 .box__column {
 	@extend .flex;
 
 	.column {
-		@extend .flex_child;
+		@extend .flex__child;
 		flex-grow: 1;
 	}
 }

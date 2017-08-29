@@ -82,7 +82,7 @@ textarea:not([disabled]):focus {
   margin-right: 37.5%;
   margin-left: 37.5%; }
 
-.width_full {
+.width_full, .table__file_simple {
   width: 100%;
   margin-right: 0;
   margin-left: 0; }
@@ -107,7 +107,7 @@ textarea:not([disabled]):focus {
   .clear::before, .clear::after {
     clear: both; }
 
-.float_left, .list__horizontal li, .box__inline_left, .nav__horizontal ul li, .nav__center_old ul li, .header__page nav ul li {
+.float_left, .list__horizontal li, .box__inline_left, .box__file_tile, .nav__horizontal ul li, .nav__center_old ul li, .header__page nav ul li {
   float: left;
   margin-right: 32px; }
 
@@ -161,11 +161,25 @@ textarea:not([disabled]):focus {
   transition: background-color .2s ease-in-out;
   pointer-events: none; }
 
-.flex, .box__column, .nav__column ul {
-  display: flex; }
+.flex, .flex__wrap, .flex__row, .box__column, .nav__column ul {
+  display: flex;
+  background-color: rgba(250, 216, 3, 0.1); }
 
-.flex_child, .box__column .column, .nav__column ul li {
+.flex__wrap {
+  flex-wrap: wrap; }
+
+.flex__row {
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.flex__child, .box__column .column, .nav__column ul li {
   flex: 0 1 auto; }
+
+.flex__child_one {
+  flex: 1; }
+
+.flex__child_end {
+  align-self: flex-end; }
 
 .txt_light_color {
   color: #666666; }
@@ -503,7 +517,7 @@ img {
   vertical-align: top; }
 
 table {
-  margin: calc(8px * 2) 0;
+  margin: 16px 0;
   border: 1px solid black;
   border-collapse: collapse; }
 
@@ -530,21 +544,21 @@ tr:last-child td {
 tfoot tr:first-child td {
   border-top: 1px solid black; }
 
-.table_blank {
+.table__blank {
   border: 1px solid transparent; }
-  .table_blank th, .table_blank td {
+  .table__blank th, .table__blank td {
     border: 1px solid transparent; }
 
-.table_free {
+.table__free {
   border: 1px solid transparent; }
 
-.table_stripe td {
+.table__stripe td {
   border-top: 0;
   border-bottom: 0; }
-.table_stripe tr:nth-child(even) td {
+.table__stripe tr:nth-child(even) td {
   background-color: #cccccc; }
 
-.table_fix {
+.table__fix {
   table-layout: fixed; }
 
 caption {
@@ -553,7 +567,7 @@ caption {
   text-align: center; }
 
 fieldset {
-  margin: calc(8px * 2) 0;
+  margin: 16px 0;
   padding: 8px;
   border: 1px solid black; }
 
@@ -884,7 +898,7 @@ nav li {
   -o-transition: height 0.5s ease;
   transition: height 0.5s ease; }
 
-.print_body [class^="din"] {
+.print_body *[class^="din"] {
   background-color: white; }
 
 .print_body {
@@ -1030,6 +1044,10 @@ nav li {
 
 .demo__credits {
   margin: 32px 0 8px 0; }
+
+.demo__button_32 {
+  width: 32px;
+  height: 32px; }
 
 .test li::after {
   content: "";

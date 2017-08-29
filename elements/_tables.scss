@@ -40,7 +40,7 @@ tfoot {
 	}
 }
 
-.table_blank {
+.table__blank {
 	border: $basic_border_width solid transparent;
 
 	th, td {
@@ -48,11 +48,11 @@ tfoot {
 	}
 }
 
-.table_free {
+.table__free {
 	border: $basic_border_width solid transparent;
 }
 
-.table_stripe {
+.table__stripe {
 	td {
 	border-top: 0;
 	border-bottom: 0;
@@ -63,7 +63,7 @@ tfoot {
 	}
 }
 
-.table_fix {
+.table__fix {
 	table-layout: fixed;
 }
 
@@ -72,4 +72,9 @@ caption {
 	padding: $half_space 0;
 	border: $basic_border_width dotted $basic_border_color;
 	text-align: center;
+}
+
+// Data
+.table__file_simple {
+	@extend .width_full;
 }
