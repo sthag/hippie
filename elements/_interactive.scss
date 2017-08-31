@@ -20,16 +20,17 @@ legend {
 
 // Common
 // -----------------------------------------------------------------------------
+input, button, textarea {
+	margin: $io_margin;
+
+	&[disabled="disabled"],
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
 label {
 	@extend %basic;
-
-	& + input {
-		margin-left: $basic_space;
-	}
-
-	input + & {
-		margin-left: $basic_space;
-	}
 
 	input {
 		margin-left: $basic_space;
@@ -37,7 +38,54 @@ label {
 }
 
 input {
+	color: $basic_io_font_color;
 
+	&[disabled="disabled"],
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+@each $input in $basic_input_list, textarea {
+	#{$input} {
+		@extend %basic_mono;
+		border: $basic_io_border;
+		padding: $half_space;
+		background-color: $basic_io_back_color;
+
+		&:hover {
+			background-color: $basic_highlight_color;
+		}
+
+		&[readonly="readonly"],
+		&[readonly] {
+			border-color: darken($basic_io_border_color, 30%);
+			background-color: darken($basic_io_back_color, 30%);
+		}
+
+		&[disabled="disabled"],
+		&[disabled] {
+			border-color: transparent;
+		}
+	}
+}
+
+@each $input in $basic_input_list {
+
+	#{$input} {
+		line-height: 1;
+	}
+}
+
+@each $input in $basic_button_list {
+	#{$input} {
+		padding: $basic_padding;
+	}
+}
+
+label + input,
+.input__label_right {
+	margin: 0 $basic_space;
 }
 
 .label__table {
@@ -48,7 +96,9 @@ input {
 	}
 }
 
-.input_default {
+
+
+.input__default {
 
 	label {
 		@extend .label__table;
@@ -74,6 +124,10 @@ input {
 // More
 // -----------------------------------------------------------------------------
 
+textarea {
+
+}
+
 button {
 
 }
@@ -91,10 +145,6 @@ optgroup {
 }
 
 option {
-
-}
-
-textarea {
 
 }
 

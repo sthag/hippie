@@ -251,6 +251,15 @@ div {
 }
 
 // Flex
+.box__column_old {
+	overflow: auto;
+
+	.column_old {
+		float: left;
+		width: 50%;
+	}
+}
+
 .box__column {
 	@extend .flex;
 

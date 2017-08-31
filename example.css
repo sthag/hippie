@@ -162,8 +162,7 @@ textarea:not([disabled]):focus {
   pointer-events: none; }
 
 .flex, .flex__wrap, .flex__row, .box__column, .nav__column ul {
-  display: flex;
-  background-color: rgba(250, 216, 3, 0.1); }
+  display: flex; }
 
 .flex__wrap {
   flex-wrap: wrap; }
@@ -199,7 +198,7 @@ textarea:not([disabled]):focus {
   font-size: 1em;
   line-height: 1.5; }
 
-pre, code, .code__solo {
+pre, code, .code__solo, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   font-family: Courier New, monospace;
   font-size: 1em;
   line-height: 1.5; }
@@ -449,6 +448,12 @@ figure {
   background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
   background-color: rgba(0, 0, 0, 0.1); }
 
+.box__column_old {
+  overflow: auto; }
+  .box__column_old .column_old {
+    float: left;
+    width: 50%; }
+
 .box__column .column {
   flex-grow: 1; }
 
@@ -556,7 +561,7 @@ tfoot tr:first-child td {
   border-top: 0;
   border-bottom: 0; }
 .table__stripe tr:nth-child(even) td {
-  background-color: #cccccc; }
+  background-color: rgba(255, 255, 255, 0.1); }
 
 .table__fix {
   table-layout: fixed; }
@@ -574,27 +579,118 @@ fieldset {
 legend {
   padding: 0 4px; }
 
-label + input {
-  margin-left: 8px; }
-input + label {
-  margin-left: 8px; }
+input, button, textarea {
+  margin: 0 32px; }
+  input[disabled="disabled"], input[disabled], button[disabled="disabled"], button[disabled], textarea[disabled="disabled"], textarea[disabled] {
+    cursor: not-allowed; }
+
 label input {
   margin-left: 8px; }
 
-.label__table, .input_default label {
+input {
+  color: #1a1a1a; }
+  input[disabled="disabled"], input[disabled] {
+    cursor: not-allowed; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]) {
+  border: 2px solid white;
+  padding: 4px;
+  background-color: #e6e6e6; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover {
+    background-color: white; }
+  input[type="color"][readonly="readonly"], input[type="color"][readonly], input[type="date"][readonly="readonly"], input[type="date"][readonly], input[type="datetime"][readonly="readonly"], input[type="datetime"][readonly], input[type="datetime-local"][readonly="readonly"], input[type="datetime-local"][readonly], input[type="email"][readonly="readonly"], input[type="email"][readonly], input[type="month"][readonly="readonly"], input[type="month"][readonly], input[type="number"][readonly="readonly"], input[type="number"][readonly], input[type="password"][readonly="readonly"], input[type="password"][readonly], input[type="search"][readonly="readonly"], input[type="search"][readonly], input[type="tel"][readonly="readonly"], input[type="tel"][readonly], input[type="text"][readonly="readonly"], input[type="text"][readonly], input[type="time"][readonly="readonly"], input[type="time"][readonly], input[type="url"][readonly="readonly"], input[type="url"][readonly], input[type="week"][readonly="readonly"], input[type="week"][readonly], input:not([type])[readonly="readonly"], input:not([type])[readonly] {
+    border-color: #b3b3b3;
+    background-color: #999999; }
+  input[type="color"][disabled="disabled"], input[type="color"][disabled], input[type="date"][disabled="disabled"], input[type="date"][disabled], input[type="datetime"][disabled="disabled"], input[type="datetime"][disabled], input[type="datetime-local"][disabled="disabled"], input[type="datetime-local"][disabled], input[type="email"][disabled="disabled"], input[type="email"][disabled], input[type="month"][disabled="disabled"], input[type="month"][disabled], input[type="number"][disabled="disabled"], input[type="number"][disabled], input[type="password"][disabled="disabled"], input[type="password"][disabled], input[type="search"][disabled="disabled"], input[type="search"][disabled], input[type="tel"][disabled="disabled"], input[type="tel"][disabled], input[type="text"][disabled="disabled"], input[type="text"][disabled], input[type="time"][disabled="disabled"], input[type="time"][disabled], input[type="url"][disabled="disabled"], input[type="url"][disabled], input[type="week"][disabled="disabled"], input[type="week"][disabled], input:not([type])[disabled="disabled"], input:not([type])[disabled] {
+    border-color: transparent; }
+
+textarea {
+  border: 2px solid white;
+  padding: 4px;
+  background-color: #e6e6e6; }
+  textarea:hover {
+    background-color: white; }
+  textarea[readonly="readonly"], textarea[readonly] {
+    border-color: #b3b3b3;
+    background-color: #999999; }
+  textarea[disabled="disabled"], textarea[disabled] {
+    border-color: transparent; }
+
+input[type="color"] {
+  line-height: 1; }
+
+input[type="date"] {
+  line-height: 1; }
+
+input[type="datetime"] {
+  line-height: 1; }
+
+input[type="datetime-local"] {
+  line-height: 1; }
+
+input[type="email"] {
+  line-height: 1; }
+
+input[type="month"] {
+  line-height: 1; }
+
+input[type="number"] {
+  line-height: 1; }
+
+input[type="password"] {
+  line-height: 1; }
+
+input[type="search"] {
+  line-height: 1; }
+
+input[type="tel"] {
+  line-height: 1; }
+
+input[type="text"] {
+  line-height: 1; }
+
+input[type="time"] {
+  line-height: 1; }
+
+input[type="url"] {
+  line-height: 1; }
+
+input[type="week"] {
+  line-height: 1; }
+
+input:not([type]) {
+  line-height: 1; }
+
+button {
+  padding: calc(8px - 3px) 8px; }
+
+input[type="button"] {
+  padding: calc(8px - 3px) 8px; }
+
+input[type="reset"] {
+  padding: calc(8px - 3px) 8px; }
+
+input[type="submit"] {
+  padding: calc(8px - 3px) 8px; }
+
+label + input,
+.input__label_right {
+  margin: 0 8px; }
+
+.label__table, .input__default label {
   display: table; }
-  .label__table input, .input_default label input {
+  .label__table input, .input__default label input {
     display: table-cell; }
 
-.input_default label {
+.input__default label {
   margin: 4px 0; }
-  .input_default label input {
+  .input__default label input {
     padding: 4px 5px;
     border-style: solid;
     border-color: transparent;
-    background-color: #404040;
-    color: #e6e6e6; }
-    .input_default label input:hover {
+    background-color: #e6e6e6;
+    color: #1a1a1a; }
+    .input__default label input:hover {
       background-color: black;
       color: white; }
 

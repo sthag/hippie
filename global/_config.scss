@@ -105,12 +105,12 @@ $basic_border_color: $basic_front_color !default;
 // default shadow colors
 // $shadow_color: fade-out($medium_color, .5);
 
-$basic_color_map: ();
+$basic_color_list: ();
 
 @each $key, $value in $color_palette {
   $map: ();
   $map: map-merge($map, ($key: createColorMap($value, 15%, .5)) );
-  $basic_color_map: map-merge($basic_color_map, $map);
+  $basic_color_list: map-merge($basic_color_list, $map);
 }
 
 
@@ -139,6 +139,7 @@ $space_5: $basic_space * 16;
 
 $basic_margin: $basic_space 0 !default;
 $high_margin: $double_space 0 !default;
+$io_margin: 0 $space_3 !default;
 
 $basic_padding: calc(#{$basic_space} - 3px) $basic_space !default;
 $wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2) !default;
@@ -149,6 +150,7 @@ $basic_border_width: $tiny_space !default;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
 $basic_border: $tiny_space solid $basic_border_color;
+$dotted_border: $tiny_space dotted $basic_border_color;
 $cell_border: $tiny_space solid $darkest_color;
 
 $basic_aside_width: 20%;
@@ -157,38 +159,47 @@ $basic_aside_width: 20%;
 // IO
 // ------------------------------------------------------------------------------
 
-$basic_text_input_map: 'input[type="color"]',
-                       'input[type="date"]',
-                       'input[type="datetime"]',
-                       'input[type="datetime-local"]',
-                       'input[type="email"]',
-                       'input[type="month"]',
-                       'input[type="number"]',
-                       'input[type="password"]',
-                       'input[type="search"]',
-                       'input[type="tel"]',
-                       'input[type="text"]',
-                       'input[type="time"]',
-                       'input[type="url"]',
-                       'input[type="week"]',
-                       'input:not([type])',
-                       'textarea';
+$basic_input_list:
+	'input[type="color"]',
+	'input[type="date"]',
+	'input[type="datetime"]',
+	'input[type="datetime-local"]',
+	'input[type="email"]',
+	'input[type="month"]',
+	'input[type="number"]',
+	'input[type="password"]',
+	'input[type="search"]',
+	'input[type="tel"]',
+	'input[type="text"]',
+	'input[type="time"]',
+	'input[type="url"]',
+	'input[type="week"]',
+	'input:not([type])';
 
-$basic_button_map: 'button',
-                   'input[type="button"]',
-                   'input[type="reset"]',
-                   'input[type="submit"]';
+$basic_button_list:
+	'button',
+	'input[type="button"]',
+	// 'input[type="file"]',
+	'input[type="reset"]',
+	'input[type="submit"]';
 
-$basic_focus_map: 'a[href]',
-                  'area[href]',
-                  'button:not([disabled])',
-                  'input:not([disabled])',
-                  'select:not([disabled])',
-                  'textarea:not([disabled])',
-                  '*[tabindex]';
+$basic_focus_list:
+	'a[href]',
+	'area[href]',
+	'button:not([disabled])',
+	'input:not([disabled])',
+	'select:not([disabled])',
+	'textarea:not([disabled])',
+	'*[tabindex]';
 
-$basic_io_font_color: darken($brightest_color, 10%);
-$basic_io_back_color: lighten($darkest_color, 25%);
+$basic_io_font_color: lighten($basic_font_color, 10%);
+$basic_io_back_color: darken($brightest_color, 10%);
+$basic_io_border_color: $brightest_color;
+
+$basic_io_border_width: $tiny_space * 2 !default;
+$basic_io_border: $basic_io_border_width solid $basic_io_border_color;
+$dotted_io_border: $tiny_space dotted $basic_io_border_color;
+
 $basic_shadow: inset 0 1px 3px rgba($darkest_color, 0.06);
 $basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $lightness: -5%, $alpha: -0.3);
 

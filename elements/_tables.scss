@@ -59,7 +59,7 @@ tfoot {
 	}
 
 	tr:nth-child(even) td {
-	background-color: $bright_color;
+	background-color: rgba($brightest_color, .1);
 	}
 }
 
@@ -70,7 +70,7 @@ tfoot {
 caption {
 	@extend p;
 	padding: $half_space 0;
-	border: $basic_border_width dotted $basic_border_color;
+	border: $dotted_border;
 	text-align: center;
 }
 
