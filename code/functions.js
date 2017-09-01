@@ -1,6 +1,6 @@
 function setup() {
 	if($('#js_tph').length && full_view_hover) {
-		// $('body').prepend("<div id=\"js_tph\" class=\"trigger__hover hover_full_view_change\"></div>");
+		// $('body').prepend("<div id=\"js_tph\" class=\"layer__hover hover_full_view_change\"></div>");
 		$('#js_tph').addClass("hover_full_view_change");
 	}
 }

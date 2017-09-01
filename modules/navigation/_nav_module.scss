@@ -19,7 +19,7 @@ nav {
 		}
 
 		li {
-			@extend .float_left;
+			@extend .float_space_left;
 			margin-right: $basic_space;
 			margin-bottom: 0;
 

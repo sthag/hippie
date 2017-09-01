@@ -68,13 +68,18 @@
 	}
 }
 
-.float_left {
+.overflow {
+	overflow: auto;
+}
+
+.float_space_left {
 	float: left;
 	margin-right: $space_3;
 }
 
-.overflow {
-	overflow: auto;
+.float_half_size {
+	float: left;
+	width: 50%;
 }
 
 .x_long {

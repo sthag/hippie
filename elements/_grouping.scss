@@ -12,21 +12,6 @@ p {
 	}
 }
 
-.p__column_line {
-	column-rule: $basic_border_width solid $darkest_color;
-}
-.p__column_2, .p__column_3 {
-	@extend p;
-}
-.p__column_2 {
-	column-count: 2;
-	column-gap: $space_3;
-}
-.p__column_3 {
-	column-count: 3;
-	column-gap: $space_4;
-}
-
 // Address
 address {
 
@@ -153,7 +138,7 @@ ul {
 .list__horizontal {
 	overflow: auto;
 	li {
-		@extend .float_left;
+		@extend .float_space_left;
 	}
 }
 
@@ -199,11 +184,30 @@ div {
 	// width: 100%;
 }
 
+
 // Inline
 .box__inline_left {
-	@extend .float_left;
+	@extend .float_space_left;
 	// padding: $basic_space / 2;
 }
+
+
+// Columns
+.block__column_line {
+	column-rule: $basic_border;
+}
+.block__column_2, .block__column_3 {
+	@extend p;
+}
+.block__column_2 {
+	column-count: 2;
+	column-gap: $space_3;
+}
+.block__column_3 {
+	column-count: 3;
+	column-gap: $space_4;
+}
+
 
 // Space and placeholders
 .box__space {
@@ -245,22 +249,15 @@ div {
 	background-color: rgba($darkest_color,.1);
 }
 
+
 // Data
 .box__file_tile {
-	@extend .float_left;
+	@extend .float_space_left;
 }
+
 
 // Flex
-.box__column_old {
-	overflow: auto;
-
-	.column_old {
-		float: left;
-		width: 50%;
-	}
-}
-
-.box__column {
+.flex__column_wrap {
 	@extend .flex;
 
 	.column {

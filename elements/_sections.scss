@@ -25,8 +25,10 @@ body {
 	::after {
 		box-sizing: inherit;
 	}
+
 	&:hover {
-		.trigger__hover {
+
+		.layer__hover {
 			background-color: transparent;
 		}
 	}
@@ -42,6 +44,9 @@ section {
 
 .sec__main_center {
 	width: $basic_width;
+	margin: 0 auto;
+	padding-top: $space_3;
+
 	@media screen and (orientation: landscape) {
 		@media (min-width: $screen_small) {
 			width: $width_small;
@@ -53,16 +58,16 @@ section {
 			width: $width_large;
 		}
 	}
+
 	@media screen and (orientation: portrait) {
 		@media (min-width: $screen_small) {
 			width: $width_small;
 		}
 	}
-	margin: 0 auto;
-	padding-top: $space_3;
 }
 
 aside {
+
 	&.right + section {
 		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
 	}
@@ -79,12 +84,15 @@ nav {
 
 aside {
 	width: $basic_aside_width;
+
 	&.left {
 		float: left;
 	}
+
 	&.right {
 		float: right;
 	}
+	
 	*:first-child {
 		margin-top: 0;
 	}

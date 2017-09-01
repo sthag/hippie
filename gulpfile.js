@@ -13,10 +13,7 @@ gulp.task('sass', () =>
 sass('./*.scss', {sourcemap: true})
 // .on('error', sass.logError)
 .pipe(plumber(errorReport("sass error")))
-.pipe(sourcemaps.write('./', {
-	includeContent: false,
-	sourceRoot: 'source'
-}))
+.pipe(sourcemaps.write('./'))
 .pipe(gulp.dest('./'))
 .pipe(livereload())
 );
