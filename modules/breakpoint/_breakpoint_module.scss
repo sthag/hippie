@@ -1,0 +1,46 @@
+.query__goingLarge {
+  @include goingLarge($screen_tiny) {};
+}
+
+.query__goingSmall {
+  @include goingSmall($screen_gigantic) {};
+}
+
+.query__phoneUp {
+}
+
+.query__phoneOnly {
+  @include forPhoneOnly {}
+}
+
+.query__tabletPortaitOnly {
+  @include forTabletPortraitOnly {
+  }
+}
+
+.query__tabletPortraitUp {
+  @include forTabletPortraitUp {
+  }
+}
+
+.query__tabletLandscapeOnly {
+  @include forTabletLandscapeOnly {}
+}
+
+.query__tabletLandscapeUp {
+  @include forTabletLandscapeUp {}
+}
+
+.query__desktopOnly {
+  @include forDesktopOnly {
+  }
+}
+
+.query__desktopUp {
+  @include forDesktopUp {
+  }
+}
+
+.query__bigDesktopUp {
+  @include forBigDesktopUp {}
+}

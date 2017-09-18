@@ -96,3 +96,80 @@
 	width: 32px;
 	height: 32px;
 }
+
+
+
+.demo__queries > p {
+  padding: $basic_padding;
+}
+
+.query__phoneUp {
+  background-color: rgba($basic_front_color, .2);
+}
+
+.query__phoneOnly {
+  @include forPhoneOnly { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__tabletPortaitOnly {
+  @include forTabletPortraitOnly { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__tabletPortraitUp {
+  @include forTabletPortraitUp { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__tabletLandscapeOnly {
+  @include forTabletLandscapeOnly { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__tabletLandscapeUp {
+  @include forTabletLandscapeUp { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__desktopOnly {
+  @include forDesktopOnly { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__desktopUp {
+  @include forDesktopUp { background-color: rgba($basic_front_color, .2); }
+}
+
+.query__bigDesktopUp {
+  @include forBigDesktopUp { background-color: rgba($basic_front_color, .2); }
+}
+
+.demo__query_example {
+	@include goingLarge($screen_tiny/1px) {background-color: $alpha_color; }
+	@include goingLarge($screen_small/1px) {background-color: $bravo_color; }
+	@include goingLarge($screen_medium/1px) {background-color: $charlie_color; }
+	@include goingLarge($screen_large/1px) {background-color: $delta_color; }
+	@include goingLarge($screen_huge/1px) {background-color: $echo_color; }
+	@include goingLarge($screen_gigantic/1px) {background-color: $foxtrot_color; }
+	margin-bottom: $space_3;
+	padding: $space_3;
+	text-align: center;
+
+	&:after {
+		@extend code;
+		@include goingLarge($screen_tiny/1px) {
+			& { content: '768px'; }
+		}
+		@include goingLarge($screen_small/1px) {
+			& { content: '1024px'; }
+		}
+		@include goingLarge($screen_medium/1px) {
+			& { content: '1280px'; }
+		}
+		@include goingLarge($screen_huge/1px) {
+			& { content: '1680px'; }
+		}
+		@include goingLarge($screen_gigantic/1px) {
+			& { content: '1920px'; }
+		}
+		content: '< 768px';
+		padding: $basic_padding;
+		border-radius: $basic_corner_radius;
+		background-color: rgba($basic_front_color, .2);
+	}
+}

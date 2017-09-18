@@ -47,22 +47,14 @@ section {
 	margin: 0 auto;
 	padding-top: $space_3;
 
-	@media screen and (orientation: landscape) {
-		@media (min-width: $screen_small) {
-			width: $width_small;
-		}
-		@media (min-width: $screen_medium) {
-			width: $width_medium;
-		}
-		@media (min-width: $screen_large) {
-			width: $width_large;
-		}
+	@include forTabletPortraitUp {
+		width: $width_small;
 	}
-
-	@media screen and (orientation: portrait) {
-		@media (min-width: $screen_small) {
-			width: $width_small;
-		}
+	@include forTabletLandscapeUp {
+		width: $width_medium;
+	}
+	@include forBigDesktopUp {
+		width: $width_large;
 	}
 }
 
@@ -92,7 +84,7 @@ aside {
 	&.right {
 		float: right;
 	}
-	
+
 	*:first-child {
 		margin-top: 0;
 	}

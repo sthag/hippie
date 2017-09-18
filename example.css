@@ -202,7 +202,7 @@ textarea:not([disabled]):focus {
   font-size: 1em;
   line-height: 1.5; }
 
-pre, code, .code__solo, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+pre, code, .demo__query_example:after, .code__solo, input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   font-family: Courier New, monospace;
   font-size: 1em;
   line-height: 1.5; }
@@ -266,19 +266,15 @@ body {
   width: 96%;
   margin: 0 auto;
   padding-top: 32px; }
-@media screen and (orientation: landscape) and (min-width: 1024px) {
-  .sec__main_center, .demo__intro {
-    width: 80%; } }
-@media screen and (orientation: landscape) and (min-width: 1280px) {
-  .sec__main_center, .demo__intro {
-    width: 60%; } }
-@media screen and (orientation: landscape) and (min-width: 1920px) {
-  .sec__main_center, .demo__intro {
-    width: 48%; } }
-
-@media screen and (orientation: portrait) and (min-width: 1024px) {
-  .sec__main_center, .demo__intro {
-    width: 80%; } }
+  @media (min-width: 768px) {
+    .sec__main_center, .demo__intro {
+      width: 80%; } }
+  @media (min-width: 1024px) {
+    .sec__main_center, .demo__intro {
+      width: 60%; } }
+  @media (min-width: 1680px) {
+    .sec__main_center, .demo__intro {
+      width: 48%; } }
 
 aside.right + section {
   margin-right: calc(20% + 8px); }
@@ -322,7 +318,7 @@ h6 {
 
 p, .block__column_2, .block__column_3, caption {
   margin: 8px 0; }
-  p code, .block__column_2 code, .block__column_3 code, caption code {
+  p code, .block__column_2 code, .block__column_3 code, caption code, p .demo__query_example:after, .block__column_2 .demo__query_example:after, .block__column_3 .demo__query_example:after, caption .demo__query_example:after {
     padding: 1px 4px;
     font-size: 1em;
     line-height: 1; }
@@ -346,7 +342,7 @@ hr, .hr__hidden, .hr__dotted {
   border-radius: 1px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.1); }
-  .pre__code code {
+  .pre__code code, .pre__code .demo__query_example:after {
     background-color: transparent; }
 
 blockquote {
@@ -493,7 +489,7 @@ b, strong {
 cite {
   font-style: italic; }
 
-code {
+code, .demo__query_example:after {
   color: #1f1f1f;
   background-color: rgba(255, 255, 255, 0.1); }
 
@@ -1142,6 +1138,87 @@ nav li {
 .demo__button_32 {
   width: 32px;
   height: 32px; }
+
+.demo__queries > p, .demo__queries > .block__column_2, .demo__queries > .block__column_3, .demo__queries > caption {
+  padding: calc(8px - 3px) 8px; }
+
+.query__phoneUp {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+@media (max-width: 767px) {
+  .query__phoneOnly {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .query__tabletPortaitOnly {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 768px) {
+  .query__tabletPortraitUp {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .query__tabletLandscapeOnly {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 1024px) {
+  .query__tabletLandscapeUp {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .query__desktopOnly {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 1280px) {
+  .query__desktopUp {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+@media (min-width: 1680px) {
+  .query__bigDesktopUp {
+    background-color: rgba(0, 0, 0, 0.2); } }
+
+.demo__query_example {
+  margin-bottom: 32px;
+  padding: 32px;
+  text-align: center; }
+  @media (min-width: 48em) {
+    .demo__query_example {
+      background-color: #fad803; } }
+  @media (min-width: 64em) {
+    .demo__query_example {
+      background-color: #d30a51; } }
+  @media (min-width: 80em) {
+    .demo__query_example {
+      background-color: #273f8b; } }
+  @media (min-width: 90em) {
+    .demo__query_example {
+      background-color: #b7e0f0; } }
+  @media (min-width: 105em) {
+    .demo__query_example {
+      background-color: #52bed1; } }
+  @media (min-width: 120em) {
+    .demo__query_example {
+      background-color: #0c85ff; } }
+  .demo__query_example:after {
+    content: '< 768px';
+    padding: calc(8px - 3px) 8px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.2); }
+    @media (min-width: 48em) {
+      .demo__query_example:after {
+        content: '768px'; } }
+    @media (min-width: 64em) {
+      .demo__query_example:after {
+        content: '1024px'; } }
+    @media (min-width: 80em) {
+      .demo__query_example:after {
+        content: '1280px'; } }
+    @media (min-width: 105em) {
+      .demo__query_example:after {
+        content: '1680px'; } }
+    @media (min-width: 120em) {
+      .demo__query_example:after {
+        content: '1920px'; } }
 
 .test li::after {
   content: "";

@@ -6,7 +6,7 @@
 //
 // @example scss - Usage
 //   .element {
-//     @include clearflow;
+//     @include clearFlow;
 //   }
 //
 // @example css - CSS Output
@@ -16,7 +16,7 @@
 //     display: table;
 //   }
 
-@mixin clearflow {
+@mixin clearFlow {
   &::after {
     content: "";
     clear: both;
