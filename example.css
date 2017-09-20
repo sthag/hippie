@@ -396,6 +396,9 @@ ul li {
 figure {
   margin: 16px 2em; }
 
+.box__page {
+  height: 100vh; }
+
 .box__info {
   padding: 16px 2em;
   border-right: 8px solid rgba(82, 190, 209, 0.6);
