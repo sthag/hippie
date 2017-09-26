@@ -119,13 +119,6 @@ $( document ).ready(function() {
 
 
 
-	// jq-sticky-anything
-	$('#js_demo_fix').stickThis({
-		pushup: '#js_demo_stop'
-	});
-
-
-
 });
 
 

@@ -6,14 +6,14 @@ function setup() {
 }
 
 // get document coordinates of the element
-function getCoords(elem) {
-  let box = elem.getBoundingClientRect();
-
-  return {
-    top: box.top + pageYOffset,
-    left: box.left + pageXOffset
-  };
-}
+// function getCoords(elem) {
+//   let box = elem.getBoundingClientRect();
+//
+//   return {
+//     top: box.top + pageYOffset,
+//     left: box.left + pageXOffset
+//   };
+// }
 
 // https://stackoverflow.com/a/488073/1444149
 function Utils() {
