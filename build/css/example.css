@@ -1010,7 +1010,7 @@ nav li {
   -webkit-transition: height 0.5s ease;
   transition: height 0.5s ease; }
 
-.print_body *[class^="din"] {
+.print_body [class^="din"] {
   background-color: white; }
 
 .print_body {
