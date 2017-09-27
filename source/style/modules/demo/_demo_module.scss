@@ -174,3 +174,18 @@
 		background-color: rgba($basic_front_color, .2);
 	}
 }
+
+// Index
+// -----------------------------------------------------------------------------
+.wrap {
+	display: flex;
+	height: 100%;
+	align-items: center;
+  justify-content: center;
+}
+
+.hello {
+	flex:  0 1 auto;
+	padding: 1em 5em;
+	background-color: rgba(black, .25);
+}

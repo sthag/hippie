@@ -1,5 +1,7 @@
 // Setup project
 var source = {
+  markup: '*.html',
+  watch: 'source/style/**/*.scss',
   styles: 'source/style/example.scss',
   scripts: ['source/code/variables.js', 'source/code/functions.js', 'source/code/global.js', 'source/code/**/*.coffee', '!source/vendor/**/*', ],
   images: 'source/art/**/*'
@@ -84,19 +86,19 @@ gulp.task('images', function() {
 
 // Watch for file changes
 gulp.task('watch', ['clean', 'styles', 'scripts'], function() {
-  browsersync.init({
-    server: ".",
-    // proxy: "http://verser.vrt/virtual/"
+	browsersync.init({
+		server: "./",
+		// proxy: "http://verser.vrt/virtual/"
   });
 
-  gulp.watch(source.styles, ['styles']);
+  gulp.watch(source.watch, ['styles']);
   gulp.watch(source.scripts, ['scripts']).on('change', function(event) {
     if (event.type === 'deleted') {
       delete cache.caches['scripts'][event.path];
       remember.forget('scripts', event.path);
     }
   });
-  gulp.watch("./*.html").on('change', browsersync.reload);
+  gulp.watch(source.markup).on('change', browsersync.reload);
   // gulp.watch(['build/**']).on('change', browsersync.reload);
   // gulp.watch(source.images, ['images']);
 });

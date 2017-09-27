@@ -90,6 +90,9 @@ textarea:not([disabled]):focus {
 .height_basic {
   height: 1024px; }
 
+.height_full {
+  height: 100vh; }
+
 .txt_center {
   text-align: center !important; }
 
@@ -412,9 +415,6 @@ ul li {
 
 figure {
   margin: 16px 2em; }
-
-.box__page {
-  height: 100vh; }
 
 .box__info {
   padding: 16px 2em;
@@ -1251,6 +1251,25 @@ nav li {
     @media (min-width: 120em) {
       .demo__query_example:after {
         content: '1920px'; } }
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.hello {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding: 1em 5em;
+  background-color: rgba(0, 0, 0, 0.25); }
 
 .test li::after {
   content: "";
