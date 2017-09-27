@@ -1,9 +1,11 @@
 .demo__intro {
-	@extend .sec__main_center;
-	border-top-width: $border_width_8;
-	border-top-style: solid;
-	border-color: $basic_border_color;
-	padding-top: $space_3;
+	@extend .sec__main_status;
+}
+
+.demo__status {
+	@extend .sec__main_status;
+	min-height: 50vh;
+	border-color: $foxtrot_color;
 }
 
 .demo__header {

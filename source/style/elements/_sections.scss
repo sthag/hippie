@@ -58,6 +58,20 @@ section {
 	}
 }
 
+.sec__main_status {
+	@extend .sec__main_center;
+	position: relative;
+	border-top-width: $border_width_8;
+	border-top-style: solid;
+	border-color: $basic_border_color;
+	padding-top: $space_3;
+
+	h1:first-of-type {
+		margin-top: 0;
+		font-weight: bold;
+	}
+}
+
 aside {
 
 	&.right + section {
