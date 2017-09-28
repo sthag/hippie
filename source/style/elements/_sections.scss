@@ -65,11 +65,6 @@ section {
 	border-top-style: solid;
 	border-color: $basic_border_color;
 	padding-top: $space_3;
-
-	h1:first-of-type {
-		margin-top: 0;
-		font-weight: bold;
-	}
 }
 
 aside {
@@ -110,6 +105,15 @@ header {
 
 .header__page {
 	overflow: auto;
+}
+
+.header__txt {
+	margin-bottom: $space_3;
+	border-bottom: $dotted_border;
+
+	h1 {
+		border-top: $basic_border;
+	}
 }
 
 footer {

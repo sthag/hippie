@@ -6,6 +6,11 @@
 	@extend .sec__main_status;
 	min-height: 50vh;
 	border-color: $foxtrot_color;
+
+	h1:first-of-type {
+		margin-top: 0;
+		font-weight: bold;
+	}
 }
 
 .demo__header {
