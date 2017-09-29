@@ -23,7 +23,8 @@ const gulp = require('gulp'),
       sass = require('gulp-ruby-sass'),
       cssnano = require('gulp-cssnano'),
       jshint = require('gulp-jshint'),
-      uglify = require('gulp-uglify'),
+      uglifyjs = require('uglify-es'),
+      composer = require('gulp-uglify/composer'),
       // imagemin = require('gulp-imagemin'),
       cache = require('gulp-cached'),
       remember = require('gulp-remember'),
@@ -31,6 +32,7 @@ const gulp = require('gulp'),
       notify = require('gulp-notify'),
       browsersync = require('browser-sync').create();
 
+var minify = composer(uglifyjs, console);
 
 // Task - Clean build directory
 gulp.task('clean', function() {
@@ -62,7 +64,7 @@ gulp.task('scripts', function(cb) {
     jshint('.jshintrc'),
     jshint.reporter('default'),
     sourcemap.init(),
-    uglify(),
+    minify(),
     remember('scripts'),
     concat('all.min.js'),
     sourcemap.write(),

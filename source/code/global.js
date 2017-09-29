@@ -33,7 +33,10 @@ $( document ).ready(function() {
 			$(this).next(".exp_pop").css({
 				"top": ev.pageY - $(this).next(".exp_pop").outerHeight() - 4,
 				"left": ev.pageX + 8
+				// "left": ev.pageX - $(this).offset().left + 8
 			});
+			// TODO - needs more love
+			console.log(ev.pageX);
 		}
 	);
 
