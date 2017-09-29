@@ -17,12 +17,23 @@
   },
   "homepage": "https://github.com/sthag/hippie#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-livereload": "^3.8.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jshint": "^2.0.4",
     "gulp-notify": "^3.0.0",
-    "gulp-plumber": "^1.1.0",
+    "gulp-remember": "^0.3.1",
+    "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
-    "gulp-sourcemaps": "^2.6.0"
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "pump": "^1.0.2"
   },
   "dependencies": {}
 }

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// Provides an easy way to include a clearflow for containing floats.
+//
+// @link http://cssmojo.com/latest_new_clearfix_so_far/
+//
+// @example scss - Usage
+//   .element {
+//     @include clearFlow;
+//   }
+//
+// @example css - CSS Output
+//   .element::after {
+//     content: "";
+//     clear: both;
+//     display: table;
+//   }
+
+@mixin clearFlow {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

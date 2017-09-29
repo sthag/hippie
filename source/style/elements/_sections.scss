@@ -1,0 +1,163 @@
+// Document
+// -----------------------------------------------------------------------------
+
+html {
+	height: 100%;
+}
+
+
+
+
+// Basic sections
+// -----------------------------------------------------------------------------
+
+body {
+	position: relative;
+	box-sizing: $box_sizing;
+	font-family: $primary_font_family;
+	font-size: $basic_size;
+	line-height: $basic_line;
+	color: $basic_font_color;
+	background-color: $basic_back_color;
+
+	*,
+	::before,
+	::after {
+		box-sizing: inherit;
+	}
+
+	&:hover {
+
+		.layer__hover {
+			background-color: transparent;
+		}
+	}
+}
+
+article {
+
+}
+
+section {
+
+}
+
+.sec__main_center {
+	width: $basic_width;
+	margin: 0 auto;
+	padding-top: $space_3;
+
+	@include forTabletPortraitUp {
+		width: $width_small;
+	}
+	@include forTabletLandscapeUp {
+		width: $width_medium;
+	}
+	@include forBigDesktopUp {
+		width: $width_large;
+	}
+}
+
+.sec__main_status {
+	@extend .sec__main_center;
+	position: relative;
+	border-top-width: $border_width_8;
+	border-top-style: solid;
+	border-color: $basic_border_color;
+	padding-top: $space_3;
+}
+
+aside {
+
+	&.right + section {
+		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
+	}
+
+	&.left + section {
+		margin-left: calc(#{$basic_aside_width} + #{$basic_space});
+	}
+}
+
+
+nav {
+
+}
+
+aside {
+	width: $basic_aside_width;
+
+	&.left {
+		float: left;
+	}
+
+	&.right {
+		float: right;
+	}
+
+	*:first-child {
+		margin-top: 0;
+	}
+}
+
+header {
+
+}
+
+.header__page {
+	overflow: auto;
+}
+
+.header__txt {
+	margin-bottom: $space_3;
+	border-bottom: $dotted_border;
+
+	h1 {
+		border-top: $basic_border;
+	}
+}
+
+footer {
+
+}
+
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {
+	@extend %head_1;
+	margin: $space_5 0 $space_3;
+}
+
+h2 {
+	@extend %head_2;
+	margin: $space_4 0 $space_3;
+}
+
+h3 {
+	@extend %head_3;
+	margin: $double_space 0 $double_space;
+	text-transform: uppercase;
+}
+
+h4 {
+	@extend %head_3;
+	margin: $double_space 0 $double_space;
+	text-transform: none;
+}
+
+h5 {
+	@extend %head_4;
+	margin: $double_space 0 $basic_space;
+	text-transform: none;
+}
+
+h6 {
+	@extend %basic;
+	margin: $basic_space 0;
+	text-transform: none;
+	font-weight: bold;
+}

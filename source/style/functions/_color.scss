@@ -1,0 +1,13 @@
+@function createColorMap($color, $percentage, $opacity) {
+  $map: (
+    base: $color,
+    light: lighten($color, $percentage),
+    dark: darken($color, $percentage),
+    trans: transparentize($color, $opacity)
+  );
+  @return $map;
+}
+
+@function basic_color($key: 'alpha') {
+  @return map-get($color_palette, $key);
+}

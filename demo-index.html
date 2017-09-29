@@ -11,9 +11,12 @@
 	<meta name="robots" content="noindex">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+	<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
 	<!--    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'>-->
-	<link rel="stylesheet" type="text/css" media="all" href="./example.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="./build/css/example.min.css"/>
 </head>
 
 <body>
@@ -26,6 +29,7 @@
 		<nav class="nav__page_meta">
 			<ul>
 				<li class="magic"><a href="#begin" id="js_scrolltop" class="a_button_meta"><img src="./art/up.png" alt="" width="32" height="64"></a></li>
+				<li><button class="a_button_meta">Show Meta Information</button></li>
 				<li><a href="#end" id="js_scrolldown" class="a_button_meta"><img src="./art/down.png" alt="" width="32" height="32"></a></li>
 			</ul>
 		</nav>
@@ -402,13 +406,10 @@
 		<h1>Druck</h1>
 
 		<section>
-			<header>
+			<header class="header__txt">
 				<h1>Ende der Einführung</h1>
-			</header>
-			<article>
 				<p>Dies war eine Übersicht der grundlegenden Elemente. Nun folgen weitere Elemente mit besonderen Formatierungen.</p>
-				<hr class="hr__dotted"/>
-			</article>
+			</header>
 		</section>
 	</div>
 
@@ -423,7 +424,7 @@
 	</section>
 
 	<section class="sec__main_center">
-		<header>
+		<header class="header__txt">
 			<h1>Medienformat Abfragen</h1>
 		</header>
 		<article>
@@ -442,7 +443,7 @@
 		</article>
 	</section>
 	<section class="sec__main_center">
-		<header>
+		<header class="header__txt">
 			<h1>Sammlung formatierter Elemente</h1>
 			<p>Die Elemente werden fortlaufend komplexer</p>
 		</header>
@@ -532,8 +533,8 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 						</ul>
 					</nav>
 				</header>
-				<div class="pos_abs pos_bottom width_full">
-					<pre class="pre__code"><code>footer.pos_abs.pos_bottom>nav.nav__column>ul>(li>a.a__button_text)*4</code></pre>
+				<div class="pos_abs pin_bottom width_full">
+					<pre class="pre__code"><code>footer.pos_abs.pin_bottom>nav.nav__column>ul>(li>a.a__button_text)*4</code></pre>
 					<footer id="js_demo_stop" class="demo__footer">
 						<nav class="nav__column nav__separate">
 							<ul>
@@ -623,20 +624,74 @@ nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
 
 		</article>
 	</section>
+	<section>
+		<header class="sec__main_center header__txt">
+			<h1>Autarke Seiten</h1>
+			<p>Diese Elemente repräsentieren jeweils eine eigene Seite.</p>
+		</header>
+		<article>
+			<section class="sec_main_status demo__status">
+				<h1>404</h1>
+				<p>Hier ist nichts.</p>
+				<blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
+					<p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
+					<p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+				</blockquote>
+				<div class="pos_abs pin_bottom width_full">
+					<p class="txt_center">domain.tld * <a class="lineLink" href="mailto:admin@domain.tld">admin@domain.tld</a></p>
+				</div>
+			</section>
+			<section class="sec_main_status demo__status">
+				<h1>403</h1>
+				<p>Nicht erlaubt! <dfn>Forbidden</dfn></p>
+				<blockquote>
+					<p>Die Anfrage wurde mangels Berechtigung des Clients nicht durchgeführt, bspw. weil der authentifizierte Benutzer nicht berechtigt ist, oder eine als HTTPS konfigurierte URL nur mit HTTP aufgerufen wurde.</p>
+					<p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+				</blockquote>
+				<div class="pos_abs pin_bottom width_full">
+					<p class="txt_center">domain.tld * <a class="lineLink" href="mailto:admin@domain.tld">admin@domain.tld</a></p>
+				</div>
+			</section>
+			<section class="sec_main_status demo__status">
+				<h1>400</h1>
+				<p>Fehlerhafte Anfrage! <dfn>Bad Request</dfn></p>
+				<blockquote>
+					<p>Die Anfrage-Nachricht war fehlerhaft aufgebaut.</p>
+					<p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+				</blockquote>
+				<div class="pos_abs pin_bottom width_full">
+					<p class="txt_center">domain.tld * <a class="lineLink" href="mailto:admin@domain.tld">admin@domain.tld</a></p>
+				</div>
+			</section>
+		</article>
+	</section>
 	<div id="end"></div>
 
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
-	<script src="./code/vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
-	<script src="./code/variables.js" type="text/javascript"></script>
-	<script src="./code/functions.js" type="text/javascript"></script>
-	<script src="./code/global.js" type="text/javascript"></script>
+	<script src="./vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
+	<script src="./build/js/all.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	// Page specific
 	// ------------------------------------------------------------------------------
+	$( document ).ready(function() {
+		// jq-sticky-anything
+		$('#js_demo_fix').stickThis({
+			pushup: '#js_demo_stop'
+		});
+	});
 
+	// $(window).scroll(function(){
+	// 	var windowTopPos = $(window).scrollTop();
+	// 	var footerTopPos = $('#js_demo_stop').offset().top;
+	// 	var navBottomPos = $('#js_demo_fix').offset().top + $('#js_demo_fix').outerHeight();
+	//
+	// 	if(navBottomPos >= footerTopPos) {
+	// 		$('#js_demo_fix').css('position', 'absolute');
+	// 	}
+	// });
 	</script>
 </body>
 </html>

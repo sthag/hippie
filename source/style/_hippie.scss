@@ -1,0 +1,101 @@
+/*
+ * # TABLE OF CONTENTS
+ *
+ * - Reset
+ * - Global functions and mixins
+ * - Configuration
+ * - Special modules
+ * - Basic styles
+ *   - Common
+ *   - Typography
+ *
+ *   - Sections
+ *   - Grouping
+ *   - Textlevel
+ *   - Embedded
+ *   - Tables
+ *   - Interactive
+ * - Modules
+ *
+ */
+
+
+// Reset
+// Use a file outside of hippie i.e. vendor/normalize.css
+// -----------------------------------------------------------------------------
+@import "../../vendor/normalizecss/normalize.css";
+// @import "vendor/YOUR-FILES.css";
+
+
+
+// Functions and Mixins
+// Important code constructions
+// -----------------------------------------------------------------------------
+@import "functions/all";
+@import "mixins/all";
+
+
+
+// Fonts
+// Use a central file outside of hippie for font definitions with @font-face
+// -----------------------------------------------------------------------------
+// @import "vendor/fonts.css";
+
+
+
+// Global configuration with default values
+// Adjustments can be made by copying values from _config.scss to _override.scss
+// Be careful though changes will get lost if hippie gets updated
+// -----------------------------------------------------------------------------
+// @import "global/default"; // DO NOT EDIT
+@import "settings"; // EDIT
+@import "global/config"; // DO NOT EDIT
+
+
+
+// Modules and variables
+// Additional modules can be defined here
+// -----------------------------------------------------------------------------
+@import "modules/vendor";
+//@import modules/all deprecated because of the new vendor mixin
+// @import "modules/YOUR-MODULE/YOUR-FILES";
+
+// Basic styles - this is the core of definitions
+// Individual styles can be added her
+// -----------------------------------------------------------------------------
+@import "global/common";
+@import "elements/typography";
+// Following the w3c document element structure
+// https://w3c.github.io/html/index.html#contents
+@import "elements/sections";
+@import "elements/grouping";
+@import "elements/textlevel";
+@import "elements/embedded";
+@import "elements/tables";
+@import "elements/interactive";
+// @import "YOU-NAME-IT";
+
+// Individual Modules and variables
+// in dependency to other styles
+// Additional modules can be defined here
+// -----------------------------------------------------------------------------
+@import "modules/breakpoint/breakpoint_module";
+@import "modules/navigation/nav_module";
+@import "modules/tables/tables_module";
+@import "modules/card/card_module";
+@import "modules/editor/editor_module";
+@import "modules/explanation/explanation_module";
+@import "modules/print/print_module";
+// @import "modules/YOUR-MODULE/YOUR-FILES";
+
+
+
+// Demonstration
+@import "modules/demo/demo_module";
+
+
+
+// Not yet sorted
+@import "elements/new";
+
+// NOTE // No css rules allowed in here

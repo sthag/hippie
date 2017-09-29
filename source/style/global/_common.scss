@@ -1,0 +1,209 @@
+// General layout attributes
+// ------------------------------------------------------------------------------
+%size_content {
+	box-sizing: content-box;
+}
+
+%size_content_solo {
+	@extend %size_content;
+
+	*,
+	::before,
+	::after {
+		box-sizing: $box_sizing;
+	}
+}
+
+%hidden {
+	display: none;
+}
+
+.magic {
+	@extend %hidden;
+}
+
+.center_50 {
+	margin-right: 25%;
+	margin-left: 25%;
+}
+.center_25 {
+	margin-right: 37.5%;
+	margin-left: 37.5%;
+}
+
+.width_full {
+	width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.height_basic {
+	height: 1024px;
+}
+
+.height_full {
+	height: 100vh;
+}
+
+.txt_center {
+	text-align: center !important;
+}
+.txt_right {
+	text-align: right !important;
+}
+.txt_left {
+	text-align: left !important;
+}
+
+.space_right {
+	margin-right: $space_3;
+}
+
+
+
+// Clearing and floating
+// ------------------------------------------------------------------------------
+.clear {
+	clear: both;
+
+	&::before,
+	&::after {
+		clear: both;
+	}
+}
+
+.overflow {
+	overflow: auto;
+}
+
+.float_space_left {
+	float: left;
+	margin-right: $space_3;
+}
+
+.float_half_size {
+	float: left;
+	width: 50%;
+}
+
+.x_long {
+	overflow-x: scroll;
+}
+
+
+// Positioned elements
+// ------------------------------------------------------------------------------
+%full_viewport {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+%full_parent {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	// width: 100%;
+	// height: 100%;
+}
+
+.pos_abs {
+	position: absolute;
+}
+
+.pos_rel {
+	position: relative;
+}
+
+.pos_fix {
+	position: fixed;
+}
+
+.pin_bottom {
+	bottom: 0;
+}
+
+.pos_full_view {
+	@extend %full_viewport;
+	background-color: rgba($alpha_color, .5);
+}
+
+.pos_full_page {
+	@extend %full_parent;
+	background-color: rgba($charlie_color, .25);
+}
+
+.hover_back_change {
+	background-color: darken($basic_back_color, 10%);
+	transition: background-color .2s ease-in-out;
+
+	&:hover {
+		background-color: $basic_back_color;
+	}
+}
+
+.hover_full_view_change {
+	@extend %full_viewport;
+	z-index: $z_heaven;
+	background-color: transparentize($darkest_color, .5);
+	transition: background-color .2s ease-in-out;
+	pointer-events: none;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex__wrap {
+	@extend .flex;
+	flex-wrap: wrap;
+}
+
+.flex__row {
+	@extend .flex;
+	flex-direction: column;
+	// align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.flex__child {
+	flex:  0 1 auto;
+}
+
+.flex__child_one {
+	flex:  1;
+}
+
+.flex__child_end {
+	align-self: flex-end;
+}
+
+
+// Colors
+// ------------------------------------------------------------------------------
+.txt_light_color {
+	color: darken($basic_back_color, 10%);
+}
+
+
+
+// Input
+// ------------------------------------------------------------------------------
+%default_button {
+	display: inline-block;
+	padding: $basic_padding;
+	background-color: transparentize($basic_link_color, .8);
+	border-radius: $basic_corner;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: rgba($basic_highlight_color, .1);
+		color: $basic_highlight_color;
+		border-color: transparent;
+	}
+}

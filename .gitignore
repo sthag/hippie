@@ -187,4 +187,5 @@ typings/
 # https://interaktionsweise.de/
 ###################
 ###################
+build/
 art/

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>HIPPIE Presentation Demo</title>
+	<title>HIPPIE Index</title>
 
 	<meta name="author" content="Interaktionsweise">
 	<meta name="description" content="hippie example">
@@ -19,12 +19,16 @@
 	<link rel="stylesheet" type="text/css" media="all" href="./build/css/example.min.css"/>
 </head>
 
-<body>
-	<div class="height_full">
-		<div class="slides">
-			<section>Start</section>
-			<section>Seite 2</section>
-		</div>
+<body class="height_full">
+	<div id="js_tph" class="layer__hover"></div>
+
+	<div class="wrap">
+		<ul class="list__link hello">
+			<li><a href="demo-index.html">Index</a></li>
+			<li><a href="demo-raw.html">Raw</a></li>
+			<li><a href="demo-explorer.html">Explorer</a></li>
+			<li><a href="demo-presentation.html">Presentation</a></li>
+		</ul>
 	</div>
 
 	<script
@@ -36,7 +40,22 @@
 	<script type="text/javascript">
 	// Page specific
 	// ------------------------------------------------------------------------------
+	$( document ).ready(function() {
+		// jq-sticky-anything
+		$('#js_demo_fix').stickThis({
+			pushup: '#js_demo_stop'
+		});
+	});
 
+	// $(window).scroll(function(){
+	// 	var windowTopPos = $(window).scrollTop();
+	// 	var footerTopPos = $('#js_demo_stop').offset().top;
+	// 	var navBottomPos = $('#js_demo_fix').offset().top + $('#js_demo_fix').outerHeight();
+	//
+	// 	if(navBottomPos >= footerTopPos) {
+	// 		$('#js_demo_fix').css('position', 'absolute');
+	// 	}
+	// });
 	</script>
 </body>
 </html>

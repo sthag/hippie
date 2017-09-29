@@ -1,0 +1,263 @@
+// Basic content
+// -----------------------------------------------------------------------------
+
+// Paragraph
+p {
+	@extend %basic;
+	margin: $basic_space 0;
+	code {
+		padding: $tiny_space $half_space;
+		font-size: 1em;
+		line-height: 1;
+	}
+}
+
+// Address
+address {
+
+}
+
+// Line
+hr {
+	margin: $space_3 auto;
+	border-width: $basic_border_width 0 0;
+	border-style: solid;
+	border-color: $darkest_color;
+}
+
+.hr__hidden {
+	@extend hr;
+	border-color: transparent;
+}
+
+.hr__dotted {
+	@extend hr;
+	border-style: dotted;
+}
+
+// Preformat
+pre {
+	@extend %basic_mono;
+}
+
+.pre__code {
+	// overflow-x: scroll;
+	border-color: rgba($brightest_color,.1);
+	border-style: dotted;
+	border-width:  0 0 0 $border_width_4;
+	border-radius: $basic_corner;
+	padding: $basic_space;
+	background-color: rgba($brightest_color,.1);
+	code {
+		background-color: transparent;
+	}
+}
+
+// Quote
+blockquote {
+	margin: $basic_space $basic_indent;
+}
+
+.quote__mark {
+	p::before {
+		content: "\201E \0020";
+	}
+	p::after {
+		content: "\201C \0020";
+	}
+	.quote__source {
+		&::before, &::after {
+			content: "";
+		}
+	}
+}
+
+// List
+dl, ul, ol {
+	margin: $double_space 0 $basic_space;
+}
+
+ul, ol {
+	padding-left: $basic_indent;
+}
+
+li, dt, dd {
+	@extend %basic;
+}
+
+li, dd {
+	// margin-bottom: $basic_space;
+}
+
+dd {
+	margin-left: $basic_indent;
+}
+
+ul {
+	li {
+		list-style: square;
+	}
+}
+
+.list__dash {
+	li {
+		list-style: none;
+		position: relative;
+
+		&::before {
+			content: "_";
+			position: absolute;
+			left: -1em;
+		}
+	}
+}
+
+.list__link {
+	li {
+		margin-bottom: $tiny_space * 2;
+		text-transform: uppercase;
+		a {
+			display: block;
+			padding: $basic_padding;
+			color: $basic_font_color;
+			img {
+				margin-right: $basic_space;
+				padding-bottom: .2em;
+				vertical-align: text-bottom;
+			}
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $basic_action_color;
+				color: $basic_highlight_color;
+			}
+		}
+	}
+}
+
+.list__horizontal {
+	overflow: auto;
+	li {
+		@extend .float_space_left;
+	}
+}
+
+// Embedded
+figure {
+	margin: $double_space $basic_indent;
+}
+
+figcaption {
+	@extend %basic;
+}
+
+
+
+// Special elements
+// -----------------------------------------------------------------------------
+
+main {
+
+}
+
+div {
+
+}
+
+.box__info {
+	padding: $double_space $basic_indent;
+	border-right: $basic_space solid rgba($echo_color, .6);
+	background-color: rgba($echo_color, .1) !important;
+}
+
+.box__main_indent {
+	margin-left: 25%;
+}
+
+.box__full_width {
+	// position: relative;
+	// overflow: hidden;
+	// width: 100%;
+}
+
+
+// Inline
+.box__inline_left {
+	@extend .float_space_left;
+	// padding: $basic_space / 2;
+}
+
+
+// Columns
+.block__column_line {
+	column-rule: $basic_border;
+}
+.block__column_2, .block__column_3 {
+	@extend p;
+}
+.block__column_2 {
+	column-count: 2;
+	column-gap: $space_3;
+}
+.block__column_3 {
+	column-count: 3;
+	column-gap: $space_4;
+}
+
+
+// Space and placeholders
+.box__space {
+	position: relative;
+	width: 100%;
+}
+
+.box__cube {
+	float: left;
+	display: table;
+	width: $space_4;
+	text-align: center;
+	vertical-align: middle;
+	span {
+		display: table-cell;
+	}
+}
+
+.box__placeholder {
+	width: 100%;
+	height: $space_4;
+	border: $border_width_4 solid rgba($darkest_color,.1);
+	border-radius: $basic_corner;
+	padding: $basic_space;
+	background-color: rgba($darkest_color,.1);
+	svg {
+		vertical-align: top;
+	}
+}
+
+.box__placeholder_bkg {
+	width: 100%;
+	height: $space_4;
+	border: $border_width_4 solid rgba($darkest_color,.1);
+	border-radius: $basic_corner;
+	padding: $basic_space;
+	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
+	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='2%' y1='2%' x2='98%' y2='98%' stroke='#000' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/></svg>") no-repeat;
+	background-color: rgba($darkest_color,.1);
+}
+
+
+// Data
+.box__file_tile {
+	@extend .float_space_left;
+}
+
+
+// Flex
+.flex__column_wrap {
+	@extend .flex;
+
+	.column {
+		@extend .flex__child;
+		flex-grow: 1;
+	}
+}
