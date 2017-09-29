@@ -56,7 +56,7 @@
 // Modules and variables
 // Additional modules can be defined here
 // -----------------------------------------------------------------------------
-@import "modules/vendor";
+// @import "modules/vendor";
 // @import modules/all deprecated because of the new vendor mixin
 // @import "modules/YOUR-MODULE/YOUR-FILES";
 
@@ -80,12 +80,12 @@
 // Additional modules can be defined here
 // -----------------------------------------------------------------------------
 @import "modules/breakpoint/breakpoint_module";
-@import "modules/navigation/nav_module";
+// @import "modules/navigation/nav_module";
 @import "modules/tables/tables_module";
-@import "modules/card/card_module";
-@import "modules/editor/editor_module";
-@import "modules/explanation/explanation_module";
-@import "modules/print/print_module";
+// @import "modules/card/card_module";
+// @import "modules/editor/editor_module";
+// @import "modules/explanation/explanation_module";
+// @import "modules/print/print_module";
 // @import "modules/YOUR-MODULE/YOUR-FILES";
 
 
@@ -96,6 +96,6 @@
 
 
 // Not yet sorted
-@import "elements/new";
+// @import "elements/new";
 
 // NOTE // No css rules allowed in here

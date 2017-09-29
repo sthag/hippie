@@ -1,9 +1,11 @@
 .demo__intro {
+	@extend .sec__main_center;
 	@extend .sec__main_status;
 }
 
 .demo__status {
 	@extend .sec__main_status;
+	position: relative;
 	min-height: 50vh;
 	border-color: $foxtrot_color;
 

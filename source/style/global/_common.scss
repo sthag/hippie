@@ -59,6 +59,26 @@
 	margin-right: $space_3;
 }
 
+.main_center {
+	&	> * {
+		margin-right: (100% - $basic_width) / 2;
+		margin-left: (100% - $basic_width) / 2;
+
+		@include forTabletPortraitUp {
+			margin-right: (100% - $width_small) / 2;
+			margin-left: (100% - $width_small) / 2;
+		}
+		@include forTabletLandscapeUp {
+			margin-right: 1(00% - $width_medium) / 2;
+			margin-left: 1(00% - $width_medium) / 2;
+		}
+		@include forBigDesktopUp {
+			margin-right: (100% - $width_large) / 2;
+			margin-left: (100% - $width_large) / 2;
+		}
+	}
+}
+
 
 
 // Clearing and floating
