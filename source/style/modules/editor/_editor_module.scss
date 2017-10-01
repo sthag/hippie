@@ -7,8 +7,8 @@
 // ------------------------------------------------------------------------------
 
 %wip {
-  border-right: $basic_space solid rgba(crimson, .8);
-  background-color: rgba(crimson, .1) !important;
+  border-right: $basic_space solid rgba(crimson, 0.8);
+  background-color: rgba(crimson, 0.1) !important;
 }
 .wip {
   @extend %wip;

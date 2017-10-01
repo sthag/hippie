@@ -13,6 +13,12 @@
 		margin-top: 0;
 		font-weight: bold;
 	}
+
+	@media (max-height: 512px) {
+		.pos_abs {
+			position: static !important;
+		}
+	}
 }
 
 .demo__header {
@@ -27,18 +33,18 @@
 }
 
 .header__fancy {
-	background-color: transparentize($bravo_color, .4);
+	background-color: transparentize($bravo_color, 0.4);
 
 	nav {
 
 		a {
-			background-color: transparentize($alpha_color, .4);
+			background-color: transparentize($alpha_color, 0.4);
 			color: $alpha_color;
 
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($brightest_color, .2);
+				background-color: rgba($brightest_color, 0.2);
 				color: $brightest_color;
 			}
 		}
@@ -50,7 +56,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: transparentize($charlie_color, .4);
+	background-color: transparentize($charlie_color, 0.4);
 
 	nav {
 
@@ -59,7 +65,7 @@
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($brightest_color, .2);
+				background-color: rgba($brightest_color, 0.2);
 				color: $brightest_color;
 			}
 		}
@@ -114,39 +120,39 @@
 }
 
 .query__phoneUp {
-  background-color: rgba($basic_front_color, .2);
+  background-color: rgba($basic_front_color, 0.2);
 }
 
 .query__phoneOnly {
-  @include forPhoneOnly { background-color: rgba($basic_front_color, .2); }
+  @include forPhoneOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__tabletPortaitOnly {
-  @include forTabletPortraitOnly { background-color: rgba($basic_front_color, .2); }
+  @include forTabletPortraitOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__tabletPortraitUp {
-  @include forTabletPortraitUp { background-color: rgba($basic_front_color, .2); }
+  @include forTabletPortraitUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__tabletLandscapeOnly {
-  @include forTabletLandscapeOnly { background-color: rgba($basic_front_color, .2); }
+  @include forTabletLandscapeOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__tabletLandscapeUp {
-  @include forTabletLandscapeUp { background-color: rgba($basic_front_color, .2); }
+  @include forTabletLandscapeUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__desktopOnly {
-  @include forDesktopOnly { background-color: rgba($basic_front_color, .2); }
+  @include forDesktopOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__desktopUp {
-  @include forDesktopUp { background-color: rgba($basic_front_color, .2); }
+  @include forDesktopUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .query__bigDesktopUp {
-  @include forBigDesktopUp { background-color: rgba($basic_front_color, .2); }
+  @include forBigDesktopUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
 .demo__query_example {
@@ -180,7 +186,7 @@
 		content: '< 768px';
 		padding: $basic_padding;
 		border-radius: $basic_corner_radius;
-		background-color: rgba($basic_front_color, .2);
+		background-color: rgba($basic_front_color, 0.2);
 	}
 }
 
@@ -196,5 +202,5 @@
 .hello {
 	flex:  0 1 auto;
 	padding: 1em 5em;
-	background-color: rgba(black, .25);
+	background-color: rgba(black, 0.25);
 }

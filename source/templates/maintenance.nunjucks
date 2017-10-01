@@ -1,0 +1,28 @@
+<!-- layout.nunjucks -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+
+  {% block head %}
+  <title>{% block title %}{% endblock %}</title>
+
+  <meta name="author" content="Interaktionsweise">
+  <meta name="description" content="hippie example">
+  <meta name="generator" content="Notepad++, Atom">
+  <meta name="robots" content="noindex">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+
+  <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  {% endblock %}
+</head>
+
+<body id="{{ pageId }}" class="height_full">
+  <div id="root">
+    {% block body_content %}{% endblock %}
+  </div>
+</body>
+</html>

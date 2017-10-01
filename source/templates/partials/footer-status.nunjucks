@@ -1,0 +1,4 @@
+<!-- footer-status.partial -->
+<footer class="pos_abs pin_bottom width_full">
+	<address class="txt_center"><a class="lineLink" href="mailto:admin@domain.tld">admin@domain.tld</a> * Server Application/ver.s.ion (System Name) serving domain.tld:port</address>
+</footer>

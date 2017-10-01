@@ -1,0 +1,6 @@
+<!-- index.nunjucks -->
+{% extends "index.nunjucks" %}
+
+{% block body_content %}
+
+{% endblock %}

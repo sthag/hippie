@@ -4,7 +4,8 @@
 // Paragraph
 p {
 	@extend %basic;
-	margin: $basic_space 0;
+	margin-top: $basic_space;
+	margin-bottom: $basic_space;
 	code {
 		padding: $tiny_space $half_space;
 		font-size: 1em;
@@ -14,7 +15,9 @@ p {
 
 // Address
 address {
-
+	@extend %basic;
+	margin-top: $double_space;
+	margin-bottom: $double_space;
 }
 
 // Line
@@ -124,7 +127,7 @@ ul {
 			color: $basic_font_color;
 			img {
 				margin-right: $basic_space;
-				padding-bottom: .2em;
+				padding-bottom: 0.2em;
 				vertical-align: text-bottom;
 			}
 			&:active,
@@ -168,8 +171,8 @@ div {
 
 .box__info {
 	padding: $double_space $basic_indent;
-	border-right: $basic_space solid rgba($echo_color, .6);
-	background-color: rgba($echo_color, .1) !important;
+	border-right: $basic_space solid rgba($echo_color, 0.6);
+	background-color: rgba($echo_color, 0.1) !important;
 }
 
 .box__main_indent {

@@ -1,0 +1,32 @@
+<!-- index.nunjucks -->
+{% set pageId = "index" %}
+
+{% extends "index.nunjucks" %}
+
+{% block title %}index{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+{% include "partials/page-hover.nunjucks" %}
+<div class="wrap">
+  <ul class="list__link hello">
+    <li><a href="demo-index.html">Index</a></li>
+    <li><a href="demo-blank.html">Blank</a></li>
+    <li><a href="demo-explorer.html">Explorer</a></li>
+    <li><a href="demo-presentation.html">Presentation</a></li>
+    <li><a href="404.html">404</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+// Page specific
+// ------------------------------------------------------------------------------
+$( document ).ready(function() {
+  console.log(                     'HIPPIE'            );
+});
+</script>
+{% endblock %}

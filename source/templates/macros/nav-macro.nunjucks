@@ -1,0 +1,18 @@
+{% set item = [['mateladen', 'shop'], ['zubereitung', 'preparation'], ['wissen', 'knowledge'], ['blog', 'blog'], ['kontakt', 'contact']] %}
+{% macro active(activePage='') %}<!-- nav.macro -->
+			<nav class="nav_site">
+				<span id="js_nav_tog" class="nav_site_toggle"><img src="./art/more.svg" width="22" height="22"/></span>
+				<ul class="nav_site_main">
+					{% for a, b in item -%}
+					<li{%if activePage == a %} class="active_txt"{% endif %}>{%if activePage == a %}{{ a }}{%else%}<a href="{{ b }}.html">{{ a }}</a>{% endif %}</li>
+					{% endfor -%}
+				</ul>
+				<ul class="nav_site_add">
+					<li><a href="dummy.html"><img src="./art/search.svg" width="22" height="22"/></a></li>
+					<li><img src="./art/cart.svg" width="22" height="22"/></li>
+				</ul>
+			</nav>
+{%- endmacro %}
+{% macro top() %}<!-- top.macro -->
+			<div id="js_top" class="overlay_btn hidden"><span class="span_solo"><img src="./art/top.svg" width="44" height="44"/></span></div>
+{%- endmacro %}

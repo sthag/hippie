@@ -154,7 +154,7 @@ nav {
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($basic_font_color, .2);
+				background-color: rgba($basic_font_color, 0.2);
 				color: $basic_font_color;
 			}
 		}

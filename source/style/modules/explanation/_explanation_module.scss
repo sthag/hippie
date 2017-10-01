@@ -11,7 +11,7 @@
     content: "";
     display: block;
     height: 48px;
-    background-color: rgba($delta_color, .1) !important;
+    background-color: rgba($delta_color, 0.1) !important;
   }
 }
 %expose_before {
@@ -19,7 +19,7 @@
     content: "";
     display: block;
     height: 48px;
-    background-color: rgba($delta_color, .1) !important;
+    background-color: rgba($delta_color, 0.1) !important;
   }
 }
 %expose {
@@ -27,7 +27,7 @@
     content: "";
     display: block;
     height: 48px;
-    background-color: rgba($delta_color, .1) !important;
+    background-color: rgba($delta_color, 0.1) !important;
   }
 }
 %exp {
@@ -85,7 +85,7 @@
   display: table;
   right: $double_space;
   bottom: $double_space;
-  background-color: rgba($darkest_color, .4);
+  background-color: rgba($darkest_color, 0.4);
   &:hover {
     background-color: $brightest_color;
     > .span__solo {
@@ -94,7 +94,7 @@
   }
   .span__solo {
     display: table-cell;
-    color: rgba($brightest_color, .8);
+    color: rgba($brightest_color, 0.8);
 		font-family: $monospace_font_family;
 		font-size: 1.4em;
     text-align: center;
@@ -110,6 +110,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba($delta_color, .1) !important;
-  @include vendor-prefix(transition, height .5s ease);
+  background-color: rgba($delta_color, 0.1) !important;
+  @include vendor-prefix(transition, height 0.5s ease);
 }

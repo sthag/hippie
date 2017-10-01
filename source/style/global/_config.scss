@@ -103,13 +103,13 @@ $basic_action_color: $foxtrot_color !default;
 $basic_border_color: $basic_front_color !default;
 
 // default shadow colors
-// $shadow_color: fade-out($medium_color, .5);
+// $shadow_color: fade-out($medium_color, 0.5);
 
 $basic_color_list: ();
 
 @each $key, $value in $color_palette {
   $map: ();
-  $map: map-merge($map, ($key: createColorMap($value, 15%, .5)) );
+  $map: map-merge($map, ($key: createColorMap($value, 15%, 0.5)) );
   $basic_color_list: map-merge($basic_color_list, $map);
 }
 

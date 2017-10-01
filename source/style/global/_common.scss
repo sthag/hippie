@@ -149,17 +149,17 @@
 
 .pos_full_view {
 	@extend %full_viewport;
-	background-color: rgba($alpha_color, .5);
+	background-color: rgba($alpha_color, 0.5);
 }
 
 .pos_full_page {
 	@extend %full_parent;
-	background-color: rgba($charlie_color, .25);
+	background-color: rgba($charlie_color, 0.25);
 }
 
 .hover_back_change {
 	background-color: darken($basic_back_color, 10%);
-	transition: background-color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
 		background-color: $basic_back_color;
@@ -169,8 +169,8 @@
 .hover_full_view_change {
 	@extend %full_viewport;
 	z-index: $z_heaven;
-	background-color: transparentize($darkest_color, .5);
-	transition: background-color .2s ease-in-out;
+	background-color: transparentize($darkest_color, 0.5);
+	transition: background-color 0.2s ease-in-out;
 	pointer-events: none;
 }
 
@@ -216,13 +216,13 @@
 %default_button {
 	display: inline-block;
 	padding: $basic_padding;
-	background-color: transparentize($basic_link_color, .8);
+	background-color: transparentize($basic_link_color, 0.8);
 	border-radius: $basic_corner;
 
 	&:active,
 	&:focus,
 	&:hover {
-		background-color: rgba($basic_highlight_color, .1);
+		background-color: rgba($basic_highlight_color, 0.1);
 		color: $basic_highlight_color;
 		border-color: transparent;
 	}

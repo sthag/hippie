@@ -1,0 +1,11 @@
+#root {
+	@extend .sec__main_status;
+	position: relative;
+	height: 100%;
+	border-color: $foxtrot_color;
+
+	h1:first-of-type {
+		margin-top: 0;
+		font-weight: bold;
+	}
+}
