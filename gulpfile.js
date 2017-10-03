@@ -31,6 +31,7 @@ nunjucks = require('gulp-nunjucks-render');
 cssnano = require('gulp-cssnano'),
 jshint = require('gulp-jshint'),
 jscs = require('gulp-jscs'),
+sasslint = require('gulp-sass-lint'),
 uglifyjs = require('uglify-es'),
 composer = require('gulp-uglify/composer'),
 // imagemin = require('gulp-imagemin'),
@@ -109,6 +110,14 @@ gulp.task('lint:js', function() {
   }))
   // .pipe(jscs.reporter());
 });
+
+gulp.task('lint:scss', function() {
+  return gulp.src('source/style/**/*.scss')
+  .pipe(plumbError('SASSLint Error'))
+  .pipe(sasslint({
+    configFile: '.sass-lint.yml'
+  }))
+})
 
 gulp.task('clean:dev', function() {
   del.sync([
@@ -206,7 +215,7 @@ gulp.task('watch-js', ['lint:js'], browsersync.reload);
 
 gulp.task('testwatch', function() {
   gulp.watch('source/code/**/*.js', ['watch-js'])
-  gulp.watch('source/style/**/*.+(scss|sass)', ['test']);
+  gulp.watch('source/style/**/*.+(scss|sass)', ['test', 'lint:scss']);
   gulp.watch([
     'source/templates/**/*',
     'source/pages/**/*.+(html|nunjucks)'
@@ -240,7 +249,7 @@ gulp.task('olddefault', ['clean', 'styles', 'scripts', 'images', 'nunjucks']);
 gulp.task('default', function(callback) {
   sequencer(
     'clean:dev',
-    ['sprites', 'lint:js'],
+    ['sprites', 'lint:js', 'lint:scss'],
     ['test', 'testnunjucks'],
     ['testsync', 'testwatch'],
     callback
