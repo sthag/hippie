@@ -1,22 +1,23 @@
-<!-- index.nunjucks -->
+<!-- index.njk -->
 {% set pageId = "404" %}
+{% set pageClass = "body__status" %}
 
-{% extends "maintenance.nunjucks" %}
+{% extends "maintenance.njk" %}
 
-{% block title %}index{% endblock %}
+{% block title %}404{% endblock %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" type="text/css" media="all" href="./css/maintenance.css"/>
 {% endblock %}
 
 {% block body_content %}
-<div class="main_center">
+<main class="main__site">
   <h1>404</h1>
-  <p>Hier ist nichts.</p>
+  <h3>Client-Fehler</h3>
+  <p>Hier ist nichts. <dfn>Not Found</dfn></br>
   <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
     <p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
     <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
   </blockquote>
-</div>
-{% include "partials/footer-status.nunjucks" %}
+</main>
+{% include "partials/footer-status.njk" %}
 {% endblock %}

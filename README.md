@@ -1,14 +1,13 @@
 # HIPPIE
 
-## USE (work in progress)
+## USE (work in progress (it is not ready to be used))
 
 Clone the repo `https://github.com/sthag/hippie.git`.
 
-Copy the source folder to your projects style folder.
+Change to the newly created folder. By default this would be *hippie*.
 
-Compile the SCSS files, for example like a so `sass --watch source/:./`.
-
-Load the screen.css file within the head section of your HTML document. `<link rel="stylesheet" type="text/css" media="all" href="./{your projects style folder}/screen.css"/>`
+Run the command *gulp*.
+This will create a folder *build* with the resulting files.
 
 ## LOGIC
 

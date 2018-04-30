@@ -1,0 +1,715 @@
+<!-- demo.njk -->
+{% set pageId = "intro" %}
+{% set pageClass = "" %}
+
+{% extends "demo.njk" %}
+
+{% block title %}Intro{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+<div class="temp__layer">
+  <!-- <div class="exp_overlay_btn exp_help_btn">
+  <span class="span__solo">?</span>
+</div> -->
+<nav class="nav__page_meta">
+  <ul>
+    <li class="magic"><a href="#begin" id="js_scrolltop" class="a_button_meta"><img src="./art/up.png" alt="" width="32" height="64"></a></li>
+    <li><button class="a_button_meta">Show Meta Information</button></li>
+    <li><a href="#end" id="js_scrolldown" class="a_button_meta"><img src="./art/down.png" alt="" width="32" height="32"></a></li>
+  </ul>
+</nav>
+</div>
+
+<div id="begin" class="demo__intro">
+  Dies ist einfach nur Text.<br>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.
+  <p>Es wirken nur die Eigenschaften des <code>&lt;body&gt;</code> Elements. Dieses Element umschließt den gesamten Inhalt des Dokumentes und kommt daher nur einmal vor. Inhalte sind normalerweise durch Elemente definiert. Grundlegende Elemente teilen das Dokument zunächst in Abschnitte.</p>
+  <h1>Bereiche</h1>
+  <article>
+    <section>
+      <p>Einen Abschnitt, welcher für sich alleine stehen kann, definiert sich durch <code>&lt;article&gt;</code>. Solch ein Element wird oft detailliert gestaltet, kommt aber auch ohne jegliche Gestaltung aus.</p>
+      <p>Noch allgemeiner ist das <code>&lt;section&gt;</code> Element. Es schafft Bereiche um Inhalte zu strukturieren.</p>
+      <p>Bestimmte Bereiche haben einen vorgegebene Zweck.<br>Folgende Bereiche sind vorgegeben:</p>
+    </section>
+    <!-- <div class="overflow"> -->
+    <aside class="left">
+      <p>Ein Bereich, der seitlich zum hauptsächlichen Inhalt verläuft, wird mit <code>&lt;aside&gt;</code> markiert.</p>
+    </aside>
+    <section class="bside">
+      <header>
+        <p>Um einleitenden Inhalt festzuhalten, wird das <code>&lt;header&gt;</code> Element eingesetzt. Es beinhaltet häufig auch Navigationselemente. Dabei bezieht es sich auf den nächsten, umgebenden Abschnitt.</p>
+        <nav>
+          <p>Das Element <code>&lt;nav&gt;</code> umfasst Elemente, die zur Navigation innerhalb des Dokumentes dienen.</p>
+        </nav>
+      </header>
+      <footer>
+        <p>Auch abschließender Inhalt kann für einen Abschnitt definiert werden. Dazu wird <code>&lt;footer&gt;</code> eingesetzt.</p>
+      </footer>
+    </section>
+    <!-- </div> -->
+  </article>
+  <article>
+    <p>Zur feineren Strukturierung und Gliederung von Texten sind einige weitere Elemente verfügbar. Diese werden nun der Reihe nach aufgeführt. Zu Beginn die Überschriften, da sie noch zu den Abschnitten gehören. Das kommt vermutlich daher, da Abschnitte häufig eine kennzeichnende Überschrift beinhalten.</p>
+    <h1>Überschrift 1</h1>
+    <p>Eine Überschrift erster Ordnung <code>&lt;h1&gt;</code> ist sehr groß und steht daher oft außerhalb eines Textflusses. Sie schafft eine deutliche Trennung sowohl inhaltlich wie auch optisch. Sie erzeugt einen Abstand gleich der horizontalen Linie über sich.</p>
+    <h2>Überschrift 2</h2>
+    <p>Die weiteren Überschriften <code>&lt;h2&gt;</code> bis <code>&lt;h6&gt;</code> gliedern Text und werden auch als Titel für andere Elemente eingesetzt.</p>
+    <h3>Überschrift 3 ist in Großbuchstaben gesetzt</h3>
+    <h4>Überschrift 4 verwendet normale Buchstaben und gleicht ansonsten Überschrift 3</h4>
+    <h5>Überschrift 5 ist Überschrift 5</h5>
+    <h6>Überschrift 6</h6>
+    <p>Schließlich eine Überschrift in der Größe des Fließtextes. Allerdings in fett.</p>
+    <h1>Gruppierung</h1>
+    <p>Ein Absatz <code>&lt;p&gt;</code>. Zugegeben ein kurzer.</p>
+    <p>Aus mehreren Absätzen wird ein ganzer Text. Solche Texte haben gelegentlich großen informativen oder unterhaltsamen Charakter.<br>Einfache Zeilenumbrüche werden darin mit <code>&lt;br&gt;</code> erreicht.</p>
+    <p>Die Unterteilung in Absätze ist eine von vielen Möglichkeiten Texte zu gruppieren und ihnen Struktur zu verleihen. In diesem Dokument flattert Text normalerweise von Links daher. Er ist schwarz und in einer serifenlosen Schrift gesetzt. Zu weiteren Formatierungen, die eher auf einer Ebene der Zeichen einzuordnen ist, wird im Verlauf näher eingegangen. Zunächst die Struktur:</p>
+    <p class="txt_center js_pop">Text sitzt gerne auch mal zentriert.</p><div class="exp_pop"><code class="code__solo">p.txt_center</code></div>
+    <p class="txt_right js_pop">Rechtsbündig ist schon eher eine Ausnahme bzw. Besonderheit.</p><div class="exp_pop"><code class="code__solo">p.txt_right</code></div>
+    <p>Texte können auf verschiedene Arten unterteilt werden. Dafür werden unterschiedlich formatierte <code>&lt;hr&gt;</code> Elemente verwendet. Die horizontale Linie ist die Ausgangsformatierung, daher auch der abgekürzte Name des Elements. Eine Linie ist schwarz und durchgezogen.</p>
+    <hr/>
+    <p>Es ist auch eine unsichtbare Unterteilung möglich:</p>
+    <hr class="hr__hidden js_pop"/><div class="exp_pop"><code class="code__solo">hr.hr__hidden</code></div>
+    <p>Die Linie darf auch gepunkted sein. Zudem sind verschiedene Längen möglich. Diese sind immer ein Prozentwert der verfügbaren Breite. Hier in gleicher Reihenfolge 100%, 50% und 25%:</p>
+    <hr class="hr__dotted js_pop" emmet/><div class="exp_pop"><code class="code__solo">hr.hr__dotted</code></div><!--hr.hr__dotted-->
+    <hr class="center_50 js_pop"/><div class="exp_pop"><code class="code__solo">hr.center_50</code></div>
+    <hr class="hr__dotted center_25 js_pop"/><div class="exp_pop"><code class="code__solo">hr.hr__dotted.center_25</code></div>
+    <p class="block__column_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code__solo">p.block__column_2</code></div>
+    <p class="block__column_3 block__column_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code__solo">p.block__column_3.block__column_line</code></div>
+    <p class="block__column_3 block__column_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
+    <p>Es gibt die Möglichkeit vorformatierten Text darzustellen <code>&lt;pre&gt;</code>.</p>
+    <pre>Dadurch<br>	bleiben<br>		Einrückungen<br>			durch<br>				Tabulatoren<br>					erhalten.</pre>
+    <p>Text bekommt durch Listen besondere optische wie auch inhaltliche Struktur. Es gibt ungeordnete <code>&lt;ul&gt;</code> und geordnete Listen <code>&lt;ol&gt;</code> sowie Beschreibungslisten <code>&lt;dl&gt;</code>. Die beiden ersten Varianten beinhalten das Listenelement <code>&lt;li&gt;</code>. Beschreibungslisten beinhalten jeweils das Paar von Ausdruck <code>&lt;dt&gt;</code> und Beschreibung <code>&lt;dd&gt;</code>. Im Folgenden eine Liste der Listen in ihrer Ausgangskonfiguration:</p>
+    <ul>
+      <li>Ungeordnete</li>
+      <li>Listen</li>
+    </ul>
+    <ul class="list__dash">
+      <li>Verschiedener</li>
+      <li>Art</li>
+    </ul>
+    <ol>
+      <li>Geordnete</li>
+      <li>Liste</li>
+    </ol>
+    <dl>
+      <dt>Beschreibungsliste</dt>
+      <dd>Auch Definitionslisten genannt</dd>
+      <dt>Ausdruck</dt>
+      <dd>Beschreibung</dd>
+    </dl>
+    <p>Wird Bezug auf fremde Inhalte genommen, kommt ein Zitat <code>&lt;blockquote&gt;</code> zur Anwendung. Es besteht aus der Aussage und der Quelle.</p>
+    <blockquote class="js_pop" cite="https://de.wikipedia.org/wiki/Zitat/">
+      <p>Ein Zitat (das, lateinisch citatum „Angeführtes, Aufgerufenes“ zu lat. citāre „in Bewegung setzen, vorladen“, vgl. „jemanden vor Gericht zitieren“) ist eine wörtlich übernommene Stelle aus einem Text oder ein Hinweis auf eine bestimmte Textstelle.</p>
+      <p class="quote__source"><a href="https://de.wikipedia.org/wiki/Zitat/">Wikipedia</a></p>
+    </blockquote>
+    <div class="exp_pop"><code class="code__solo">blockquote>p+p.quote__source</code></div>
+    <p>Auch Inhalte, die nicht in Textform sind, können durch einen Bezug integriert werden. Wie diese Fahne werden sie mit <code>&lt;figure&gt;</code> umschlossen und tragen eine Bezeichnung.</p>
+    <figure class="js_pop">
+      <figcaption>Fahne</figcaption>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10%" height="10%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice" alt="Background flag">
+        <rect id="triangle-5" y="0" fill="#273F8B" width="1920" height="1200"/>
+        <polygon id="triangle-6" fill="#8E1F68" points="0,1200 1920,458.25 1920,1200 "/>
+        <polygon id="triangle-7" fill="#D30A51" points="0,1200 1920,522.75 1920,1200 "/>
+        <polygon id="triangle-8" fill="#F2AF13" points="0,1200 1920,741.75 1920,1200 "/>
+        <polygon id="triangle-9" fill="#FAD803" points="0,1200 1920,787.5 1920,1200 "/>
+        <polygon id="triangle-4" fill="#3C579A" points="0,1200 0,0 733.5,0 "/>
+        <polygon id="triangle-3" fill="#B7E0F0" points="0,1200 0,0 688.5,0 "/>
+        <polygon id="triangle-2" fill="#6BC7D9" points="0,1200 0,0 453,0 "/>
+        <polygon id="triangle-1" fill="#52BED1" points="0,1200 0,0 370.5,0 "/>
+      </svg>
+    </figure>
+    <div class="exp_pop"><code class="code__solo">figure>figcaption+{element}</code></div>
+    <p>Eine von sich aus undefinierte Möglichkeit zur Gruppierung von Text besteht durch <code>&lt;div&gt;</code>. Dieses Element hat, ohne weitere Klassifizierung keine Auswirkungen auf die Erscheinung oder die inhaltliche Aussage. Daher der allgemeine Einsatz.</p>
+    <div class="box__info"><p>Es wird allerdings häufig eingesetzt und bekommt vielfältige Funktionen zugeordnet wie diese hervorgehobene Information zeigt.</p></div>
+    <p>Eine sehr klar definierte Gruppierung stellt das Element <code>&lt;main&gt;</code> dar. Es umschließt den hauptsächlichen Inhalt des Dokumentes.</p>
+  </article>
+  <article>
+    <h1 id="textlevel">Textebene</h1>
+    <h2>Verweise</h2>
+    <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a__line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code__solo">a.a__line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a__line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
+    <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a__line" href="#">unterstrichene Varianten</a> sind möglich.</p>
+    <p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Auf diese Verwendung wird im Folgenden genauer eingegangen <span class="wip_txt">...</span></p>
+    <h2>Formatierungen</h2>
+    <p>Texte, Wörter oder Zeichen können vielfältig formatiert werden. Sie können <b>fett</b> <code>&lt;b&gt;</code> oder <i>kursiv</i> <code>&lt;i&gt;</code> geschrieben sein. <b><i>Auch beides ist möglich!</i>?</b>! Sollen sie nicht nur anders <b>aussehen</b>, sondern auch <i>eine besondere inhaltliche Bedeutung</i> bekommen, werden sie mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code> ausgezeichnet.</p>
+    <p>Gerade bei wörtlichen Zitierungen kommt häufig das Anführungszeichen zum Einsatz. Es kann durch die Formatierung automatisch ergänzt werden.</p>
+    <blockquote class="quote__mark js_pop" cite="">
+      <p>Das kannst du schon so machen aber dann isses halt Kacke.</p>
+      <p class="quote__source">o. V.</p>
+    </blockquote>
+    <div class="exp_pop"><code class="code__solo">blockquote.quote__mark>p+p.quote__source</code></div>
+    <p>Ein besonderer inhaltlicher Bezug ist der Titel eines Werkes. Sowas kann mit <code>&lt;cite&gt;</code> ausgezeichnet werden. <cite>Pulp Fiction</cite>, super Film - zum Beispiel.</p>
+    <p>Auch die Auszeichnung <code>&lt;code&gt;</code> wurde bis hier hin schon verwendet. Sie markiert Maschinensprache. Für zusammenhängende Blöcke wird die Auszeichnung oft in Kombination mit dem Element <code>&lt;pre&gt;</code> verwendet:</p>
+    <pre class="pre__code"><code>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;Hyper Text Markup Language&lt;/title&gt;<br>  &lt;/head&gt;<br>  &lt;body id="root"&gt;<br>    &lt;!-- Content goes here --&gt;<br>    &lt;p class="example"&gt;Just like this.&lt;/p&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</code></pre>
+    <p>Dabei bleiben vorhandene Textformatierungen wie Zeilenumbrüche und Einrückung erhalten.</p>
+    <p>Die Zeichen in Absätzen bis hin zu ganzen Texten können, mit einem geeigneten Eingabegerät, markiert werden. Dies stellt sich wie folgt dar:</p>
+    <p class="txt_center">Bei<mark class="mark__cursor">spiel zum mark</mark>ieren ^^.</p>
+    <p>Eine Markierung kann, mittels <code>&lt;mark&gt;</code>, auch durch den Autor geschehen. Diese stellt sich ein wenig anders dar: <mark>Diese Worte sind markiert.</mark></p>
+
+    <h2>Änderungen</h2>
+
+  </article>
+  <article>
+    <h1>Eingebundene Inhalte</h1>
+
+  </article>
+  <article>
+    <h1>Tabellen</h1>
+    <p>Tabellen bieten besonders geordnete Struktur. Häufig werden in ihnen Text und Daten kombiniert dargestellt. Dies erfordert individuelle Formatierungen. Einige grundlegende Eigenschaften werden im folgenden aufgezeigt. Tabellen sind in ihrer Größe entweder vordefiniert oder richten sich nach ihrem Inhalt. Das gilt auch für die einzelnen Zellen.<span class="wip_txt">...</span></p>
+    <table class="width_full js_pop">
+      <tbody>
+        <tr>
+          <td>Eine</td>
+          <td>einfache</td>
+        </tr>
+        <tr>
+          <td colspan="2">Tabelle</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="exp_pop"><code class="code__solo">table.width_full>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+    <div class="overflow">
+      <table class="float_space_left js_pop">
+        <tbody>
+          <tr>
+            <td>Eine</td>
+            <td>fließende</td>
+          </tr>
+          <tr>
+            <td colspan="2">Tabelle</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="exp_pop"><code class="code__solo">table>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+      <table class="table__blank float_space_left js_pop">
+        <tbody>
+          <tr>
+            <td>Mit</td>
+            <td>ohne</td>
+          </tr>
+          <tr>
+            <td colspan="2">Linien</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="exp_pop"><code class="code__solo">table.table__blank>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+    </div>
+    <p>Die nächste Tabelle verwendet alle zur Auszeichnung verfügbaren Elemente und hat eine starre Zellverteilung:</p>
+    <table class="width_full table__fix js_pop">
+      <caption>Beschreibung bzw. Zusammenhang der Tabelle</caption>
+      <thead>
+        <tr>
+          <th>Kopfzeile</th>
+          <th>A</th>
+          <th>B</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>Fußzeile</td>
+          <td>A</td>
+          <td>B</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <td>Tabelle</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>mit</td>
+          <td>Titel</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Kopf-</td>
+          <td>und</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Fußzeile</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="exp_pop"><code class="code__solo">table.width_full.table__fix>caption+thead>tr>th*3^^tfoot>tr>td*3^^tbody>(tr>td*3)*3</code></div>
+    <hr class="hr__hidden">
+    <p>Viele weitere Formate sind möglich <span class="wip_txt">...</span></p>
+    <table class="width_full js_pop">
+      <thead>
+        <tr>
+          <th class="precol"></th>
+          <th>Kopfzeile</th>
+          <th>A</th>
+          <th>B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="precol">Vorspalte</td>
+          <td>Eine</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="precol">1</td>
+          <td></td>
+          <td>erweiterte</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="precol">2</td>
+          <td></td>
+          <td></td>
+          <td>Tabelle</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="exp_pop"><code class="code__solo">table.width_full>thead>tr>th.precol+th[colspan=2]^^tbody>tr>td.precol+td*2^tr>td.precol+td[colspan=2]</code></div>
+    <table class="width_full table__stripe table__free">
+      <thead>
+        <tr>
+          <th>Kopfzeile</th>
+          <th>A</th>
+          <th>B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tabelle</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ohne</td>
+          <td>Rahmen</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>jedoch</td>
+          <td>mit</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Streifen</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table__fix">
+      <caption>Beschreibung bzw. Zusammenhang der Tabelle</caption>
+      <thead>
+        <tr>
+          <th>Kopfzeile</th>
+          <th>1</th>
+          <th>&gt;9000</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>Fußzeile</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <td>Alpha</td>
+          <td>0</td>
+          <td>9000</td>
+        </tr>
+        <tr>
+          <td>Bravo</td>
+          <td>1</td>
+          <td>9001</td>
+        </tr>
+        <tr>
+          <td>Charlie</td>
+          <td>0</td>
+          <td>9000</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+  <article>
+    <h1>Formulare</h1>
+    <p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Werden sie nicht explizit gestaltet, ist ihre Erscheinung system- bzw. browserabhängig. <span class="wip_txt">(Vielleicht ist das auch scheiße, hier darauf einzugehen) ...</span> Üblicherweise stehen alle Formularelemente innerhalb eines <code>&lt;form&gt;</code> Elementes. Dieses ist notwendig um Angaben zur Kommunikation mit dem Server zu setzen. Es hat normalerweise keine gestalterische Funktion.</p>
+    <p>Grundlegend ist das Element <code>&lt;input&gt;</code>. Es hat viele Attribute um den Typ der Eingabe anzupassen. Ist es undefiniert nimmt es jegliche textbasierte Information auf und erhält eine Standardgröße.</p>
+    <p><input value="Undefiniert"/></p>
+    <p>Ein spezieller Typ des Eingabefeldes verändert seine Funktion zu einer Schaltfläche <code>&lt;input[type="button"]&gt;</code>. Es gibt allerdings auch ein eigenes Element <code>&lt;button&gt;</code> dafür.
+      <p><input type="button" value="Input Button"><button>Button</button></p>
+      <p>Interaktive Elemente können durch das Attribut <code>&lt;readonly&gt;</code> nur lesbar gemacht werden oder mittels <code>&lt;disabled&gt;</code> gänzlich deaktiviert werden.</p>
+      <p><input type="text" value="Read Only Text" readonly><input type="text" value="Disabled Text" disabled><button disabled>Button</button></p>
+      <p>Das Element <code>&lt;label&gt;</code> ergänzt interaktive Elemente um eine Beschriftung. Wichtig ist hier, dass die Beziehung beider Elemente zu einander deutlich ist.</p>
+      <div class="overflow">
+        <div class="float_half_size">
+          <label for="demo__input">Beschriftung:</label><input type="text" id="demo__input">
+        </div>
+        <div class="float_half_size txt_right">
+          <input type="text" id="demo__input" class="input__label_right"><label for="demo__input">Beschriftung</label>
+        </div>
+      </div>
+      <p>Zusätzlich zur Beschriftung einzelner Elemente gibt es auch die Möglichkeit Gruppierungen zu schaffen. Diese werden mit <code>&lt;fieldset&gt;</code> realisiert.</p>
+      <fieldset>
+        <label for="demo__output">Beschriftung:</label><input type="text" readonly id="demo__output">
+      </fieldset>
+      <p>Sie können mittels <code>&lt;legend&gt;</code> auch eine eigene Beschriftung erhalten.</p>
+      <fieldset>
+        <legend>Einfache Eingabefelder</legend>
+        <label>Texteingabe<input type="text" placeholder="Text"></label>
+        <label>Schaltfläche<input type="button" value="Senden"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Weitere Eingabemöglichkeiten</legend>
+        <p>Innerhalb einer Gruppe können nicht nur Ein- und Ausgabefelder platziert werden. Andere Elemente ergänzen Information oder lockern das Erscheinungsbild auf. Hier nun eine Liste möglicher Arten von Eingabefeldern.</p>
+        <pre class="pre__code"><code>ul>(li>label>input[type="text"])</code></pre>
+        <ul class="list__basic">
+          <li><label for="">Einfache Datumseingabe<input type="date"></label></li>
+          <li><label for="">Einfache Zahleneingabe<input type="number"></label></li>
+          <li><label for="">Einfache @dresseingabe<input type="email" placeholder="@"></label></li>
+          <li><label for="">Einfache Farbauswahl<input type="color"></label></li>
+          <li><label for="">Einfache Dateiauswahl<input type="file"></label></li>
+        </ul>
+        <div class="overflow">
+          <aside class="left">
+            <p>Dies ist ein Eingabefeld für Fließtext. Es bildet auch Zeilenumbrüche ab und hat häufig variable Größen.</p>
+          </aside>
+          <section class="bside">
+            <label>Mehrzeilige Texteingabe</label>
+            <textarea rows="10"></textarea>
+          </section>
+        </div>
+      </fieldset>
+      <input type="checkbox"/>
+      <input type="datetime"/>
+      <input type="image"/>
+      <input type="month"/>
+      <form action="" method="get">
+        <p class="label">
+        Show me a <select name="F">
+          <option value="0"> Plain list</option>
+          <option value="1" selected="selected"> Fancy list</option>
+          <option value="2"> Table list</option>
+        </select>
+        Sorted by <select name="C">
+          <option value="N" selected="selected"> Name</option>
+          <option value="M"> Date Modified</option>
+          <option value="S"> Size</option>
+          <option value="D"> Description</option>
+        </select>
+        <select name="O">
+          <option value="A" selected="selected"> Ascending</option>
+          <option value="D"> Descending</option>
+        </select>
+        <select name="V">
+          <option value="0" selected="selected"> in Normal order</option>
+          <option value="1"> in Version order</option>
+        </select>
+        Matching <input type="text" name="P" value="*" />
+        <input type="submit" name="X" value="Go" />
+      </p>
+      </form>
+
+      <h2>Interaktive Elemente</h2>
+    </article>
+    <article>
+      <h1>Struktur</h1>
+      <div class="box__placeholder"></div>
+      <hr class="hr__hidden"/>
+      <div class="box__placeholder">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%">
+          <line x1='0' y1='0' x2='100%' y2='100%' stroke='#000' stroke-width='.5'/>
+          <line x1='0' y1='100%' x2='100%' y2='0' stroke='#000' stroke-width='.5'/>
+        </svg>
+      </div>
+      <hr class="hr__hidden"/>
+      <div class="box__placeholder_bkg"></div>
+    </article>
+    <article>
+      <h1>Medien</h1>
+    </article>
+    <article>
+      <h1>Druck</h1>
+    </article>
+
+    <section>
+      <header class="header__txt">
+        <h1>Ende der Einführung</h1>
+        <p>Dies war eine Übersicht der grundlegenden Elemente. Nun folgen weitere Elemente mit besonderen Formatierungen.</p>
+      </header>
+    </section>
+  </div>
+
+  <section class="sec__main_center">
+    <header>
+      <h1>HIPPIE Erklärung</h1>
+      <p>Aufbau, Standardwerte</p>
+    </header>
+    <article>
+      <p>&hellip;</p>
+    </article>
+  </section>
+
+  <section class="sec__main_center">
+    <header class="header__txt">
+      <h1>Medienformat Abfragen</h1>
+    </header>
+    <article>
+      <div class="demo__query_example">Umbruch bei&nbsp;</div>
+      <div class="demo__queries">
+        <p class="query__phoneUp">Telefone und größer</p>
+        <p class="query__phoneOnly">Nur Telefone</p>
+        <p class="query__tabletPortaitOnly"Nur >Schreibtafeln hochkant</p>
+        <p class="query__tabletPortraitUp">Schreibtafeln und größer</p>
+        <p class="query__tabletLandscapeOnly">Schreibtafeln im Querformat</p>
+        <p class="query__tabletLandscapeUp">Schreibtafeln quer und größer</p>
+        <p class="query__desktopOnly">Nur Arbeitsplatzrechner</p>
+        <p class="query__desktopUp">Arbeitsplatzrechner und größer</p>
+        <p class="query__bigDesktopUp">Richtige Monitore und größer</p>
+      </div>
+    </article>
+  </section>
+  <section class="sec__main_center">
+    <header class="header__txt">
+      <h1>Sammlung formatierter Elemente</h1>
+      <p>Die Elemente werden fortlaufend komplexer</p>
+    </header>
+    <article>
+      <pre class="pre__code"><code>h3.txt_light_color+p</code></pre>
+      <h3 class="txt_light_color">Helle Überschrift</h3>
+      <p>Mit normalem Textabsatz</p>
+      <pre class="pre__code"><code>a>h4</code></pre>
+      <a href="">
+        <h4>Überschrift als Block-Verweis</h4>
+      </a>
+      <pre class="pre__code"><code>section>div.box__inline_left>img^p+p</code></pre>
+      <section class="overflow">
+        <div class="box__inline_left demo__avatar"><img src="./art/bullet.gif" width="256" height="256" alt="Avatar"></div>
+        <p>Vorname Name<br>Straße 1, 01234 Stadt</p><p>+49 (0)123 1337 0000<br><a class="lineLink" href="mailto:name@domain.tld">name@domain.tld</a></p>
+      </section>
+      <pre class="pre__code"><code>div.box__main_indent</code></pre>
+      <div class="box__main_indent">
+        <hr/>
+        <p>Eingerückter Inhalt</p>
+        <hr/>
+      </div>
+      <pre class="pre__code"><code>nav>ul>(li>a.a__button{Punkt $})*4
+        nav>ul>(li>a.a__button_border{Stufe $})*4</code></pre>
+        <div class="overflow">
+          <nav class="float_space_left">
+            <ul>
+              <li><a href="" class="a__button">Punkt 1</a></li>
+              <li><a href="" class="a__button">Punkt 2</a></li>
+              <li><a href="" class="a__button">Punkt 3</a></li>
+              <li><a href="" class="a__button">Punkt 4</a></li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li><a href="" class="a__button_border">Stufe 1</a></li>
+              <li><a href="" class="a__button_border">Stufe 2</a></li>
+              <li><a href="" class="a__button_border">Stufe 3</a></li>
+              <li><a href="" class="a__button_border">Stufe 4</a></li>
+            </ul>
+          </nav>
+        </div>
+        <pre class="pre__code"><code>nav.nav__horizontal>ul>(li>a.a__button{Abschnitt $})*4
+          nav.nav__center_old>ul>(li>a.a__button{Typ $})*4</code></pre>
+          <nav class="nav__horizontal">
+            <ul>
+              <li><a href="" class="a__button">Abschnitt 1</a></li>
+              <li><a href="" class="a__button">Abschnitt 2</a></li>
+              <li><a href="" class="a__button">Abschnitt 3</a></li>
+              <li><a href="" class="a__button">Abschnitt 4</a></li>
+            </ul>
+          </nav>
+          <div class="overflow">
+            <nav class="nav__center_old">
+              <ul>
+                <li><a href="" class="a__button">Typ 1</a></li>
+                <li><a href="" class="a__button">Typ 2</a></li>
+                <li><a href="" class="a__button">Typ 3</a></li>
+                <li><a href="" class="a__button">Typ 4</a></li>
+              </ul>
+            </nav>
+          </div>
+          <pre class="pre__code x_long"><code>header.header__page>h1+p+nav.nav__separate_right>ul>(li>a.a__button{Nav $})*4^+nav.nav__right>ul>(li>a.a__button{Nav $})*4</code></pre>
+          <header class="header__page demo__header header__fancy">
+            <h1>Aufmacher</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec consectetur diam. Sed nisl odio, volutpat nec nisi sit amet, commodo faucibus est. Donec lacinia vestibulum sapien. Morbi porttitor nibh quis imperdiet scelerisque. Praesent rutrum quam eu sodales luctus.</p>
+            <nav class="nav__separate_right">
+              <ul>
+                <li><a href="" class="a__button">Mensch</a></li>
+                <li><a href="" class="a__button">Pflanze</a></li>
+              </ul>
+            </nav>
+            <nav class="nav__right">
+              <ul>
+                <li><a href="" class="a__button">Blau</a></li>
+                <li><a href="" class="a__button">Gelb</a></li>
+              </ul>
+            </nav>
+          </header>
+          <pre class="pre__code"><code>header.header__page>nav.nav__right>ul>(li>a.a__button{Nav $})*4</code></pre>
+          <div class="box__space height_basic">
+            <header id="js_demo_fix" class="header__page demo__header header__fix">
+              <nav class="nav__right">
+                <ul>
+                  <li><a href="" class="a__button">Eins</a></li>
+                  <li><a href="" class="a__button">Zwei</a></li>
+                </ul>
+              </nav>
+            </header>
+            <div class="pos_abs pin_bottom width_full">
+              <pre class="pre__code"><code>footer.pos_abs.pin_bottom>nav.nav__column>ul>(li>a.a__button_text)*4</code></pre>
+              <footer id="js_demo_stop" class="demo__footer">
+                <nav class="nav__column nav__separate">
+                  <ul>
+                    <li><a href="" class="a__button_text">Alpha</a></li>
+                    <li><a href="" class="a__button_text">Bravo</a></li>
+                    <li><a href="" class="a__button_text">Charlie</a></li>
+                    <li><a href="" class="a__button_text">Delta</a></li>
+                  </ul>
+                </nav>
+                <p class="txt_center demo__credits"><i class="i__bright">👨‍💻</i> mit <i class="i__bright">❤</i> von <a href="https://interaktionsweise.de">Interaktionsweise</a></p>
+              </footer>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="flex__child"></div>
+            <div class="flex__child"></div>
+            <div class="flex__child"></div>
+            <div class="flex__child"></div>
+            <div class="flex__child"></div>
+          </div>
+          <div class="flex__column_wrap">
+            <div class="column"><input value="Undefiniert"/></div>
+            <div class="column"><input type="text" size="8" value="Text"/></div>
+            <div class="column"><input type="text" size="8" value="Deaktiviert" disabled/></div>
+            <div class="column"><input type="button" value="Auswählen"></div>
+            <div class="column"><input type="submit" value="Senden" disabled/></div>
+          </div>
+
+          <h2>Gruppierung</h2>
+          <pre class="pre__code"><code>ul.list__link>(li>a>img)*2+li>a</code></pre>
+          <ul class="list__link">
+            <li><a href=""><img src="./art/letter.gif" alt="">name@domain.tld</a></li>
+            <li><a href=""><img src="./art/bullet.gif" alt="">Work</a></li>
+            <li><a href="">Projects</a></li>
+          </ul>
+
+          <h2>Tabellen</h2>
+          <pre class="pre__code x_long"><code>table.table__link>thead>tr>th{&amp;nbsp;}+th{Ab / Zy}+th{Neu / Alt}^^(tbody>tr>td.cell__icon[rowspan="2"]>img[width=16  height=16]^+td.cell__link>a[target=_blank]{Name}+a[target=_blank]{URL}^+td.cell__date[rowspan="2"]{YYY-MM-DD}^tr>td.cell__text>div.shorten{Beschreibung})*2</code></pre>
+          <table class="table__link js_pop">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Ab / Zy</th>
+                <th>Neu / Alt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell__icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
+                <td class="cell__link"><a href="" target="_blank">Name</a><a href="" target="_blank">URL</a></td>
+                <td class="cell__date" rowspan="2">YYYY-MM-DD</td>
+              </tr>
+              <tr>
+                <td class="cell__text">
+                  <div class="shorten">Beschreibung</div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td class="cell__icon" rowspan="2"><img src="" alt="" width="16" height="16"></td>
+                <td class="cell__link"><a href="" target="_blank">Name</a><a href="" target="_blank">URL</a></td>
+                <td class="cell__date" rowspan="2">YYYY-MM-DD</td>
+              </tr>
+              <tr>
+                <td class="cell__text">
+                  <div class="shorten">Beschreibung</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Eingebettet</h2>
+          <div class="box__full_width demo__flag">
+            <svg version="1.1" id="vector" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice" alt="Background flag">
+              <rect id="triangle-5" y="0" fill="#273F8B" width="1920" height="1200"></rect>
+              <polygon id="triangle-6" fill="#8E1F68" points="0,1200 1920,458.25 1920,1200 "></polygon>
+              <polygon id="triangle-7" fill="#D30A51" points="0,1200 1920,522.75 1920,1200 "></polygon>
+              <polygon id="triangle-8" fill="#F2AF13" points="0,1200 1920,741.75 1920,1200 "></polygon>
+              <polygon id="triangle-9" fill="#FAD803" points="0,1200 1920,787.5 1920,1200 "></polygon>
+              <polygon id="triangle-4" fill="#3C579A" points="0,1200 0,0 733.5,0 "></polygon>
+              <polygon id="triangle-3" fill="#B7E0F0" points="0,1200 0,0 688.5,0 "></polygon>
+              <polygon id="triangle-2" fill="#6BC7D9" points="0,1200 0,0 453,0 "></polygon>
+              <polygon id="triangle-1" fill="#52BED1" points="0,1200 0,0 370.5,0 "></polygon>
+            </svg>
+          </div>
+
+
+        </article>
+      </section>
+      <section>
+        <header class="sec__main_center header__txt">
+          <h1>Autarke Seiten</h1>
+          <p>Diese Elemente repräsentieren jeweils eine eigene Seite.</p>
+        </header>
+        <article>
+          <section class="sec_main_status demo__status">
+            <div class="wrap_center">
+              <h1>404</h1>
+              <p>Hier ist nichts.</p>
+              <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
+                <p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
+                <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+              </blockquote>
+            </div>
+            {% include "partials/footer-status.njk" %}
+          </section>
+          <section class="sec_main_status demo__status">
+            <div class="wrap_center">
+              <h1>403</h1>
+              <p>Nicht erlaubt! <dfn>Forbidden</dfn></p>
+              <blockquote>
+                <p>Die Anfrage wurde mangels Berechtigung des Clients nicht durchgeführt, bspw. weil der authentifizierte Benutzer nicht berechtigt ist, oder eine als HTTPS konfigurierte URL nur mit HTTP aufgerufen wurde.</p>
+                <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+              </blockquote>
+            </div>
+            {% include "partials/footer-status.njk" %}
+          </section>
+          <section class="sec_main_status demo__status">
+            <div class="wrap_center">
+              <h1>400</h1>
+              <p>Fehlerhafte Anfrage! <dfn>Bad Request</dfn></p>
+              <blockquote>
+                <p>Die Anfrage-Nachricht war fehlerhaft aufgebaut.</p>
+                <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
+              </blockquote>
+            </div>
+            {% include "partials/footer-status.njk" %}
+          </section>
+        </article>
+      </section>
+      {% include "partials/footer.njk" %}
+      {% endblock %}
+
+      {% block script %}
+      <script type="text/javascript">
+      // Page specific
+      // ------------------------------------------------------------------------------
+      $( document ).ready(function() {
+        console.log('HIPPIE');
+
+        // jq-sticky-anything
+        $('#js_demo_fix').stickThis({
+          pushup: '#js_demo_stop'
+        });
+      });
+      </script>
+      {% endblock %}

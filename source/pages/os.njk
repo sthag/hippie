@@ -1,0 +1,146 @@
+<!-- demo.njk -->
+{% set pageId = "os" %}
+{% set pageClass = "" %}
+
+{% extends "default.njk" %}
+
+{% block title %}demo{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+{# {% include "partials/page-hover.njk" %} #}
+<div class="height_full">
+  <div class="flex__wrap">
+    <button class="demo__button_32"></button>
+    <button class="demo__button_32"></button>
+    <button class="demo__button_32"></button>
+    <button class="demo__button_32"></button>
+    <button class="demo__button_32"></button>
+    <button class="demo__button_32"></button>
+  </div>
+  <div class="flex">
+    <div class="flex__child">
+      <!-- (nav>ul.list__data>(li>a>img+p{Punkt $})*6)*2 -->
+      <nav>
+        <ul class="list__files">
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 1</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 2</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 3</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 4</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 5</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 6</p>
+          </a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="list__files">
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 1</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 2</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 3</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 4</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 5</p>
+          </a></li>
+          <li><a href="">
+            <img src="" alt="">
+            <p>Punkt 6</p>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flex__child_one flex__row">
+      <!-- div.flex__child.box__file_wrp>(div.box__file_tile>img[src="./art/icon_default.svg"]^+p{Dateiname $}+p{Auszeichnung $})*4^+div.flex__child>table.table__file_simple>(tr>td>img^+td{Objektname $}+td.cell__file_path{Objektpfad $})*2 -->
+      <div class="flex__child box__file_wrp">
+        <div class="flex__wrap box__file_tile">
+          <div class="flex__child"><img src="./art/icon_default.svg" alt=""></div>
+          <div class="box__flex_one">
+            <p>Dateiname 1</p>
+            <p>Auszeichnung 1</p>
+          </div>
+        </div>
+        <div class="flex__wrap box__file_tile">
+          <div class="flex__child"><img src="./art/icon_default.svg" alt=""></div>
+          <div class="box__flex_one">
+            <p>Dateiname 2</p>
+            <p>Auszeichnung 2</p>
+          </div>
+        </div>
+        <div class="flex__wrap box__file_tile">
+          <div class="flex__child"><img src="./art/icon_default.svg" alt=""></div>
+          <div class="box__flex_one">
+            <p>Dateiname 3</p>
+            <p>Auszeichnung 3</p>
+          </div>
+        </div>
+        <div class="flex__wrap box__file_tile">
+          <div class="flex__child"><img src="./art/icon_default.svg" alt=""></div>
+          <div class="box__flex_one">
+            <p>Dateiname 4</p>
+            <p>Auszeichnung 4</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex__child_one">
+        <table class="table__file_simple">
+          <tr>
+            <td><img src="" alt=""></td>
+            <td>Objektname 1</td>
+            <td class="cell__file_path">Objektpfad 1</td>
+          </tr>
+          <tr>
+            <td><img src="" alt=""></td>
+            <td>Objektname 2</td>
+            <td class="cell__file_path">Objektpfad 2</td>
+          </tr>
+        </table>
+      </div>
+      <div class="flex__child">
+        <p>Status</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+// Page specific
+// ------------------------------------------------------------------------------
+$( document ).ready(function() {
+  console.log('HIPPIE');
+});
+</script>
+{% endblock %}

@@ -1,11 +1,19 @@
-#root {
-	@extend .sec__main_status;
-	position: relative;
-	height: 100%;
-	border-color: $foxtrot_color;
+.body__status {
+  @extend .sec__main_status;
+  height: 100vh;
+  border-color: $foxtrot_color;
 
-	h1:first-of-type {
-		margin-top: 0;
-		font-weight: bold;
-	}
+  .main__site {
+    @extend .wrap_center;
+    & > h1:first-of-type {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight: bold;
+      line-height: 1;
+    }
+    & > h1 + h3 {
+      margin-top: 0;
+      margin-bottom: $space_3;
+    }
+  }
 }

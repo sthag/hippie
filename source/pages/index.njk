@@ -1,7 +1,8 @@
-<!-- index.nunjucks -->
+<!-- index.njk -->
 {% set pageId = "index" %}
+{% set pageClass = "height_full" %}
 
-{% extends "index.nunjucks" %}
+{% extends "default.njk" %}
 
 {% block title %}index{% endblock %}
 {% block head %}
@@ -9,14 +10,14 @@
 {% endblock %}
 
 {% block body_content %}
-{% include "partials/page-hover.nunjucks" %}
 <div class="wrap">
   <ul class="list__link hello">
-    <li><a href="demo-index.html">Index</a></li>
-    <li><a href="demo-blank.html">Blank</a></li>
-    <li><a href="demo-explorer.html">Explorer</a></li>
-    <li><a href="demo-presentation.html">Presentation</a></li>
+    <li><a href="intro.html">Intro</a></li>
+    <li><a href="elements.html">Elements</a></li>
+    <li><a href="os.html">OS</a></li>
+    <li><a href="blank.html">Blank</a></li>
     <li><a href="404.html">404</a></li>
+    <li><a href="500.html">500</a></li>
   </ul>
 </div>
 {% endblock %}
@@ -26,7 +27,7 @@
 // Page specific
 // ------------------------------------------------------------------------------
 $( document ).ready(function() {
-  console.log(                     'HIPPIE'            );
+  console.log('HIPPIE');
 });
 </script>
 {% endblock %}

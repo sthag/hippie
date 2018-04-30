@@ -1,10 +1,10 @@
 // Setup project
 var source = {
-  watch: ['source/style/**/*.scss', 'source/templates/**/*.+(html|nunjucks)', 'source/pages/**/*.+(html|nunjucks)'],
+  watch: ['source/style/**/*.scss', 'source/templates/**/*.+(html|njk)', 'source/pages/**/*.+(html|njk)'],
   styles: ['source/style/example.scss', 'source/style/maintenance.scss'],
   scripts: ['source/code/variables.js', 'source/code/functions.js', 'source/code/global.js', 'source/code/**/*.coffee', '!source/vendor/**/*', ],
   images: 'source/art/**/*',
-  pages: 'source/pages/**/*.+(html|nunjucks)',
+  pages: 'source/pages/**/*.+(html|njk)',
   vendor: 'vendor/**/*'
 };
 var build = {
@@ -71,7 +71,7 @@ gulp.task('testsync', function() {
 });
 
 gulp.task('testnunjucks', function() {
-  return gulp.src('source/pages/**/*.+(html|nunjucks)')
+  return gulp.src('source/pages/**/*.+(html|njk)')
   .pipe(plumbError('Error Running Nunjucks'))
   .pipe(nunjucks({
     path: ['source/templates'],
@@ -218,7 +218,7 @@ gulp.task('testwatch', function() {
   gulp.watch('source/style/**/*.+(scss|sass)', ['test', 'lint:scss']);
   gulp.watch([
     'source/templates/**/*',
-    'source/pages/**/*.+(html|nunjucks)'
+    'source/pages/**/*.+(html|njk)'
   ], ['testnunjucks']);
 });
 

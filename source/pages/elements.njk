@@ -1,0 +1,72 @@
+<!-- demo.njk -->
+{% set pageId = "elements" %}
+{% set pageClass = "" %}
+
+{% extends "demo.njk" %}
+
+{% block title %}Elements{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+<div class="temp__layer">
+  <!-- <div class="exp_overlay_btn exp_help_btn">
+  <span class="span__solo">?</span>
+</div> -->
+<nav class="nav__page_meta">
+  <ul>
+    <li class="magic"><a href="#begin" id="js_scrolltop" class="a_button_meta"><img src="./art/up.png" alt="" width="32" height="64"></a></li>
+    <li><button class="a_button_meta">Show Meta Information</button></li>
+    <li><a href="#end" id="js_scrolldown" class="a_button_meta"><img src="./art/down.png" alt="" width="32" height="32"></a></li>
+  </ul>
+</nav>
+</div>
+<div id="begin" class="">
+  <article>
+    <header>
+      <h1>Bereiche</h1>
+      <p>Um einleitenden Inhalt festzuhalten, wird das <code>&lt;header&gt;</code> Element eingesetzt. Es beinhaltet häufig auch Navigationselemente. Dabei bezieht es sich auf den nächsten, umgebenden Abschnitt.</p>
+      <nav>
+        <p>Das Element <code>&lt;nav&gt;</code> umfasst Elemente, die zur Navigation innerhalb des Dokumentes dienen.</p>
+      </nav>
+    </header>
+    <section>
+      <p>Einen Abschnitt, welcher für sich alleine stehen kann, definiert sich durch <code>&lt;article&gt;</code>. Solch ein Element wird oft detailliert gestaltet, kommt aber auch ohne jegliche Gestaltung aus.</p>
+      <p>Noch allgemeiner ist das <code>&lt;section&gt;</code> Element. Es schafft Bereiche um Inhalte zu strukturieren.</p>
+      <p>Bestimmte Bereiche haben einen vorgegebene Zweck.<br>Folgende Bereiche sind vorgegeben:</p>
+    </section>
+    <div class="overflow">
+      <aside class="left">
+        <p>Ein Bereich, der seitlich zum hauptsächlichen Inhalt verläuft, wird mit <code>&lt;aside&gt;</code> markiert.</p>
+      </aside>
+      <section class="bside">
+        <header>
+          <p>Um einleitenden Inhalt festzuhalten, wird das <code>&lt;header&gt;</code> Element eingesetzt. Es beinhaltet häufig auch Navigationselemente. Dabei bezieht es sich auf den nächsten, umgebenden Abschnitt.</p>
+          <nav>
+            <p>Das Element <code>&lt;nav&gt;</code> umfasst Elemente, die zur Navigation innerhalb des Dokumentes dienen.</p>
+          </nav>
+        </header>
+        <footer>
+          <p>Auch abschließender Inhalt kann für einen Abschnitt definiert werden. Dazu wird <code>&lt;footer&gt;</code> eingesetzt.</p>
+        </footer>
+      </section>
+    </div>
+    <footer>
+      <p>Auch abschließender Inhalt kann für einen Abschnitt definiert werden. Dazu wird <code>&lt;footer&gt;</code> eingesetzt.</p>
+    </footer>
+  </article>
+</div>
+{% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+// Page specific
+// ------------------------------------------------------------------------------
+$( document ).ready(function() {
+  console.log('HIPPIE');
+
+});
+</script>
+{% endblock %}

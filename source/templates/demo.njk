@@ -1,4 +1,4 @@
-<!-- layout.nunjucks -->
+<!-- layout.njk -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,6 +6,15 @@
 
   {% block head %}
   <title>{% block title %}{% endblock %} - HIPPIE</title>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
+  <!--Only use one of the above!-->
 
   <meta name="author" content="Interaktionsweise">
   <meta name="description" content="hippie example">
@@ -18,14 +27,29 @@
   <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
 
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" type="text/css" media="all" href="./css/example.css"/>
   <!-- <link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/> -->
   {% endblock %}
 </head>
 
-<body id="{{ pageId }}" class="height_full">
-  {% block body_content %}{% endblock %}
-  <script src="bower_components/jquery/dist/jquery.js"></script>
+<body id="{{ pageId }}" class="body__demo">
+  {% include "partials/page-hover.njk" %}
+  <div id="root">
+  <header id="js_head" class="header_site">
+    {% block body_header %}
+    <!-- super stuff -->
+    {% endblock %}
+  </header>
+  <main class="main_site">
+    {% block body_content %}{% endblock %}
+  </main>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  {# <script src="bower_components/jquery/dist/jquery.js"></script> #}
   <script src="../vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
   <script src="./js/all.min.js" type="text/javascript"></script>
   {% block script %}{% endblock %}

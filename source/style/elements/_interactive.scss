@@ -32,9 +32,14 @@ input, button, textarea {
 label {
 	@extend %basic;
 
-	input {
+	input, textarea {
 		margin-left: $basic_space;
 	}
+}
+
+label + textarea {
+	@extend %solo;
+	display: block;
 }
 
 input {
@@ -46,10 +51,9 @@ input {
 	}
 }
 
-@each $input in $basic_input_list, textarea {
+@each $input in $basic_input_list, textarea, select {
 	#{$input} {
 		@extend %basic_mono;
-		border: $basic_io_border;
 		padding: $half_space;
 		background-color: $basic_io_back_color;
 
@@ -70,8 +74,13 @@ input {
 	}
 }
 
-@each $input in $basic_input_list {
+@each $input in $basic_input_list, textarea {
+	#{$input} {
+		border: $basic_io_border;
+	}
+}
 
+@each $input in $basic_input_list {
 	#{$input} {
 		line-height: 1;
 	}
@@ -84,8 +93,14 @@ input {
 }
 
 label + input,
-.input__label_right {
+.input__label_right,
+.label > input,
+.label > select {
 	margin: 0 $basic_space;
+}
+
+.label {
+	line-height: 2.5;
 }
 
 .label__table {
@@ -133,7 +148,7 @@ button {
 }
 
 select {
-
+	border: none;
 }
 
 datalist {

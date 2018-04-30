@@ -90,8 +90,8 @@ li, dt, dd {
 	@extend %basic;
 }
 
-li, dd {
-	// margin-bottom: $basic_space;
+.list__basic li, dd {
+	margin-bottom: $basic_space;
 }
 
 dd {

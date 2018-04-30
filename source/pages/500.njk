@@ -1,0 +1,23 @@
+<!-- index.njk -->
+{% set pageId = "500" %}
+{% set pageClass = "body__status" %}
+
+{% extends "maintenance.njk" %}
+
+{% block title %}500{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+<main class="main__site">
+  <h1>500</h1>
+  <h3>Server-Fehler</h3>
+  <p>Allgemeiner Server Fehler!!! <dfn>Internal Server Error</dfn></p>
+  <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#5xx_%E2%80%93_Server-Fehler">
+    <p>Dies ist ein „Sammel-Statuscode“ für unerwartete Serverfehler.</p>
+    <p class="quote-author"><a class="line-link" href="https://de.wikipedia.org/wiki/HTTP-Statuscode#5xx_%E2%80%93_Server-Fehler">Wikipedia</a></p>
+  </blockquote>
+</main>
+{% include "partials/footer-status.njk" %}
+{% endblock %}

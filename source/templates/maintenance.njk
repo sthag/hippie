@@ -1,4 +1,3 @@
-<!-- layout.nunjucks -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,7 +7,7 @@
   <title>{% block title %}{% endblock %}</title>
 
   <meta name="author" content="Interaktionsweise">
-  <meta name="description" content="hippie example">
+  <meta name="description" content="hippie http status">
   <meta name="generator" content="Notepad++, Atom">
   <meta name="robots" content="noindex">
 
@@ -17,10 +16,12 @@
 
   <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  
+  <link rel="stylesheet" type="text/css" media="all" href="./css/maintenance.css"/>
   {% endblock %}
 </head>
 
-<body id="{{ pageId }}" class="height_full">
+<body id="{{ pageId }}" class="{{ pageClass }}">
   <div id="root">
     {% block body_content %}{% endblock %}
   </div>

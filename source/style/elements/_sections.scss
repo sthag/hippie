@@ -67,11 +67,11 @@ section {
 
 aside {
 
-	&.right + section {
+	&.right + .bside {
 		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
 	}
 
-	&.left + section {
+	&.left + .bside {
 		margin-left: calc(#{$basic_aside_width} + #{$basic_space});
 	}
 }
