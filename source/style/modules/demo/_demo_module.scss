@@ -201,6 +201,8 @@
 
 .hello {
 	flex:  0 1 auto;
-	padding: 1em 5em;
-	background-color: rgba(black, 0.25);
+	ul {
+		padding: 1em 5em;
+		background-color: rgba(black, 0.25);
+	}
 }
