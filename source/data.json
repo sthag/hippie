@@ -1,0 +1,34 @@
+{
+  "demolinks": [
+    {
+      "href": "demo/intro.html",
+      "text": "Intro"
+    },
+    {
+      "href": "demo/os.html",
+      "text": "OS"
+    },
+    {
+      "href": "demo/error/404.html",
+      "text": "404"
+    },
+    {
+      "href": "demo/error/500.html",
+      "text": "500"
+    }
+  ],
+  "links": [
+    {
+      "href": "elements.html",
+      "text": "Elements"
+    },
+    {
+      "href": "blank.html",
+      "text": "Blank"
+    },
+    {
+      "href": "tests.html",
+      "text": "Tests"
+    }
+  ]
+}

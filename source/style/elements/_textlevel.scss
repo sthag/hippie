@@ -164,3 +164,41 @@ ins {
 del {
 
 }
+
+
+
+// General Classes
+// ------------------------------------------------------------------------------
+.txt-tiny {
+	font-size: .5em !important;
+}
+
+.txt-smaller {
+	font-size: .75em !important;
+}
+
+.txt-larger {
+	font-size: 1.2em !important;
+}
+
+.txt-huge {
+	font-size: 3em !important;
+}
+
+.txt_center {
+	text-align: center !important;
+}
+.txt_right {
+	text-align: right !important;
+}
+.txt_left {
+	text-align: left !important;
+}
+
+.txt_white {
+	color: white;
+}
+
+.txt_black {
+	color: black;
+}

@@ -6,7 +6,10 @@ Clone the repo `https://github.com/sthag/hippie.git`.
 
 Change to the newly created folder. By default this would be *hippie*.
 
-Run the command *gulp*.
+Run the command `npm install`.
+This will install all nodejs dependencies into the filder *node_modules*.
+
+Run the command `gulp`.
 This will create a folder *build* with the resulting files.
 
 ## LOGIC

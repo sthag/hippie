@@ -52,11 +52,12 @@ $head_size_4: 1.35em !default;
 $text_size_1: 1em;
 $text_size_2: 20;
 
-$text_line_1: 1.5 !default;
-$head_line_1: $text_line_1;
-$head_line_2: $text_line_1;
-$head_line_3: $text_line_1;
-$head_line_4: $text_line_1;
+$text_line_basic: 1.3 !default;
+$text_line_mono: 1.1 !default;
+$head_line_basic: $text_line_basic !default;
+$head_line_2: $head_line_basic;
+$head_line_3: $head_line_basic;
+$head_line_4: $head_line_basic;
 
 $print_font_family: #{'Times New Roman', times} !default;
 $monospace_font_family: #{'Courier New', monospace} !default;

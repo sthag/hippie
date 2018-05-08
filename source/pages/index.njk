@@ -12,18 +12,27 @@
 {% block body_content %}
 <div class="wrap">
   <div class="hello">
-    <h2>Demo Pages</h2>
+    <h2>This is HIPPIE</h2>
+    <p>You can start using it by replacing this file with your own index page.</p>
+    <p>The folder <i>demo</i> contains examples and also an overview of definitions made.<br/>Follow the white rabbit.</p>
+
+    <h3>Demo Pages</h3>
     <ul class="list__link">
-      <li><a href="demo/intro.html">Intro</a></li>
-      <li><a href="demo/os.html">OS</a></li>
-      <li><a href="demo/blank.html">Blank</a></li>
-      <li><a href="demo/error/404.html">404</a></li>
-      <li><a href="demo/error/500.html">500</a></li>
+      <!-- Loops through "demo-links" array -->
+      {% for link in demolinks %}
+      <li><a href="{{link.href}}">{{link.text}}</a></li>
+      {% endfor %}
     </ul>
-    <h2>Overview about all the styles</h2>
+    <pre class="txt-tiny txt_white">
+  ()()
+  (..)
+C(")(")</pre>
+    <h3>Overview about all the styles</h3>
     <ul class="list__link">
-      <li><a href="elements.html">Elements</a></li>
-      <li><a href="tests.html">Tests</a></li>
+      <!-- Loops through "links" array -->
+      {% for link in links %}
+      <li><a href="{{link.href}}">{{link.text}}</a></li>
+      {% endfor %}
     </ul>
   </div>
 </div>
