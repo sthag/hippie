@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function setup() {
 	if($('#js_tph').length && full_view_hover) {

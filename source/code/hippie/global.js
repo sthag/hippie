@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // DOM ready
 // ------------------------------------------------------------------------------
@@ -22,9 +22,9 @@ $( document ).ready(function() {
 		function() {
 			var $this = $(this);
 
-			if($(this).attr("emmet")){
-
-			}
+			// if($(this).attr("emmet")){
+			//
+			// }
 
 			$(this).next(".exp_pop").show();
 		}, function() {
@@ -47,11 +47,11 @@ $( document ).ready(function() {
 	$(".exp_help_btn").click(function(e){
 		var $wrap, $pop;
 
-		if(exp_mode != true){
+		if(exp_mode !== true){
 			exp_mode = true;
 
 			$(".js_pop").each(function(i, e){
-				if($(this).css("position") == "static") {
+				if($(this).css("position") === "static") {
 					$(this).addClass("js_changed_pos");
 					$(this).css("position", "relative");
 				}
@@ -70,7 +70,7 @@ $( document ).ready(function() {
 				$(this).after($pop);
 				if($(this).hasClass("js_changed_pos")){
 					$(this).css("position", "");
-					if($(this).attr("style") == "") {
+					if($(this).attr("style") === "") {
 						$(this).removeAttr("style");
 					}
 					$(this).removeClass("js_changed_pos");
@@ -112,14 +112,14 @@ $( document ).ready(function() {
 	var i = 0;
 	$( ".pass-def dd" ).each(function() {
 		$( this ).find( "li" ).each(function( index ) {
-			if ( 0 == $( this ).children( "ul" ).length ) {
+			if ( 0 === $( this ).children( "ul" ).length ) {
 				//console.log( index + ": " + $( this ).text() );
 				var tempContent = $( this ).html();
 				//$( this ).html( "<span class=\"list-count\"></span>" );
 				$( this ).html( tempContent +"<span class=\"list-count\">"+ i +"</span>" );
 				i++;
 			}
-		})
+		});
 	});
 
 

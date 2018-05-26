@@ -5,6 +5,10 @@
       "text": "Intro"
     },
     {
+      "href": "demo/elements.html",
+      "text": "Elements"
+    },
+    {
       "href": "demo/os.html",
       "text": "OS"
     },
@@ -18,10 +22,6 @@
     }
   ],
   "links": [
-    {
-      "href": "elements.html",
-      "text": "Elements"
-    },
     {
       "href": "blank.html",
       "text": "Blank"
