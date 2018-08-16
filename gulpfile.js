@@ -17,38 +17,39 @@ var build_folder = {
 }
 
 // Load plugins
-var fs = require('fs');
-const gulp = require('gulp'),
-// rename = require('gulp-rename'),
-del = require('del');
-gulpif = require('gulp-if');
-sequencer = require('run-sequence');
-// concat = require('gulp-concat'),
-// pump = require('pump'),
-sourcemap = require('gulp-sourcemaps'),
-prefix = require('gulp-autoprefixer'),
-sass = require('gulp-sass'),
-// rubysass = require('gulp-ruby-sass'),
-nunjucks = require('gulp-nunjucks-render');
-// cssnano = require('gulp-cssnano'),
-jshint = require('gulp-jshint'),
-jscs = require('gulp-jscs'),
-// useref = require('gulp-useref'),
-sasslint = require('gulp-sass-lint'),
-// uglifyjs = require('uglify-es'),
-// composer = require('gulp-uglify/composer'),
-// imagemin = require('gulp-imagemin'),
-spritesmith = require('gulp.spritesmith'),
-// cache = require('gulp-cached'),
-// remember = require('gulp-remember'),
-// changed = require('gulp-changed'),
-// newer = require('gulp-newer'),
-plumber = require('gulp-plumber'),
-notify = require('gulp-notify'),
-data = require('gulp-data'),
-browsersync = require('browser-sync').create();
+const fs = require('fs');
+const gulp = require('gulp');
+// const rename = require('gulp-rename');
+const del = require('del');
+const gulpif = require('gulp-if');
+const sequencer = require('run-sequence');
+const sourcemap = require('gulp-sourcemaps');
+const prefix = require('gulp-autoprefixer');
+const sass = require('gulp-sass');
+// const rubysass = require('gulp-ruby-sass');
+const nunjucks = require('gulp-nunjucks-render');
+// const cssnano = require('gulp-cssnano');
+const jshint = require('gulp-jshint');
+const jscs = require('gulp-jscs');
+// const useref = require('gulp-useref');
+const sasslint = require('gulp-sass-lint');
+// const imagemin = require('gulp-imagemin');
+const spritesmith = require('gulp.spritesmith');
+// const changed = require('gulp-changed');
+// const newer = require('gulp-newer');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const data = require('gulp-data');
+const browsersync = require('browser-sync').create();
 
-// var minify = composer(uglifyjs, console);
+// only used for js task
+const concat = require('gulp-concat');
+const pump = require('pump');
+const composer = require('gulp-uglify/composer');
+const uglifyjs = require('uglify-es');
+const minify = composer(uglifyjs, console);
+const cache = require('gulp-cached');
+const remember = require('gulp-remember');
 
 
 
@@ -62,11 +63,30 @@ gulp.task('sass', function() {
     includePaths: [source_folder.root+'/bower_components']
   }))
   .pipe(prefix(['>= 4%', 'last 2 version']))
+  // .pipe(cssnano())
   .pipe(sourcemap.write())
   .pipe(gulp.dest(build_folder.styles))
   .pipe(browsersync.reload({
     stream: true
   }))
+});
+
+
+// and this is functionality
+gulp.task('js', function(cb) {
+  pump([
+    gulp.src(source_folder.scripts),
+    cache('scripts'),
+    jshint('.jshintrc'),
+    jshint.reporter('default'),
+    sourcemap.init(),
+    minify(),
+    remember('scripts'),
+    concat('all.min.js'),
+    sourcemap.write(),
+    gulp.dest(build_folder.scripts),
+    browsersync.stream()
+  ], cb);
 });
 
 
@@ -150,7 +170,7 @@ gulp.task('clean:dev', function() {
 
 // watch over changes and react
 // split up into sub tasks
-gulp.task('watch-js', ['lint:js'], browsersync.reload);
+gulp.task('watch-js', ['lint:js', 'js'], browsersync.reload);
 
 gulp.task('overwatch', function() {
   gulp.watch('source/code/**/*.js', ['watch-js'])
@@ -168,7 +188,7 @@ gulp.task('default', function(callback) {
   sequencer(
     'clean:dev',
     ['sprites', 'lint:js', 'lint:scss'],
-    ['sass', 'nunjucks'],
+    ['sass', 'js', 'nunjucks'],
     ['syncreload', 'overwatch'],
     callback
   )
