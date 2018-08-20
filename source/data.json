@@ -21,10 +21,14 @@
       "text": "500"
     }
   ],
-  "links": [
+  "demoadditionallinks": [
     {
       "href": "blank.html",
       "text": "Blank"
+    },
+    {
+      "href": "maintenance.html",
+      "text": "Maintenance"
     },
     {
       "href": "tests.html",

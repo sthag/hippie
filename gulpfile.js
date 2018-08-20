@@ -113,8 +113,12 @@ gulp.task('nunjucks', function() {
 // automagically reload browsers
 gulp.task('syncreload', function() {
   browsersync.init({
+    // online: false,
+    // watch: true,
+    // logLevel: "info",
     open: false,
     server: 'build',
+    // index: "demo.html",
     // proxy: "http://verser.vrt/virtual/"
   });
 });

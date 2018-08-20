@@ -26,6 +26,9 @@
 <form action="">
   <input id="txtName" type="text" /><span id="error">Caps Lock is ON.</span>
 </form>
+
+{% import "macros/nav-macro.njk" as forms %}
+{{ forms.active('zubereitung') }}
 {% endblock %}
 
 {% block script %}

@@ -185,6 +185,10 @@ del {
 	font-size: 3em !important;
 }
 
+.txt_hero {
+	font-size: $hero_size_1;
+}
+
 .txt_center {
 	text-align: center !important;
 }
@@ -201,4 +205,11 @@ del {
 
 .txt_black {
 	color: black;
+}
+
+.txt_gradient {
+	background: linear-gradient(165deg, $alpha_color 30%, $bravo_color 45%, $charlie_color 50%, $delta_color, $echo_color 80%, $foxtrot_color);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
