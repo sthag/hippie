@@ -1,0 +1,19 @@
+<!-- page-maintenance.njk -->
+{% set pageId = "blank" %}
+{% set pageClass = "height_full" %}
+
+{% extends "hippie/demo-maintenance.njk" %}
+
+{% block title %}Wartung{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" media="all" href="../css/demo.css"/>
+<!-- <link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/> -->
+{% endblock %}
+
+{% block body_content %}
+<div id="root" class="overflow">
+	<h1 class="txt_hero txt_center txt_gradient">HIPPIE</h1>
+</div>
+{% endblock %}

@@ -1,32 +1,24 @@
-// Form basics
+// Forms
 // -----------------------------------------------------------------------------
+// form
+// label
+// input
+// button
+// select
+// datalist
+// optgroup
+// option
+// textarea
+// output
+// progress
+// meter
+// fieldset
+// legend
+
+
 
 form {
 
-}
-
-fieldset {
-	margin: $high_margin;
-	padding: $basic_space;
-	border: $basic_border;
-}
-
-legend {
-	@extend %basic;
-	padding: 0 $half_space;
-}
-
-
-
-// Common
-// -----------------------------------------------------------------------------
-input, button, textarea {
-	margin: $io_margin;
-
-	&[disabled="disabled"],
-	&[disabled] {
-		cursor: not-allowed;
-	}
 }
 
 label {
@@ -40,6 +32,15 @@ label {
 label + textarea {
 	@extend %solo;
 	display: block;
+}
+
+input, button, textarea {
+	margin: $io_margin;
+
+	&[disabled="disabled"],
+	&[disabled] {
+		cursor: not-allowed;
+	}
 }
 
 input {
@@ -92,55 +93,22 @@ input {
 	}
 }
 
+fieldset {
+	margin: $high_margin;
+	padding: $basic_space;
+	border: $basic_border;
+}
+
+legend {
+	@extend %basic;
+	padding: 0 $half_space;
+}
+
 label + input,
 .input__label_right,
 .label > input,
 .label > select {
 	margin: 0 $basic_space;
-}
-
-.label {
-	line-height: 2.5;
-}
-
-.label__table {
-	display: table;
-
-	input {
-		display: table-cell;
-	}
-}
-
-
-
-.input__default {
-
-	label {
-		@extend .label__table;
-		margin: $half_space 0;
-
-		input {
-			padding: $half_space ($half_space + 1);
-			border-style: solid;
-			border-color: transparent;
-			background-color: $basic_io_back_color;
-			color: $basic_io_font_color;
-
-			&:hover {
-				background-color: $darkest_color;
-				color: $brightest_color;
-			}
-		}
-	}
-}
-
-
-
-// More
-// -----------------------------------------------------------------------------
-
-textarea {
-
 }
 
 button {
@@ -163,6 +131,10 @@ option {
 
 }
 
+textarea {
+
+}
+
 output {
 
 }
@@ -179,6 +151,11 @@ meter {
 
 // Interactive elements
 // -----------------------------------------------------------------------------
+// details
+// summary
+// dialog
+
+
 
 details {
 
@@ -188,23 +165,58 @@ summary {
 
 }
 
-menu {
-
-}
-
-menuitem {
-
-}
-
 dialog {
 
 }
 
 
 
-// Canvas
+// Scripting
 // -----------------------------------------------------------------------------
+// script
+// noscript
+// template
+// canvas
+
+
 
 canvas {
 
+}
+
+
+
+// General Classes
+// ------------------------------------------------------------------------------
+.label {
+	line-height: 2.5;
+}
+
+.label__table {
+	display: table;
+
+	input {
+		display: table-cell;
+	}
+}
+
+.input__default {
+
+	label {
+		@extend .label__table;
+		margin: $half_space 0;
+
+		input {
+			padding: $half_space ($half_space + 1);
+			border-style: solid;
+			border-color: transparent;
+			background-color: $basic_io_back_color;
+			color: $basic_io_font_color;
+
+			&:hover {
+				background-color: $darkest_color;
+				color: $brightest_color;
+			}
+		}
+	}
 }

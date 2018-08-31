@@ -13,6 +13,7 @@ var build_folder = {
   scripts: 'build/js',
   images: 'build/art',
   vendor: 'build/vendor',
+  pages: 'build/**/*.html',
   root: 'build'
 }
 
@@ -95,7 +96,7 @@ gulp.task('nunjucks', function() {
   return gulp.src('source/pages/**/*.+(html|njk)')
   .pipe(plumbError('Error Running Nunjucks'))
   .pipe(data(function() {
-    return JSON.parse(fs.readFileSync('./source/data.json'))
+    return JSON.parse(fs.readFileSync('./source/demo_data.json'))
   }))
   .pipe(nunjucks({
     path: ['source/templates'],
@@ -114,12 +115,12 @@ gulp.task('nunjucks', function() {
 gulp.task('syncreload', function() {
   browsersync.init({
     // online: false,
-    // watch: true,
     // logLevel: "info",
+    // proxy: "http://verser.vrt/virtual/",
+    // watch: true,
+    index: "demo.html",
     open: false,
-    server: 'build',
-    // index: "demo.html",
-    // proxy: "http://verser.vrt/virtual/"
+    server: 'build'
   });
 });
 
@@ -165,6 +166,7 @@ gulp.task('lint:scss', function() {
 gulp.task('clean:dev', function() {
   del.sync([
     build_folder.styles,
+    build_folder.pages,
     build_folder.root+'/*.html'
   ]);
 });
@@ -182,7 +184,7 @@ gulp.task('overwatch', function() {
   gulp.watch([
     'source/templates/**/*',
     'source/pages/**/*.+(html|njk)',
-    'source/data.json'
+    'source/demo_data.json'
   ], ['nunjucks']);
 });
 

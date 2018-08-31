@@ -1,6 +1,45 @@
-// Links
+// Text-Level semantics
 // -----------------------------------------------------------------------------
+// a
+// em
+// strong
+// small
+// s
+// cite
+// q
+// dfn
+// abbr
+// ruby
+// rb
+// rt
+// rtc
+// rp
+// data
+// time
+// code
+// var
+// samp
+// kbd
+// sub
+// sup
+// i
+// b
+// u
+// mark
+// bdi
+// bdo
+// span
+// br
+// wbr
+// -----------------------------------------------------------------------------
+// Edits
+// -----------------------------------------------------------------------------
+// ins
+// del
 
+
+
+// Links
 a {
 	color: $basic_link_color;
 	//  color: lighten($basic_action_color, 20%);
@@ -46,9 +85,7 @@ a {
 }
 
 
-// Other elements
-// -----------------------------------------------------------------------------
-
+// Italic, Emphasis
 i, em {
 	font-style: italic;
 }
@@ -58,20 +95,27 @@ i, em {
 	color: $brightest_color;
 }
 
+// Bold, Strong
 b, strong {
 	font-weight: 500; // TODO maybe bolder
 }
 
+// Small
 small {
 
 }
 
+// No longer accurate or no longer relevant
+s {
 
-// Cite
+}
+
+// Citation
 cite {
 	font-style: italic;
 }
 
+// Phrasing content, quoted
 q {
 
 }
@@ -81,6 +125,26 @@ dfn {
 }
 
 abbr {
+
+}
+
+ruby {
+
+}
+
+rb {
+
+}
+
+rt {
+
+}
+
+rtc {
+
+}
+
+rp {
 
 }
 
@@ -102,6 +166,10 @@ code {
 	@extend %basic_mono;
 	padding: $tiny_space $half_space;
 	color: $basic_font_color;
+}
+
+var {
+
 }
 
 samp {
@@ -137,6 +205,11 @@ mark {
 	background-color: $darkest_color;
 }
 
+bdi, bdo {
+
+}
+
+// Span
 span {
 
 }
@@ -144,6 +217,7 @@ span {
 	@extend %solo;
 }
 
+// Linebreak
 br {
 
 }
@@ -169,19 +243,19 @@ del {
 
 // General Classes
 // ------------------------------------------------------------------------------
-.txt-tiny {
+.txt_tiny {
 	font-size: .5em !important;
 }
 
-.txt-smaller {
+.txt_smaller {
 	font-size: .75em !important;
 }
 
-.txt-larger {
+.txt_larger {
 	font-size: 1.2em !important;
 }
 
-.txt-huge {
+.txt_huge {
 	font-size: 3em !important;
 }
 

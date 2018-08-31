@@ -1,8 +1,8 @@
-<!-- demo.njk -->
+<!-- page-intro.njk -->
 {% set pageId = "intro" %}
 {% set pageClass = "" %}
 
-{% extends "demo.njk" %}
+{% extends "hippie/demo-extended.njk" %}
 
 {% block title %}Intro{% endblock %}
 {% block head %}
@@ -14,17 +14,11 @@
   <!-- <div class="exp_overlay_btn exp_help_btn">
   <span class="span__solo">?</span>
 </div> -->
-<nav class="nav__page_meta">
-  <ul>
-    <li class="magic"><a href="#begin" id="js_scrolltop" class="a_button_meta"><img src="./art/up.png" alt="" width="32" height="64"></a></li>
-    <li><button class="a_button_meta">Show Meta Information</button></li>
-    <li><a href="#end" id="js_scrolldown" class="a_button_meta"><img src="./art/down.png" alt="" width="32" height="32"></a></li>
-  </ul>
-</nav>
+{% include "hippie/partials/nav-page-meta.njk" %}
 </div>
 
 <div id="begin" class="demo__intro">
-  Dies ist einfach nur Text.<br>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.
+  Dies ist einfach nur Text.<br>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.<br>Dies ist normalerweise nicht vorgesehen und wird hier nur zur Einführung und Anschauung verwendet.<br><br>
   <p>Es wirken nur die Eigenschaften des <code>&lt;body&gt;</code> Elements. Dieses Element umschließt den gesamten Inhalt des Dokumentes und kommt daher nur einmal vor. Inhalte sind normalerweise durch Elemente definiert. Grundlegende Elemente teilen das Dokument zunächst in Abschnitte.</p>
   <h1>Bereiche</h1>
   <article>
@@ -48,6 +42,7 @@
         <p>Auch abschließender Inhalt kann für einen Abschnitt definiert werden. Dazu wird <code>&lt;footer&gt;</code> eingesetzt.</p>
       </footer>
     </section>
+    <address>Das Element <code>&lt;address&gt;</code> hat den Zweck, Kontaktinformationen bereit zu stellen. Diese werden, je nach Position des Elements im Kontext der gesamten Seite, anders gewertet.</address>
     <!-- </div> -->
   </article>
   <article>
@@ -75,9 +70,9 @@
     <hr class="hr__dotted js_pop" emmet/><div class="exp_pop"><code class="code__solo">hr.hr__dotted</code></div><!--hr.hr__dotted-->
     <hr class="center_50 js_pop"/><div class="exp_pop"><code class="code__solo">hr.center_50</code></div>
     <hr class="hr__dotted center_25 js_pop"/><div class="exp_pop"><code class="code__solo">hr.hr__dotted.center_25</code></div>
-    <p class="block__column_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code__solo">p.block__column_2</code></div>
-    <p class="block__column_3 block__column_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code__solo">p.block__column_3.block__column_line</code></div>
-    <p class="block__column_3 block__column_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
+    <p class="column__2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code__solo">p.column__2</code></div>
+    <p class="column__3 column__line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code__solo">p.column__3.column__line</code></div>
+    <p class="column__3 column__line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
     <p>Es gibt die Möglichkeit vorformatierten Text darzustellen <code>&lt;pre&gt;</code>.</p>
     <pre>Dadurch<br>	bleiben<br>		Einrückungen<br>			durch<br>				Tabulatoren<br>					erhalten.</pre>
     <p>Text bekommt durch Listen besondere optische wie auch inhaltliche Struktur. Es gibt ungeordnete <code>&lt;ul&gt;</code> und geordnete Listen <code>&lt;ol&gt;</code> sowie Beschreibungslisten <code>&lt;dl&gt;</code>. Die beiden ersten Varianten beinhalten das Listenelement <code>&lt;li&gt;</code>. Beschreibungslisten beinhalten jeweils das Paar von Ausdruck <code>&lt;dt&gt;</code> und Beschreibung <code>&lt;dd&gt;</code>. Im Folgenden eine Liste der Listen in ihrer Ausgangskonfiguration:</p>
@@ -587,11 +582,11 @@
             <div class="flex__child"></div>
           </div>
           <div class="flex__column_wrap">
-            <div class="column"><input value="Undefiniert"/></div>
-            <div class="column"><input type="text" size="8" value="Text"/></div>
-            <div class="column"><input type="text" size="8" value="Deaktiviert" disabled/></div>
-            <div class="column"><input type="button" value="Auswählen"></div>
-            <div class="column"><input type="submit" value="Senden" disabled/></div>
+            <div class="flex__column"><input value="Undefiniert"/></div>
+            <div class="flex__column"><input type="text" size="8" value="Text"/></div>
+            <div class="flex__column"><input type="text" size="8" value="Deaktiviert" disabled/></div>
+            <div class="flex__column"><input type="button" value="Auswählen"></div>
+            <div class="flex__column"><input type="submit" value="Senden" disabled/></div>
           </div>
 
           <h2>Gruppierung</h2>
@@ -670,7 +665,7 @@
                 <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
               </blockquote>
             </div>
-            {% include "partials/footer-status.njk" %}
+            {% include "hippie/partials/footer-status.njk" %}
           </section>
           <section class="sec_main_status demo__status">
             <div class="wrap_center">
@@ -681,7 +676,7 @@
                 <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
               </blockquote>
             </div>
-            {% include "partials/footer-status.njk" %}
+            {% include "hippie/partials/footer-status.njk" %}
           </section>
           <section class="sec_main_status demo__status">
             <div class="wrap_center">
@@ -692,14 +687,17 @@
                 <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
               </blockquote>
             </div>
-            {% include "partials/footer-status.njk" %}
+            {% include "hippie/partials/footer-status.njk" %}
           </section>
         </article>
       </section>
-      {% include "partials/footer.njk" %}
+      {% include "hippie/partials/footer.njk" %}
       {% endblock %}
 
       {% block script %}
+      {{ super() }}
+      <script src="../vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
+      <script src="../js/all.min.js" type="text/javascript"></script>
       <script type="text/javascript">
       // Page specific
       // ------------------------------------------------------------------------------

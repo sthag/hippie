@@ -1,9 +1,19 @@
-// Images
+// Embedded content
 // -----------------------------------------------------------------------------
+// picture
+// source
+// img
+// iframe
+// embed
+// object
+// param
+// video
+// audio
+// track
+// map
+// area
 
-img {
-	vertical-align: top;
-}
+
 
 picture {
 
@@ -13,10 +23,9 @@ source {
 
 }
 
-
-
-// Other stuff
-// -----------------------------------------------------------------------------
+img {
+	vertical-align: top;
+}
 
 iframe {
 
@@ -30,11 +39,19 @@ object {
 
 }
 
+param {
+
+}
+
 video {
 
 }
 
 audio {
+
+}
+
+track {
 
 }
 

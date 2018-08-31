@@ -1,8 +1,8 @@
-<!-- demo.njk -->
+<!-- page-os.njk -->
 {% set pageId = "os" %}
 {% set pageClass = "" %}
 
-{% extends "demo.njk" %}
+{% extends "hippie/demo-extended.njk" %}
 
 {% block title %}demo{% endblock %}
 {% block head %}
@@ -132,10 +132,13 @@
     </div>
   </div>
 </div>
-{% include "partials/footer.njk" %}
+{% include "hippie/partials/footer.njk" %}
 {% endblock %}
 
 {% block script %}
+{{ super() }}
+<script src="../vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
+<script src="../js/all.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 // Page specific
 // ------------------------------------------------------------------------------

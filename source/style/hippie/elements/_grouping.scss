@@ -1,5 +1,22 @@
-// Basic content
+// Grouping content
 // -----------------------------------------------------------------------------
+// p
+// address
+// hr
+// pre
+// blockquote
+// ol
+// ul
+// li
+// dl
+// dt
+// dd
+// figure
+// figcaption
+// main
+// div
+
+
 
 // Paragraph
 p {
@@ -15,7 +32,7 @@ p {
 
 // Address
 address {
-	@extend %basic;
+	// @extend %basic;
 	margin-top: $double_space;
 	margin-bottom: $double_space;
 }
@@ -90,7 +107,7 @@ li, dt, dd {
 	@extend %basic;
 }
 
-.list__basic li, dd {
+dd, .list__basic li {
 	margin-bottom: $basic_space;
 }
 
@@ -104,6 +121,29 @@ ul {
 	}
 }
 
+// Embedded
+figure {
+	margin: $double_space $basic_indent;
+}
+
+figcaption {
+	@extend %basic;
+}
+
+// Main content
+main {
+
+}
+
+// Div
+div {
+
+}
+
+
+
+// General Classes
+// ------------------------------------------------------------------------------
 .list__dash {
 	li {
 		list-style: none;
@@ -147,28 +187,6 @@ ul {
 	}
 }
 
-// Embedded
-figure {
-	margin: $double_space $basic_indent;
-}
-
-figcaption {
-	@extend %basic;
-}
-
-
-
-// Special elements
-// -----------------------------------------------------------------------------
-
-main {
-
-}
-
-div {
-
-}
-
 .box__info {
 	padding: $double_space $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, 0.6);
@@ -185,24 +203,21 @@ div {
 	// width: 100%;
 }
 
-
-
 // Columns
-.block__column_line {
+.column__line {
 	column-rule: $basic_border;
 }
-.block__column_2, .block__column_3 {
+.column__2, .column__3 {
 	@extend p;
 }
-.block__column_2 {
+.column__2 {
 	column-count: 2;
 	column-gap: $space_3;
 }
-.block__column_3 {
+.column__3 {
 	column-count: 3;
 	column-gap: $space_4;
 }
-
 
 // Space and placeholders
 .box__space {
@@ -240,19 +255,22 @@ div {
 	background-color: rgba($brightest_color,.1);
 }
 
-
 // Data
 .box__file_tile {
 	@extend .float_space_left;
 }
 
-
 // Flex
 .flex__column_wrap {
 	@extend .flex;
 
-	.column {
+	.flex__column {
 		@extend .flex__child;
 		flex-grow: 1;
 	}
+}
+
+// Sprites
+.sprite__img {
+	display: inline-block;
 }

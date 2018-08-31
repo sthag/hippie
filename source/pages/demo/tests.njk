@@ -1,12 +1,14 @@
-<!-- blank.njk -->
+<!-- page-tests.njk -->
 {% set pageId = "blank" %}
 {% set pageClass = "height_full" %}
 
-{% extends "default.njk" %}
+{% extends "hippie/demo-default.njk" %}
 
 {% block title %}blank{% endblock %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" type="text/css" media="all" href="../css/demo.css"/>
+<!-- <link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/> -->
 <style>
 #error {
   border: 1px solid #FFFF66;
@@ -27,11 +29,13 @@
   <input id="txtName" type="text" /><span id="error">Caps Lock is ON.</span>
 </form>
 
-{% import "macros/nav-macro.njk" as forms %}
+{% import "hippie/macros/nav-macro.njk" as forms %}
 {{ forms.active('zubereitung') }}
 {% endblock %}
 
 {% block script %}
+{{ super() }}
+<script src="../js/all.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 // Page specific
 // ------------------------------------------------------------------------------

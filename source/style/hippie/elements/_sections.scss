@@ -1,4 +1,4 @@
-// Document
+// Root
 // -----------------------------------------------------------------------------
 
 html {
@@ -7,16 +7,27 @@ html {
 
 
 
-
-// Basic sections
+// Sections
 // -----------------------------------------------------------------------------
+// body
+// article
+// section
+// nav
+// aside
+// h1-h6
+// header
+// footer
 
+
+
+// Body
 body {
 	position: relative;
 	box-sizing: $box_sizing;
 	font-family: $primary_font_family;
 	font-size: $basic_size;
 	line-height: $basic_line;
+	line-height: $text_line_basic;
 	color: $basic_font_color;
 	background-color: $basic_back_color;
 
@@ -34,10 +45,12 @@ body {
 	}
 }
 
+// Article
 article {
 
 }
 
+// Section
 section {
 
 }
@@ -65,7 +78,14 @@ section {
 	padding-top: $space_3;
 }
 
+// Navigation
+nav {
+
+}
+
+// Aside element
 aside {
+	width: $basic_aside_width;
 
 	&.right + .bside {
 		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
@@ -74,15 +94,6 @@ aside {
 	&.left + .bside {
 		margin-left: calc(#{$basic_aside_width} + #{$basic_space});
 	}
-}
-
-
-nav {
-
-}
-
-aside {
-	width: $basic_aside_width;
 
 	&.left {
 		float: left;
@@ -97,6 +108,55 @@ aside {
 	}
 }
 
+// Headings
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {
+	@extend %head_1;
+	margin: $space_5 0 $space_3;
+}
+
+h1 + h1 {
+	margin-top: 0;
+}
+
+h2 {
+	@extend %head_2;
+	margin: $space_4 0 $space_3;
+}
+
+h2 + h2 {
+	margin-top: 0;
+}
+
+h3 {
+	@extend %head_3;
+	margin: $double_space 0;
+	text-transform: uppercase;
+}
+
+h4 {
+	@extend %head_3;
+	margin: $double_space 0;
+	text-transform: none;
+}
+
+h5 {
+	@extend %head_4;
+	margin: $double_space 0 $basic_space;
+	text-transform: none;
+}
+
+h6 {
+	@extend %basic;
+	margin: $basic_space 0;
+	text-transform: none;
+	font-weight: bold;
+}
+
+// Header
 header {
 
 }
@@ -114,48 +174,7 @@ header {
 	}
 }
 
+// Footer
 footer {
 
-}
-
-// Headings
-// -----------------------------------------------------------------------------
-
-h1, h2, h3, h4, h5, h6 {
-
-}
-
-h1 {
-	@extend %head_1;
-	margin: $space_5 0 $space_3;
-}
-
-h2 {
-	@extend %head_2;
-	margin: $space_4 0 $space_3;
-}
-
-h3 {
-	@extend %head_3;
-	margin: $double_space 0 $double_space;
-	text-transform: uppercase;
-}
-
-h4 {
-	@extend %head_3;
-	margin: $double_space 0 $double_space;
-	text-transform: none;
-}
-
-h5 {
-	@extend %head_4;
-	margin: $double_space 0 $basic_space;
-	text-transform: none;
-}
-
-h6 {
-	@extend %basic;
-	margin: $basic_space 0;
-	text-transform: none;
-	font-weight: bold;
 }

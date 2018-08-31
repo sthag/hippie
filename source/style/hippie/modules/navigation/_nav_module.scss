@@ -119,7 +119,7 @@ nav {
 	position: fixed;
 	// display: table;
 	// width: 3em;
-  right: 0;
+  right: $half_space;
   bottom: $double_space;
 
 	ul {
@@ -129,7 +129,12 @@ nav {
 	li {
 		margin-bottom: 0;
 	}
-	.a_button_meta {
+	button {
+		width: 32px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.a__button_meta {
 		// display: table-cell;
 		display: inline-block;
 

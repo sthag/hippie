@@ -1,8 +1,8 @@
-<!-- demo.njk -->
+<!-- page-elements.njk -->
 {% set pageId = "elements" %}
 {% set pageClass = "" %}
 
-{% extends "demo.njk" %}
+{% extends "hippie/demo-extended.njk" %}
 
 {% block title %}Elements{% endblock %}
 {% block head %}
@@ -14,13 +14,7 @@
   <!-- <div class="exp_overlay_btn exp_help_btn">
   <span class="span__solo">?</span>
 </div> -->
-<nav class="nav__page_meta">
-  <ul>
-    <li class="magic"><a href="#begin" id="js_scrolltop" class="a_button_meta"><img src="./art/up.png" alt="" width="32" height="64"></a></li>
-    <li><button class="a_button_meta">Show Meta Information</button></li>
-    <li><a href="#end" id="js_scrolldown" class="a_button_meta"><img src="./art/down.png" alt="" width="32" height="32"></a></li>
-  </ul>
-</nav>
+{% include "hippie/partials/nav-page-meta.njk" %}
 </div>
 <div id="begin" class="">
   <article>
@@ -57,10 +51,13 @@
     </footer>
   </article>
 </div>
-{% include "partials/footer.njk" %}
+{% include "hippie/partials/footer.njk" %}
 {% endblock %}
 
 {% block script %}
+{{ super() }}
+<script src="../vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
+<script src="../js/all.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 // Page specific
 // ------------------------------------------------------------------------------
