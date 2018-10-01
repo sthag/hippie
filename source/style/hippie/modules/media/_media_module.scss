@@ -1,3 +1,9 @@
 .up {
 	@include sprite($up);
 }
+.down {
+	@include sprite($down);
+}
+.meta {
+	@include sprite($meta);
+}

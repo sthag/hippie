@@ -1,9 +1,9 @@
-.body__status {
-  @extend .sec__main_status;
+.body_status {
+  @extend .sec_main_status;
   height: 100vh;
   border-color: $foxtrot_color;
 
-  .main__site {
+  .main_site {
     @extend .wrap_center;
     & > h1:first-of-type {
       margin-top: 0;

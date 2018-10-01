@@ -10,7 +10,7 @@ nav {
 	}
 }
 
-.nav__horizontal {
+.nav_horizontal {
 	ul {
 		@extend .overflow;
 
@@ -30,7 +30,7 @@ nav {
 	}
 }
 
-.nav__right {
+.nav_right {
 	float: right;
 	margin-left: $basic_space;
 
@@ -39,7 +39,7 @@ nav {
 	}
 }
 
-.nav__separate {
+.nav_separate {
 	li {
 		position: relative;
 		padding-left: $tiny_space;
@@ -59,7 +59,7 @@ nav {
 	}
 }
 
-.nav__separate_right {
+.nav_separate_right {
 	float: right;
 	li {
 		position: relative;
@@ -81,8 +81,8 @@ nav {
 	}
 }
 
-.nav__center_old {
-	@extend .nav__horizontal;
+.nav_center_old {
+	@extend .nav_horizontal;
 	float: right;
 	position: relative;
 	left: -50%;
@@ -94,7 +94,7 @@ nav {
 	}
 }
 
-.nav__column {
+.nav_column {
 	position: relative;
 	margin: $basic_space 0;
 
@@ -103,7 +103,7 @@ nav {
 		margin: 0 $space_5;
 
 		li {
-			@extend .flex__child;
+			@extend .flex_child;
 			flex-grow: 1;
 			margin: 0;
 			text-align: center;
@@ -115,7 +115,7 @@ nav {
 	}
 }
 
-.nav__page_meta {
+.nav_page_meta {
 	position: fixed;
 	// display: table;
 	// width: 3em;
@@ -128,13 +128,14 @@ nav {
 
 	li {
 		margin-bottom: 0;
+		line-height: 1;
 	}
 	button {
 		width: 32px;
 		margin-right: 0;
 		margin-left: 0;
 	}
-	.a__button_meta {
+	.a_button_meta {
 		// display: table-cell;
 		display: inline-block;
 
@@ -147,12 +148,15 @@ nav {
 			background-color: $basic_action_color;
 		}
 	}
+	.sprite_img {
+		vertical-align: top;
+	}
 }
 
-.header__page {
+.header_page {
 
 	nav {
-		@extend .nav__horizontal;
+		@extend .nav_horizontal;
 
 		a {
 

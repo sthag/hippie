@@ -16,13 +16,7 @@
   <!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
   <!--Only use one of the above!-->
 
-  <meta name="author" content="Interaktionsweise">
-  <meta name="description" content="hippie example">
-  <meta name="generator" content="Notepad++, Atom">
-  <meta name="robots" content="noindex">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+  {% include "hippie/partials/head-meta.njk" %}
 
   <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
@@ -33,7 +27,7 @@
   {% endblock %}
 </head>
 
-<body id="{{ pageId }}" class="body__demo">
+<body id="{{ pageId }}" class="{{ pageClass }} body_demo">
   {% include "hippie/partials/page-hover.njk" %}
   <div id="root">
   <header id="js_head" class="header_site">

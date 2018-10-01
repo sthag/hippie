@@ -1,46 +1,47 @@
-.query__goingLarge {
+.query_goingLarge {
   @include goingLarge($screen_tiny) {};
 }
 
-.query__goingSmall {
+.query_goingSmall {
   @include goingSmall($screen_gigantic) {};
 }
 
-.query__phoneUp {
+.query_phoneUp {
+  @include forPhoneUp {}
 }
 
-.query__phoneOnly {
+.query_phoneOnly {
   @include forPhoneOnly {}
 }
 
-.query__tabletPortaitOnly {
+.query_tabletPortaitOnly {
   @include forTabletPortraitOnly {
   }
 }
 
-.query__tabletPortraitUp {
+.query_tabletPortraitUp {
   @include forTabletPortraitUp {
   }
 }
 
-.query__tabletLandscapeOnly {
+.query_tabletLandscapeOnly {
   @include forTabletLandscapeOnly {}
 }
 
-.query__tabletLandscapeUp {
+.query_tabletLandscapeUp {
   @include forTabletLandscapeUp {}
 }
 
-.query__desktopOnly {
+.query_desktopOnly {
   @include forDesktopOnly {
   }
 }
 
-.query__desktopUp {
+.query_desktopUp {
   @include forDesktopUp {
   }
 }
 
-.query__bigDesktopUp {
+.query_bigDesktopUp {
   @include forBigDesktopUp {}
 }

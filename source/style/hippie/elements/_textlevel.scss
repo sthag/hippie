@@ -52,7 +52,7 @@ a {
 	}
 }
 
-.a__line {
+.a_line {
 	border-bottom-width: $tiny_space;
 	border-bottom-style: dotted;
 	border-color: $basic_border_color;
@@ -68,19 +68,19 @@ a {
 	}
 }
 
-.a__button {
+.a_button {
 	@extend %default_button;
 }
 
-.a__button_text {
+.a_button_text {
 	@extend %default_button;
 	padding: $wide_padding;
 	background-color: transparent;
 	color: $basic_font_color;
 }
 
-.a__button_border {
-	@extend .a__button_text;
+.a_button_border {
+	@extend .a_button_text;
 	border: $cell_border;
 }
 
@@ -90,7 +90,7 @@ i, em {
 	font-style: italic;
 }
 
-.i__bright {
+.i_bright {
 	font-style: normal;
 	color: $brightest_color;
 }
@@ -159,10 +159,10 @@ time {
 // Code
 code {
 	@extend %basic_mono;
-	color: lighten($basic_font_color, 12%);
+	color: lighten($basic_font_color, $basic_color_diff);
 	background-color: rgba($brightest_color,.1);
 }
-.code__solo {
+.code_solo {
 	@extend %basic_mono;
 	padding: $tiny_space $half_space;
 	color: $basic_font_color;
@@ -177,7 +177,15 @@ samp {
 }
 
 kbd {
-
+	@extend %basic_mono;
+	// font-size: .9em;
+	// font-weight: bold;
+	padding: 0 $half_space;
+	border-width: $basic_border_width;
+	border-style: solid;
+	border-color: darken($basic_back_color, $basic_color_diff);
+	border-radius: $basic_corner;
+	color: lighten($basic_font_color, $basic_color_diff);
 }
 
 sub, sup {
@@ -192,7 +200,7 @@ u {
 mark {
 	background-color: $alpha_color;
 }
-.mark__cursor {
+.mark_cursor {
 	color: $basic_highlight_color;
 	background-color: $darkest_color;
 }
@@ -213,7 +221,7 @@ bdi, bdo {
 span {
 
 }
-.span__solo {
+.span_solo {
 	@extend %solo;
 }
 

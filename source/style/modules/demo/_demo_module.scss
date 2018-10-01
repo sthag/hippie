@@ -1,10 +1,10 @@
 .demo__intro {
-	@extend .sec__main_center;
-	@extend .sec__main_status;
+	@extend .sec_main_center;
+	@extend .sec_main_status;
 }
 
 .demo__status {
-	@extend .sec__main_status;
+	@extend .sec_main_status;
 	position: relative;
 	min-height: 50vh;
 	border-color: $foxtrot_color;
@@ -32,7 +32,7 @@
 	}
 }
 
-.header__fancy {
+.header_fancy {
 	background-color: transparentize($bravo_color, 0.4);
 
 	nav {
@@ -51,7 +51,7 @@
 	}
 }
 
-.header__fix {
+.header_fix {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -101,6 +101,13 @@
 	background-position: 0 0;
 }
 
+.demo__sprite_meta {
+	width: 32px;
+	height: 32px;
+	background-image: url(../art/sprites.png);
+	background-position: -32px 32px;
+}
+
 .demo__avatar {
 
 	img {
@@ -133,39 +140,39 @@
   padding: $basic_padding;
 }
 
-.query__phoneUp {
-  background-color: rgba($basic_front_color, 0.2);
+.query_phoneUp {
+  @include forPhoneUp {background-color: rgba($basic_front_color, 0.2)};
 }
 
-.query__phoneOnly {
+.query_phoneOnly {
   @include forPhoneOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__tabletPortaitOnly {
+.query_tabletPortaitOnly {
   @include forTabletPortraitOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__tabletPortraitUp {
+.query_tabletPortraitUp {
   @include forTabletPortraitUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__tabletLandscapeOnly {
+.query_tabletLandscapeOnly {
   @include forTabletLandscapeOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__tabletLandscapeUp {
+.query_tabletLandscapeUp {
   @include forTabletLandscapeUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__desktopOnly {
+.query_desktopOnly {
   @include forDesktopOnly { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__desktopUp {
+.query_desktopUp {
   @include forDesktopUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
-.query__bigDesktopUp {
+.query_bigDesktopUp {
   @include forBigDesktopUp { background-color: rgba($basic_front_color, 0.2); }
 }
 
@@ -200,6 +207,7 @@
 		content: '< 768px';
 		padding: $basic_padding;
 		border-radius: $basic_corner_radius;
+		color: $brightest_color;
 		background-color: rgba($basic_front_color, 0.2);
 	}
 }

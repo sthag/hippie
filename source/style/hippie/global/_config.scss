@@ -101,12 +101,12 @@ $basic_link_color: $echo_color !default;
 $basic_highlight_color: $brightest_color !default;
 $basic_action_color: $foxtrot_color !default;
 
-
-
 $basic_border_color: $basic_front_color !default;
 
 // default shadow colors
 // $shadow_color: fade-out($medium_color, 0.5);
+
+$basic_color_diff: 12% !default;
 
 $basic_color_list: ();
 
@@ -147,8 +147,9 @@ $io_margin: 0 $space_3 !default;
 $basic_padding: calc(#{$basic_space} - 3px) $basic_space !default;
 $wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2) !default;
 
-$basic_corner: $tiny_space;
+$basic_corner: $tiny_space * 2;
 
+// Borders
 $basic_border_width: $tiny_space !default;
 $border_width_4: $tiny_space * 4;
 $border_width_8: $tiny_space * 8;
@@ -197,8 +198,8 @@ $basic_focus_list:
 	'textarea:not([disabled])',
 	'*[tabindex]';
 
-$basic_io_font_color: lighten($basic_font_color, 10%);
-$basic_io_back_color: darken($brightest_color, 10%);
+$basic_io_font_color: lighten($basic_font_color, $basic_color_diff);
+$basic_io_back_color: darken($brightest_color, $basic_color_diff);
 $basic_io_border_color: $brightest_color;
 
 $basic_io_border_width: $tiny_space * 2 !default;
@@ -212,8 +213,10 @@ $basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $l
 // ANIMATIONS
 // ------------------------------------------------------------------------------
 
-$basic_duration: 150ms;
-$basic_timing: ease;
+$basic_duration: 250ms;
+$double_duration: 500ms;
+$extended_duration: 2s;
+$basic_timing: ease-out;
 
 
 // HARDWARE BREAKPOINTS

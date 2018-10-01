@@ -189,7 +189,7 @@
 }
 
 .hover_back_change {
-	background-color: darken($basic_back_color, 10%);
+	background-color: darken($basic_back_color, $basic_color_diff);
 	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
@@ -201,7 +201,7 @@
 	@extend %full_viewport;
 	z-index: $z_heaven;
 	background-color: transparentize($darkest_color, 0.5);
-	transition: background-color 0.2s ease-in-out;
+	transition: background-color $extended_duration $basic_timing $extended_duration;
 	pointer-events: none;
 }
 
@@ -209,27 +209,27 @@
 	display: flex;
 }
 
-.flex__wrap {
+.flex_wrap {
 	@extend .flex;
 	flex-wrap: wrap;
 }
 
-.flex__row {
+.flex_row {
 	@extend .flex;
 	flex-direction: column;
 	// align-items: flex-start;
 	justify-content: flex-start;
 }
 
-.flex__child {
+.flex_child {
 	flex:  0 1 auto;
 }
 
-.flex__child_one {
+.flex_child_one {
 	flex:  1;
 }
 
-.flex__child_end {
+.flex_child_end {
 	align-self: flex-end;
 }
 
@@ -237,7 +237,7 @@
 // Colors
 // ------------------------------------------------------------------------------
 .txt_light_color {
-	color: darken($basic_back_color, 10%);
+	color: darken($basic_back_color, $basic_color_diff);
 }
 
 

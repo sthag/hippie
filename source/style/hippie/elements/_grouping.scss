@@ -45,12 +45,12 @@ hr {
 	border-color: $darkest_color;
 }
 
-.hr__hidden {
+.hr_hidden {
 	@extend hr;
 	border-color: transparent;
 }
 
-.hr__dotted {
+.hr_dotted {
 	@extend hr;
 	border-style: dotted;
 }
@@ -60,8 +60,8 @@ pre {
 	@extend %basic_mono;
 }
 
-.pre__code {
-	// overflow-x: scroll;
+.pre_code {
+	overflow-x: auto;
 	border-color: rgba($brightest_color,.1);
 	border-style: dotted;
 	border-width:  0 0 0 $border_width_4;
@@ -80,14 +80,14 @@ blockquote {
 	padding-left: $basic_indent;
 }
 
-.quote__mark {
+.quote_mark {
 	p::before {
 		content: "\201E \0020";
 	}
 	p::after {
 		content: "\201C \0020";
 	}
-	.quote__source {
+	.quote_source {
 		&::before, &::after {
 			content: "";
 		}
@@ -107,7 +107,7 @@ li, dt, dd {
 	@extend %basic;
 }
 
-dd, .list__basic li {
+dd, .list_basic li {
 	margin-bottom: $basic_space;
 }
 
@@ -144,7 +144,7 @@ div {
 
 // General Classes
 // ------------------------------------------------------------------------------
-.list__dash {
+.list_dash {
 	li {
 		list-style: none;
 		position: relative;
@@ -157,7 +157,7 @@ div {
 	}
 }
 
-.list__link {
+.list_link {
 	li {
 		margin-bottom: $tiny_space * 2;
 		text-transform: uppercase;
@@ -180,52 +180,52 @@ div {
 	}
 }
 
-.list__horizontal {
+.list_horizontal {
 	overflow: auto;
 	li {
 		@extend .float_space_left;
 	}
 }
 
-.box__info {
+.box_info {
 	padding: $double_space $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, 0.6);
 	background-color: rgba($echo_color, 0.1) !important;
 }
 
-.box__main_indent {
+.box_main_indent {
 	margin-left: 25%;
 }
 
-.box__full_width {
+.box_full_width {
 	// position: relative;
 	// overflow: hidden;
 	// width: 100%;
 }
 
 // Columns
-.column__line {
+.column_line {
 	column-rule: $basic_border;
 }
-.column__2, .column__3 {
+.column_2, .column_3 {
 	@extend p;
 }
-.column__2 {
+.column_2 {
 	column-count: 2;
 	column-gap: $space_3;
 }
-.column__3 {
+.column_3 {
 	column-count: 3;
 	column-gap: $space_4;
 }
 
 // Space and placeholders
-.box__space {
+.box_space {
 	position: relative;
 	width: 100%;
 }
 
-.box__cube {
+.box_cube {
 	float: left;
 	display: table;
 	width: $space_4;
@@ -236,7 +236,7 @@ div {
 	}
 }
 
-.box__placeholder {
+.box_placeholder {
 	width: 100%;
 	height: $space_4;
 	border: $border_width_4 solid rgba($alpha_color,.1);
@@ -244,33 +244,34 @@ div {
 	background-color: rgba($alpha_color,.2);
 }
 
-.box__placeholder_bkg {
+.box_placeholder_bkg {
 	width: 100%;
 	height: $space_4 * 2;
 	border: $border_width_4 solid rgba($brightest_color,.1);
 	border-radius: $basic_corner;
 	padding: $basic_space;
 	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
-	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='#FFF' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='#FFF' stroke-width='.5'/></svg>") no-repeat;
+	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='%23FFF' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='%23FFF' stroke-width='.5'/></svg>") no-repeat;
 	background-color: rgba($brightest_color,.1);
 }
 
 // Data
-.box__file_tile {
+.box_file_tile {
 	@extend .float_space_left;
 }
 
 // Flex
-.flex__column_wrap {
+.flex_column_wrap {
 	@extend .flex;
+	flex-wrap: wrap;
 
-	.flex__column {
-		@extend .flex__child;
+	.flex_column {
+		@extend .flex_child;
 		flex-grow: 1;
 	}
 }
 
 // Sprites
-.sprite__img {
+.sprite_img {
 	display: inline-block;
 }

@@ -1,9 +1,12 @@
 //Sections for Media Queries
+@mixin forPhoneUp {
+  @media (min-width: #{$screen_tiny - 1}) { @content; } //599px
+}
 @mixin forPhoneOnly {
   @media (max-width: #{$screen_tiny - 1}) { @content; } //599px
 }
 @mixin forTabletPortraitUp {
-  @media (min-width: $screen_tiny) { @content; } //600px
+  @media (min-width: $screen_small) { @content; } //600px
 }
 @mixin forTabletPortraitOnly {
   @media (min-width: $screen_tiny) and (max-width: #{$screen_small - 1}) { @content; } //600px - 899px

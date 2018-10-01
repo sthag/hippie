@@ -38,9 +38,10 @@ body {
 	}
 
 	&:hover {
-
-		.layer__hover {
-			background-color: transparent;
+		
+		.layer_hover {
+			background-color: transparent !important;
+			transition: background-color $double_duration $basic_timing 0s !important;
 		}
 	}
 }
@@ -55,7 +56,7 @@ section {
 
 }
 
-.sec__main_center {
+.sec_main_center {
 	width: $basic_width;
 	margin: 0 auto;
 	padding-top: $space_3;
@@ -71,7 +72,7 @@ section {
 	}
 }
 
-.sec__main_status {
+.sec_main_status {
 	border-top-width: $border_width_8;
 	border-top-style: solid;
 	border-color: $basic_border_color;
@@ -161,11 +162,11 @@ header {
 
 }
 
-.header__page {
+.header_page {
 	overflow: auto;
 }
 
-.header__txt {
+.header_txt {
 	margin-bottom: $space_3;
 	border-bottom: $dotted_border;
 

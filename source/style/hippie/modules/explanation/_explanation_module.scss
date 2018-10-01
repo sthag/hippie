@@ -88,11 +88,11 @@
   background-color: rgba($darkest_color, 0.4);
   &:hover {
     background-color: $brightest_color;
-    > .span__solo {
+    > .span_solo {
       color: $darkest_color;
     }
   }
-  .span__solo {
+  .span_solo {
     display: table-cell;
     color: rgba($brightest_color, 0.8);
 		font-family: $monospace_font_family;

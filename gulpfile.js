@@ -114,13 +114,16 @@ gulp.task('nunjucks', function() {
 // automagically reload browsers
 gulp.task('syncreload', function() {
   browsersync.init({
+    // ------------------------------------------------------------------------------
+    // comment out the line below to get rid of the demo index page.
+    // ------------------------------------------------------------------------------
+    index: "demo.html",
+    open: false,
+    server: 'build'
     // online: false,
     // logLevel: "info",
     // proxy: "http://verser.vrt/virtual/",
     // watch: true,
-    index: "demo.html",
-    open: false,
-    server: 'build'
   });
 });
 

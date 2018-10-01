@@ -80,7 +80,7 @@ td:last-child {
 	border-right: $basic_border;
 }
 
-.table__blank {
+.table_blank {
 	border: $basic_border_width solid transparent;
 
 	th, td {
@@ -88,11 +88,11 @@ td:last-child {
 	}
 }
 
-.table__free {
+.table_free {
 	border: $basic_border_width solid transparent;
 }
 
-.table__stripe {
+.table_stripe {
 	td {
 	border-top: 0;
 	border-bottom: 0;
@@ -103,11 +103,11 @@ td:last-child {
 	}
 }
 
-.table__fix {
+.table_fix {
 	table-layout: fixed;
 }
 
 // Data
-.table__file_simple {
+.table_file_simple {
 	@extend .width_full;
 }

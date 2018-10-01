@@ -105,7 +105,7 @@ legend {
 }
 
 label + input,
-.input__label_right,
+.input_label_right,
 .label > input,
 .label > select {
 	margin: 0 $basic_space;
@@ -192,7 +192,7 @@ canvas {
 	line-height: 2.5;
 }
 
-.label__table {
+.label_table {
 	display: table;
 
 	input {
@@ -200,10 +200,10 @@ canvas {
 	}
 }
 
-.input__default {
+.input_default {
 
 	label {
-		@extend .label__table;
+		@extend .label_table;
 		margin: $half_space 0;
 
 		input {

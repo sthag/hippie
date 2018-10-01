@@ -1,4 +1,4 @@
-.table__link {
+.table_link {
 	width: 100%;
 	border: 0;
 	table-layout: auto;
@@ -15,7 +15,7 @@
 		border: 0;
 	}
 
-	.cell__icon {
+	.cell_icon {
 		width: 48px;
 		text-align: center;
 		img {
@@ -23,7 +23,7 @@
 		}
 	}
 
-	.cell__link {
+	.cell_link {
 		padding-right: $basic_space;
 		padding-left: $basic_space;
 
@@ -47,12 +47,12 @@
 		}
 	}
 
-	th:last-child, .cell__date {
+	th:last-child, .cell_date {
 		width: 16%;
 		text-align: center;
 	}
 
-	.cell__text {
+	.cell_text {
 		padding-right: $basic_space;
 		padding-left: $basic_space;
 
