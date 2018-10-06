@@ -24,6 +24,7 @@ html {
 body {
 	position: relative;
 	box-sizing: $box_sizing;
+	margin: 0;
 	font-family: $primary_font_family;
 	font-size: $basic_size;
 	line-height: $basic_line;
@@ -38,7 +39,7 @@ body {
 	}
 
 	&:hover {
-		
+
 		.layer_hover {
 			background-color: transparent !important;
 			transition: background-color $double_duration $basic_timing 0s !important;
@@ -59,7 +60,7 @@ section {
 .sec_main_center {
 	width: $basic_width;
 	margin: 0 auto;
-	padding-top: $space_3;
+	padding-top: $space_small;
 
 	@include forTabletPortraitUp {
 		width: $width_small;
@@ -76,7 +77,7 @@ section {
 	border-top-width: $border_width_8;
 	border-top-style: solid;
 	border-color: $basic_border_color;
-	padding-top: $space_3;
+	padding-top: $space_small;
 }
 
 // Navigation
@@ -111,12 +112,12 @@ aside {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-
+	@extend %head_all;
 }
 
 h1 {
 	@extend %head_1;
-	margin: $space_5 0 $space_3;
+	margin: $space_large 0 $space_small;
 }
 
 h1 + h1 {
@@ -125,7 +126,7 @@ h1 + h1 {
 
 h2 {
 	@extend %head_2;
-	margin: $space_4 0 $space_3;
+	margin: $space_medium 0 $space_small;
 }
 
 h2 + h2 {
@@ -167,7 +168,7 @@ header {
 }
 
 .header_txt {
-	margin-bottom: $space_3;
+	margin-bottom: $space_small;
 	border-bottom: $dotted_border;
 
 	h1 {

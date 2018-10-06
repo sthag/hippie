@@ -24,17 +24,12 @@ form {
 label {
 	@extend %basic;
 
-	input, textarea {
+	input, button, textarea, select {
 		margin-left: $basic_space;
 	}
 }
 
-label + textarea {
-	@extend %solo;
-	display: block;
-}
-
-input, button, textarea {
+input, button, textarea, select {
 	margin: $io_margin;
 
 	&[disabled="disabled"],
@@ -45,51 +40,60 @@ input, button, textarea {
 
 input {
 	color: $basic_io_font_color;
-
-	&[disabled="disabled"],
-	&[disabled] {
-		cursor: not-allowed;
-	}
 }
 
-@each $input in $basic_input_list, textarea, select {
+@each $input in $io_input_list, textarea, select {
 	#{$input} {
 		@extend %basic_mono;
-		padding: $half_space;
-		background-color: $basic_io_back_color;
-
-		&:hover {
-			background-color: $basic_highlight_color;
-		}
-
-		&[readonly="readonly"],
-		&[readonly] {
-			border-color: darken($basic_io_border_color, 30%);
-			background-color: darken($basic_io_back_color, 30%);
-		}
-
-		&[disabled="disabled"],
-		&[disabled] {
-			border-color: transparent;
-		}
-	}
-}
-
-@each $input in $basic_input_list, textarea {
-	#{$input} {
-		border: $basic_io_border;
-	}
-}
-
-@each $input in $basic_input_list {
-	#{$input} {
 		line-height: 1;
 	}
 }
 
-@each $input in $basic_button_list {
+.io_input, .io_textarea, .io_select {
+	padding: $half_space;
+	background-color: $basic_io_back_color;
+
+	&:hover {
+		background-color: $basic_highlight_color;
+	}
+
+	&[readonly="readonly"],
+	&[readonly] {
+		background-color: darken($basic_io_back_color, 30%);
+	}
+
+	&[disabled="disabled"],
+	&[disabled] {
+		&:hover {
+			background-color: $basic_io_back_color;
+		}
+	}
+}
+
+@each $input in $io_date_list {
 	#{$input} {
-		padding: $basic_padding;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+@each $input in $io_input_list, textarea {
+	#{$input} {
+		// border: $basic_io_border;
+	}
+}
+
+.io_input, .io_textarea {
+	border: $basic_io_border;
+
+	&[readonly="readonly"],
+	&[readonly] {
+		border-color: darken($basic_io_border_color, 30%);
+	}
+
+	&[disabled="disabled"],
+	&[disabled] {
+		border-color: transparent;
 	}
 }
 
@@ -104,15 +108,33 @@ legend {
 	padding: 0 $half_space;
 }
 
-label + input,
-.input_label_right,
-.label > input,
-.label > select {
-	margin: 0 $basic_space;
-}
-
 button {
 
+}
+
+.io_button {
+	@extend %basic_button;
+	border: $basic_io_border_width solid $oi_border_color;
+	padding: $basic_padding;
+	color: $oi_font_color;
+	background-color: $oi_back_color;
+
+	&:hover {
+		// border-color: #0059F6;
+		border-color: transparent;
+		color: white;
+		background-color: $foxtrot_color;
+	}
+
+	&[disabled="disabled"],
+	&[disabled] {
+		border-color: transparent;
+		color: $oi_border_color;
+
+		&:hover {
+			background-color: $oi_back_color;
+		}
+	}
 }
 
 select {
@@ -132,7 +154,10 @@ option {
 }
 
 textarea {
+}
 
+.io_textarea {
+	line-height: 1.2;
 }
 
 output {
@@ -192,6 +217,12 @@ canvas {
 	line-height: 2.5;
 }
 
+.label > input,
+.label > textarea,
+.label > select {
+	margin: 0 $basic_space;
+}
+
 .label_table {
 	display: table;
 
@@ -200,23 +231,45 @@ canvas {
 	}
 }
 
-.input_default {
+label + input {
+	margin-left: $basic_space;
+}
 
-	label {
-		@extend .label_table;
-		margin: $half_space 0;
+input + label {
+	margin-left: $basic_space;
+}
 
-		input {
-			padding: $half_space ($half_space + 1);
-			border-style: solid;
-			border-color: transparent;
-			background-color: $basic_io_back_color;
-			color: $basic_io_font_color;
+td > input,
+td > button,
+td > select,
+td > textarea {
+	margin: 0;
+}
 
-			&:hover {
-				background-color: $darkest_color;
-				color: $brightest_color;
-			}
-		}
+
+
+.grid {
+	display: grid;
+	grid-gap: $basic_space;
+
+	& > input,
+	& > select,
+	& > textarea {
+		margin: 0;
 	}
+
+	& > label {
+		display: inline-block;
+		margin: $basic_io_border_width;
+		padding: $half_space;
+	}
+}
+
+.grid_column_2 {
+	grid-template-columns: max-content max-content;
+
+}
+
+.grid_column_4 {
+	grid-template-columns: max-content max-content max-content max-content;
 }

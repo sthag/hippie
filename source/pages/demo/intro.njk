@@ -168,7 +168,7 @@
   </article>
   <article>
     <h1>Tabellen</h1>
-    <p>Tabellen bieten besonders geordnete Struktur. Häufig werden in ihnen Text und Daten kombiniert dargestellt. Dies erfordert individuelle Formatierungen. Einige grundlegende Eigenschaften werden im folgenden aufgezeigt. Tabellen sind in ihrer Größe entweder vordefiniert oder richten sich nach ihrem Inhalt. Das gilt auch für die einzelnen Zellen.<span class="wip_txt">...</span></p>
+    <p>Tabellen bieten besonders geordnete Struktur. Häufig werden in ihnen Text und Daten kombiniert dargestellt. Dies erfordert individuelle Formatierungen. Einige grundlegende Eigenschaften werden im folgenden aufgezeigt. Tabellen sind in ihrer Größe entweder vordefiniert (fixiert) oder richten sich nach ihrem Inhalt. Das bedeutet, die Spaltenbreite entspricht der breitesten ihrer Zellen.</p>
     <table class="width_full js_pop">
       <tbody>
         <tr>
@@ -186,7 +186,7 @@
         <tbody>
           <tr>
             <td>Eine</td>
-            <td>fließende</td>
+            <td>freie (nicht fixierte)</td>
           </tr>
           <tr>
             <td colspan="2">Tabelle</td>
@@ -249,11 +249,11 @@
     </table>
     <div class="exp_pop"><code class="code_solo">table.width_full.table_fix>caption+thead>tr>th*3^^tfoot>tr>td*3^^tbody>(tr>td*3)*3</code></div>
     <hr class="hr_hidden">
-    <p>Viele weitere Formate sind möglich <span class="wip_txt">...</span></p>
-    <table class="width_full js_pop">
+    <p>Viele weitere Formate sind möglich. Hier nur einige typische Beispiele:</p>
+    <table class="width_full table_fix js_pop">
       <thead>
         <tr>
-          <th class="precol"></th>
+          <th class="cell_pre"></th>
           <th>Kopfzeile</th>
           <th>A</th>
           <th>B</th>
@@ -261,34 +261,27 @@
       </thead>
       <tbody>
         <tr>
-          <td class="precol">Vorspalte</td>
+          <td class="cell_pre">Vorspalte</td>
           <td>Eine</td>
           <td></td>
           <td></td>
         </tr>
         <tr>
-          <td class="precol">1</td>
+          <td class="cell_pre">1</td>
           <td></td>
           <td>erweiterte</td>
           <td></td>
         </tr>
         <tr>
-          <td class="precol">2</td>
+          <td class="cell_pre">2</td>
           <td></td>
           <td></td>
           <td>Tabelle</td>
         </tr>
       </tbody>
     </table>
-    <div class="exp_pop"><code class="code_solo">table.width_full>thead>tr>th.precol+th[colspan=2]^^tbody>tr>td.precol+td*2^tr>td.precol+td[colspan=2]</code></div>
-    <table class="width_full table_stripe table_free">
-      <thead>
-        <tr>
-          <th>Kopfzeile</th>
-          <th>A</th>
-          <th>B</th>
-        </tr>
-      </thead>
+    <div class="exp_pop"><code class="code_solo">table.width_full.table_stripe.table_free>tbody>tr>td*3</code></div>
+    <table class="width_full table_stripe table_fix table_free">
       <tbody>
         <tr>
           <td>Tabelle</td>
@@ -312,119 +305,169 @@
         </tr>
       </tbody>
     </table>
-    <table class="table_fix">
-      <caption>Beschreibung bzw. Zusammenhang der Tabelle</caption>
+    <table>
+      <caption>Die Verteilung der Zellen ist hier von ihrem Inhalt abhängig.</caption>
       <thead>
         <tr>
-          <th>Kopfzeile</th>
-          <th>1</th>
+          <th>Bezeichnung</th>
+          <th>Menge</th>
           <th>&gt;9000</th>
         </tr>
       </thead>
       <tfoot>
         <tr>
-          <td>Fußzeile</td>
-          <td>-</td>
-          <td>-</td>
+          <td>Summe</td>
+          <td></td>
+          <td>9001</td>
         </tr>
       </tfoot>
       <tbody>
         <tr>
           <td>Alpha</td>
-          <td>0</td>
-          <td>9000</td>
+          <td>1</td>
+          <td>8990</td>
         </tr>
         <tr>
           <td>Bravo</td>
+          <td>10</td>
           <td>1</td>
-          <td>9001</td>
         </tr>
         <tr>
           <td>Charlie</td>
-          <td>0</td>
-          <td>9000</td>
+          <td>1</td>
+          <td>1</td>
         </tr>
       </tbody>
     </table>
   </article>
   <article>
     <h1>Formulare</h1>
-    <p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Werden sie nicht explizit gestaltet, ist ihre Erscheinung system- bzw. browserabhängig. <span class="wip_txt">(Vielleicht ist das auch scheiße, hier darauf einzugehen) ...</span> Üblicherweise stehen alle Formularelemente innerhalb eines <code>&lt;form&gt;</code> Elementes. Dieses ist notwendig um Angaben zur Kommunikation mit dem Server zu setzen. Es hat normalerweise keine gestalterische Funktion.</p>
+    <p>Spätestens hier werden Betrachter zu Benutzern. Texteingabefelder und verschiedene Bedienelemente geben Möglichkeiten zur Interaktion. Diese Elemente sind in vielerlei Hinsicht besonders. Werden sie nicht explizit gestaltet, ist ihre Erscheinung system- bzw. browserabhängig.<br>Üblicherweise stehen alle Bedienelemente innerhalb eines <code>&lt;form&gt;</code> Elementes. Dieses ist notwendig um Angaben zur Kommunikation mit dem Server zu setzen. Es hat normalerweise keine gestalterische Funktion.</p>
     <p>Grundlegend ist das Element <code>&lt;input&gt;</code>. Es hat viele Attribute um den Typ der Eingabe anzupassen. Ist es undefiniert nimmt es jegliche textbasierte Information auf und erhält eine Standardgröße.</p>
-    <p><input value="Undefiniert"/></p>
-    <p>Ein spezieller Typ des Eingabefeldes verändert seine Funktion zu einer Schaltfläche <code>&lt;input[type="button"]&gt;</code>. Es gibt allerdings auch ein eigenes Element <code>&lt;button&gt;</code> dafür.</p>
+    <p><input value="Undefiniert"/><input class="io_input" value="Undefiniert mit Stil"/></p>
+    <p>Ein spezieller Typ des Eingabefeldes hat die Funktion einer Schaltfläche <code>&lt;input[type="button"]&gt;</code>. Es gibt allerdings auch ein eigenes Element <code>&lt;button&gt;</code> dafür.</p>
     <p><input type="button" value="Input Button"><button>Button</button></p>
+    <p><input class="io_button" type="button" value="Input Button"><button class="io_button">Button</button></p>
     <p>Interaktive Elemente können durch das Attribut <code>&lt;readonly&gt;</code> nur lesbar gemacht werden oder mittels <code>&lt;disabled&gt;</code> gänzlich deaktiviert werden.</p>
-    <p><input type="text" value="Read Only Text" readonly><input type="text" value="Disabled Text" disabled><button disabled>Button</button></p>
+    <p><input type="text" value="Nur lesbare Eingabe" readonly><input type="text" value="Deaktivierte Eingabe" size="21" disabled><button disabled>Deaktivierte Schaltfläche</button></p>
+    <p><input class="io_input" type="text" value="Nur lesbare Eingabe" readonly><input class="io_input" type="text" value="Deaktivierte Eingabe" size="21" disabled><button class="io_button" disabled>Deaktivierte Schaltfläche</button></p>
     <p>Das Element <code>&lt;label&gt;</code> ergänzt interaktive Elemente um eine Beschriftung. Wichtig ist hier, dass die Beziehung beider Elemente zu einander deutlich ist.</p>
+    <p>
+      <label>Beschriftung:<input type="text"></label>
+    </p>
     <div class="overflow">
-      <div class="float_half_size">
-        <label for="demo__input">Beschriftung:</label><input type="text" id="demo__input">
+      <div class="float_left">
+        <table class="table_fix table_blank">
+          <tbody>
+            <tr>
+              <td><label for="demo__raw_a">Alpha:</label></td>
+              <td><input type="text" id="demo__raw_a"></td>
+            </tr>
+            <tr>
+              <td><label for="demo__raw_b">Beta:</label></td>
+              <td><input type="text" id="demo__raw_b"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="float_half_size txt_right">
-        <input type="text" id="demo__input" class="input_label_right"><label for="demo__input">Beschriftung</label>
-      </div>
+      <table class="float_right">
+        <tbody>
+          <tr>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_d" value="11.966504" size="10"></td>
+            <td class="demo__td_pr"><label for="demo__io_a">x</label></td>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_a" value="10" min="0" max="1000"></td>
+            <td class="demo__td_pr"><label for="demo__io_a">Breite</label></td>
+          </tr>
+          <tr>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_e" value="51.503491" size="10"></td>
+            <td class="demo__td_pr"><label for="demo__io_b">y</label></td>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_b" value="10" min="0" max="1000"></td>
+            <td class="demo__td_pr"><label for="demo__io_b">Tiefe</label></td>
+          </tr>
+          <tr>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_f" value="88" size="10"></td>
+            <td class="demo__td_pr"><label for="demo__io_c">z</label></td>
+            <td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_c" value="48" min="0" max="1000"></td>
+            <td class="demo__td_pr"><label for="demo__io_c">Höhe</label></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <p>Zusätzlich zur Beschriftung einzelner Elemente gibt es auch die Möglichkeit Gruppierungen zu schaffen. Diese werden mit <code>&lt;fieldset&gt;</code> realisiert.</p>
     <fieldset>
-      <label for="demo__output">Beschriftung:</label><input type="text" readonly id="demo__output">
+      <div class="grid grid_column_2">
+        <label for="demo__input">Input:</label><input class="io_input" type="text" value="love" readonly id="demo__input">
+        <label for="demo__output">Output:</label><input class="io_input" type="text" value="happiness" readonly id="demo__output">
+      </div>
     </fieldset>
     <p>Sie können mittels <code>&lt;legend&gt;</code> auch eine eigene Beschriftung erhalten.</p>
     <fieldset>
-      <legend>Einfache Eingabefelder</legend>
-      <label>Texteingabe<input type="text" placeholder="Text"></label>
-      <label>Schaltfläche<input type="button" value="Senden"></label>
+      <legend>Einfache Eingabeelemente</legend>
+      <div class="grid grid_column_2">
+        <label>Schaltflächen:</label><div><button>Senden</button><input type="reset" value="Abbrechen"></div>
+        <label>Zeicheneingaben:</label><div><input type="text" placeholder="Text"><input type="number" value="0815"></div>
+        <label>Einzelauswahl:</label><div><input type="radio" name="direction" value="up" checked="checked"/><input type="radio" name="direction" value="down"/></div>
+        <label>Mehrfachauswahl:</label><div><input type="checkbox" name="speed" value="slow" checked="checked"/><input type="checkbox" name="speed" value="fast"/></div>
+        <label>Auswahllisten:</label>
+        <div>
+          <select class="txt_top">
+            <option value="A" selected="selected">Option A</option>
+            <option value="B">Option B</option>
+          </select>
+          <select class="txt_top" size="3">
+            <option value="red" selected="selected">Rot</option>
+            <option value="green">Grün</option>
+            <option value="blue">Blau</option>
+          </select>
+        </div>
+        <label>Textfeld:</label>
+        <textarea rows="3">Dies ist ein Eingabefeld für Fließtext. Es bildet auch Zeilenumbrüche ab und hat häufig variable Größen.</textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Einfache Eingabeelemente mit Stil</legend>
+      <div class="grid grid_column_2">
+        <label>Schaltflächen:</label><div><button class="io_button">Senden</button><input class="io_button" type="reset" value="Abbrechen"></div>
+        <label>Zeicheneingaben:</label><div><input class="io_input" type="text" placeholder="Text"><input class="io_input" type="number" value="0815"></div>
+        <label>Einzelauswahl:</label><div><input class="io_radio" type="radio" name="direction" value="up" checked="checked"/><input class="io_radio" type="radio" name="direction" value="down"/></div>
+        <label>Mehrfachauswahl:</label><div><input class="io_check" type="checkbox" name="speed" value="slow" checked="checked"/><input class="io_check" type="checkbox" name="speed" value="fast"/></div>
+        <label>Auswahllisten:</label>
+        <div>
+          <select class="io_select txt_top">
+            <option value="A" selected="selected">Option A</option>
+            <option value="B">Option B</option>
+          </select>
+          <select class="io_select txt_top" size="3">
+            <option value="red" selected="selected">Rot</option>
+            <option value="green">Grün</option>
+            <option value="blue">Blau</option>
+          </select>
+        </div>
+        <label>Textfeld:</label>
+        <textarea class="io_textarea" rows="3">Dies ist ein Eingabefeld für Fließtext. Es bildet auch Zeilenumbrüche ab und hat häufig variable Größen.</textarea>
+      </div>
     </fieldset>
     <fieldset>
       <legend>Weitere Eingabemöglichkeiten</legend>
-      <p>Innerhalb einer Gruppe können nicht nur Ein- und Ausgabefelder platziert werden. Andere Elemente ergänzen Information oder lockern das Erscheinungsbild auf. Hier nun eine Liste möglicher Arten von Eingabefeldern.</p>
-      <pre class="pre_code"><code>ul>(li>label>input[type="text"])</code></pre>
-      <ul class="list_basic">
-        <li><label for="">Einfache Datumseingabe<input type="date"></label></li>
-        <li><label for="">Einfache Zahleneingabe<input type="number"></label></li>
-        <li><label for="">Einfache @dresseingabe<input type="email" placeholder="@"></label></li>
-        <li><label for="">Einfache Farbauswahl<input type="color"></label></li>
-        <li><label for="">Einfache Dateiauswahl<input type="file"></label></li>
-      </ul>
-      <div class="overflow">
-        <aside class="left">
-          <p>Dies ist ein Eingabefeld für Fließtext. Es bildet auch Zeilenumbrüche ab und hat häufig variable Größen.</p>
-        </aside>
-        <section class="bside">
-          <label>Mehrzeilige Texteingabe</label>
-          <textarea rows="10"></textarea>
-        </section>
+      <p>Innerhalb einer Gruppe können nicht nur Ein- und Ausgabefelder platziert werden. Andere Elemente ergänzen Information oder lockern das Erscheinungsbild auf.</p>
+      <p>Hier nun eine Liste weiterer Arten von Eingabefeldern:</p>
+      <div class="grid grid_column_2">
+        <label for="" class="">Farbauswahl<br><code>&lt;input[type="color"]&gt;</code></label><div><input class="" type="color"></div>
+        <label for="" class="">Bereichsauswahl<br><code>&lt;input[type="range"]&gt;</code></label><div><input class="" type="range"></div>
+        <label for="" class="">Datum<br><code>&lt;input[type="date"]&gt;</code></label><div><input class="io_input" type="date"></div>
+        <label for="" class="">Uhrzeit<br><code>&lt;input[type="time"]&gt;</code></label><div><input class="io_input" type="time"></div>
+        <label for="" class="">Datum und Zeit<br><code>&lt;input[type="datetime-local"]&gt;</code></label><div><input class="io_input" type="datetime-local"></div>
+        <label for="" class="">Kalendermonat<br><code>&lt;input[type="month"]&gt;</code></label><div><input class="io_input" type="month"></div>
+        <label for="" class="">Kalenderwoche<br><code>&lt;input[type="week"]&gt;</code></label><div><input class="io_input" type="week"></div>
+        <label for="" class="">@dresse<br><code>&lt;input[type="email"]&gt;</code></label><div><input class="io_input" type="email" placeholder="@"></div>
+        <label for="" class="">Passwort<br><code>&lt;input[type="password"]&gt;</code></label><div><input class="io_input" type="password" value="admin"></div>
+        <label for="" class="">Telefonnummer<br><code>&lt;input[type="tel"]&gt;</code></label><div><input class="io_input" type="tel" value="0190123456"></div>
+        <label for="" class="">URL<br><code>&lt;input[type="url"]&gt;</code></label><div><input class="io_input" type="url" placeholder="url://"></div>
+        <label for="" class="">Suche<br><code>&lt;input[type="search"]&gt;</code></label><div><input class="io_input" type="search"></div>
+        <label for="" class="">Datei<br><code>&lt;input[type="file"]&gt;</code></label><div><input class="" type="file"></div>
+        <label for="" class="">Bild</label><input class="" type="image" value="Alternativer Text"/>
       </div>
     </fieldset>
-    <input type="checkbox"/>
-    <input type="datetime"/>
-    <input type="image"/>
-    <input type="month"/>
-    <form action="" method="get">
-      <p class="label">
-        Show me a <select name="F">
-          <option value="0"> Plain list</option>
-          <option value="1" selected="selected"> Fancy list</option>
-          <option value="2"> Table list</option>
-        </select>
-        Sorted by <select name="C">
-          <option value="N" selected="selected"> Name</option>
-          <option value="M"> Date Modified</option>
-          <option value="S"> Size</option>
-          <option value="D"> Description</option>
-        </select>
-        <select name="O">
-          <option value="A" selected="selected"> Ascending</option>
-          <option value="D"> Descending</option>
-        </select>
-        <select name="V">
-          <option value="0" selected="selected"> in Normal order</option>
-          <option value="1"> in Version order</option>
-        </select>
-        Matching <input type="text" name="P" value="*" />
-        <input type="submit" name="X" value="Go" />
-      </p>
-    </form>
 
     <h2>Interaktive Elemente</h2>
   </article>

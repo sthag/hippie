@@ -92,7 +92,7 @@ i, em {
 
 .i_bright {
 	font-style: normal;
-	color: $brightest_color;
+	color: $basic_highlight_color;
 }
 
 // Bold, Strong
@@ -160,7 +160,7 @@ time {
 code {
 	@extend %basic_mono;
 	color: lighten($basic_font_color, $basic_color_diff);
-	background-color: rgba($brightest_color,.1);
+	background-color: lighten($basic_back_color, $tiny_color_diff);
 }
 .code_solo {
 	@extend %basic_mono;
@@ -200,17 +200,9 @@ u {
 mark {
 	background-color: $alpha_color;
 }
-.mark_cursor {
-	color: $basic_highlight_color;
-	background-color: $darkest_color;
-}
-::-moz-selection {
-	color: $basic_highlight_color;
-	background-color: $darkest_color;
-}
-::selection {
-	color: $basic_highlight_color;
-	background-color: $darkest_color;
+.mark_cursor, ::-moz-selection, ::selection {
+	color: invert($basic_font_color);
+	background-color: $basic_font_color;
 }
 
 bdi, bdo {
@@ -279,6 +271,14 @@ del {
 }
 .txt_left {
 	text-align: left !important;
+}
+
+.txt_top {
+	vertical-align: top !important;
+}
+
+.txt_bottom {
+	vertical-align: bottom !important;
 }
 
 .txt_white {

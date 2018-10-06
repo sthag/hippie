@@ -139,6 +139,13 @@ gulp.task('sprites', function() {
   .pipe(gulpif('*.scss', gulp.dest('source/style/hippie/modules/media')));
 });
 
+// copy vendor files
+gulp.task('vendor', function() {
+  return gulp.src(source_folder.vendor)
+  .pipe(plumbError())
+  .pipe(gulp.dest(build_folder.vendor))
+  ;
+});
 
 // linting ...
 gulp.task('lint:js', function() {
@@ -196,7 +203,7 @@ gulp.task('overwatch', function() {
 gulp.task('default', function(callback) {
   sequencer(
     'clean:dev',
-    ['sprites', 'lint:js', 'lint:scss'],
+    ['sprites', 'vendor', 'lint:js', 'lint:scss'],
     ['sass', 'js', 'nunjucks'],
     ['syncreload', 'overwatch'],
     callback
@@ -294,7 +301,7 @@ gulp.task('images', function() {
   });
 
   // Task - Vendor
-  gulp.task('vendor', function() {
+  gulp.task('oldvendor', function() {
     return gulp.src(oldsource.vendor)
     .pipe(plumbError())
     .pipe(gulp.dest(oldbuild.vendor))

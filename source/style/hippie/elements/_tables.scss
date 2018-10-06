@@ -76,8 +76,10 @@ td:last-child {
 
 // General Classes
 // ------------------------------------------------------------------------------
-.precol {
-	border-right: $basic_border;
+.cell_pre {
+	// border-right-width: $border_width_4;
+	// border-right-color: lighten($basic_back_color, $basic_color_diff);
+	background-color: lighten($basic_back_color, $tiny_color_diff);
 }
 
 .table_blank {
@@ -99,7 +101,7 @@ td:last-child {
 	}
 
 	tr:nth-child(even) td {
-	background-color: rgba($brightest_color, 0.1);
+	background-color: lighten($basic_back_color, $tiny_color_diff);
 	}
 }
 

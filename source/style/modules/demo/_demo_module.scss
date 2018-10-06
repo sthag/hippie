@@ -126,7 +126,7 @@
 }
 
 .demo__credits {
-	margin: $space_3 0 $basic_space 0;
+	margin: $space_small 0 $basic_space 0;
 }
 
 .demo__button_32 {
@@ -141,39 +141,39 @@
 }
 
 .query_phoneUp {
-  @include forPhoneUp {background-color: rgba($basic_front_color, 0.2)};
+  @include forPhoneUp {background-color: rgba($basic_font_color, 0.2)};
 }
 
 .query_phoneOnly {
-  @include forPhoneOnly { background-color: rgba($basic_front_color, 0.2); }
+  @include forPhoneOnly { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_tabletPortaitOnly {
-  @include forTabletPortraitOnly { background-color: rgba($basic_front_color, 0.2); }
+  @include forTabletPortraitOnly { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_tabletPortraitUp {
-  @include forTabletPortraitUp { background-color: rgba($basic_front_color, 0.2); }
+  @include forTabletPortraitUp { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_tabletLandscapeOnly {
-  @include forTabletLandscapeOnly { background-color: rgba($basic_front_color, 0.2); }
+  @include forTabletLandscapeOnly { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_tabletLandscapeUp {
-  @include forTabletLandscapeUp { background-color: rgba($basic_front_color, 0.2); }
+  @include forTabletLandscapeUp { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_desktopOnly {
-  @include forDesktopOnly { background-color: rgba($basic_front_color, 0.2); }
+  @include forDesktopOnly { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_desktopUp {
-  @include forDesktopUp { background-color: rgba($basic_front_color, 0.2); }
+  @include forDesktopUp { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .query_bigDesktopUp {
-  @include forBigDesktopUp { background-color: rgba($basic_front_color, 0.2); }
+  @include forBigDesktopUp { background-color: rgba($basic_font_color, 0.2); }
 }
 
 .demo__query_example {
@@ -183,8 +183,8 @@
 	@include goingLarge($screen_large/1px) {background-color: $delta_color; }
 	@include goingLarge($screen_huge/1px) {background-color: $echo_color; }
 	@include goingLarge($screen_gigantic/1px) {background-color: $foxtrot_color; }
-	margin-bottom: $space_3;
-	padding: $space_3;
+	margin-bottom: $space_small;
+	padding: $space_small;
 	text-align: center;
 
 	&:after {
@@ -210,6 +210,23 @@
 		color: $brightest_color;
 		background-color: rgba($basic_front_color, 0.2);
 	}
+}
+
+// Tables
+.demo__td_no_bl {
+	border-left: none;
+}
+
+.demo__td_no_br {
+	border-right: none;
+}
+
+.demo__td_pr {
+	padding-right: $double_space;
+}
+
+.demo__td_pl {
+	padding-left: $double_space;
 }
 
 // Index

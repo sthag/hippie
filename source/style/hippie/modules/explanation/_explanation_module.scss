@@ -44,8 +44,8 @@
   @extend %exp_hidden !optional;
   position: absolute;
   z-index: 100;
-  top: $space_5;
-  left: $space_5;
+  top: $space_large;
+  left: $space_large;
   padding: $half_space;
   border: 4px solid $basic_back_color;
   border-radius: 4px;

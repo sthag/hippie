@@ -39,10 +39,10 @@ address {
 
 // Line
 hr {
-	margin: $space_3 auto;
+	margin: $space_small auto;
 	border-width: $basic_border_width 0 0;
 	border-style: solid;
-	border-color: $darkest_color;
+	border-color: $basic_border_color;
 }
 
 .hr_hidden {
@@ -62,12 +62,12 @@ pre {
 
 .pre_code {
 	overflow-x: auto;
-	border-color: rgba($brightest_color,.1);
+	border-color: darken($basic_back_color, $tiny_color_diff);
 	border-style: dotted;
 	border-width:  0 0 0 $border_width_4;
 	border-radius: $basic_corner;
 	padding: $basic_space;
-	background-color: rgba($brightest_color,.1);
+	background-color: lighten($basic_back_color, $tiny_color_diff);
 	code {
 		background-color: transparent;
 	}
@@ -212,11 +212,11 @@ div {
 }
 .column_2 {
 	column-count: 2;
-	column-gap: $space_3;
+	column-gap: $space_small;
 }
 .column_3 {
 	column-count: 3;
-	column-gap: $space_4;
+	column-gap: $space_medium;
 }
 
 // Space and placeholders
@@ -228,7 +228,7 @@ div {
 .box_cube {
 	float: left;
 	display: table;
-	width: $space_4;
+	width: $space_medium;
 	text-align: center;
 	vertical-align: middle;
 	span {
@@ -238,21 +238,21 @@ div {
 
 .box_placeholder {
 	width: 100%;
-	height: $space_4;
-	border: $border_width_4 solid rgba($alpha_color,.1);
+	height: $space_medium;
+	border: $border_width_4 solid transparentize($alpha_color, 0.1);
 	border-radius: $basic_corner;
-	background-color: rgba($alpha_color,.2);
+	background-color: transparentize($alpha_color, 0.2);
 }
 
 .box_placeholder_bkg {
 	width: 100%;
-	height: $space_4 * 2;
-	border: $border_width_4 solid rgba($brightest_color,.1);
+	height: $space_medium * 2;
+	border: $border_width_4 solid transparentize($basic_front_color, 0.1);
 	border-radius: $basic_corner;
 	padding: $basic_space;
 	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
 	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='%23FFF' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='%23FFF' stroke-width='.5'/></svg>") no-repeat;
-	background-color: rgba($brightest_color,.1);
+	background-color: transparentize($basic_front_color, 0.1);
 }
 
 // Data

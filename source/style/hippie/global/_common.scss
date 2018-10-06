@@ -22,10 +22,16 @@
 	@extend %hidden;
 }
 
+.center_auto {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .center_50 {
 	margin-right: 25%;
 	margin-left: 25%;
 }
+
 .center_25 {
 	margin-right: 37.5%;
 	margin-left: 37.5%;
@@ -58,7 +64,7 @@
 }
 
 .space_right {
-	margin-right: $space_3;
+	margin-right: $space_small;
 }
 
 .wrap_center {
@@ -108,7 +114,7 @@
 
 .float_space_left {
 	@extend .float_left;
-	margin-right: $space_3;
+	margin-right: $space_small;
 }
 
 .float_half_size {

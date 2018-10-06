@@ -51,6 +51,10 @@
 	line-height: $head_line_4;
 }
 
+%basic_button {
+	@extend %basic;
+}
+
 %solo {
 	@extend %basic;
 }

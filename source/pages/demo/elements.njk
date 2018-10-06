@@ -153,6 +153,31 @@
         <div class="flex_column"><input type="button" value="Auswählen"></div>
         <div class="flex_column"><input type="submit" value="Senden" disabled/></div>
       </div>
+      <form action="" method="get">
+        <p class="label">
+          Show me a <select name="F">
+            <option value="0"> Plain list</option>
+            <option value="1" selected="selected"> Fancy list</option>
+            <option value="2"> Table list</option>
+          </select>
+          Sorted by <select name="C">
+            <option value="N" selected="selected"> Name</option>
+            <option value="M"> Date Modified</option>
+            <option value="S"> Size</option>
+            <option value="D"> Description</option>
+          </select>
+          <select name="O">
+            <option value="A" selected="selected"> Ascending</option>
+            <option value="D"> Descending</option>
+          </select>
+          <select name="V">
+            <option value="0" selected="selected"> in Normal order</option>
+            <option value="1"> in Version order</option>
+          </select>
+          Matching <input type="text" name="P" value="*" />
+          <input type="submit" name="X" value="Go" />
+        </p>
+      </form>
 
       <h2>Gruppierung</h2>
       <pre class="pre_code"><code>ul.list_link>(li>a>img)*2+li>a</code></pre>
