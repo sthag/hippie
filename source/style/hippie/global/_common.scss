@@ -1,5 +1,8 @@
-// General layout attributes
-// ------------------------------------------------------------------------------
+// General classes
+// -----------------------------------------------------------------------------
+
+
+
 %size_content {
 	box-sizing: content-box;
 }
@@ -22,19 +25,27 @@
 	@extend %hidden;
 }
 
-.center_auto {
+.space_even_auto {
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.center_50 {
+.space_even_half {
 	margin-right: 25%;
 	margin-left: 25%;
 }
 
-.center_25 {
+.space_even_fourth {
 	margin-right: 37.5%;
 	margin-left: 37.5%;
+}
+
+.space_right_small {
+	margin-right: $space_small;
+}
+
+.space_left_fourth {
+	margin-left: 25%;
 }
 
 .width_full {
@@ -63,10 +74,6 @@
 	height: 100vh;
 }
 
-.space_right {
-	margin-right: $space_small;
-}
-
 .wrap_center {
 	&	> * {
 		margin-right: (100% - $basic_width) / 2;
@@ -90,7 +97,7 @@
 
 
 // Clearing and floating
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 .clear {
 	clear: both;
 
@@ -127,9 +134,9 @@
 }
 
 
-// Inlining
-// ------------------------------------------------------------------------------
 
+// Inlining
+// -----------------------------------------------------------------------------
 .inline {
 	display: inline-block;
 }
@@ -137,7 +144,7 @@
 
 
 // Positioned elements
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 %full_viewport {
 	position: fixed;
 	top: 0;
@@ -195,11 +202,11 @@
 }
 
 .hover_back_change {
-	background-color: darken($basic_back_color, $basic_color_diff);
+	background-color: darken($color_back_basic, $color_diff_basic);
 	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
-		background-color: $basic_back_color;
+		background-color: $color_back_basic;
 	}
 }
 
@@ -211,45 +218,81 @@
 	pointer-events: none;
 }
 
-.flex {
-	display: flex;
-}
-
-.flex_wrap {
-	@extend .flex;
-	flex-wrap: wrap;
-}
-
-.flex_row {
-	@extend .flex;
-	flex-direction: column;
-	// align-items: flex-start;
-	justify-content: flex-start;
-}
-
-.flex_child {
-	flex:  0 1 auto;
-}
-
-.flex_child_one {
-	flex:  1;
-}
-
-.flex_child_end {
-	align-self: flex-end;
-}
 
 
 // Colors
-// ------------------------------------------------------------------------------
-.txt_light_color {
-	color: darken($basic_back_color, $basic_color_diff);
+// -----------------------------------------------------------------------------
+.txt_color_light {
+	color: $color_font_light;
+}
+
+.txt_color_dark {
+	color: $color_font_dark;
+}
+
+
+
+// Text
+// -----------------------------------------------------------------------------
+.txt_tiny {
+	font-size: .5em !important;
+}
+
+.txt_smaller {
+	font-size: .75em !important;
+}
+
+.txt_larger {
+	font-size: 1.2em !important;
+}
+
+.txt_huge {
+	font-size: 3em !important;
+}
+
+.txt_hero {
+	font-size: $hero_size_1;
+}
+
+.txt_center {
+	text-align: center !important;
+}
+
+.txt_right {
+	text-align: right !important;
+}
+
+.txt_left {
+	text-align: left !important;
+}
+
+.txt_top {
+	vertical-align: top !important;
+}
+
+.txt_bottom {
+	vertical-align: bottom !important;
+}
+
+.txt_white {
+	color: white;
+}
+
+.txt_black {
+	color: black;
+}
+
+.txt_gradient {
+	background: linear-gradient(165deg, $alpha_color 30%, $bravo_color 45%, $charlie_color 50%, $delta_color, $echo_color 80%, $foxtrot_color);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 
 
 // Input
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 %default_button {
 	display: inline-block;
 	padding: $basic_padding;

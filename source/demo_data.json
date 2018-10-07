@@ -9,8 +9,8 @@
       "text": "Elements"
     },
     {
-      "href": "demo/os.html",
-      "text": "OS"
+      "href": "demo/examples.html",
+      "text": "Examples"
     },
     {
       "href": "demo/tests.html",
@@ -33,6 +33,10 @@
     {
       "href": "demo/error/500.html",
       "text": "500"
+    },
+    {
+      "href": "demo/os.html",
+      "text": "OS"
     }
   ]
 }

@@ -70,8 +70,8 @@
     <hr class="hr_hidden js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_hidden</code></div>
     <p>Die Linie darf auch gepunkted sein. Zudem sind verschiedene Längen möglich. Diese sind immer ein Prozentwert der verfügbaren Breite. Hier in gleicher Reihenfolge 100%, 50% und 25%:</p>
     <hr class="hr_dotted js_pop" emmet/><div class="exp_pop"><code class="code_solo">hr.hr_dotted</code></div><!--hr.hr_dotted-->
-    <hr class="center_50 js_pop"/><div class="exp_pop"><code class="code_solo">hr.center_50</code></div>
-    <hr class="hr_dotted center_25 js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted.center_25</code></div>
+    <hr class="space_even_half js_pop"/><div class="exp_pop"><code class="code_solo">hr.space_even_half</code></div>
+    <hr class="hr_dotted space_even_fourth js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted.space_even_fourth</code></div>
     <p class="column_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code_solo">p.column_2</code></div>
     <p class="column_3 column_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code_solo">p.column_3.column_line</code></div>
     <p class="column_3 column_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
@@ -120,15 +120,18 @@
     <div class="exp_pop"><code class="code_solo">figure>figcaption+{element}</code></div>
     <p>Eine sehr klar definierte Gruppierung stellt das Element <code>&lt;main&gt;</code> dar. Es umschließt den hauptsächlichen Inhalt des Dokumentes.</p>
     <p>Eine von sich aus undefinierte Möglichkeit zur Gruppierung von Text besteht durch <code>&lt;div&gt;</code>. Dieses Element hat, ohne weitere Klassifizierung keine Auswirkungen auf die Erscheinung oder die inhaltliche Aussage. Daher der allgemeine Einsatz.</p>
-    <div class="box_info"><p>Es wird allerdings häufig eingesetzt und bekommt vielfältige Funktionen zugeordnet wie diese hervorgehobene Information zeigt.</p></div>
+    <div class="div_info"><p>Es wird allerdings häufig eingesetzt und bekommt vielfältige Funktionen zugeordnet wie diese hervorgehobene Information zeigt.</p></div>
   </article>
   <article>
     <h1 id="textlevel">Textebene</h1>
     {# // a // em // strong // small // s // cite // q // dfn // abbr // ruby // rb // rt // rtc // rp // data // time // code // var // samp // kbd // sub // sup // i // b // u // mark // bdi // bdo // span // br // wbr // -- Edits -- // ins // del #}
     <h2>Verweise</h2>
-    <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.a_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können auch auf E-Mail Adressen oder Dateien zeigen.</p>
+    <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.a_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können zum Beispiel auch auf E-Mail Adressen oder Dateien zeigen. Theoretisch kann solch ein Verweis <b>Alles</b> auslösen. Anweisungen werden im <a href="https://tools.ietf.org/html/rfc1738">URL Standard</a> übergeben.</p>
     <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a_line" href="#">unterstrichene Varianten</a> sind möglich.</p>
-    <p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Auf diese Verwendung wird im Folgenden genauer eingegangen <span class="wip_txt">...</span></p>
+    <p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Verweise werden dann durchaus auch wie Schaltflächen dargestellt.</p>
+    <nav>
+      <p><a class="a_button_text" href="#textlevel">↥</a> (Zum Anfang des Abschnitts springen)<br><a class="a_button_text" href="#begin">⇫</a> (Zum Anfang der Seite springen)</p>
+    </nav>
     <h2>Formatierungen</h2>
     <p>Texte, Wörter oder Zeichen können vielfältig formatiert werden.</p>
     <p>Sie können <b>fett</b> <code>&lt;b&gt;</code> oder <i>kursiv</i> <code>&lt;i&gt;</code> geschrieben sein. <b><i>Auch beides ist möglich!</i>?</b>! Sollen sie nicht nur anders <strong>aussehen</strong>, sondern auch <em>eine besondere inhaltliche Bedeutung</em> bekommen, werden sie mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code> ausgezeichnet.</p>

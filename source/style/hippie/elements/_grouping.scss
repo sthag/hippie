@@ -19,6 +19,7 @@
 
 
 // Paragraph
+// -----------------------------------------------------------------------------
 p {
 	@extend %basic;
 	margin-top: $basic_space;
@@ -30,7 +31,23 @@ p {
 	}
 }
 
+.column_line {
+	column-rule: $basic_border;
+}
+.column_2, .column_3 {
+	@extend p;
+}
+.column_2 {
+	column-count: 2;
+	column-gap: $space_small;
+}
+.column_3 {
+	column-count: 3;
+	column-gap: $space_medium;
+}
+
 // Address
+// -----------------------------------------------------------------------------
 address {
 	// @extend %basic;
 	margin-top: $double_space;
@@ -38,6 +55,7 @@ address {
 }
 
 // Line
+// -----------------------------------------------------------------------------
 hr {
 	margin: $space_small auto;
 	border-width: $basic_border_width 0 0;
@@ -56,24 +74,26 @@ hr {
 }
 
 // Preformat
+// -----------------------------------------------------------------------------
 pre {
 	@extend %basic_mono;
 }
 
 .pre_code {
 	overflow-x: auto;
-	border-color: darken($basic_back_color, $tiny_color_diff);
+	border-color: darken($color_back_basic, $tiny_color_diff);
 	border-style: dotted;
 	border-width:  0 0 0 $border_width_4;
 	border-radius: $basic_corner;
 	padding: $basic_space;
-	background-color: lighten($basic_back_color, $tiny_color_diff);
+	background-color: lighten($color_back_basic, $tiny_color_diff);
 	code {
 		background-color: transparent;
 	}
 }
 
 // Quote
+// -----------------------------------------------------------------------------
 blockquote {
 	margin: $basic_space 0;
 	padding-right: $basic_indent;
@@ -95,6 +115,7 @@ blockquote {
 }
 
 // List
+// -----------------------------------------------------------------------------
 dl, ul, ol {
 	margin: $double_space 0 $basic_space;
 }
@@ -121,29 +142,6 @@ ul {
 	}
 }
 
-// Embedded
-figure {
-	margin: $double_space $basic_indent;
-}
-
-figcaption {
-	@extend %basic;
-}
-
-// Main content
-main {
-
-}
-
-// Div
-div {
-
-}
-
-
-
-// General Classes
-// ------------------------------------------------------------------------------
 .list_dash {
 	li {
 		list-style: none;
@@ -187,39 +185,34 @@ div {
 	}
 }
 
-.box_info {
+// Embedded
+// -----------------------------------------------------------------------------
+figure {
+	margin: $double_space $basic_indent;
+}
+
+figcaption {
+	@extend %basic;
+}
+
+// Main content
+// -----------------------------------------------------------------------------
+main {
+
+}
+
+// Div
+// -----------------------------------------------------------------------------
+div {
+
+}
+
+.div_info {
 	padding: $double_space $basic_indent;
 	border-right: $basic_space solid rgba($echo_color, 0.6);
 	background-color: rgba($echo_color, 0.1) !important;
 }
 
-.box_main_indent {
-	margin-left: 25%;
-}
-
-.box_full_width {
-	// position: relative;
-	// overflow: hidden;
-	// width: 100%;
-}
-
-// Columns
-.column_line {
-	column-rule: $basic_border;
-}
-.column_2, .column_3 {
-	@extend p;
-}
-.column_2 {
-	column-count: 2;
-	column-gap: $space_small;
-}
-.column_3 {
-	column-count: 3;
-	column-gap: $space_medium;
-}
-
-// Space and placeholders
 .box_space {
 	position: relative;
 	width: 100%;
@@ -231,6 +224,7 @@ div {
 	width: $space_medium;
 	text-align: center;
 	vertical-align: middle;
+
 	span {
 		display: table-cell;
 	}
@@ -255,20 +249,72 @@ div {
 	background-color: transparentize($basic_front_color, 0.1);
 }
 
-// Data
 .box_file_tile {
 	@extend .float_space_left;
 }
 
 // Flex
-.flex_column_wrap {
+.flex {
+	display: flex;
+}
+
+.flex_wrap {
 	@extend .flex;
 	flex-wrap: wrap;
+}
+
+.flex_row {
+	@extend .flex;
+	flex-direction: column;
+	// align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.flex_child {
+	flex: 0 1 auto;
+}
+
+.flex_child_one {
+	flex: 1;
+}
+
+.flex_child_end {
+	align-self: flex-end;
+}
+
+.flex_column_wrap {
+	@extend .flex_wrap;
 
 	.flex_column {
 		@extend .flex_child;
 		flex-grow: 1;
 	}
+}
+
+// Grid
+.grid {
+	display: grid;
+	grid-gap: $basic_space;
+
+	& > input,
+	& > select,
+	& > textarea {
+		margin: 0;
+	}
+
+	& > label {
+		margin: $basic_io_border_width;
+		padding: $half_space;
+	}
+}
+
+.grid_column_2 {
+	grid-template-columns: max-content max-content;
+
+}
+
+.grid_column_4 {
+	grid-template-columns: max-content max-content max-content max-content;
 }
 
 // Sprites

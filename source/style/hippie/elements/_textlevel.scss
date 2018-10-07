@@ -31,15 +31,11 @@
 // span
 // br
 // wbr
-// -----------------------------------------------------------------------------
-// Edits
-// -----------------------------------------------------------------------------
-// ins
-// del
 
 
 
 // Links
+// -----------------------------------------------------------------------------
 a {
 	color: $basic_link_color;
 	//  color: lighten($basic_action_color, 20%);
@@ -81,11 +77,12 @@ a {
 
 .a_button_border {
 	@extend .a_button_text;
-	border: $cell_border;
+	border: $basic_border;
 }
 
 
 // Italic, Emphasis
+// -----------------------------------------------------------------------------
 i, em {
 	font-style: italic;
 }
@@ -96,38 +93,49 @@ i, em {
 }
 
 // Bold, Strong
+// -----------------------------------------------------------------------------
 b, strong {
 	font-weight: 500; // TODO maybe bolder
 }
 
 // Small
+// -----------------------------------------------------------------------------
 small {
 
 }
 
 // No longer accurate or no longer relevant
+// -----------------------------------------------------------------------------
 s {
 
 }
 
 // Citation
+// -----------------------------------------------------------------------------
 cite {
 	font-style: italic;
 }
 
 // Phrasing content, quoted
+// -----------------------------------------------------------------------------
 q {
 
 }
 
+// Definition
+// -----------------------------------------------------------------------------
 dfn {
 
 }
 
+// Abbreviation
+// -----------------------------------------------------------------------------
 abbr {
 
 }
 
+// Ruby annotations
+// -----------------------------------------------------------------------------
 ruby {
 
 }
@@ -148,34 +156,46 @@ rp {
 
 }
 
+// Machine readable data
+// -----------------------------------------------------------------------------
 data {
 
 }
 
+// Machine readable time
+// -----------------------------------------------------------------------------
 time {
 
 }
 
 // Code
+// -----------------------------------------------------------------------------
 code {
 	@extend %basic_mono;
-	color: lighten($basic_font_color, $basic_color_diff);
-	background-color: lighten($basic_back_color, $tiny_color_diff);
+	color: lighten($basic_font_color, $color_diff_basic);
+	background-color: lighten($color_back_basic, $tiny_color_diff);
 }
+
 .code_solo {
 	@extend %basic_mono;
 	padding: $tiny_space $half_space;
 	color: $basic_font_color;
 }
 
+// Variable
+// -----------------------------------------------------------------------------
 var {
 
 }
 
+// Sample
+// -----------------------------------------------------------------------------
 samp {
 
 }
 
+// Keyboard input
+// -----------------------------------------------------------------------------
 kbd {
 	@extend %basic_mono;
 	// font-size: .9em;
@@ -183,41 +203,62 @@ kbd {
 	padding: 0 $half_space;
 	border-width: $basic_border_width;
 	border-style: solid;
-	border-color: darken($basic_back_color, $basic_color_diff);
+	border-color: darken($color_back_basic, $color_diff_basic);
 	border-radius: $basic_corner;
-	color: lighten($basic_font_color, $basic_color_diff);
+	color: lighten($basic_font_color, $color_diff_basic);
 }
 
+// Sub- and superscript
+// -----------------------------------------------------------------------------
 sub, sup {
 
 }
 
+// Unarticulated, non-textual annotation
+// -----------------------------------------------------------------------------
 u {
 
 }
 
 // Marks
+// -----------------------------------------------------------------------------
 mark {
 	background-color: $alpha_color;
 }
-.mark_cursor, ::-moz-selection, ::selection {
+
+.mark_cursor {
 	color: invert($basic_font_color);
 	background-color: $basic_font_color;
 }
 
+::-moz-selection {
+	color: invert($basic_font_color);
+	background-color: $basic_font_color;
+}
+
+::selection {
+	color: invert($basic_font_color);
+	background-color: $basic_font_color;
+}
+
+// Text direction
+// -----------------------------------------------------------------------------
 bdi, bdo {
 
 }
 
 // Span
+// -----------------------------------------------------------------------------
 span {
 
 }
+
 .span_solo {
 	@extend %solo;
 }
 
-// Linebreak
+// Linebreaks
+// -----------------------------------------------------------------------------
 br {
 
 }
@@ -230,6 +271,10 @@ wbr {
 
 // Edits
 // -----------------------------------------------------------------------------
+// ins
+// del
+
+
 
 ins {
 
@@ -237,61 +282,4 @@ ins {
 
 del {
 
-}
-
-
-
-// General Classes
-// ------------------------------------------------------------------------------
-.txt_tiny {
-	font-size: .5em !important;
-}
-
-.txt_smaller {
-	font-size: .75em !important;
-}
-
-.txt_larger {
-	font-size: 1.2em !important;
-}
-
-.txt_huge {
-	font-size: 3em !important;
-}
-
-.txt_hero {
-	font-size: $hero_size_1;
-}
-
-.txt_center {
-	text-align: center !important;
-}
-.txt_right {
-	text-align: right !important;
-}
-.txt_left {
-	text-align: left !important;
-}
-
-.txt_top {
-	vertical-align: top !important;
-}
-
-.txt_bottom {
-	vertical-align: bottom !important;
-}
-
-.txt_white {
-	color: white;
-}
-
-.txt_black {
-	color: black;
-}
-
-.txt_gradient {
-	background: linear-gradient(165deg, $alpha_color 30%, $bravo_color 45%, $charlie_color 50%, $delta_color, $echo_color 80%, $foxtrot_color);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }

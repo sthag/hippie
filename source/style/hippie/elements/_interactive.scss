@@ -17,16 +17,44 @@
 
 
 
+// Form
+// -----------------------------------------------------------------------------
 form {
 
 }
 
+// Label
+// -----------------------------------------------------------------------------
 label {
 	@extend %basic;
 
 	input, button, textarea, select {
 		margin-left: $basic_space;
 	}
+}
+
+input + label {
+	margin-left: $basic_space;
+}
+
+.label {
+	line-height: 2.5;
+}
+
+.label > input,
+.label > textarea,
+.label > select {
+	margin: 0 $basic_space;
+}
+
+// Input
+// -----------------------------------------------------------------------------
+input {
+	color: $basic_io_font_color;
+}
+
+label + input {
+	margin-left: $basic_space;
 }
 
 input, button, textarea, select {
@@ -38,8 +66,11 @@ input, button, textarea, select {
 	}
 }
 
-input {
-	color: $basic_io_font_color;
+td > input,
+td > button,
+td > select,
+td > textarea {
+	margin: 0;
 }
 
 @each $input in $io_input_list, textarea, select {
@@ -97,17 +128,23 @@ input {
 	}
 }
 
+// Fieldset
+// -----------------------------------------------------------------------------
 fieldset {
 	margin: $high_margin;
 	padding: $basic_space;
 	border: $basic_border;
 }
 
+// Legend
+// -----------------------------------------------------------------------------
 legend {
 	@extend %basic;
 	padding: 0 $half_space;
 }
 
+// Button
+// -----------------------------------------------------------------------------
 button {
 
 }
@@ -137,14 +174,20 @@ button {
 	}
 }
 
+// Selection
+// -----------------------------------------------------------------------------
 select {
 	border: none;
 }
 
+// Datalist
+// -----------------------------------------------------------------------------
 datalist {
 
 }
 
+// Options
+// -----------------------------------------------------------------------------
 optgroup {
 
 }
@@ -153,6 +196,8 @@ option {
 
 }
 
+// Textarea
+// -----------------------------------------------------------------------------
 textarea {
 }
 
@@ -160,10 +205,14 @@ textarea {
 	line-height: 1.2;
 }
 
+// Output
+// -----------------------------------------------------------------------------
 output {
 
 }
 
+// Progress
+// -----------------------------------------------------------------------------
 progress {
 
 }
@@ -207,69 +256,4 @@ dialog {
 
 canvas {
 
-}
-
-
-
-// General Classes
-// ------------------------------------------------------------------------------
-.label {
-	line-height: 2.5;
-}
-
-.label > input,
-.label > textarea,
-.label > select {
-	margin: 0 $basic_space;
-}
-
-.label_table {
-	display: table;
-
-	input {
-		display: table-cell;
-	}
-}
-
-label + input {
-	margin-left: $basic_space;
-}
-
-input + label {
-	margin-left: $basic_space;
-}
-
-td > input,
-td > button,
-td > select,
-td > textarea {
-	margin: 0;
-}
-
-
-
-.grid {
-	display: grid;
-	grid-gap: $basic_space;
-
-	& > input,
-	& > select,
-	& > textarea {
-		margin: 0;
-	}
-
-	& > label {
-		display: inline-block;
-		margin: $basic_io_border_width;
-		padding: $half_space;
-	}
-}
-
-.grid_column_2 {
-	grid-template-columns: max-content max-content;
-
-}
-
-.grid_column_4 {
-	grid-template-columns: max-content max-content max-content max-content;
 }

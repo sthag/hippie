@@ -13,12 +13,47 @@
 
 
 
+// Table
+// -----------------------------------------------------------------------------
 table {
 	margin: $high_margin;
 	border: $basic_border;
 	border-collapse: collapse;
 }
 
+.table_blank {
+	border: $basic_border_width solid transparent;
+
+	th, td {
+		border: $basic_border_width solid transparent;
+	}
+}
+
+.table_free {
+	border: $basic_border_width solid transparent;
+}
+
+.table_stripe {
+	td {
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	tr:nth-child(even) td {
+		background-color: lighten($color_back_basic, $tiny_color_diff);
+	}
+}
+
+.table_fix {
+	table-layout: fixed;
+}
+
+.table_file_simple {
+	@extend .width_full;
+}
+
+// Caption
+// -----------------------------------------------------------------------------
 caption {
 	@extend p;
 	padding: $half_space 0;
@@ -26,6 +61,8 @@ caption {
 	text-align: center;
 }
 
+// Columns
+// -----------------------------------------------------------------------------
 colgroup {
 
 }
@@ -34,14 +71,20 @@ col {
 
 }
 
+// Table body
+// -----------------------------------------------------------------------------
 tbody {
 
 }
 
+// Table head
+// -----------------------------------------------------------------------------
 thead {
 
 }
 
+// Table foot
+// -----------------------------------------------------------------------------
 tfoot {
 
 	tr:first-child td {
@@ -49,10 +92,14 @@ tfoot {
 	}
 }
 
-tr:last-child td {
-	border-bottom: 0;
+// Row
+// -----------------------------------------------------------------------------
+tr {
+
 }
 
+// Cells
+// -----------------------------------------------------------------------------
 th, td {
 	@extend %basic;
 	padding: $half_space;
@@ -64,52 +111,20 @@ th {
 }
 
 td {
-	border-right: $cell_border;
-	border-bottom: $cell_border;
+	border-right: $basic_border;
+	border-bottom: $basic_border;
 }
 
 td:last-child {
 	border-right: 0;
+
+	td {
+		border-bottom: 0;
+	}
 }
 
-
-
-// General Classes
-// ------------------------------------------------------------------------------
 .cell_pre {
 	// border-right-width: $border_width_4;
-	// border-right-color: lighten($basic_back_color, $basic_color_diff);
-	background-color: lighten($basic_back_color, $tiny_color_diff);
-}
-
-.table_blank {
-	border: $basic_border_width solid transparent;
-
-	th, td {
-	border: $basic_border_width solid transparent;
-	}
-}
-
-.table_free {
-	border: $basic_border_width solid transparent;
-}
-
-.table_stripe {
-	td {
-	border-top: 0;
-	border-bottom: 0;
-	}
-
-	tr:nth-child(even) td {
-	background-color: lighten($basic_back_color, $tiny_color_diff);
-	}
-}
-
-.table_fix {
-	table-layout: fixed;
-}
-
-// Data
-.table_file_simple {
-	@extend .width_full;
+	// border-right-color: lighten($color_back_basic, $color_diff_basic);
+	background-color: lighten($color_back_basic, $tiny_color_diff);
 }
