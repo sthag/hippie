@@ -2,7 +2,7 @@
 {% set pageId = "intro" %}
 {% set pageClass = "" %}
 
-{% extends "hippie/demo-extended.njk" %}
+{% extends "demo/extended.njk" %}
 
 {% block title %}Intro{% endblock %}
 {% block head %}
@@ -19,10 +19,10 @@
 
 <div id="begin" class="demo__intro">
   Dies ist einfach nur Text.<br>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.<br>Dies ist normalerweise nicht vorgesehen und wird hier nur zur Einführung und Anschauung verwendet.<br><br>
-  <p>Es wirken nur die Eigenschaften des <code>&lt;body&gt;</code> Elements. Dieses Element umschließt den gesamten Inhalt des Dokumentes und kommt daher nur einmal vor. Inhalte sind normalerweise durch Elemente definiert. Grundlegende Elemente teilen das Dokument zunächst in Abschnitte.</p>
-  <h1 id="sections">Bereiche</h1>
-  {# // body // article // section // nav // aside // h1-h6 // header // footer #}
   <article>
+    <p>Es wirken nur die Eigenschaften des <code>&lt;body&gt;</code> Elements. Dieses Element umschließt den gesamten Inhalt des Dokumentes und kommt daher nur einmal vor. Inhalte sind normalerweise durch Elemente definiert. Grundlegende Elemente teilen das Dokument zunächst in Abschnitte.</p>
+    <h1 id="sections">Bereiche</h1>
+    {# // body // article // section // nav // aside // h1-h6 // header // footer #}
     <section>
       <p>Einen Abschnitt, welcher für sich alleine stehen kann, definiert sich durch <code>&lt;article&gt;</code>. Solch ein Element wird oft detailliert gestaltet, kommt aber auch ohne jegliche Gestaltung aus.</p>
       <p>Noch allgemeiner ist das <code>&lt;section&gt;</code> Element. Es schafft Bereiche um Inhalte zu strukturieren.</p>
@@ -59,7 +59,7 @@
     <h1 id="grouping">Gruppierung</h1>
     {# // p // address // hr // pre // blockquote // ol // ul // li // dl // dt // dd // figure // figcaption // main // div #}
     <p>Ein Absatz <code>&lt;p&gt;</code>. Zugegeben ein kurzer.</p>
-    <p>Aus mehreren Absätzen wird ein ganzer Text. Solche Texte haben gelegentlich großen informativen oder unterhaltsamen Charakter.<br>Einfache Zeilenumbrüche werden darin mit <code>&lt;br&gt;</code> erreicht.</p>
+    <p>Aus mehreren Absätzen wird ein ganzer Text. Solche Texte haben gelegentlich großen informativen oder unterhaltsamen Charakter.<br>Einfache Zeilenumbrüche werden darin mit <code>&lt;br&gt;</code> erreicht. Dies ist allerdings ein Element der Textebene und keine Gruppierung.</p>
     <p>Die Unterteilung in Absätze ist eine von vielen Möglichkeiten Texte zu gruppieren und ihnen Struktur zu verleihen. In diesem Dokument flattert Text normalerweise von Links daher. Er ist schwarz und in einer serifenlosen Schrift gesetzt. Zu weiteren Formatierungen, die eher auf einer Ebene der Zeichen einzuordnen ist, wird im Verlauf näher eingegangen. Zunächst die Struktur:</p>
     <p class="txt_center js_pop">Text sitzt gerne auch mal zentriert.</p><div class="exp_pop"><code class="code_solo">p.txt_center</code></div>
     <p class="txt_right js_pop">Rechtsbündig ist schon eher eine Ausnahme bzw. Besonderheit.</p><div class="exp_pop"><code class="code_solo">p.txt_right</code></div>
@@ -83,6 +83,13 @@
       <p class="quote_source"><a href="https://de.wikipedia.org/wiki/Zitat/">Wikipedia</a></p>
     </blockquote>
     <div class="exp_pop"><code class="code_solo">blockquote>p+p.quote_source</code></div>
+    <p>Gerade bei wörtlichen Zitierungen kommt häufig das Anführungszeichen zum Einsatz. Es kann durch die Formatierung automatisch ergänzt werden.</p>
+    <blockquote class="quote_mark js_pop" cite="">
+      <p>Das kannst du schon so machen aber dann isses halt Kacke.</p>
+      <p class="quote_source">o. V.</p>
+    </blockquote>
+    <div class="exp_pop"><code class="code_solo">blockquote.quote_mark>p+p.quote_source</code></div>
+    <h2>Listen</h2>
     <p>Text bekommt durch Listen besondere optische wie auch inhaltliche Struktur. Es gibt ungeordnete <code>&lt;ul&gt;</code> und geordnete Listen <code>&lt;ol&gt;</code> sowie Beschreibungslisten <code>&lt;dl&gt;</code>. Die beiden ersten Varianten beinhalten das Listenelement <code>&lt;li&gt;</code>. Beschreibungslisten beinhalten jeweils das Paar von Ausdruck <code>&lt;dt&gt;</code> und Beschreibung <code>&lt;dd&gt;</code>. Im Folgenden eine Liste der Listen in ihrer Ausgangskonfiguration:</p>
     <ul>
       <li>Ungeordnete</li>
@@ -102,7 +109,7 @@
       <dt>Ausdruck</dt>
       <dd>Beschreibung</dd>
     </dl>
-    <p>Auch Inhalte, die nicht in Textform sind, können durch einen Bezug integriert werden. Wie diese Fahne werden sie mit <code>&lt;figure&gt;</code> umschlossen und tragen eine Bezeichnung.</p>
+    <p>Auch Inhalte, die nicht in Textform sind, können durch einen Bezug integriert werden. Wie diese Fahne werden sie mit <code>&lt;figure&gt;</code> umschlossen und tragen eine Bezeichnung, welche mit <code>&lt;figcaption&gt;</code> ausgezeichnet wird.</p>
     <figure class="js_pop">
       <figcaption>Fahne</figcaption>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10%" height="10%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice" alt="Background flag">
@@ -127,47 +134,112 @@
     {# // a // em // strong // small // s // cite // q // dfn // abbr // ruby // rb // rt // rtc // rp // data // time // code // var // samp // kbd // sub // sup // i // b // u // mark // bdi // bdo // span // br // wbr // -- Edits -- // ins // del #}
     <h2>Verweise</h2>
     <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.a_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können zum Beispiel auch auf E-Mail Adressen oder Dateien zeigen. Theoretisch kann solch ein Verweis <b>Alles</b> auslösen. Anweisungen werden im <a href="https://tools.ietf.org/html/rfc1738">URL Standard</a> übergeben.</p>
-    <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a_line" href="#">unterstrichene Varianten</a> sind möglich.</p>
+    <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a_line" href="#">unterstrichene Varianten</a> sind einfache Beispiele.</p>
     <p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Verweise werden dann durchaus auch wie Schaltflächen dargestellt.</p>
     <nav>
-      <p><a class="a_button_text" href="#textlevel">↥</a> (Zum Anfang des Abschnitts springen)<br><a class="a_button_text" href="#begin">⇫</a> (Zum Anfang der Seite springen)</p>
+      <p><a class="a_button_text" href="#textlevel">↥</a> (Zum Anfang des Abschnitts springen) <a class="a_button_text" href="#begin">⇫</a> (Zum Anfang der Seite springen)</p>
+    </nav>
+    <nav class="nav_center_old">
+      <ul>
+        <li><a href="../demo.html" class="a_button">Startseite</a></li>
+        <li><a href="" class="a_button">Hilfe</a></li>
+        <li><a href="" class="a_button">⌨</a></li>
+        <li><a href="" class="a_button">⋯</a></li>
+      </ul>
     </nav>
     <h2>Formatierungen</h2>
     <p>Texte, Wörter oder Zeichen können vielfältig formatiert werden.</p>
     <p>Sie können <b>fett</b> <code>&lt;b&gt;</code> oder <i>kursiv</i> <code>&lt;i&gt;</code> geschrieben sein. <b><i>Auch beides ist möglich!</i>?</b>! Sollen sie nicht nur anders <strong>aussehen</strong>, sondern auch <em>eine besondere inhaltliche Bedeutung</em> bekommen, werden sie mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code> ausgezeichnet.</p>
     <p>Das <code>&lt;u&gt;</code> Element stellt eine Spanne von Text mit einer unartikulierten, wenn auch explizit dargestellten, nicht-textuellen Anmerkung dar, wie z.B. die Beschriftung des Textes als Eigenname wie <u>Interaktionsweise</u>, oder die Beschriftung des Textes als falsch geschrieben.</p>
     <p>Ähnlich ist es mit dem Element <code>&lt;small&gt;</code>. <small>Es steht für Randnotizen wird aber häufig auch kleiner dargestellt.</small></p>
-    <p>Gerade bei wörtlichen Zitierungen kommt häufig das Anführungszeichen zum Einsatz. Es kann durch die Formatierung automatisch ergänzt werden.</p>
-    <blockquote class="quote_mark js_pop" cite="">
-      <p>Das kannst du schon so machen aber dann isses halt Kacke.</p>
-      <p class="quote_source">o. V.</p>
-    </blockquote>
-    <div class="exp_pop"><code class="code_solo">blockquote.quote_mark>p+p.quote_source</code></div>
-    <p>Ein besonderer inhaltlicher Bezug ist der Titel eines Werkes. Sowas kann mit <code>&lt;cite&gt;</code> ausgezeichnet werden. <cite>Pulp Fiction</cite>, super Film - zum Beispiel.</p>
-    <p>Auch die Auszeichnung <code>&lt;code&gt;</code> wurde bis hier hin schon verwendet. Sie markiert Maschinensprache.<code>var code = "Das ist code";</code></p>
-    <p>In diesem Beispiel wird die Variable <var>code</var> definiert. Solch ein spezieller Text kann mit dem dafür vorgesehenen Element <code>&lt;var&gt;</code> ausgezeichnet werden.</p>
+    <p>Ist ein Text nicht mehr korrekt oder relevant kann er mit <code>&lt;s&gt;</code> markiert werden:<br><s>Die Erde ist eine Scheibe.</s></p>
+    <p>Ein besonderer inhaltlicher Bezug ist der Titel eines Werkes. Sowas kann mit <code>&lt;cite&gt;</code> ausgezeichnet werden. <cite>Pulp Fiction</cite>, ist ein super Film - zum Beispiel.</p>
+    <p>Um ein Zitat direkt im Text zu verwenden benutzt man das <code>&lt;q&gt;</code> Element. Es platziert Anführungszeichen um die Aussage:</p>
+    <p>Sie sagte: <q>Du wolltest staubsaugen!</q><br>Er sagte: <q>Mach' ich morgen.</q></p>
+    <p>Mit dem <code>&lt;dfn&gt;</code> Element werden Begriffe definiert. Es wird häufig mit dem Element für Abkürzungen <code>&lt;abbr&gt;</code> gemeinsam verwendet. Die eigentliche Definition kann dabei auch im Attribut <code>title</code> stehen.</p>
+    <p><dfn><abbr title="Hippie interweaves preeminent personal interface elements">Hippie</abbr></dfn> is an recursive acronym for <dfn>Hippie interweaves preeminent personal interface elements</dfn>.</p>
+    <p>Die besondere Auszeichnungen <code>&lt;ruby&gt;</code> <q cite="https://de.wikipedia.org/wiki/Ruby_Annotation">bezeichnet ein Anmerkungssystem, bei dem der Text zusammen mit seiner Anmerkung in einer Zeile erscheint.</q> Das System verwendet die folgenden weiteren Elemente mit spezifischer Bedeutung:</p>
+    <dl>
+      <df><code>&lt;rb&gt;</code></df>
+      <dd>Basis Textkomponente</dd>
+      <df><code>&lt;rt&gt;</code></df>
+      <dd>Annotation</dd>
+      <df><code>&lt;rtc&gt;</code></df>
+      <dd>Einzelne Komponente einer Annotation</dd>
+      <df><code>&lt;rp&gt;</code></df>
+      <dd>Alternative bei fehlender Unterstützung</dd>
+    </dl>
+    <hr class="hr_dotted space_even_half">
+    <div class="txt_center">
+      <ruby class="space_right_small"><rb>Basis</rb><rt>Auszeichnung</rt></ruby>
+      <ruby class="space_right_small"><rb>今日</rb><rt>きょう</rt></ruby>
+      <ruby>
+        ♥<rp>: </rp><rt>Herz</rt><rp>, </rp><rtc><rt lang=fr>Cœur</rt></rtc><rp>.</rp>
+        ☘<rp>: </rp><rt>Kleeblatt</rt><rp>, </rp><rtc><rt lang=fr>Trèfle</rt></rtc><rp>.</rp>
+        ✶<rp>: </rp><rt>Stern</rt><rp>, </rp><rtc><rt lang=fr>Étoile</rt></rtc><rp>.</rp>
+      </ruby>
+    </div>
+    <hr class="hr_dotted space_even_half">
+    <p>Wikipedia erklärt dies ausführlicher unter <a href="https://de.wikipedia.org/wiki/Ruby_Annotation">Ruby Annotation</a>.</p>
+    <p>Es gibt auch mehrere besondere Elemente um Maschinensprache oder Programmkode zu bezeichnen. Dabei wird unterschieden, ob der Inhalt nur für Menschen ausgezeichnet wird oder auch maschinen-lesbar sein soll. Die Elemente <code>&lt;data&gt;</code> und <code>&lt;time&gt;</code> enthalten eine maschinen-lesbare Repräsentation des Inhaltes:</p>
+    <dl>
+      <dt><data>0</data> ≠ <data>NULL</data></dt>
+      <dd><code>&lt;data&gt;0&lt;/data&gt; ≠ &lt;data&gt;NULL&lt;/data&gt;</code></dd>
+      <dt>Der Wert <data value="NULL">NULL</data> mit Attribut</dt>
+      <dd><code>&lt;data value="NULL"&gt;NULL&lt;/data&gt;</code></dd>
+      <dt><time>2018-10-08</time></dt>
+      <dd><code>&lt;time&gt;2018-10-08&lt;/time&gt;</code></dd>
+      <dt>Die Zeitangabe <i><time datetime="2018-10-08">Gestern</time></i> mit Attribut</dt>
+      <dd><code>&lt;time datetime="2018-10-08"&gt;Gestern&lt;/time&gt;</code></dd>
+    </dl>
+    <p>Die Auszeichnung <code>&lt;code&gt;</code> wurde bis hier hin schon verwendet. Sie markiert ebenfalls Maschinensprache. Allerdings dient sie dazu von Menschen gelesen zu werden. In diesem Dokument werden alle Elemente, die erklärt werden wiederum mit diesem Element markiert.</p>
     <p>Für zusammenhängende Blöcke wird die Auszeichnung oft in Kombination mit dem Element <code>&lt;pre&gt;</code> verwendet:</p>
     <pre class="pre_code"><code>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;Hyper Text Markup Language&lt;/title&gt;<br>  &lt;/head&gt;<br>  &lt;body id="root"&gt;<br>    &lt;!-- Content goes here --&gt;<br>    &lt;p class="example"&gt;Just like this.&lt;/p&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</code></pre>
     <p>Dabei bleiben vorhandene Textformatierungen wie Zeilenumbrüche und Einrückung erhalten.</p>
+    <p><code>var def = "Definition einer Variablen";</code></p>
+    <p>In diesem Beispiel wird die Variable <var>def</var> definiert. Solch ein spezieller Typ Programmkode kann mit dem dafür vorgesehenen Element <code>&lt;var&gt;</code> ausgezeichnet werden.</p>
     <p>Soll beispielhaft auf Ausgaben von Computern verwiesen werden, wird das <code>&lt;samp&gt;</code> Element verwendet. Der Computer hat gesagt: <samp>Ich kann das angegebene Objekt nicht finden</samp>.</p>
-    <p>Benutzereingaben haben ebenfalls ein eigenes Element <code>&lt;kbd&gt;</code>. Damit werden Eingaben durch den Nutzer, wie Drücken Sie gleichzeitig <kbd>Strg</kbd> und <kbd>A</kbd>, gekennzeichnet.</p>
+    <p>Benutzereingaben haben ebenfalls ein eigenes Element <code>&lt;kbd&gt;</code>. Damit werden Eingaben durch den Nutzer, wie zum Beispiel <q>Drücken Sie gleichzeitig <kbd>Strg</kbd> und <kbd>A</kbd></q>, gekennzeichnet.</p>
+    <p>Hoch- und Tiefgestellte Zeichen werden durch die Elemente <code>&lt;sup&gt;</code> und <code>&lt;sub&gt;</code> repräsentiert. Sie dienen nicht dazu rein optische Auszeichnungen zu erreichen sondern werden für ihren jeweiligen Zweck eingesetzt. In der Mathematik oder Chemie sind sie üblich:</p>
+    <p>Beispielsweise die Formel <var>E</var>=<var>m</var><var>c</var><sup>2</sup> oder das Element H<sub>2</sub>O</p>
     <p>Die Zeichen in Absätzen bis hin zu ganzen Texten können, mit einem geeigneten Eingabegerät, markiert werden. Dies stellt sich wie folgt dar:</p>
-    <p class="txt_center">Bei<mark class="mark_cursor">spiel zum mark</mark>ieren ^^.</p>
+    <p class="txt_center">Bei<mark class="mark_cursor">spiel zum mark</mark>ieren 😉.</p>
     <p>Eine Markierung kann, mittels <code>&lt;mark&gt;</code>, auch durch den Autor geschehen. Diese stellt sich ein wenig anders dar: <mark>Diese Worte sind markiert.</mark></p>
-    <p>Um Text, dessen schreibweise nicht vorhersehbar ist, zu markieren wie z.B. Benutzernamen <bdi>كائن بشري</bdi>, die auch rechtsbündig geschrieben sein können, wird das <code>&lt;bdi&gt;</code> Element eingesetzt.<br>Die Schreibweise kann auch auch vom Author vorgegeben und expliziert geändert werden. Dies wird dem <code>&lt;bdo&gt;</code> Element umgesetzt.</p>
+    <p>Um Text, dessen schreibweise nicht vorhersehbar ist, zu markieren wie z.B. Benutzernamen <bdi>كائن بشري</bdi>, die auch rechtsbündig geschrieben sein können, wird das <code>&lt;bdi&gt;</code> Element eingesetzt.<br>Die Schreibweise kann auch auch vom Author vorgegeben und expliziert geändert werden. Dies wird dem <code>&lt;bdo&gt;</code> Element umgesetzt. Die Richtung wird dann mit dem Attribut <code>dir</code> angegeben.</p>
     <bdo dir="rtl">
       <ul>
         <li>كائن بشري</li>
         <li>إنسان آلي</li>
       </ul>
     </bdo>
-    <p>Neben den vielen speziellen Elmenten gibt es auch ein Element, das keine vordefinierte Bedeutung hat. Es ist das <code>&lt;span&gt;</code> Element.<br></p>
-    <p><span class="wip_txt">...</span></p>
+    <p>Neben den vielen speziellen Elmenten gibt es auch ein Element, das keine vordefinierte Bedeutung hat. Es ist das <code>&lt;span&gt;</code> Element.<br>Es dient dazu ganz individuelle Auszeichnungen zu ermöglichen die eher optische Auswirkungen haben und eben keine inhaltlichen. Mit den Attributen <code>id</code> oder <code>class</code> werden dazu eigene Typen des Elements definiert. Diese Möglichkeit der Definition von individuellen Elementen ist ein Grundprinzip der Auszeichnungssprache <abbr title="Hypertext Markup Language" >HTML</abbr>.</p>
+    <p>Mit der Einführung von Absätzen wurde auch schon das <code>&lt;br&gt;</code> Element erwähnt und seitdem häufig benutzt. Es erzeugt einen Zeilenumbruch. Es wird dadurch kein neuer Absatz erstellt. Es dient auch nicht dazu optischen Abstand zu erzeugen, sondern innerhalb eines Absatzes den Text umzubrechen.</p>
+    <p>Eine besondere Form des Zeilenumbruchs kann mit <code>&lt;wbr&gt;</code> eingesetzt werden. Es stellt die Möglichkeit für einen Zeilenumbruch dar. Da das Format eines HTML-Dokumentes häufig nicht vorhersehbar ist, kann solch ein Element einen Umbruch erzeugen falls ein Wort zu lang für eine Textzeile sein sollte.</p>
+    <p>Und der Löwe brüllte "RRRR<wbr>rrrr<wbr>oooooooo<wbr>aaaa<wbr>AAAAAAAA<wbr>HHHH<wbr>hhhh<wbr>rrrrrrrrr"!</p>
+    <p>Es kann auch innerhalb von vorformatierten Texten Zeilenumbrüche ermöglichen</p>
     <h2>Änderungen</h2>
+    <p>Werden Texte geändert, können solche Änderungen sichtbar gemacht werden. Somit können sie besser nachvollzogen werden.<br>Zum Beispiel eine Ergänzung von Inhalt.</p>
+    <aside>
+      <ins>Dies ist auch wichtig.</ins>
+    </aside>
+    <p>Der Inhalt wird dann mit <code>&lt;ins&gt;</code> ausgezeichnet. Wird Text entfernt, kommt das <code>&lt;del&gt;</code> zum Einsatz.</p>
+    <h6>Zu Tun</h6>
+    <ul>
+      <li>Fahrrad reparieren</li>
+      <li><del>Staubsaugen</del></li>
+      <li>Tisch bauen</li>
+    </ul>
   </article>
   <article>
-    <h1>Eingebundene Inhalte</h1>
-
+    <h1 id="embedded">Eingebundene Inhalte</h1>
+    {# // picture // source // img // iframe // embed // object // param // video // audio // track // map // area #}
+    <img src="data:image/gif;base64,R0lGODlhgABQAIQAMf/MAP+ZM/+ZAP9mM8zM/8xmM8wzM8wAZpnM/5nMzJmZzJkzZpkAZmbMzGaZzGZmmWYzZjNmmTMzmQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAgABQAAQF/mDjiORolug5NiKSEG8Mz68SSbek73zv/8CgcEhkGY/IpBLRcBEQM+hL+nRIHrscLsvVab/drTcMHpvF6DIuxVaxj7I4DZZAE+/4vB6o7PubRgSCUIOCT4YRDxE3jFuNj46RkJOSlZSXlo5tm24nTXKgBA5ae6Wmpz5/qklOU1GvCYqNZ2q1ZLe0uGm6X5y+K0dzoQlWpKjHyHery0wIhIeFgwiLmZjW1djX2pa/viwjw3PUyeTlQct/TCyHru0ENru58vH0tvP29VndnazhMVjGzAkkh06VM2gICdkAmK3htocOI0bYtymQv2kBB2o8VrBPM3dUoDxQdI+XyZIo/vOlnMivJQk4wubA20iTYMcj6l5ESzgKok+JQH8+osivQcw4DezUXFrqJquQsAhQw0f1pMqrVe8RRcHCn6iMTMMqc8qCSUJDUmQFXSuUrcOtwBwk8FdMrF09ZHOy2+vsitWsWP8KXgk3WLhxdxMXIdtk5zMFattKdjt5UuGuR2GAVcyZR16jIGHYmBV45eDSqGttNdJKGAKlnWPvuNnsme2vlHNX1q3JZdHMM2UL9+yUb5S6ppOnPg1YtW+ureMogD08Nm1XOxPx3s3dLQQICyh+iz5jVHXZEBgsYJC+4EfjsZjLV97c6vf1C8CrF99gmJXziuGn3oDr3YQWWhht/qdgd5Sklx9++hlwgAHikfcCYgDSlJ6D7A14AAMHhHiAe1C9YF599M233BgO6vegehPGKCGFz1kkzGYZosKhgAKK6KOIzDRx2ztTLWjkT/e56KKMTM44IUWgvIZjjnlwuCOIP2bpY0HGkZTilytedZ96SzppZpMydvOJTFNSGcSVPGopZ5bMOFYXg0diM+aLC6B55p9NerOOdG7useGA6c2p6JwGgbZXkWCiGOYNLcYJ6KV+pukSZjJ4WSgQcMK46KiMqqITO3imWkmS+C2A6auZ/umNMFh8ysOh63FI6q6LGhSSlCpKWhUEEvAJXqzIwvqnAQNU1J84baJHoIe8/lab5QAFBCAAAAL4YdYzJ+Y52Z7HKptsstluGwAA667LyVw0RJuYldRaa20B6WrLrb7bAvBHO/9NGuwO5K5n7sFMYhtAu+w2vC4AEEdcEQ2vAXilvbsawGwB3Ha8rboRhyyxR4WQpCpElZ6LsJMKM8ywyDCLvIkM5sWGK5YYz6kxtvt+vHDMQMvcRxQMRSoYqwysnOzGDjcd9NMyu7EmMYrdnLOcBqTrsdNQdz0yEgcJUuTJkbyo9KXMgvyy12zD/MYMtYal69U+YiuAzx+3rXfMSqA68Dxjnt1kAQOovffhT0MXQ8AaEdtjzllrnTfilAOdxBTAplqmyoP//HDlyKAnrsIMG81t7cb8hq461GCbSJqwEjjIOcvZrr367UGjEIO8Q+zI6855f4778JYHI0pu983OtO3EN2+5CS7UgUqHGRtwt+fOZ886a1JJit/ShTes/fhev/ROKbIrmrUAzJPvfvGfMHTNd69a3+/7+LNNAtV31PsjvvrKnwD1tw5elKtzwhugArvWgrj9YD0+2hnHFkhBvXWlQUmLEc8qyMG9scCBscMS8DpIQg9Oh1JJS1sJV3i4pKQnaz9joQz15gDxzfCGegsBADs=" width="128" height="80" alt="Fahne von Interaktionsweise">
+    <p>Die ist ein Bild. Es wird mit dem Element <code>&lt;img&gt;</code> eingebunden. Solch ein Bild hat üblicherweise die Attribute <code>width</code> und <code>height</code>. Mit ihnen werden die Abmessungen (Breite und Höhe) festgelegt. Außerdem sollte immer das Attribut <code>alt</code> für eine alternative Beschreibung in Textform verwendet werden.</p>
+    <p>Das Bild selbst liegt normalerweise als Datei vor. Die Quelle wird mit dem Attribut <code>src</code> angegeben. Es können einige Alternativen zur Angabe einer konkreten Datei eingesetzt werden. Zum Beispiel können mehrere Dateien in Abhängigkeit zur Darstellung oder dem unterstützen Format angegeben werden. Dafür können dann die Elemente <code>&lt;source&gt;</code> und <code>&lt;picture&gt;</code> in Kombination verwendet werden.</p>
+    <picture>
+      <source srcset="../art/demo/flag_websafe_128x80.webp" type="image/webp">
+      <img src="../art/demo/flag_websafe_128x80.gif" alt="" width="128" height="80">
+    </picture>
   </article>
   <article>
     <h1>Tabellen</h1>
@@ -351,7 +423,7 @@
     <p>Ein spezieller Typ des Eingabefeldes hat die Funktion einer Schaltfläche <code>&lt;input[type="button"]&gt;</code>. Es gibt allerdings auch ein eigenes Element <code>&lt;button&gt;</code> dafür.</p>
     <p><input type="button" value="Input Button"><button>Button</button></p>
     <p><input class="io_button" type="button" value="Input Button"><button class="io_button">Button</button></p>
-    <p>Interaktive Elemente können durch das Attribut <code>&lt;readonly&gt;</code> nur lesbar gemacht werden oder mittels <code>&lt;disabled&gt;</code> gänzlich deaktiviert werden.</p>
+    <p>Interaktive Elemente können durch das Attribut <code>readonly</code> nur lesbar gemacht werden oder mittels <code>disabled</code> gänzlich deaktiviert werden.</p>
     <p><input type="text" value="Nur lesbare Eingabe" readonly><input type="text" value="Deaktivierte Eingabe" size="21" disabled><button disabled>Deaktivierte Schaltfläche</button></p>
     <p><input class="io_input" type="text" value="Nur lesbare Eingabe" readonly><input class="io_input" type="text" value="Deaktivierte Eingabe" size="21" disabled><button class="io_button" disabled>Deaktivierte Schaltfläche</button></p>
     <p>Das Element <code>&lt;label&gt;</code> ergänzt interaktive Elemente um eine Beschriftung. Wichtig ist hier, dass die Beziehung beider Elemente zu einander deutlich ist.</p>

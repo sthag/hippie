@@ -7,7 +7,7 @@
 // ------------------------------------------------------------------------------
 
 %paper {
-	background-color: $basic_front_color;
+	background-color: $color_front_basic;
 }
 
 $a4: ".dina4" 1.2cm 1.2cm 1.2cm 2.4cm;
@@ -17,7 +17,7 @@ $a6: ".dina6" 0 0 0 1.2cm;
 $din: $a4, $a5, $a6;
 
 .print_body {
-	font-size: $basic_print_size;
+	font-size: $size_text_print;
 	margin: 10vh 20vw;
 
 	@page {

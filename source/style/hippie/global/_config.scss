@@ -5,12 +5,10 @@
 
 // TEXT
 // ------------------------------------------------------------------------------
-$basic_size: 17px !default;
-$basic_print_size: 10pt !default;
+$size_text_basic: 17px !default;
+$size_text_print: 10pt !default;
 
-$size_1: $basic_size * 4;
-
-$basic_line: 1;
+$line_basic: 1;
 
 // $i: 1;
 // @while $i < 7 {
@@ -44,30 +42,24 @@ $basic_line: 1;
 //   ),
 // );
 
-$head_size_1: 3.1em !default;
-$head_size_2: 2.5em !default;
-$head_size_3: 1.8em !default;
-$head_size_4: 1.35em !default;
+$size_head_1: 3.1em !default;
+$size_head_2: 2.5em !default;
+$size_head_3: 1.8em !default;
+$size_head_4: 1.35em !default;
 
-$text_size_1: 1em;
-$text_size_2: 20;
+$size_text_1: 1em;
+$size_text_2: 20;
 
-$hero_size_1: $head_size_1 * 3;
+$size_hero: $size_head_1 * 3;
 
-$text_line_basic: 1.28 !default;
-$text_line_mono: 1.1 !default;
-$head_line_basic: $text_line_basic !default;
-$head_line_2: $head_line_basic;
-$head_line_3: $head_line_basic;
-$head_line_4: $head_line_basic;
+$line_text_basic: 1.28 !default;
+$line_text_mono: 1.1 !default;
+$line_head_basic: $line_text_basic !default;
 
-$print_font_family: #{'Times New Roman', times} !default;
-$monospace_font_family: #{'Courier New', monospace} !default;
-
-$primary_font_family: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
-$secondary_font_family: $primary_font_family !default;
-$third_font_family: $monospace_font_family !default;
-$fourth_font_family: $print_font_family !default;
+$family_text_basic: #{'Roboto', 'Segoe UI', 'Liberation Sans', 'Source Sans', 'Trebuchet MS', Helvetica, Arial, sans-serif, sans} !default;
+$family_text_print: #{'Times New Roman', times} !default;
+$family_text_mono: #{'Courier New', monospace} !default;
+$family_head_basic: $family_text_basic !default;
 
 
 
@@ -85,38 +77,38 @@ $color_palette: (
 @include addDefaultColors;
 
 $color_diff_basic: 12% !default;
-$tiny_color_diff: 4% !default;
-$double_color_diff: $color_diff_basic * 2;
+$color_diff_tiny: 4% !default;
+$color_diff_double: $color_diff_basic * 2;
 
-$darkest_color: black !default;
-$brightest_color: white !default;
+$color_darkest: black !default;
+$color_brightest: white !default;
 
-$basic_font_color: black !default;
+$color_text_basic: black !default;
 $color_back_basic: #808080 !default;
-$basic_border_color: lighten($basic_font_color, $color_diff_basic) !default;
-$basic_front_color: white !default;
+$color_border_basic: lighten($color_text_basic, $color_diff_basic) !default;
+$color_front_basic: white !default;
 
-$medium_color: lighten($darkest_color, 50%);
-$dark_color: lighten($darkest_color, $double_color_diff);
-$bright_color: darken($brightest_color, $double_color_diff);
+$color_medium: lighten($color_darkest, 50%);
+$color_dark: lighten($color_darkest, $color_diff_double);
+$color_darker: darken($color_back_basic, $color_diff_basic);
+$color_brighter: lighten($color_back_basic, $color_diff_basic);
+$color_bright: darken($color_brightest, $color_diff_double);
 
-$basic_head_color: $basic_font_color !default;
-$basic_link_color: $echo_color !default;
-$basic_highlight_color: $basic_front_color !default;
-$basic_action_color: $foxtrot_color !default;
+$color_head_basic: $color_text_basic !default;
+$color_link_basic: $echo_color !default;
+$color_highlight_basic: $color_front_basic !default;
+$color_action_basic: $foxtrot_color !default;
 
-$color_font_light: lighten($color_back_basic, $color_diff_basic);
-$color_font_dark: darken($color_back_basic, $color_diff_basic);
 
 // default shadow colors
-// $shadow_color: fade-out($medium_color, 0.5);
+// $shadow_color: fade-out($color_medium, 0.5);
 
-$basic_color_list: ();
+$color_list: ();
 
 @each $key, $value in $color_palette {
   $map: ();
   $map: map-merge($map, ($key: createColorMap($value, 15%, 0.5)) );
-  $basic_color_list: map-merge($basic_color_list, $map);
+  $color_list: map-merge($color_list, $map);
 }
 
 
@@ -130,40 +122,36 @@ $z_top: 10 !default;
 $z_basic: 1 !default;
 $z_earth: -100 !default;
 
-$basic_width: 96% !default;
+$width_basic: 96% !default;
 $width_small: 80% !default;
 $width_medium: 60% !default;
 $width_large: 48% !default;
+$width_aside_basic: 20% !default;
 
-$tiny_space: 1px !default;
-$basic_space: $tiny_space * 8 !default;
-$half_space: $basic_space / 2;
-$double_space: $basic_space * 2;
-$space_small: $basic_space * 4;
-$space_medium: $basic_space * 8;
-$space_large: $basic_space * 16;
+$space_tiny: 1px !default;
+$space_basic: $space_tiny * 8 !default;
+$space_half: $space_basic / 2;
+$space_double: $space_basic * 2;
+$space_small: $space_basic * 4;
+$space_medium: $space_basic * 8;
+$space_large: $space_basic * 16;
 
-$basic_margin: $basic_space 0 !default;
-$high_margin: $double_space 0 !default;
-$io_margin: 0 $space_small 0 0 !default;
+$margin_basic: $space_basic 0 !default;
+$margin_double: $space_double 0 !default;
+$margin_io: 0 $space_small 0 0 !default;
 
-$basic_padding: calc(#{$basic_space} - 3px) $basic_space !default;
-$wide_padding: calc(#{$basic_space} - 1px) calc(#{$basic_space} * 2) !default;
+$padding_basic: calc(#{$space_basic} - 3px) $space_basic !default;
+$padding_link: calc(#{$space_basic} - 1px) calc(#{$space_basic} * 2) !default;
 
-$basic_indent: 2em !default;
+$indent_basic: 2em !default;
 
-$basic_corner: $tiny_space * 2;
+$border_basic: $space_tiny solid $color_border_basic;
+$border_dotted: $space_tiny dotted $color_border_basic;
+$width_border_basic: $space_tiny !default;
+$width_border_4: $width_border_basic * 4;
+$width_border_8: $width_border_basic * 8;
 
-// Borders
-$basic_border_width: $tiny_space !default;
-$border_width_4: $basic_border_width * 4;
-$border_width_8: $basic_border_width * 8;
-$basic_border: $tiny_space solid $basic_border_color;
-$dotted_border: $tiny_space dotted $basic_border_color;
-
-$basic_corner_radius: $tiny_space * 2;
-
-$basic_aside_width: 20%;
+$radius_basic: $space_tiny * 2 !default;
 
 
 
@@ -210,29 +198,28 @@ $io_focus_list:
 	'textarea:not([disabled])',
 	'*[tabindex]';
 
-$basic_io_font_color: lighten($basic_font_color, $color_diff_basic);
-$basic_io_back_color: darken($basic_front_color, $color_diff_basic);
-$basic_io_border_color: $basic_front_color;
+$color_text_io: lighten($color_text_basic, $color_diff_basic) !default;
+$color_text_button: $color_text_basic !default;
+$color_back_io: darken($color_front_basic, $color_diff_basic) !default;
+$color_back_button: $color_darker !default;
+$color_border_io: $color_front_basic !default;
+$color_border_button: $color_dark !default;
 
-$oi_font_color: $basic_font_color;
-$oi_back_color: darken($color_back_basic, $color_diff_basic);
-$oi_border_color: darken($oi_back_color, $color_diff_basic);
+$width_border_io: $space_tiny * 2 !default;
+$border_io: $width_border_io solid $color_border_io;
+$border_io_dotted: $width_border_io dotted $color_border_io;
 
-$basic_io_border_width: $tiny_space * 2 !default;
-$basic_io_border: $basic_io_border_width solid $basic_io_border_color;
-$dotted_io_border: $basic_io_border_width dotted $basic_io_border_color;
-
-$basic_shadow: inset 0 1px 3px rgba($darkest_color, 0.06);
-$basic_focus_shadow: $basic_shadow, 0 0 5px adjust-color($basic_action_color, $lightness: -5%, $alpha: -0.3);
+$shadow_basic: inset 0 1px 3px rgba($color_darkest, 0.06);
+$shadow_focus: $shadow_basic, 0 0 5px adjust-color($color_action_basic, $lightness: -5%, $alpha: -0.3);
 
 
 
 // ANIMATIONS
 // ------------------------------------------------------------------------------
-$basic_duration: 250ms;
-$double_duration: 500ms;
-$extended_duration: 2s;
-$basic_timing: ease-out;
+$duration_basic: 250ms !default;
+$duration_double: $duration_basic * 2;
+$duration_long: 2s !default;
+$timing_basic: ease-out !default;
 
 
 

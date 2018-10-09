@@ -37,47 +37,57 @@
 // Links
 // -----------------------------------------------------------------------------
 a {
-	color: $basic_link_color;
-	//  color: lighten($basic_action_color, 20%);
+	color: $color_link_basic;
+	//  color: lighten($color_action_basic, 20%);
 	text-decoration: none;
 
 	&:active,
 	&:focus,
 	&:hover {
-		color: $basic_highlight_color;
+		color: $color_highlight_basic;
 	}
 }
 
 .a_line {
-	border-bottom-width: $tiny_space;
+	border-bottom-width: $space_tiny;
 	border-bottom-style: dotted;
-	border-color: $basic_border_color;
+	border-color: $color_border_basic;
+	color: $color_text_basic;
 	background-color: transparent;
-	color: $basic_font_color;
-	transition: color $basic_duration $basic_timing;
+	transition: color $duration_basic $timing_basic;
 
 	&:active,
 	&:focus,
 	&:hover {
-		background-color: $basic_action_color;
-		color: $basic_highlight_color;
+		color: $color_highlight_basic;
+		background-color: $color_action_basic;
 	}
 }
 
 .a_button {
-	@extend %default_button;
+	display: inline-block;
+	padding: $padding_basic;
+	border-radius: $radius_basic;
+	background-color: transparentize($color_link_basic, 0.8);
+
+	&:active,
+	&:focus,
+	&:hover {
+		border-color: transparent;
+		background-color: transparentize($color_highlight_basic, 0.8);
+	}
 }
 
 .a_button_text {
-	@extend %default_button;
-	padding: $wide_padding;
+	@extend .a_button;
+	padding: $padding_link;
+	color: $color_text_basic;
 	background-color: transparent;
-	color: $basic_font_color;
 }
 
 .a_button_border {
 	@extend .a_button_text;
-	border: $basic_border;
+	border: $border_basic;
 }
 
 
@@ -88,8 +98,8 @@ i, em {
 }
 
 .i_bright {
+	color: $color_highlight_basic;
 	font-style: normal;
-	color: $basic_highlight_color;
 }
 
 // Bold, Strong
@@ -172,14 +182,14 @@ time {
 // -----------------------------------------------------------------------------
 code {
 	@extend %basic_mono;
-	color: lighten($basic_font_color, $color_diff_basic);
-	background-color: lighten($color_back_basic, $tiny_color_diff);
+	color: lighten($color_text_basic, $color_diff_basic);
+	background-color: lighten($color_back_basic, $color_diff_tiny);
 }
 
 .code_solo {
 	@extend %basic_mono;
-	padding: $tiny_space $half_space;
-	color: $basic_font_color;
+	padding: $space_tiny $space_half;
+	color: $color_text_basic;
 }
 
 // Variable
@@ -191,7 +201,7 @@ var {
 // Sample
 // -----------------------------------------------------------------------------
 samp {
-
+	@extend %basic_mono;
 }
 
 // Keyboard input
@@ -200,12 +210,12 @@ kbd {
 	@extend %basic_mono;
 	// font-size: .9em;
 	// font-weight: bold;
-	padding: 0 $half_space;
-	border-width: $basic_border_width;
+	padding: 0 $space_half;
+	border-width: $width_border_basic;
 	border-style: solid;
-	border-color: darken($color_back_basic, $color_diff_basic);
-	border-radius: $basic_corner;
-	color: lighten($basic_font_color, $color_diff_basic);
+	border-color: $color_darker;
+	border-radius: $radius_basic;
+	color: lighten($color_text_basic, $color_diff_basic);
 }
 
 // Sub- and superscript
@@ -227,18 +237,18 @@ mark {
 }
 
 .mark_cursor {
-	color: invert($basic_font_color);
-	background-color: $basic_font_color;
+	color: invert($color_text_basic);
+	background-color: $color_text_basic;
 }
 
 ::-moz-selection {
-	color: invert($basic_font_color);
-	background-color: $basic_font_color;
+	color: invert($color_text_basic);
+	background-color: $color_text_basic;
 }
 
 ::selection {
-	color: invert($basic_font_color);
-	background-color: $basic_font_color;
+	color: invert($color_text_basic);
+	background-color: $color_text_basic;
 }
 
 // Text direction

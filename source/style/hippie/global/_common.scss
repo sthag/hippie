@@ -40,8 +40,22 @@
 	margin-left: 37.5%;
 }
 
-.space_right_small {
-	margin-right: $space_small;
+@each $size, $variable in (basic, #{$space_basic}),
+                          (small, #{$space_small}),
+                          (medium, #{$space_medium}),
+                          (large, #{$space_large}) {
+  .space_top_#{$size} {
+    margin-top: $variable;
+  }
+  .space_right_#{$size} {
+    margin-right: $variable;
+  }
+  .space_bottom_#{$size} {
+    margin-bottom: $variable;
+  }
+  .space_left_#{$size} {
+    margin-left: $variable;
+  }
 }
 
 .space_left_fourth {
@@ -76,8 +90,8 @@
 
 .wrap_center {
 	&	> * {
-		margin-right: (100% - $basic_width) / 2;
-		margin-left: (100% - $basic_width) / 2;
+		margin-right: (100% - $width_basic) / 2;
+		margin-left: (100% - $width_basic) / 2;
 
 		@include forTabletPortraitUp {
 			margin-right: (100% - $width_small) / 2;
@@ -202,7 +216,7 @@
 }
 
 .hover_back_change {
-	background-color: darken($color_back_basic, $color_diff_basic);
+	background-color: $color_darker;
 	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
@@ -213,8 +227,8 @@
 .hover_full_view_change {
 	@extend %full_viewport;
 	z-index: $z_heaven;
-	background-color: transparentize($darkest_color, 0.5);
-	transition: background-color $extended_duration $basic_timing $extended_duration;
+	background-color: transparentize($color_darkest, 0.5);
+	transition: background-color $duration_long $timing_basic $duration_long;
 	pointer-events: none;
 }
 
@@ -223,11 +237,11 @@
 // Colors
 // -----------------------------------------------------------------------------
 .txt_color_light {
-	color: $color_font_light;
+	color: $color_brighter;
 }
 
 .txt_color_dark {
-	color: $color_font_dark;
+	color: $color_darker;
 }
 
 
@@ -251,7 +265,7 @@
 }
 
 .txt_hero {
-	font-size: $hero_size_1;
+	font-size: $size_hero;
 }
 
 .txt_center {
@@ -287,23 +301,4 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-}
-
-
-
-// Input
-// -----------------------------------------------------------------------------
-%default_button {
-	display: inline-block;
-	padding: $basic_padding;
-	background-color: transparentize($basic_link_color, 0.8);
-	border-radius: $basic_corner;
-
-	&:active,
-	&:focus,
-	&:hover {
-		background-color: rgba($basic_highlight_color, 0.1);
-		color: $basic_highlight_color;
-		border-color: transparent;
-	}
 }

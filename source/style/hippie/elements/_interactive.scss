@@ -29,12 +29,12 @@ label {
 	@extend %basic;
 
 	input, button, textarea, select {
-		margin-left: $basic_space;
+		margin-left: $space_basic;
 	}
 }
 
 input + label {
-	margin-left: $basic_space;
+	margin-left: $space_basic;
 }
 
 .label {
@@ -44,21 +44,20 @@ input + label {
 .label > input,
 .label > textarea,
 .label > select {
-	margin: 0 $basic_space;
+	margin: 0 $space_basic;
 }
 
 // Input
 // -----------------------------------------------------------------------------
 input {
-	color: $basic_io_font_color;
 }
 
 label + input {
-	margin-left: $basic_space;
+	margin-left: $space_basic;
 }
 
 input, button, textarea, select {
-	margin: $io_margin;
+	margin: $margin_io;
 
 	&[disabled="disabled"],
 	&[disabled] {
@@ -81,22 +80,23 @@ td > textarea {
 }
 
 .io_input, .io_textarea, .io_select {
-	padding: $half_space;
-	background-color: $basic_io_back_color;
+	padding: $space_half;
+	color: $color_text_io;
+	background-color: $color_back_io;
 
 	&:hover {
-		background-color: $basic_highlight_color;
+		background-color: $color_highlight_basic;
 	}
 
 	&[readonly="readonly"],
 	&[readonly] {
-		background-color: darken($basic_io_back_color, 30%);
+		background-color: darken($color_back_io, $color_diff_double);
 	}
 
 	&[disabled="disabled"],
 	&[disabled] {
 		&:hover {
-			background-color: $basic_io_back_color;
+			background-color: $color_back_io;
 		}
 	}
 }
@@ -110,16 +110,16 @@ td > textarea {
 
 @each $input in $io_input_list, textarea {
 	#{$input} {
-		// border: $basic_io_border;
+		// border: $border_io;
 	}
 }
 
 .io_input, .io_textarea {
-	border: $basic_io_border;
+	border: $border_io;
 
 	&[readonly="readonly"],
 	&[readonly] {
-		border-color: darken($basic_io_border_color, 30%);
+		border-color: darken($color_border_io, $color_diff_double);
 	}
 
 	&[disabled="disabled"],
@@ -131,16 +131,16 @@ td > textarea {
 // Fieldset
 // -----------------------------------------------------------------------------
 fieldset {
-	margin: $high_margin;
-	padding: $basic_space;
-	border: $basic_border;
+	margin: $margin_double;
+	padding: $space_basic;
+	border: $border_basic;
 }
 
 // Legend
 // -----------------------------------------------------------------------------
 legend {
 	@extend %basic;
-	padding: 0 $half_space;
+	padding: 0 $space_half;
 }
 
 // Button
@@ -151,10 +151,10 @@ button {
 
 .io_button {
 	@extend %basic_button;
-	border: $basic_io_border_width solid $oi_border_color;
-	padding: $basic_padding;
-	color: $oi_font_color;
-	background-color: $oi_back_color;
+	border: $width_border_io solid $color_border_button;
+	padding: $padding_basic;
+	color: $color_text_button;
+	background-color: $color_back_button;
 
 	&:hover {
 		// border-color: #0059F6;
@@ -166,10 +166,10 @@ button {
 	&[disabled="disabled"],
 	&[disabled] {
 		border-color: transparent;
-		color: $oi_border_color;
+		color: lighten($color_text_button, $color_diff_double);
 
 		&:hover {
-			background-color: $oi_back_color;
+			background-color: $color_back_button;
 		}
 	}
 }

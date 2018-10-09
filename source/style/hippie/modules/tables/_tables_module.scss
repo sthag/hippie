@@ -4,10 +4,10 @@
 	table-layout: auto;
 
 	tbody {
-		border-bottom: $basic_border;
+		border-bottom: $border_basic;
 
 		&:hover {
-			background-color: $bright_color;
+			background-color: $color_bright;
 		}
 	}
 
@@ -24,8 +24,8 @@
 	}
 
 	.cell_link {
-		padding-right: $basic_space;
-		padding-left: $basic_space;
+		padding-right: $space_basic;
+		padding-left: $space_basic;
 
 		&:hover {
 			background-color: $foxtrot_color;
@@ -34,7 +34,7 @@
 			}
 			a:last-child {
 				display: block;
-				color: $basic_highlight_color;
+				color: $color_highlight_basic;
 			}
 		}
 
@@ -53,8 +53,8 @@
 	}
 
 	.cell_text {
-		padding-right: $basic_space;
-		padding-left: $basic_space;
+		padding-right: $space_basic;
+		padding-left: $space_basic;
 
 		div {
 			width: 100%;

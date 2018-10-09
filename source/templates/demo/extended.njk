@@ -1,11 +1,11 @@
-<!-- template-demo-extended.njk -->
+<!-- template-extended.njk -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
 
   {% block head %}
-  <title>{% block title %}{% endblock %} - HIPPIE</title>
+  {% include "demo/partials/head-meta.njk" %}
 
   <!--[if lte IE 9]>
   <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -15,8 +15,6 @@
   <![endif]-->
   <!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
   <!--Only use one of the above!-->
-
-  {% include "hippie/partials/head-meta.njk" %}
 
   <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />

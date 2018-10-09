@@ -2,9 +2,9 @@
 {% set pageId = "blank" %}
 {% set pageClass = "height_full" %}
 
-{% extends "hippie/demo-default.njk" %}
+{% extends "demo/default.njk" %}
 
-{% block title %}blank{% endblock %}
+{% block title %}tests - HIPPIE{% endblock %}
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" media="all" href="../css/demo.css"/>
@@ -29,7 +29,7 @@
   <input id="txtName" type="text" /><span id="error">Caps Lock is ON.</span>
 </form>
 
-{% import "hippie/macros/nav-macro.njk" as forms %}
+{% import "demo/macros/nav-macro.njk" as forms %}
 {{ forms.active('zubereitung') }}
 {% endblock %}
 

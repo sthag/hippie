@@ -22,17 +22,17 @@
 // -----------------------------------------------------------------------------
 p {
 	@extend %basic;
-	margin-top: $basic_space;
-	margin-bottom: $basic_space;
+	margin-top: $space_basic;
+	margin-bottom: $space_basic;
 	code {
-		padding: $tiny_space $half_space;
+		padding: $space_tiny $space_half;
 		font-size: 1em;
 		line-height: 1;
 	}
 }
 
 .column_line {
-	column-rule: $basic_border;
+	column-rule: $border_basic;
 }
 .column_2, .column_3 {
 	@extend p;
@@ -50,17 +50,18 @@ p {
 // -----------------------------------------------------------------------------
 address {
 	// @extend %basic;
-	margin-top: $double_space;
-	margin-bottom: $double_space;
+	margin-top: $space_double;
+	margin-bottom: $space_double;
 }
 
 // Line
 // -----------------------------------------------------------------------------
 hr {
-	margin: $space_small auto;
-	border-width: $basic_border_width 0 0;
+	margin-top: $space_small;
+	margin-bottom: $space_small;
+	border-width: $width_border_basic 0 0;
 	border-style: solid;
-	border-color: $basic_border_color;
+	border-color: $color_border_basic;
 }
 
 .hr_hidden {
@@ -81,12 +82,12 @@ pre {
 
 .pre_code {
 	overflow-x: auto;
-	border-color: darken($color_back_basic, $tiny_color_diff);
+	border-color: darken($color_back_basic, $color_diff_tiny);
 	border-style: dotted;
-	border-width:  0 0 0 $border_width_4;
-	border-radius: $basic_corner;
-	padding: $basic_space;
-	background-color: lighten($color_back_basic, $tiny_color_diff);
+	border-width:  0 0 0 $width_border_4;
+	border-radius: $radius_basic;
+	padding: $space_basic;
+	background-color: lighten($color_back_basic, $color_diff_tiny);
 	code {
 		background-color: transparent;
 	}
@@ -95,9 +96,9 @@ pre {
 // Quote
 // -----------------------------------------------------------------------------
 blockquote {
-	margin: $basic_space 0;
-	padding-right: $basic_indent;
-	padding-left: $basic_indent;
+	margin: $space_basic 0;
+	padding-right: $indent_basic;
+	padding-left: $indent_basic;
 }
 
 .quote_mark {
@@ -105,7 +106,7 @@ blockquote {
 		content: "\201E \0020";
 	}
 	p::after {
-		content: "\201C \0020";
+		content: "\0020 \201C";
 	}
 	.quote_source {
 		&::before, &::after {
@@ -117,11 +118,15 @@ blockquote {
 // List
 // -----------------------------------------------------------------------------
 dl, ul, ol {
-	margin: $double_space 0 $basic_space;
+	margin: $space_double 0;
 }
 
 ul, ol {
-	padding-left: $basic_indent;
+	padding-left: $indent_basic;
+}
+
+dl {
+		margin-left: $indent_basic;
 }
 
 li, dt, dd {
@@ -129,11 +134,11 @@ li, dt, dd {
 }
 
 dd, .list_basic li {
-	margin-bottom: $basic_space;
+	margin-bottom: $space_basic;
 }
 
 dd {
-	margin-left: $basic_indent;
+	margin-left: $indent_basic;
 }
 
 ul {
@@ -157,22 +162,22 @@ ul {
 
 .list_link {
 	li {
-		margin-bottom: $tiny_space * 2;
+		margin-bottom: $space_tiny * 2;
 		text-transform: uppercase;
 		a {
 			display: block;
-			padding: $basic_padding;
-			color: $basic_font_color;
+			padding: $padding_basic;
+			color: $color_text_basic;
 			img {
-				margin-right: $basic_space;
+				margin-right: $space_basic;
 				padding-bottom: 0.2em;
 				vertical-align: text-bottom;
 			}
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: $basic_action_color;
-				color: $basic_highlight_color;
+				background-color: $color_action_basic;
+				color: $color_highlight_basic;
 			}
 		}
 	}
@@ -188,11 +193,12 @@ ul {
 // Embedded
 // -----------------------------------------------------------------------------
 figure {
-	margin: $double_space $basic_indent;
+	margin: $space_double $indent_basic;
 }
 
 figcaption {
 	@extend %basic;
+	color: $color_darker;
 }
 
 // Main content
@@ -208,8 +214,8 @@ div {
 }
 
 .div_info {
-	padding: $double_space $basic_indent;
-	border-right: $basic_space solid rgba($echo_color, 0.6);
+	padding: $space_double $indent_basic;
+	border-right: $space_basic solid rgba($echo_color, 0.6);
 	background-color: rgba($echo_color, 0.1) !important;
 }
 
@@ -233,20 +239,20 @@ div {
 .box_placeholder {
 	width: 100%;
 	height: $space_medium;
-	border: $border_width_4 solid transparentize($alpha_color, 0.1);
-	border-radius: $basic_corner;
+	border: $width_border_4 solid transparentize($alpha_color, 0.1);
+	border-radius: $radius_basic;
 	background-color: transparentize($alpha_color, 0.2);
 }
 
 .box_placeholder_bkg {
 	width: 100%;
 	height: $space_medium * 2;
-	border: $border_width_4 solid transparentize($basic_front_color, 0.1);
-	border-radius: $basic_corner;
-	padding: $basic_space;
+	border: $width_border_4 solid transparentize($color_front_basic, 0.1);
+	border-radius: $radius_basic;
+	padding: $space_basic;
 	/*data:[<mime type>][;charset=<charset>][;base64],<encoded data>*/
 	background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0' y='0' width='100%' height='100%'><line x1='0' y1='0' x2='100%' y2='100%' stroke='%23FFF' stroke-width='.5'/><line x1='0' y1='100%' x2='100%' y2='0' stroke='%23FFF' stroke-width='.5'/></svg>") no-repeat;
-	background-color: transparentize($basic_front_color, 0.1);
+	background-color: transparentize($color_front_basic, 0.1);
 }
 
 .box_file_tile {
@@ -294,7 +300,7 @@ div {
 // Grid
 .grid {
 	display: grid;
-	grid-gap: $basic_space;
+	grid-gap: $space_basic;
 
 	& > input,
 	& > select,
@@ -303,8 +309,8 @@ div {
 	}
 
 	& > label {
-		margin: $basic_io_border_width;
-		padding: $half_space;
+		margin: $width_border_io;
+		padding: $space_half;
 	}
 }
 

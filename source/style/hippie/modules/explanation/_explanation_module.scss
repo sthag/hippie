@@ -46,7 +46,7 @@
   z-index: 100;
   top: $space_large;
   left: $space_large;
-  padding: $half_space;
+  padding: $space_half;
   border: 4px solid $color_back_basic;
   border-radius: 4px;
   background-color: $color_back_basic;
@@ -54,14 +54,14 @@
 }
 .exp_marker_pop {
   position: absolute;
-  top: -$basic_size / 4 * 3;
-  right: -$basic_size / 2;
-  width: $basic_size;
-  height: $basic_size;
-  border: $tiny_space solid $basic_highlight_color;
-  border-radius: $basic_size;
-  color: $basic_highlight_color;
-  background-color: $darkest_color;
+  top: -$size_text_basic / 4 * 3;
+  right: -$size_text_basic / 2;
+  width: $size_text_basic;
+  height: $size_text_basic;
+  border: $space_tiny solid $color_highlight_basic;
+  border-radius: $size_text_basic;
+  color: $color_highlight_basic;
+  background-color: $color_darkest;
 }
 
 .exp_expose {
@@ -78,24 +78,24 @@
   position: fixed;
   width: 3em;
   height: 2em;
-	// padding: $basic_space $basic_space * 2;
+	// padding: $space_basic $space_basic * 2;
   cursor: pointer;
 }
 .exp_help_btn {
   display: table;
-  right: $double_space;
-  bottom: $double_space;
-  background-color: rgba($darkest_color, 0.4);
+  right: $space_double;
+  bottom: $space_double;
+  background-color: rgba($color_darkest, 0.4);
   &:hover {
-    background-color: $brightest_color;
+    background-color: $color_brightest;
     > .span_solo {
-      color: $darkest_color;
+      color: $color_darkest;
     }
   }
   .span_solo {
     display: table-cell;
-    color: rgba($brightest_color, 0.8);
-		font-family: $monospace_font_family;
+    color: rgba($color_brightest, 0.8);
+		font-family: $family_text_mono;
 		font-size: 1.4em;
     text-align: center;
     vertical-align: middle;

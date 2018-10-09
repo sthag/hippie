@@ -5,7 +5,7 @@ nav {
 	}
 
 	li {
-		margin-bottom: $basic_space;
+		margin-bottom: $space_basic;
 		list-style: none;
 	}
 }
@@ -15,12 +15,12 @@ nav {
 		@extend .overflow;
 
 		ul {
-			margin: $basic_space 0;
+			margin: $space_basic 0;
 		}
 
 		li {
 			@extend .float_space_left;
-			margin-right: $basic_space;
+			margin-right: $space_basic;
 			margin-bottom: 0;
 
 			&:last-child {
@@ -32,28 +32,28 @@ nav {
 
 .nav_right {
 	float: right;
-	margin-left: $basic_space;
+	margin-left: $space_basic;
 
 	.align_parent {
-		margin-right: $basic_space * -1;
+		margin-right: $space_basic * -1;
 	}
 }
 
 .nav_separate {
 	li {
 		position: relative;
-		padding-left: $tiny_space;
+		padding-left: $space_tiny;
 
 		&:not(:first-child) {
 
 			&::before {
 				content: "";
 				position: absolute;
-				width: $tiny_space;
+				width: $space_tiny;
 				height: 100%;
 				left: 0;
 				top: 0;
-				background-color: $basic_border_color;
+				background-color: $color_border_basic;
 			}
 		}
 	}
@@ -65,17 +65,17 @@ nav {
 		position: relative;
 
 		&:first-child {
-			padding-left: $basic_space * 2 + $tiny_space;
+			padding-left: $space_basic * 2 + $space_tiny;
 
 			&::before {
 				content: "";
 				position: absolute;
-				width: $tiny_space;
+				width: $space_tiny;
 				height: 100%;
 				left: 0;
 				top: 0;
-				background-color: $basic_front_color;
-				margin: 0 $basic_space;
+				background-color: $color_front_basic;
+				margin: 0 $space_basic;
 			}
 		}
 	}
@@ -96,7 +96,7 @@ nav {
 
 .nav_column {
 	position: relative;
-	margin: $basic_space 0;
+	margin: $space_basic 0;
 
 	ul {
 		@extend .flex;
@@ -119,11 +119,11 @@ nav {
 	position: fixed;
 	// display: table;
 	// width: 3em;
-  right: $half_space;
-  bottom: $double_space;
+  right: $space_half;
+  bottom: $space_double;
 
 	ul {
-		margin: $basic_space 0;
+		margin: $space_basic 0;
 	}
 
 	li {
@@ -145,7 +145,7 @@ nav {
 		}
 
 		&:hover {
-			background-color: $basic_action_color;
+			background-color: $color_action_basic;
 		}
 	}
 	.sprite_img {
@@ -163,8 +163,8 @@ nav {
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: rgba($basic_font_color, 0.2);
-				color: $basic_font_color;
+				background-color: rgba($color_text_basic, 0.2);
+				color: $color_text_basic;
 			}
 		}
 	}

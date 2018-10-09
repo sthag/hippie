@@ -3,7 +3,7 @@ var source_folder = {
   watch: ['source/style/hippie/**/*.scss', 'source/style/**/*.scss', 'source/templates/**/*.+(html|njk)', 'source/pages/**/*.+(html|njk)'],
   styles: ['source/style/hippie/*.+(scss|sass)', 'source/style/**/*.+(scss|sass)'],
   scripts: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', 'source/code/**/*.coffee', '!source/vendor/**/*', ],
-  images: 'source/art/**/*',
+  images: 'source/art/images/**/*',
   pages: 'source/pages/**/*.+(html|njk)',
   vendor: 'vendor/**/*',
   root: 'source'
@@ -11,7 +11,7 @@ var source_folder = {
 var build_folder = {
   styles: 'build/css',
   scripts: 'build/js',
-  images: 'build/art',
+  art: 'build/art',
   vendor: 'build/vendor',
   pages: 'build/**/*.html',
   root: 'build'
@@ -135,8 +135,16 @@ gulp.task('sprites', function() {
     cssName: '_sprites.scss',
     imgName: 'sprites.png'
   }))
-  .pipe(gulpif('*.png', gulp.dest(build_folder.images)))
+  .pipe(gulpif('*.png', gulp.dest(build_folder.art)))
   .pipe(gulpif('*.scss', gulp.dest('source/style/hippie/modules/media')));
+});
+
+// copy art files
+gulp.task('art', function() {
+  return gulp.src(source_folder.images)
+  .pipe(plumbError())
+  .pipe(gulp.dest(build_folder.art))
+  ;
 });
 
 // copy vendor files
@@ -194,6 +202,7 @@ gulp.task('overwatch', function() {
   gulp.watch([
     'source/templates/**/*',
     'source/pages/**/*.+(html|njk)',
+    'source/art/**/*',
     'source/demo_data.json'
   ], ['nunjucks']);
 });
@@ -203,7 +212,7 @@ gulp.task('overwatch', function() {
 gulp.task('default', function(callback) {
   sequencer(
     'clean:dev',
-    ['sprites', 'vendor', 'lint:js', 'lint:scss'],
+    ['sprites', 'art', 'vendor', 'lint:js', 'lint:scss'],
     ['sass', 'js', 'nunjucks'],
     ['syncreload', 'overwatch'],
     callback
@@ -216,141 +225,7 @@ function plumbError(errTitle) {
     errorHandler: notify.onError({
       // Customizing error title
       title: errTitle || "Error running Gulp",
-      message: "Error: <%= error.message %>",
-      sound: true
+      message: "<%= error.message %>"
     })
   });
 }
-
-
-
-
-
-
-
-
-// NOTE // to be deleted
-
-var oldsource = {
-  watch: ['source/style/hippie/**/*.scss', 'source/style/**/*.scss', 'source/templates/**/*.+(html|njk)', 'source/pages/**/*.+(html|njk)'],
-  styles: ['source/style/demo.scss', 'source/style/maintenance.scss'],
-  scripts: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', 'source/code/**/*.coffee', '!source/vendor/**/*', ],
-  images: 'source/art/**/*',
-  pages: 'source/pages/**/*.+(html|njk)',
-  vendor: 'vendor/**/*'
-};
-var oldbuild = {
-  styles: 'build/css',
-  scripts: 'build/js',
-  images: 'build/art',
-  vendor: 'build/vendor',
-  root: 'build'
-}
-
-// Task - Clean build directory
-gulp.task('clean', function() {
-  return del([oldbuild.scripts, oldbuild.styles, oldbuild.images]);
-});
-
-// Task - Styles
-gulp.task('styles', () => rubysass(oldsource.styles, {sourcemap: true})
-.on('error', rubysass.logError)
-// .pipe(newer({dest: oldbuild.styles, ext: '.css'}))
-.pipe(prefix('last 2 version'))
-.pipe(gulp.dest(oldbuild.styles))
-.pipe(rename({suffix: '.min'}))
-.pipe(cssnano())
-.pipe(sourcemap.write('.', {
-  includeContent: false,
-  sourceRoot: 'source'
-}))
-.pipe(gulp.dest(oldbuild.styles))
-.pipe(browsersync.stream({match: '**/*.css'}))
-// .pipe(notify({message: 'Style task complete'}))
-);
-
-// Task - Scripts
-gulp.task('scripts', function(cb) {
-  pump([
-    gulp.src(oldsource.scripts),
-    cache('scripts'),
-    jshint('.jshintrc'),
-    jshint.reporter('default'),
-    sourcemap.init(),
-    minify(),
-    remember('scripts'),
-    concat('all.min.js'),
-    sourcemap.write(),
-    gulp.dest(oldbuild.scripts),
-    browsersync.stream()
-  ], cb);
-});
-
-// Task - Images
-gulp.task('images', function() {
-  return gulp.src(oldsource.images)
-  .pipe(changed(oldbuild.images))
-  // .pipe(cache(imagemin({
-    //   optimizationLevel: 3,
-    //   progressive: true,
-    //   interlaced: true })))
-    // )
-    .pipe(gulp.dest(oldbuild.images))
-    // .pipe(notify({ message: 'Images task complete' }))
-    ;
-  });
-
-  // Task - Vendor
-  gulp.task('oldvendor', function() {
-    return gulp.src(oldsource.vendor)
-    .pipe(plumbError())
-    .pipe(gulp.dest(oldbuild.vendor))
-    ;
-  });
-
-  //Task - Nunjucks
-  gulp.task('oldnunjucks', function() {
-    return gulp.src(oldsource.pages)
-    // .pipe(changed(oldbuild.root))
-    .pipe(nunjucks({
-      path: ['source/templates'],
-      envOptions: {
-        trimBlocks: true
-      }
-    }))
-    .pipe(gulp.dest(oldbuild.root))
-  });
-
-  // a task that ensures the other task is complete before reloading browsers
-  gulp.task('prewatch', ['oldnunjucks', 'styles'], function(done) {
-    browsersync.reload();
-    done();
-  });
-
-  // Old watch for file changes
-  gulp.task('oldwatch', ['styles', 'scripts', 'oldnunjucks'], function() {
-    browsersync.init({
-      open: false,
-      server: oldbuild.root,
-      // proxy: "http://verser.vrt/virtual/"
-    });
-
-    gulp.watch(oldsource.scripts, ['scripts']).on('change', function(event) {
-      if (event.type === 'deleted') {
-        delete cache.caches['scripts'][event.path];
-        remember.forget('scripts', event.path);
-      }
-    });
-    // gulp.watch(oldsource.watch, ['prewatch']);
-    gulp.watch(oldsource.watch, ['styles', 'oldnunjucks']).on('change', browsersync.reload);
-    // gulp.watch(oldsource.images, ['images']);
-  });
-
-  gulp.task('olddefault', ['clean', 'styles', 'scripts', 'images', 'nunjucks']);
-
-  // function errorHandler(err) {
-    //   // Logs out error in the command line
-    //   console.log(err.toString());
-    //   // Ends the current pipe, so Gulp watch doesn't break
-    //   this.emit('end');
-    // }

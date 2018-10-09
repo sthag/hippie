@@ -188,4 +188,6 @@ typings/
 ###################
 ###################
 build/
-art/
+**/art/*
+**/art/sprites/
+!**/art/demo/

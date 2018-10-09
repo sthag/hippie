@@ -25,11 +25,11 @@ body {
 	position: relative;
 	box-sizing: $box_sizing;
 	margin: 0;
-	font-family: $primary_font_family;
-	font-size: $basic_size;
-	line-height: $basic_line;
-	line-height: $text_line_basic;
-	color: $basic_font_color;
+	font-family: $family_text_basic;
+	font-size: $size_text_basic;
+	line-height: $line_basic;
+	line-height: $line_text_basic;
+	color: $color_text_basic;
 	background-color: $color_back_basic;
 
 	*,
@@ -42,7 +42,7 @@ body {
 
 		.layer_hover {
 			background-color: transparent !important;
-			transition: background-color $double_duration $basic_timing 0s !important;
+			transition: background-color $duration_double $timing_basic 0s !important;
 		}
 	}
 }
@@ -60,7 +60,7 @@ section {
 }
 
 .sec_main_center {
-	width: $basic_width;
+	width: $width_basic;
 	margin: 0 auto;
 	padding-top: $space_small;
 
@@ -76,9 +76,9 @@ section {
 }
 
 .sec_main_status {
-	border-top-width: $border_width_8;
+	border-top-width: $width_border_8;
 	border-top-style: solid;
-	border-color: $basic_border_color;
+	border-color: $color_border_basic;
 	padding-top: $space_small;
 }
 
@@ -91,14 +91,14 @@ nav {
 // Aside element
 // -----------------------------------------------------------------------------
 aside {
-	width: $basic_aside_width;
+	width: $width_aside_basic;
 
 	&.right + .bside {
-		margin-right: calc(#{$basic_aside_width} + #{$basic_space});
+		margin-right: calc(#{$width_aside_basic} + #{$space_basic});
 	}
 
 	&.left + .bside {
-		margin-left: calc(#{$basic_aside_width} + #{$basic_space});
+		margin-left: calc(#{$width_aside_basic} + #{$space_basic});
 	}
 
 	&.right {
@@ -140,25 +140,25 @@ h2 + h2 {
 
 h3 {
 	@extend %head_3;
-	margin: $double_space 0;
+	margin: $space_double 0;
 	text-transform: uppercase;
 }
 
 h4 {
 	@extend %head_3;
-	margin: $double_space 0;
+	margin: $space_double 0;
 	text-transform: none;
 }
 
 h5 {
 	@extend %head_4;
-	margin: $double_space 0 $basic_space;
+	margin: $space_double 0 $space_basic;
 	text-transform: none;
 }
 
 h6 {
 	@extend %basic;
-	margin: $basic_space 0;
+	margin: $space_basic 0;
 	text-transform: none;
 	font-weight: bold;
 }
@@ -175,10 +175,10 @@ header {
 
 .header_txt {
 	margin-bottom: $space_small;
-	border-bottom: $dotted_border;
+	border-bottom: $border_dotted;
 
 	h1 {
-		border-top: $basic_border;
+		border-top: $border_basic;
 	}
 }
 

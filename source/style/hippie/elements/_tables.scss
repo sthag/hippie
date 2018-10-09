@@ -16,21 +16,21 @@
 // Table
 // -----------------------------------------------------------------------------
 table {
-	margin: $high_margin;
-	border: $basic_border;
+	margin: $margin_double;
+	border: $border_basic;
 	border-collapse: collapse;
 }
 
 .table_blank {
-	border: $basic_border_width solid transparent;
+	border: $width_border_basic solid transparent;
 
 	th, td {
-		border: $basic_border_width solid transparent;
+		border: $width_border_basic solid transparent;
 	}
 }
 
 .table_free {
-	border: $basic_border_width solid transparent;
+	border: $width_border_basic solid transparent;
 }
 
 .table_stripe {
@@ -40,7 +40,7 @@ table {
 	}
 
 	tr:nth-child(even) td {
-		background-color: lighten($color_back_basic, $tiny_color_diff);
+		background-color: lighten($color_back_basic, $color_diff_tiny);
 	}
 }
 
@@ -56,8 +56,8 @@ table {
 // -----------------------------------------------------------------------------
 caption {
 	@extend p;
-	padding: $half_space 0;
-	border: $dotted_border;
+	padding: $space_half 0;
+	border: $border_dotted;
 	text-align: center;
 }
 
@@ -88,7 +88,7 @@ thead {
 tfoot {
 
 	tr:first-child td {
-		border-top: $basic_border;
+		border-top: $border_basic;
 	}
 }
 
@@ -102,17 +102,17 @@ tr {
 // -----------------------------------------------------------------------------
 th, td {
 	@extend %basic;
-	padding: $half_space;
+	padding: $space_half;
 }
 
 th {
-	border: $basic_border;
+	border: $border_basic;
 	text-align: left;
 }
 
 td {
-	border-right: $basic_border;
-	border-bottom: $basic_border;
+	border-right: $border_basic;
+	border-bottom: $border_basic;
 }
 
 td:last-child {
@@ -124,7 +124,7 @@ td:last-child {
 }
 
 .cell_pre {
-	// border-right-width: $border_width_4;
+	// border-right-width: $width_border_4;
 	// border-right-color: lighten($color_back_basic, $color_diff_basic);
-	background-color: lighten($color_back_basic, $tiny_color_diff);
+	background-color: lighten($color_back_basic, $color_diff_tiny);
 }
