@@ -1,10 +1,10 @@
 <!-- page-tests.njk -->
-{% set pageId = "blank" %}
+{% set pageId = "tests" %}
 {% set pageClass = "height_full" %}
 
 {% extends "demo/default.njk" %}
 
-{% block title %}tests - HIPPIE{% endblock %}
+{% block title %}Tests{% endblock %}
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" media="all" href="../css/demo.css"/>
@@ -29,8 +29,9 @@
   <input id="txtName" type="text" /><span id="error">Caps Lock is ON.</span>
 </form>
 
+<p>Navigation</p>
 {% import "demo/macros/nav-macro.njk" as forms %}
-{{ forms.active('zubereitung') }}
+{{ forms.active('Beispiel') }}
 {% endblock %}
 
 {% block script %}
