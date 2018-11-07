@@ -48,6 +48,14 @@ a {
 	}
 }
 
+.a_internal {
+	color: $charlie_color;
+}
+
+.a_external {
+	color: $delta_color;
+}
+
 .a_line {
 	border-bottom-width: $space_tiny;
 	border-bottom-style: dotted;

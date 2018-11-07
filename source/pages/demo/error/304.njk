@@ -1,0 +1,23 @@
+<!-- page-error-404.njk -->
+{% set pageId = "304" %}
+{% set pageClass = "body_status" %}
+
+{% extends "demo/maintenance.njk" %}
+
+{% block title %}{{ pageId }}{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body_content %}
+<main class="main_site">
+  <h1>{{ pageId }}</h1>
+  <h3>Umleitung</h3>
+  <p>Unverändert <dfn>Not Modified</dfn></p>
+  <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#3xx_%E2%80%93_Umleitung">
+    <p>Der Inhalt der angeforderten Ressource hat sich seit der letzten Abfrage des Clients nicht verändert und wird deshalb nicht übertragen. Zu den Einzelheiten siehe <a href="https://de.wikipedia.org/wiki/Browser-Cache#Versionsvergleich" title="Browser-Cache">Browser-Cache-Versionsvergleich</a>.</p>
+    <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#3xx_%E2%80%93_Umleitung">Wikipedia</a></p>
+  </blockquote>
+</main>
+{{ super() }}
+{% endblock %}

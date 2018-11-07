@@ -11,9 +11,6 @@
 
 {% block body_content %}
 <div class="temp_layer">
-  <!-- <div class="exp_overlay_btn exp_help_btn">
-  <span class="span_solo">?</span>
-</div> -->
 {% include "hippie/partials/nav-page-meta.njk" %}
 </div>
 
@@ -133,8 +130,8 @@
     <h1 id="textlevel">Textebene</h1>
     {# // a // em // strong // small // s // cite // q // dfn // abbr // ruby // rb // rt // rtc // rp // data // time // code // var // samp // kbd // sub // sup // i // b // u // mark // bdi // bdo // span // br // wbr // -- Edits -- // ins // del #}
     <h2>Verweise</h2>
-    <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a_line js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.a_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a_line" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können zum Beispiel auch auf E-Mail Adressen oder Dateien zeigen. Theoretisch kann solch ein Verweis <b>Alles</b> auslösen. Anweisungen werden im <a href="https://tools.ietf.org/html/rfc1738">URL Standard</a> übergeben.</p>
-    <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a href="#">Farbige</a> oder <a class="a_line" href="#">unterstrichene Varianten</a> sind einfache Beispiele.</p>
+    <p>Ein wesentlicher Bestandteil von Hypertext sind Verweise <code>&lt;a&gt;</code>. Sie dienen als Sprungmarken innerhalb des Netzwerks. Es kann grob zwischen internen und externen Verweisen unterschieden werden. <a class="a_internal js_pop" href="#links">Interne Verweise</a><span class="exp_pop"><code class="code_solo">a.a_line</code></span> können Verknüpfungen innerhalb des aktuellen Dokumentes sein oder auch Funktionen aktivieren. <a class="a_external" href="http://de.wikipedia.org">Externe Verweise</a> verknüpfen Inhalte über das gesamte Netzwerk hinweg. Sie können zum Beispiel auch auf E-Mail Adressen oder Dateien zeigen. Theoretisch kann solch ein Verweis <b>Alles</b> auslösen. Anweisungen werden im <a href="https://tools.ietf.org/html/rfc1738">URL Standard</a> übergeben.</p>
+    <p>Nicht nur Text kann als Verweis verwendet werden. Auch andere Elemente wie Bilder können verknüpft werden. Abhängig von ihrer Funktion und ihrem Zweck, werden Verweise unterschiedlich formatiert. <a class="a_internal" href="#">Farbige</a> oder <a class="a_line" href="#">unterstrichene Varianten</a> sind einfache Beispiele.</p>
     <p>Wird der Verweis innerhalb eines <code>&lt;nav&gt;</code> Elementes notiert, bekommt er die spezielle Bedeutung eines Navigationsverweises innerhalb des Dokumentes oder der Anwendung. Verweise werden dann durchaus auch wie Schaltflächen dargestellt.</p>
     <nav>
       <p><a class="a_button_text" href="#textlevel">↥</a> (Zum Anfang des Abschnitts springen) <a class="a_button_text" href="#begin">⇫</a> (Zum Anfang der Seite springen)</p>
@@ -142,7 +139,7 @@
     <nav class="nav_center_old">
       <ul>
         <li><a href="../demo.html" class="a_button">Startseite</a></li>
-        <li><a href="" class="a_button">Hilfe</a></li>
+        <li><a href="" class="a_button a_internal">Hilfe</a></li>
         <li><a href="" class="a_button">⌨</a></li>
         <li><a href="" class="a_button">⋯</a></li>
       </ul>
@@ -594,8 +591,6 @@
 // Page specific
 // ------------------------------------------------------------------------------
 $( document ).ready(function() {
-  console.log('HIPPIE');
-
 });
 </script>
 {% endblock %}

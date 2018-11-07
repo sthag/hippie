@@ -71,6 +71,14 @@ gulp.task('sass', function() {
     stream: true
   }))
 });
+// linting ...
+gulp.task('lint:scss', function() {
+  return gulp.src('source/style/**/*.scss')
+  .pipe(plumbError('SASSLint Error'))
+  .pipe(sasslint({
+    configFile: '.sass-lint.yml'
+  }))
+})
 
 
 // and this is functionality
@@ -78,8 +86,8 @@ gulp.task('js', function(cb) {
   pump([
     gulp.src(source_folder.scripts),
     cache('scripts'),
-    jshint('.jshintrc'),
-    jshint.reporter('default'),
+    // jshint('.jshintrc'),
+    // jshint.reporter('default'),
     sourcemap.init(),
     minify(),
     remember('scripts'),
@@ -88,6 +96,22 @@ gulp.task('js', function(cb) {
     gulp.dest(build_folder.scripts),
     browsersync.stream()
   ], cb);
+});
+// linting ...
+gulp.task('lint:js', function() {
+  return gulp.src('source/code/**/*.js')
+  .pipe(plumbError('JSHint Error'))
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'))
+  .pipe(jshint.reporter('fail', {
+    ignoreWarning: true,
+    ignoreInfo: true
+  }))
+  .pipe(jscs({
+    fix: false,
+    configPath: '.jscsrc'
+  }))
+  // .pipe(jscs.reporter());
 });
 
 
@@ -133,10 +157,14 @@ gulp.task('sprites', function() {
   gulp.src('source/art/sprites/**/*')
   .pipe(spritesmith({
     cssName: '_sprites.scss',
-    imgName: 'sprites.png'
+    imgName: 'sprites.png',
+    imgPath: '../art/sprites.png',
+    // retinaSrcFilter:	'source/art/sprites/*@2x.png',
+    // retinaImgName:	'sprites@2x.png',
+    // retinaImgPath:	'../art/sprites@2x.png'
   }))
   .pipe(gulpif('*.png', gulp.dest(build_folder.art)))
-  .pipe(gulpif('*.scss', gulp.dest('source/style/hippie/modules/media')));
+  .pipe(gulpif('*.scss', gulp.dest('source/style/hippie/mixins')));
 });
 
 // copy art files
@@ -155,34 +183,18 @@ gulp.task('vendor', function() {
   ;
 });
 
-// linting ...
-gulp.task('lint:js', function() {
-  return gulp.src('source/code/**/*.js')
-  .pipe(plumbError('JSHint Error'))
-  .pipe(jshint())
-  .pipe(jshint.reporter('jshint-stylish'))
-  .pipe(jshint.reporter('fail', {
-    ignoreWarning: true,
-    ignoreInfo: true
-  }))
-  .pipe(jscs({
-    fix: false,
-    configPath: '.jscsrc'
-  }))
-  // .pipe(jscs.reporter());
+// copy additional files
+gulp.task('favicon', function() {
+  return gulp.src('source/favicon.ico')
+  .pipe(plumbError())
+  .pipe(gulp.dest(build_folder.root))
+  ;
 });
-gulp.task('lint:scss', function() {
-  return gulp.src('source/style/**/*.scss')
-  .pipe(plumbError('SASSLint Error'))
-  .pipe(sasslint({
-    configFile: '.sass-lint.yml'
-  }))
-})
 
 
 // cleans the build folder
 gulp.task('clean:dev', function() {
-  del.sync([
+  return del.sync([
     build_folder.styles,
     build_folder.pages,
     build_folder.root+'/*.html'
@@ -202,9 +214,9 @@ gulp.task('overwatch', function() {
   gulp.watch([
     'source/templates/**/*',
     'source/pages/**/*.+(html|njk)',
-    'source/art/**/*',
     'source/demo_data.json'
   ], ['nunjucks']);
+  gulp.watch('source/art/**/*', ['sprites']);
 });
 
 
@@ -212,7 +224,7 @@ gulp.task('overwatch', function() {
 gulp.task('default', function(callback) {
   sequencer(
     'clean:dev',
-    ['sprites', 'art', 'vendor', 'lint:js', 'lint:scss'],
+    ['sprites', 'art', 'vendor', 'favicon', 'lint:js', 'lint:scss'],
     ['sass', 'js', 'nunjucks'],
     ['syncreload', 'overwatch'],
     callback

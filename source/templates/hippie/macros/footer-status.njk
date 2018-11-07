@@ -1,0 +1,13 @@
+<!-- footer-status.macro -->
+{% macro footer(email='admin@domain.tld', app='Application', version='ver.s.ion', system='System Name', domain='domain.tld:port', type) %}
+
+{% if not type or type == 'status' %}
+<footer class="pos_abs pin_bottom width_full">
+  <address class="txt_center">Kontakt: <a class="lineLink" href="mailto:{{ email }}">{{ email }}</a> * Server: {{ app }}/{{ version }} ({{ system }}) * Domain: {{ domain }}</address>
+</footer>
+{% else %}
+<footer class="pos_abs pin_bottom width_full">
+  <p>Platzhalter unten fixiert</p>
+</footer>
+{% endif %}
+{% endmacro %}

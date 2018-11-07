@@ -223,49 +223,6 @@
       </div>
     </article>
   </section>
-  <section>
-    <header class="sec_main_center header_txt">
-      <h1>Autarke Seiten</h1>
-      <p>Diese Elemente repräsentieren jeweils eine eigene Seite.</p>
-    </header>
-    <article>
-      <section class="sec_main_status demo__status">
-        <div class="wrap_center">
-          <h1>404</h1>
-          <p>Hier ist nichts.</p>
-          <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
-            <p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
-            <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
-          </blockquote>
-        </div>
-        {% include "demo/partials/footer-status.njk" %}
-      </section>
-      <section class="sec_main_status demo__status">
-        <div class="wrap_center">
-          <h1>403</h1>
-          <p>Nicht erlaubt! <dfn>Forbidden</dfn></p>
-          <blockquote>
-            <p>Die Anfrage wurde mangels Berechtigung des Clients nicht durchgeführt, bspw. weil der authentifizierte Benutzer nicht berechtigt ist, oder eine als HTTPS konfigurierte URL nur mit HTTP aufgerufen wurde.</p>
-            <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
-          </blockquote>
-        </div>
-        {% include "demo/partials/footer-status.njk" %}
-      </section>
-      <section class="sec_main_status demo__status">
-        <div class="wrap_center">
-          <h1>400</h1>
-          <p>Fehlerhafte Anfrage! <dfn>Bad Request</dfn></p>
-          <blockquote>
-            <p>Die Anfrage-Nachricht war fehlerhaft aufgebaut.</p>
-            <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
-          </blockquote>
-        </div>
-        {% include "demo/partials/footer-status.njk" %}
-      </section>
-    </article>
-  </section>
-
-
 </div>
 {% include "hippie/partials/footer.njk" %}
 {% endblock %}
@@ -278,8 +235,6 @@
 // Page specific
 // ------------------------------------------------------------------------------
 $( document ).ready(function() {
-  console.log('HIPPIE');
-
   // jq-sticky-anything
   $('#js_demo_fix').stickThis({
     pushup: '#js_demo_stop'

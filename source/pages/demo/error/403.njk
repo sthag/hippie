@@ -1,5 +1,5 @@
 <!-- page-error-404.njk -->
-{% set pageId = "404" %}
+{% set pageId = "403" %}
 {% set pageClass = "body_status" %}
 
 {% extends "demo/maintenance.njk" %}
@@ -13,9 +13,9 @@
 <main class="main_site">
   <h1>{{ pageId }}</h1>
   <h3>Client-Fehler</h3>
-  <p>Hier ist nichts. <dfn>Not Found</dfn></br>
+  <p>Nicht erlaubt! <dfn>Forbidden</dfn></p>
   <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
-    <p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
+    <p>Die Anfrage wurde mangels Berechtigung des Clients nicht durchgeführt, bspw. weil der authentifizierte Benutzer nicht berechtigt ist, oder eine als HTTPS konfigurierte URL nur mit HTTP aufgerufen wurde.</p>
     <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
   </blockquote>
 </main>

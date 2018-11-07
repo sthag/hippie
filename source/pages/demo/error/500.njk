@@ -4,16 +4,14 @@
 
 {% extends "demo/maintenance.njk" %}
 
-{% block title %}500{% endblock %}
+{% block title %}{{ pageId }}{% endblock %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" type="text/css" media="all" href="../../css/demo_basic.css"/>
-<!-- <link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/> -->
 {% endblock %}
 
 {% block body_content %}
 <main class="main_site">
-  <h1>500</h1>
+  <h1>{{ pageId }}</h1>
   <h3>Server-Fehler</h3>
   <p>Allgemeiner Server Fehler!!! <dfn>Internal Server Error</dfn></p>
   <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#5xx_%E2%80%93_Server-Fehler">
@@ -21,5 +19,5 @@
     <p class="quote-author"><a class="line-link" href="https://de.wikipedia.org/wiki/HTTP-Statuscode#5xx_%E2%80%93_Server-Fehler">Wikipedia</a></p>
   </blockquote>
 </main>
-{% include "demo/partials/footer-status.njk" %}
+{{ super() }}
 {% endblock %}

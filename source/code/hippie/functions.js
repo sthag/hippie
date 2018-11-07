@@ -1,6 +1,9 @@
 "use strict";
 
 function setup() {
+	console.log('\n', hippie_brand, '\n\n');
+	console.info('Debug information:\n\nHTML height is', html_height, '\nBODY height is', body_height, '\nVIEW height is', view_height);
+
 	if($('#js_tph').length && full_view_hover) {
 		// $('body').prepend("<div id=\"js_tph\" class=\"layer__hover hover_full_view_change\"></div>");
 		$('#js_tph').addClass("hover_full_view_change");
@@ -9,33 +12,31 @@ function setup() {
 
 // get document coordinates of the element
 function getCoords(elem) {
-  let box = elem.getBoundingClientRect();
+	let box = elem.getBoundingClientRect();
 
-  return {
-    top: box.top + pageYOffset,
-    left: box.left + pageXOffset
-  };
+	return {
+		top: box.top + pageYOffset,
+		left: box.left + pageXOffset
+	};
 }
 
 // https://stackoverflow.com/a/488073/1444149
-function Utils() {
-
-}
+function Utils() {}
 
 Utils.prototype = {
-    constructor: Utils,
-    isElementInView: function (element, fullyInView) {
-        var pageTop = $(window).scrollTop();
-        var pageBottom = pageTop + $(window).height();
-        var elementTop = $(element).offset().top;
-        var elementBottom = elementTop + $(element).height();
+	constructor: Utils,
+	isElementInView: function (element, fullyInView) {
+		var pageTop = $(window).scrollTop();
+		var pageBottom = pageTop + $(window).height();
+		var elementTop = $(element).offset().top;
+		var elementBottom = elementTop + $(element).height();
 
-        if (fullyInView === true) {
-            return ((pageTop < elementTop) && (pageBottom > elementBottom));
-        } else {
-            return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-        }
-    }
+		if (fullyInView === true) {
+			return ((pageTop < elementTop) && (pageBottom > elementBottom));
+		} else {
+			return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+		}
+	}
 };
 
 var Utils = new Utils();
@@ -51,7 +52,7 @@ function scrollNav() {
 		$('.'+theClass).parent('li').addClass('active');
 		//Animate
 		$('html, body').stop().animate({
-				scrollTop: $( $(this).attr('href') ).offset().top - 160
+			scrollTop: $( $(this).attr('href') ).offset().top - 160
 		}, 400);
 		return false;
 	});

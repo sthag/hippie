@@ -88,24 +88,27 @@
 }
 
 .demo__sprite_down {
-	width: 32px;
-	height: 32px;
-	background-image: url(../art/sprites.png);
-	background-position: -32px 0;
+	@include sprite($down);
+	// width: 32px;
+	// height: 32px;
+	// background-image: url(../art/sprites.png);
+	// background-position: -32px 0;
 }
 
 .demo__sprite_up {
-	width: 32px;
-	height: 64px;
-	background-image: url(../art/sprites.png);
-	background-position: 0 0;
+	@include sprite($up);
+	// width: 32px;
+	// height: 64px;
+	// background-image: url(../art/sprites.png);
+	// background-position: 0 0;
 }
 
 .demo__sprite_meta {
-	width: 32px;
-	height: 32px;
-	background-image: url(../art/sprites.png);
-	background-position: -32px 32px;
+	@include sprite($meta);
+	// width: 32px;
+	// height: 32px;
+	// background-image: url(../art/sprites.png);
+	// background-position: -32px 32px;
 }
 
 .demo__avatar {

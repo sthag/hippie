@@ -38,13 +38,13 @@ $( document ).ready(function() {
 				// "left": ev.pageX - $(this).offset().left + 8
 			});
 			// TODO - needs more love
-			console.log(ev.pageX);
+			// console.log(ev.pageX);
 		}
 	);
 
 	// WIP Activates layer with explanation elements
 	// Besser ::after oder ::before benutzen
-	$(".exp_help_btn").click(function(e){
+	$(".js_showmeta").click(function(e){
 		var $wrap, $pop;
 
 		if(exp_mode !== true){
@@ -80,24 +80,32 @@ $( document ).ready(function() {
 			exp_mode = false;
 
 		}
-		console.log("Explanation mode: "+ exp_mode);
+		console.log("Explanation mode", exp_mode);
 	});
 
 	//	WIP Scroll to top
-	$('#js_scrolltop').click(function(event) {
+	$('.js_scrolltop').click(function(event) {
+		event.preventDefault();
 		console.log('scroll to the top');
-		event.preventDefault();
-		// $('body').scrollTop();
-		$('body').animate({scrollTop: 0}, basic_ease, function() {
-			 console.log('arrived at top');
-		});
+
+		document.documentElement.scrollTop = document.body.scrollTop = 0;
+
+		// var body = document.querySelector('body');
+		// // get scroll position in px
+		// console.log(body.scrollTop);
+		// // set scroll position in px
+		// body.scrollTop = 0;
+
+		// $('body')[0].scrollTop = 0;
+		// $('body').animate({scrollTop: 0}, basic_ease, function() {
+		// 	 console.log('arrived at top');
+		// });
 	});
-	$('#js_scrolldown').click(function(event) {
-		console.log('scroll down');
+	$('.js_scrolldown').click(function(event) {
 		event.preventDefault();
-		$('body').animate({scrollTop: $(document).height()}, basic_ease * 2, function() {
-			 console.log('arrived at bottom');
-		});
+		var pos = Math.max(html_height, body_height) - view_height;
+		console.log('scroll down to', pos);
+		document.documentElement.scrollTop = pos;
 	});
 
 
@@ -113,10 +121,10 @@ $( document ).ready(function() {
 	$( ".pass-def dd" ).each(function() {
 		$( this ).find( "li" ).each(function( index ) {
 			if ( 0 === $( this ).children( "ul" ).length ) {
-				//console.log( index + ": " + $( this ).text() );
+				//console.log(index, ":", $( this ).text());
 				var tempContent = $( this ).html();
 				//$( this ).html( "<span class=\"list-count\"></span>" );
-				$( this ).html( tempContent +"<span class=\"list-count\">"+ i +"</span>" );
+				$( this ).html(tempContent + "<span class=\"list-count\">" + i + "</span>");
 				i++;
 			}
 		});
@@ -135,12 +143,11 @@ $( document ).scroll(function() {
 	// Toggle navigation elements
 	doc_pos_y = $( document ).scrollTop();
 	// console.log(doc_pos_y);
-	var h = scroll_y_margin;
 	// var demo_margin = $('.header__fix');
-	if (doc_pos_y > h) {
-		$('#js_scrolltop').parent().removeClass('magic');
+	if (doc_pos_y > scroll_y_margin) {
+		$('.js_scrolltop').parent().removeClass('magic');
 	} else {
-		$('#js_scrolltop').parent().addClass('magic');
+		$('.js_scrolltop').parent().addClass('magic');
 	}
 
 

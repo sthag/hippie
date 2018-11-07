@@ -1,0 +1,7 @@
+<!-- explanation-colors.partial -->
+{# var colors = [{name: "alpha", class: "alpha_color"}] #}
+
+{% set cls = cycler("odd", "even") %}
+{% for row in rows %}
+  <div class="{{ cls.next() }}">{{ row.name }}</div>
+{% endfor %}

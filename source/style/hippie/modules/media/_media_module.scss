@@ -1,9 +1,4 @@
-.up {
-	@include sprite($up);
-}
-.down {
-	@include sprite($down);
-}
-.meta {
-	@include sprite($meta);
+.nomedia {
+	@extend .box_placeholder;
+	height: inherit;
 }
