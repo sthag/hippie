@@ -41,11 +41,7 @@ const input = {
   root: 'source',
   screens: 'source/screens/**/*.+(njk|html)',
   templates: 'source/templates',
-  data: {
-    template: 'source/data/template.json',
-    app: ['source/data/**/*.json', '!source/data/template.json'],
-    watch: 'source/data/**/*.json',
-  },
+  data: 'source/data/**/*.json',
   style: 'source/style/**/*.s+(a|c)ss',
   code: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', '!source/vendor/**/*'],
   fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
@@ -54,7 +50,10 @@ const input = {
     sprites: 'source/art/sprites/**/*.png',
     images: 'source/art/images/**/*.+(png|gif|jpg)'
   },
-  vendor: 'vendor/**/*'
+  vendor: 'vendor/**/*',
+  demo: {
+    data: 'source/templates/demo/data.json'
+  }
 };
 
 const output = {
@@ -87,7 +86,7 @@ function reload(done) {
 
 // Concatenate JSON files
 function json() {
-  return src(input.data.app)
+  return src(input.data)
   .pipe(plumber())
   .pipe(jsonConcat(hippie.jsonFile +'.json', function(data) {
     return new Buffer(JSON.stringify(data));
@@ -100,7 +99,7 @@ function nunjucks() {
 	return src(input.screens)
   .pipe(plumber())
   .pipe(data(function() {
-    let data = JSON.parse(fs.readFileSync(input.data.template));
+    let data = JSON.parse(fs.readFileSync(input.demo.data));
     object = {hippie, data};
     return object;
   }))
@@ -219,12 +218,12 @@ function vendor() {
 }
 
 function overview() {
-  watch([input.screens, input.data.template], series(nunjucks, reload));
+  watch([input.screens, input.demo.data], series(nunjucks, reload));
   watch(input.style, series(styleLint, style, reload));
   watch(input.code, series(codeLint, code, reload));
   watch(input.fonts, series(fonts, reload));
   watch([input.art.favicons, input.art.sprites, input.art.images], series(art, reload));
-  watch(input.data.app, series(json, reload));
+  watch(input.data, series(json, reload));
 }
 
 const assets = parallel(fonts, art, vendor);
