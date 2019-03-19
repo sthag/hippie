@@ -2,7 +2,7 @@
 const hippie = {
   brand: 'hippie',
   jsFile: 'main',
-  dbFile: 'db'
+  jsonFile: 'db'
 }
 
 // Gulp requirements
@@ -42,8 +42,8 @@ const input = {
   screens: 'source/screens/**/*.+(njk|html)',
   templates: 'source/templates',
   data: {
-    hippie: 'source/data/demo.json',
-    app: ['source/data/**/*.json', '!source/data/demo_data.json'],
+    template: 'source/data/template.json',
+    app: ['source/data/**/*.json', '!source/data/template.json'],
     watch: 'source/data/**/*.json',
   },
   style: 'source/style/**/*.s+(a|c)ss',
@@ -55,7 +55,6 @@ const input = {
     images: 'source/art/images/**/*.+(png|gif|jpg)'
   },
   vendor: 'vendor/**/*'
-  // watch: ['source/style/hippie/**/*.scss', 'source/style/**/*.scss', 'source/templates/**/*.+(html|njk)', 'source/screens/**/*.+(html|njk)']
 };
 
 const output = {
@@ -78,14 +77,6 @@ function clean() {
   // for example if you are using del 2.0 or above, return its promise
   return del(output.root +'/**');
 }
-// cleans the build folder
-// gulp.task('clean:dev', function() {
-//   return del.sync([
-//     output.style,
-//     output.screens,
-//     output.root+'/*.html'
-//   ]);
-// });
 
 // Automagically reload browsers
 function reload(done) {
@@ -97,10 +88,11 @@ function reload(done) {
 // Concatenate JSON files
 function json() {
   return src(input.data.app)
-  .pipe(jsonConcat(jsonFile +'.json', function(data) {
+  .pipe(plumber())
+  .pipe(jsonConcat(hippie.jsonFile +'.json', function(data) {
     return new Buffer(JSON.stringify(data));
   }))
-  .pipe(gulp.dest(output.data));
+  .pipe(dest(output.data));
 }
 
 // Transpile HTML
@@ -108,7 +100,7 @@ function nunjucks() {
 	return src(input.screens)
   .pipe(plumber())
   .pipe(data(function() {
-    let data = JSON.parse(fs.readFileSync(input.data.hippie));
+    let data = JSON.parse(fs.readFileSync(input.data.template));
     object = {hippie, data};
     return object;
   }))
@@ -120,24 +112,6 @@ function nunjucks() {
 	}))
 	.pipe(dest(output.root));
 }
-// templating engine
-// gulp.task('nunjucks', function() {
-//   return gulp.src('source/screens/**/*.+(html|njk)')
-//   .pipe(plumbError('Error Running Nunjucks'))
-//   .pipe(data(function() {
-//     return JSON.parse(fs.readFileSync('./source/demo_data.json'))
-//   }))
-//   .pipe(nunjucks({
-//     path: output.templates,
-//     envOptions: {
-//       trimBlocks: true
-//     }
-//   }))
-//   .pipe(gulp.dest(output.root))
-//   .pipe(server.reload({
-//     stream: true
-//   }))
-// });
 
 // Serve files to the browser
 function serve(done) {
@@ -149,27 +123,12 @@ function serve(done) {
 
   done();
 }
-// automagically reload browsers
-// gulp.task('syncreload', function() {
-//   server.init({
-//     // ------------------------------------------------------------------------------
-//     // comment out the line below to get rid of the demo index page.
-//     // ------------------------------------------------------------------------------
-//     index: "demo.html",
-//     open: false,
-//     server: 'build'
-//     // online: false,
-//     // logLevel: "info",
-//     // proxy: "http://verser.vrt/virtual/",
-//     // watch: true,
-//   });
-// });
 
 // This is for the looks
 function style() {
   return src(input.style)
   .pipe(plumber())
-  // .pipe(plumbError('STYLE problems'))
+  // .pipe(plumbError('STYLE PROBLEM'))
   .pipe(sass({
     includePaths: [input.vendor +'/**/*.s+(a|c)ss']
   }))
@@ -200,30 +159,6 @@ function styleLint() {
 
   return stream;
 }
-// this is for the looks
-// gulp.task('sass', function() {
-//   return gulp.src(input.style)
-//   .pipe(plumbError('Error Running Sass'))
-//   .pipe(sourcemap.init())
-//   .pipe(sass({
-//     includePaths: [input.root+'/bower_components']
-//   }))
-//   .pipe(autoprefixer(['>= 4%', 'last 2 version']))
-//   // .pipe(cssnano())
-//   .pipe(sourcemap.write())
-//   .pipe(gulp.dest(output.style))
-//   .pipe(server.reload({
-//     stream: true
-//   }))
-// });
-// // linting ...
-// gulp.task('lint:scss', function() {
-//   return gulp.src('source/style/**/*.scss')
-//   .pipe(plumbError('SASSLint Error'))
-//   .pipe(sasslint({
-//     configFile: '.sass-lint.yml'
-//   }))
-// })
 
 // Javascript for the win
 function code(cb) {
@@ -251,38 +186,6 @@ function codeLint() {
     ignoreInfo: true
   }));
 }
-// and this is functionality
-// gulp.task('js', function(cb) {
-//   pump([
-//     gulp.src(input.code),
-//     cache('code'),
-//     // jshint('.jshintrc'),
-//     // jshint.reporter('default'),
-//     sourcemap.init(),
-//     minify(),
-//     remember('code'),
-//     concat('all.min.js'),
-//     sourcemap.write(),
-//     gulp.dest(output.code),
-//     server.stream()
-//   ], cb);
-// });
-// // linting ...
-// gulp.task('lint:js', function() {
-//   return gulp.src('source/code/**/*.js')
-//   .pipe(plumbError('JSHint Error'))
-//   .pipe(jshint())
-//   .pipe(jshint.reporter('jshint-stylish'))
-//   .pipe(jshint.reporter('fail', {
-//     ignoreWarning: true,
-//     ignoreInfo: true
-//   }))
-//   .pipe(jscs({
-//     fix: false,
-//     configPath: '.jscsrc'
-//   }))
-//   // .pipe(jscs.reporter());
-// });
 
 // Fonts
 function fonts() {
@@ -307,34 +210,6 @@ function art() {
 
   return merge(favicons, images)
 }
-// creates sprites from files in art/sprites folder
-// gulp.task('sprites', function() {
-//   gulp.src('source/art/sprites/**/*')
-//   .pipe(spritesmith({
-//     cssName: '_sprites.scss',
-//     imgName: 'sprites.png',
-//     imgPath: '../art/sprites.png',
-//     // retinaSrcFilter:	'source/art/sprites/*@2x.png',
-//     // retinaImgName:	'sprites@2x.png',
-//     // retinaImgPath:	'../art/sprites@2x.png'
-//   }))
-//   .pipe(gulpif('*.png', gulp.dest(output.art)))
-//   .pipe(gulpif('*.scss', gulp.dest('source/style/hippie/mixins')));
-// });
-// copy art files
-// gulp.task('art', function() {
-//   return gulp.src(input.art)
-//   .pipe(plumbError())
-//   .pipe(gulp.dest(output.art))
-//   ;
-// });
-// copy additional files
-// gulp.task('favicon', function() {
-//   return gulp.src('source/favicon.ico')
-//   .pipe(plumbError())
-//   .pipe(gulp.dest(output.root))
-//   ;
-// });
 
 // Gather dependencies for tools
 function vendor() {
@@ -342,21 +217,14 @@ function vendor() {
   .pipe(plumber())
   .pipe(dest(output.vendor))
 }
-// copy vendor files
-// gulp.task('vendor', function() {
-//   return gulp.src(input.vendor)
-//   .pipe(plumbError())
-//   .pipe(gulp.dest(output.vendor))
-//   ;
-// });
 
 function overview() {
-  watch([input.screens, input.data.watch], series(nunjucks, reload));
+  watch([input.screens, input.data.template], series(nunjucks, reload));
   watch(input.style, series(styleLint, style, reload));
   watch(input.code, series(codeLint, code, reload));
   watch(input.fonts, series(fonts, reload));
   watch([input.art.favicons, input.art.sprites, input.art.images], series(art, reload));
-  // watch(input.data.app, series(json, reload));
+  watch(input.data.app, series(json, reload));
 }
 
 const assets = parallel(fonts, art, vendor);
@@ -366,32 +234,6 @@ exports.lint = parallel(styleLint, codeLint);
 exports.assets = assets;
 exports.build = build;
 exports.default = series(build, serve, overview);
-// watch over changes and react
-// split up into sub tasks
-// gulp.task('watch-js', ['lint:js', 'js'], server.reload);
-//
-// gulp.task('overwatch', function() {
-//   gulp.watch('source/code/**/*.js', ['watch-js'])
-//   gulp.watch('source/style/**/*.+(scss|sass)', ['sass', 'lint:scss']);
-//   gulp.watch([
-//     'source/templates/**/*',
-//     'source/screens/**/*.+(html|njk)',
-//     'source/demo_data.json'
-//   ], ['nunjucks']);
-//   gulp.watch('source/art/**/*', ['sprites']);
-// });
-//
-//
-// // The default task (called when you run `gulp` from cli)
-// gulp.task('default', function(callback) {
-//   sequencer(
-//     'clean:dev',
-//     ['sprites', 'art', 'vendor', 'favicon', 'lint:js', 'lint:scss'],
-//     ['sass', 'js', 'nunjucks'],
-//     ['syncreload', 'overwatch'],
-//     callback
-//   )
-// });
 
 // function plumbError(errTitle) {
 //   return plumber({

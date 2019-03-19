@@ -1,54 +1,22 @@
 {
-  "demoadditionallinks": [
+  "demo": [
     {
-      "href": "demo/intro.html",
-      "text": "Intro"
+      "demo1": "1",
+      "demo2": "2"
     },
     {
-      "href": "demo/elements.html",
-      "text": "Elements"
+      "demo1": "1",
+      "demo2": "2"
     },
     {
-      "href": "demo/examples.html",
-      "text": "Examples"
-    },
-    {
-      "href": "demo/tests.html",
-      "text": "Tests"
+      "demo1": "1",
+      "demo2": "2"
     }
   ],
-  "demolinks": [
+  "test": [
     {
-      "href": "demo/blank.html",
-      "text": "Blank"
-    },
-    {
-      "href": "demo/maintenance.html",
-      "text": "Maintenance"
-    },
-    {
-      "href": "demo/error/304.html",
-      "text": "304"
-    },
-    {
-      "href": "demo/error/404.html",
-      "text": "404"
-    },
-    {
-      "href": "demo/error/403.html",
-      "text": "403"
-    },
-    {
-      "href": "demo/error/400.html",
-      "text": "400"
-    },
-    {
-      "href": "demo/error/500.html",
-      "text": "500"
-    },
-    {
-      "href": "demo/os.html",
-      "text": "OS"
+      "test1": "3",
+      "test2": "4"
     }
   ]
 }
