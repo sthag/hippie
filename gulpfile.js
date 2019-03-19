@@ -141,6 +141,10 @@ function style() {
 }
 // Linting
 function styleLint() {
+  var dir = output.reports;
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
   var file = fs.createWriteStream(output.reports +'/sass-lint.html');
   var stream = src(input.style)
   .pipe(plumber())
