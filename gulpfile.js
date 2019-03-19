@@ -226,7 +226,7 @@ function overview() {
   watch(input.data, series(json, reload));
 }
 
-const assets = parallel(fonts, art, vendor);
+const assets = parallel(fonts, art, json, vendor);
 const build = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
 
 exports.lint = parallel(styleLint, codeLint);
