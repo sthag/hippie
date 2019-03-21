@@ -14,10 +14,13 @@
   <div class="hello">
     <h2>This is {{hippie.brand | upper}}</h2>
     <p>You can start using it by replacing this file with your own index page.</p>
-    <p>To do this you need to open the file <code>/gulpfile.js</code> and comment out the line <code>index: "demo.html",</code>. Then you need to place your index file (<code>index.njk</code>) into the folder <code>/source/pages</code>.</p>
-    <p>For a very basic start you can make a copy of the demo page <code>blank.njk</code>. You can find it at <code>/source/pages/demo</code>.</p>
-    <p>The <i>demo</i> folder contains an overview of all elements and also examples for style combinations and even whole page layouts.<br/>Follow the white rabbit.</p>
-    <h3>Overview</h3>
+    <p>To do this you need to create a file <code>/index.njk</code> inside the <i>source/screens</i> folder. You can also create a <code>data.json</code> file inside the <i>source/templates</i> folder as a data source for your nunjucks files.</p>
+    <p>For a very basic start you can make a copy of the demo page <code>blank.njk</code>. You can find it at <i>/source/screens/demo</i>.</p>
+    <p>The <i>source/demo</i> folder contains an overview of all HTML elements and also examples for CSS style combinations and even whole page layouts.<br/>Follow the white rabbit.</p>
+    <div class="pos_rel">
+      <pre class="txt_tiny txt_white pos_abs pin_down pin_right">  ()()<br>  (..)<br>C(")(")</pre>
+      <h3>Overview</h3>
+    </div>
     <nav>
       <ul class="list_link">
         <!-- Loops through "demoadditionallinks" array -->
@@ -26,10 +29,7 @@
         {% endfor %}
       </ul>
     </nav>
-    <div class="pos_rel">
-      <pre class="txt_tiny txt_white pos_abs pin_down pin_right">  ()()<br>  (..)<br>C(")(")</pre>
-      <h3>Demo Pages</h3>
-    </div>
+    <h3>Demo Pages</h3>
     <ul class="list_link">
       <!-- Loops through "demo-links" array -->
       {% for link in data.demolinks %}

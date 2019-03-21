@@ -2,9 +2,10 @@
 const hippie = {
   brand: 'hippie',
   jsFile: 'main',
-  jsonFile: 'db'
+  jsonFile: 'db',
+  index: 'demo.html',
+  data: 'demo/data.json'
 }
-
 // Gulp requirements
 const { watch, series, parallel } = require('gulp');
 const { src, dest } = require('gulp');
@@ -68,6 +69,14 @@ const output = {
   vendor: 'build/vendor'
 };
 
+//Check for index file and deactivate demo content
+if (fs.existsSync('source/screens/index.*')){
+  hippie.index = 'index.html';
+}
+if (fs.existsSync('source/templates/data.json')){
+  hippie.data = 'data.json';
+}
+
 // Create tasks
 
 // Clean build folder
@@ -99,7 +108,7 @@ function nunjucks() {
 	return src(input.screens)
   .pipe(plumber())
   .pipe(data(function() {
-    let data = JSON.parse(fs.readFileSync(input.demo.data));
+    let data = JSON.parse(fs.readFileSync(input.templates +'/'+ hippie.data));
     object = {hippie, data};
     return object;
   }))
@@ -115,7 +124,7 @@ function nunjucks() {
 // Serve files to the browser
 function serve(done) {
   server.init({
-    index: "demo.html",
+    index: hippie.index,
     open: false,
     server: output.root
   });
