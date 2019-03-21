@@ -2,19 +2,19 @@
 {% set pageId = "elements" %}
 {% set pageClass = "" %}
 
-{% extends "demo/extended.njk" %}
+{% extends "demo/_extended.njk" %}
 
 {% block title %}Elements{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block body_content %}
+{% block main %}
 <div class="temp_layer">
   <!-- <div class="exp_overlay_btn exp_help_btn">
   <span class="span_solo">?</span>
 </div> -->
-{% include "hippie/partials/nav-page-meta.njk" %}
+{% include "hippie/partials/_body_nav.njk" %}
 </div>
 <div id="begin" class="">
   <section class="sec_main_center">
@@ -61,7 +61,7 @@
     </article>
   </section>
 </div>
-{% include "hippie/partials/footer.njk" %}
+{% include "hippie/partials/_footer.njk" %}
 {% endblock %}
 
 {% block script %}

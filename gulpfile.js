@@ -32,7 +32,7 @@ const jshint = require('gulp-jshint');
 const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
-// const spritesmith = require('gulp.spritesmith');
+const spritesmith = require('gulp.spritesmith');
 // const buffer = require('vinyl-buffer');
 // const imagemin = require('gulp-imagemin');
 
@@ -48,7 +48,7 @@ const input = {
   art: {
     favicons: 'source/art/favicons/**/*.+(ico|png)',
     sprites: 'source/art/sprites/**/*.png',
-    images: 'source/art/images/**/*.+(png|gif|jpg)'
+    images: 'source/art/images/**/*.+(png|gif|jpg|webp)'
   },
   vendor: 'vendor/**/*',
   demo: {
@@ -201,17 +201,40 @@ function fonts() {
 function art() {
   // Move favicons to the root folder
   let favicons = src(input.art.favicons)
+  .pipe(plumber())
   .pipe(changed(output.art))
   .pipe(dest(output.root))
 
-  // Assemble sprites
-
   // Move images to the root folder
   let images = src(input.art.images)
+  .pipe(plumber())
   .pipe(changed(output.art))
-  .pipe(dest(output.art))
+  .pipe(dest(output.art));
 
   return merge(favicons, images)
+}
+
+function sprites() {
+  // Assemble sprites
+  let sprites = src(input.art.sprites)
+  .pipe(plumber())
+  .pipe(changed(output.art))
+  .pipe(spritesmith({
+    imgName: 'sprite.png',
+    imgPath: '../art/sprite.png',
+    cssName: '_sprite.scss'
+  }));
+
+  var imgStream = sprites.img
+    // DEV: We must buffer our stream into a Buffer for `imagemin`
+    // .pipe(buffer())
+    // .pipe(imagemin())
+    .pipe(dest(output.art));
+
+  var cssStream = sprites.css
+    .pipe(dest('source/style/hippie/mixins/'));
+
+  return merge(imgStream, cssStream);
 }
 
 // Gather dependencies for tools
@@ -222,21 +245,24 @@ function vendor() {
 }
 
 function overview() {
-  watch([input.screens, input.demo.data], series(nunjucks, reload));
+  watch([input.templates, input.screens, input.demo.data], series(nunjucks, reload));
   watch(input.style, series(styleLint, style, reload));
   watch(input.code, series(codeLint, code, reload));
   watch(input.fonts, series(fonts, reload));
-  watch([input.art.favicons, input.art.sprites, input.art.images], series(art, reload));
+  watch(input.art.sprites, series(parallel(sprites, style), reload));
+  watch([input.art.favicons, input.art.images], series(art, reload));
   watch(input.data, series(json, reload));
 }
 
-const assets = parallel(fonts, art, json, vendor);
-const build = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
+const assets = parallel(fonts, art, sprites, json, vendor);
+const build = series(clean, assets, parallel(nunjucks, style, code));
+const dev = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
 
-exports.lint = parallel(styleLint, codeLint);
+exports.lint = parallel(series(style, styleLint), series(code, codeLint));
 exports.assets = assets;
 exports.build = build;
-exports.default = series(build, serve, overview);
+exports.dev = dev;
+exports.default = series(dev, serve, overview);
 
 // function plumbError(errTitle) {
 //   return plumber({

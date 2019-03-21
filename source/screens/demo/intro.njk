@@ -2,17 +2,15 @@
 {% set pageId = "intro" %}
 {% set pageClass = "" %}
 
-{% extends "demo/extended.njk" %}
+{% extends "demo/_extended.njk" %}
 
 {% block title %}Intro{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block body_content %}
-<div class="temp_layer">
-{% include "hippie/partials/nav-page-meta.njk" %}
-</div>
+{% block main %}
+{% include "hippie/partials/_body_nav.njk" %}
 
 <div id="begin" class="demo__intro">
   Dies ist einfach nur Text.<br>Weniger wäre Nichts, denn dieser Text ist nicht durch ein spezifisches Element umschlossen.<br>Dies ist normalerweise nicht vorgesehen und wird hier nur zur Einführung und Anschauung verwendet.<br><br>
@@ -209,7 +207,7 @@
         <li>إنسان آلي</li>
       </ul>
     </bdo>
-    <p>Neben den vielen speziellen Elmenten gibt es auch ein Element, das keine vordefinierte Bedeutung hat. Es ist das <code>&lt;span&gt;</code> Element.<br>Es dient dazu ganz individuelle Auszeichnungen zu ermöglichen die eher optische Auswirkungen haben und eben keine inhaltlichen. Mit den Attributen <code>id</code> oder <code>class</code> werden dazu eigene Typen des Elements definiert. Diese Möglichkeit der Definition von individuellen Elementen ist ein Grundprinzip der Auszeichnungssprache <abbr title="Hypertext Markup Language" >HTML</abbr>.</p>
+    <p>Neben den vielen speziellen Elementen gibt es auch ein Element, das keine vordefinierte Bedeutung hat. Es ist das <code>&lt;span&gt;</code> Element.<br>Es dient dazu ganz individuelle Auszeichnungen zu ermöglichen die eher optische Auswirkungen haben und eben keine inhaltlichen. Mit den Attributen <code>id</code> oder <code>class</code> werden dazu eigene Typen des Elements definiert. Diese Möglichkeit der Definition von individuellen Elementen ist ein Grundprinzip der Auszeichnungssprache <abbr title="Hypertext Markup Language" >HTML</abbr>.</p>
     <p>Mit der Einführung von Absätzen wurde auch schon das <code>&lt;br&gt;</code> Element erwähnt und seitdem häufig benutzt. Es erzeugt einen Zeilenumbruch. Es wird dadurch kein neuer Absatz erstellt. Es dient auch nicht dazu optischen Abstand zu erzeugen, sondern innerhalb eines Absatzes den Text umzubrechen.</p>
     <p>Eine besondere Form des Zeilenumbruchs kann mit <code>&lt;wbr&gt;</code> eingesetzt werden. Es stellt die Möglichkeit für einen Zeilenumbruch dar. Da das Format eines HTML-Dokumentes häufig nicht vorhersehbar ist, kann solch ein Element einen Umbruch erzeugen falls ein Wort zu lang für eine Textzeile sein sollte.</p>
     <p>Und der Löwe brüllte "RRRR<wbr>rrrr<wbr>oooooooo<wbr>aaaa<wbr>AAAAAAAA<wbr>HHHH<wbr>hhhh<wbr>rrrrrrrrr"!</p>
@@ -581,7 +579,6 @@
   </article>
 </section>
 
-{% include "hippie/partials/footer.njk" %}
 {% endblock %}
 
 {% block script %}

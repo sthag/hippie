@@ -2,15 +2,14 @@
 {% set pageId = "os" %}
 {% set pageClass = "" %}
 
-{% extends "demo/extended.njk" %}
+{% extends "demo/_extended.njk" %}
 
 {% block title %}OS{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block body_content %}
-{# {% include "partials/page-hover.njk" %} #}
+{% block main %}
 <div class="height_full">
   <div class="flex_wrap">
     <button class="demo__button_32"></button>
@@ -132,7 +131,6 @@
     </div>
   </div>
 </div>
-{% include "hippie/partials/footer.njk" %}
 {% endblock %}
 
 {% block script %}

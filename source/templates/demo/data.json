@@ -1,19 +1,23 @@
 {
   "demoadditionallinks": [
     {
-      "href": "demo/intro.html",
+      "href": "/demo.html",
+      "text": "Index"
+    },
+    {
+      "href": "/demo/intro.html",
       "text": "Intro"
     },
     {
-      "href": "demo/elements.html",
+      "href": "/demo/elements.html",
       "text": "Elements"
     },
     {
-      "href": "demo/examples.html",
+      "href": "/demo/examples.html",
       "text": "Examples"
     },
     {
-      "href": "demo/tests.html",
+      "href": "/demo/tests.html",
       "text": "Tests"
     }
   ],

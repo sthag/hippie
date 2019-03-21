@@ -2,14 +2,14 @@
 {% set pageId = "304" %}
 {% set pageClass = "body_status" %}
 
-{% extends "demo/maintenance.njk" %}
+{% extends "demo/_maintenance.njk" %}
 
 {% block title %}{{ pageId }}{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block body_content %}
+{% block main %}
 <main class="main_site">
   <h1>{{ pageId }}</h1>
   <h3>Umleitung</h3>

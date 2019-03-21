@@ -1,0 +1,49 @@
+<!-- template-extended.njk -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+
+  {% block head %}
+  <title>{% block title %}{% endblock %} - HIPPIE</title>
+
+  {% include "demo/partials/_meta.njk" %}
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
+  <!--Only use one of the above!-->
+
+  {% block link %}{% endblock %}
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" type="text/css" media="all" href="/css/demo.css"/>
+  <!-- <link rel="stylesheet" type="text/css" media="print" href="/css/print.css"/> -->
+  {% endblock %}
+</head>
+
+<body id="{{ pageId }}" class="{{ pageClass }}">
+  {% include "hippie/partials/_body_hover.njk" %}
+  <div id="root">
+    {% include "hippie/partials/_header.njk" %}
+
+    <main class="main_site">
+      {% block main %}{% endblock %}
+    </main>
+
+    {% include "hippie/partials/_footer.njk" %}
+  </div>
+
+  {% block script %}
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  {# <script src="bower_components/jquery/dist/jquery.js"></script> #}
+  {% endblock %}
+</body>
+</html>

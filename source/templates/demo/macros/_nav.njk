@@ -1,0 +1,10 @@
+<!-- nav.main.macro -->
+{% macro main(data, active='') %}
+<nav>
+	<ul>
+		{% for link in data %}
+		<li{%if active == link.text %} class="active_txt"{% endif %}>{%if active == link.text %}{{ link.text }}{%else%}<a href="{{ link.href }}">{{ link.text }}</a>{% endif %}</li>
+		{% endfor %}
+	</ul>
+</nav>
+{% endmacro %}

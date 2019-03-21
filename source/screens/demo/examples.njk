@@ -2,19 +2,19 @@
 {% set pageId = "examples" %}
 {% set pageClass = "" %}
 
-{% extends "demo/extended.njk" %}
+{% extends "demo/_extended.njk" %}
 
 {% block title %}Examples{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
-{% block body_content %}
+{% block main %}
 <div class="temp_layer">
   <!-- <div class="exp_overlay_btn exp_help_btn">
   <span class="span_solo">?</span>
 </div> -->
-{% include "hippie/partials/nav-page-meta.njk" %}
+{% include "hippie/partials/_body_nav.njk" %}
 </div>
 <div id="begin" class="">
   <section class="sec_main_center">
@@ -111,7 +111,7 @@
         </header>
         <div class="pos_abs pin_bottom width_full">
           <pre class="pre_code"><code>footer.pos_abs.pin_bottom>nav.nav_column>ul>(li>a.a_button_text)*4</code></pre>
-          <footer id="js_demo_stop" class="demo__footer">
+          <footer id="js_demo_stop" class="demo_footer">
             <nav class="nav_column nav_separate">
               <ul>
                 <li><a href="" class="a_button_text">Alpha</a></li>
@@ -224,7 +224,7 @@
     </article>
   </section>
 </div>
-{% include "hippie/partials/footer.njk" %}
+{% include "hippie/partials/_footer.njk" %}
 {% endblock %}
 
 {% block script %}
