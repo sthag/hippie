@@ -17,6 +17,14 @@
 	}
 }
 
+%h_content_full {
+	height: 100%;
+
+	body {
+		min-height: 100%;
+	}
+}
+
 %hidden {
 	display: none;
 }
@@ -80,12 +88,16 @@
 	margin-left: 0;
 }
 
-.height_basic {
+.h_basic {
 	height: 1024px;
 }
 
-.height_full {
+.h_full_view {
 	height: 100vh;
+}
+
+.h_100 {
+	height: 100%;
 }
 
 .wrap_center {
@@ -159,7 +171,7 @@
 
 // Positioned elements
 // -----------------------------------------------------------------------------
-%full_viewport {
+%viewport_fixed {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -206,7 +218,7 @@
 }
 
 .pos_full_view {
-	@extend %full_viewport;
+	@extend %viewport_fixed;
 	background-color: rgba($alpha_color, 0.5);
 }
 
@@ -225,7 +237,7 @@
 }
 
 .hover_full_view_change {
-	@extend %full_viewport;
+	@extend %viewport_fixed;
 	z-index: $z_heaven;
 	background-color: transparentize($color_darkest, 0.5);
 	transition: background-color $duration_long $timing_basic $duration_long;

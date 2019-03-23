@@ -44,7 +44,7 @@ const input = {
   templates: 'source/templates',
   data: 'source/data/**/*.json',
   style: 'source/style/**/*.s+(a|c)ss',
-  code: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', '!source/vendor/**/*'],
+  code: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', 'source/code/variables.js', 'source/code/functions.js', 'source/code/global.js', 'source/code/**/*.js', '!source/vendor/**/*'],
   fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
   art: {
     favicons: 'source/art/favicons/**/*.+(ico|png)',
@@ -175,7 +175,10 @@ function styleLint() {
 // Javascript for the win
 function code(cb) {
   pump([
-    src(input.code, { sourcemaps: true }),
+    src(input.code, {
+      sourcemaps: true,
+      allowEmpty: true
+    }),
     cache('code'),
     concat(hippie.jsFile +'.js'),
     dest(output.code),
@@ -189,7 +192,7 @@ function code(cb) {
 }
 // Linting
 function codeLint() {
-  return src(input.code)
+  return src(input.code, { allowEmpty: true })
   .pipe(plumber())
   .pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'))
