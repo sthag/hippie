@@ -70,7 +70,7 @@ const output = {
 };
 
 //Check for index file and deactivate demo content
-if (fs.existsSync('source/screens/index.*')){
+if (fs.existsSync('source/screens/index.njk')){
   hippie.index = 'index.html';
 }
 if (fs.existsSync('source/templates/data.json')){
