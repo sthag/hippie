@@ -6,7 +6,7 @@
 
   body {
 
-    .bkgBox {
+    .card_bkg {
       @extend %full_parent;
       transition-duration: 800ms;
       overflow: hidden;
@@ -18,7 +18,7 @@
       }
     }
 
-    .cardBox {
+    .card_box {
       display: flex;
       align-items: center;
       justify-content: center;
