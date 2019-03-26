@@ -1,6 +1,6 @@
-<!-- template-default.njk -->
+<!-- default.template -->
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="{{ pageClass }}" id="{{ pageId }}">
 <head>
   <meta charset="utf-8">
 
@@ -8,21 +8,22 @@
   <title>{% block title %}{% endblock %} - HIPPIE</title>
 
   {% include "demo/partials/_meta.njk" %}
+  {% block meta %}{% endblock %}
 
-  {% block link %}{% endblock %}
+  {% include "demo/partials/_links.njk" %}
+  {% block links %}{% endblock %}
 
   <link rel="stylesheet" type="text/css" media="all" href="/css/demo.css"/>
-  <!-- <link rel="stylesheet" type="text/css" media="print" href="/css/print.css"/> -->
   {% endblock %}
 </head>
 
-<body id="{{ pageId }}" class="{{ pageClass }}">
+<body>
   {% block body %}{% endblock %}
 
   {% block script %}
   <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   {% endblock %}
 </body>
