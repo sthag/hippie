@@ -11,8 +11,7 @@
   {% block meta %}{% endblock %}
 
   {% include "demo/partials/_links.njk" %}
-  {% block links %}{% endblock %}
-
+  {% block links %}
   <!--[if lte IE 9]>
   <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
@@ -25,6 +24,7 @@
   <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" type="text/css" media="all" href="/css/demo.css"/>
   <!-- <link rel="stylesheet" type="text/css" media="print" href="/css/print.css"/> -->
+  {% endblock %}
   {% endblock %}
 </head>
 
