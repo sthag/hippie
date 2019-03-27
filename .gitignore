@@ -8,6 +8,9 @@ source/art/*.*
 source/art/images/*.*
 source/art/sprites/
 !source/art/**/demo/
+source/templates/data.json
+source/data/**
+!source/data/**/demo.json
 
 
 
