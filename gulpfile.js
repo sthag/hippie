@@ -98,7 +98,7 @@ function json() {
   return src(input.data)
   .pipe(plumber())
   .pipe(jsonConcat(hippie.jsonFile +'.json', function(data) {
-    return new Buffer(JSON.stringify(data));
+    return new Buffer.from(JSON.stringify(data));
   }))
   .pipe(dest(output.data));
 }
