@@ -5,8 +5,9 @@
 build/**
 reports/**
 source/art/*.*
-source/art/images/*.*
-source/art/sprites/
+source/art/images/**
+source/art/sprites/**
+source/style/hippie/mixins/_sprite.scss
 !source/art/**/demo/
 source/templates/data.json
 source/data/**
