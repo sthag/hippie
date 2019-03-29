@@ -1,10 +1,10 @@
 "use strict";
 
 function setup() {
-	console.log('\n', hippie_brand, '\n\n');
-	console.info('Debug information:\n\nHTML height is', html_height, '\nBODY height is', body_height, '\nVIEW height is', view_height);
+	console.log('\n', hippie.brand, '\n\n');
+	console.info('Debug information:\n\nHTML height is', htmlH, '\nBODY height is', bodyH, '\nVIEW height is', viewH);
 
-	if($('#js_tph').length && full_view_hover) {
+	if($('#js_tph').length && viewHover) {
 		// $('body').prepend("<div id=\"js_tph\" class=\"layer__hover hover_full_view_change\"></div>");
 		$('#js_tph').addClass("hover_full_view_change");
 	}

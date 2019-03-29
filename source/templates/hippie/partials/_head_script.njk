@@ -1,0 +1,32 @@
+<!-- head.script.partial -->
+<script>
+//Entry script at page init
+
+// get the current time difference between page
+// load and when this func was invoked
+function getTimeDiff() {
+	return new Date().getTime() - performance.timing.navigationStart;
+}
+
+var debugOn = true;
+var $log, assetsLoaded = false;
+
+function logPerf(msg) {
+	if (debugOn) {
+		if (assetsLoaded) {
+			if (!$('#jslogPerf').length) {
+				$('body').prepend('<div id="jslogPerf" style="position:fixed;bottom:8px;right:16px;z-index:1000;padding:8px;background:rgb(0,255,255,.5)"></div>')
+			}
+			$log = $log || $('#jslogPerf');
+			$log.append('<p style="margin-bottom:4px;font-size:.75em;"><b>' + getTimeDiff() + '</b>ms :: ' + msg);
+		}
+		if (window.console) {
+			console.log(getTimeDiff() + 'ms :: ' + msg);
+			if (console.timeStamp){
+				console.timeStamp(msg);
+			}
+		}
+	}
+}
+logPerf('On HEAD, starting...');
+</script>

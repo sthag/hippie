@@ -179,11 +179,12 @@ function code(cb) {
       sourcemaps: true,
       allowEmpty: true
     }),
-    cache('code'),
+    plumber(),
+    // cache('code'),
     concat(hippie.jsFile +'.js'),
     dest(output.code),
     uglify(),
-    remember('code'),
+    // remember('code'),
     rename({
       suffix: '.min'
     }),

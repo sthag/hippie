@@ -19,7 +19,7 @@
     "nonbsp"        : true,     // true: Prohibit "non-breaking whitespace" characters.
     "nonew"         : false,    // true: Prohibit use of constructors for side-effects (without assignment)
     "plusplus"      : false,    // true: Prohibit use of `++` and `--`
-    "quotmark"      : true,    // Quotation mark consistency:
+    "quotmark"      : false,    // Quotation mark consistency:
                                 //   false    : do nothing (default)
                                 //   true     : ensure whatever is used is consistent
                                 //   "single" : require single quotes
@@ -87,5 +87,16 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : {"hippie": true}        // additional predefined global variables
+    "globals"       : {
+      "hippie": true,
+      "viewW": true,
+      "viewH": true,
+      "htmlH": true,
+      "bodyW": true,
+      "bodyH": true,
+      "docPosY": true,
+      "docInitleft": true,
+      "viewHover": true,
+      "basicEase": true
+      }        // additional predefined global variables
 }
