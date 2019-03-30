@@ -1,32 +1,58 @@
 <!-- head.script.partial -->
 <script>
 //Entry script at page init
+var debugOn = true;
+var debugOnScreen = true;
+var assetsLoaded = false;
 
-// get the current time difference between page
+// Get the current time difference between page
 // load and when this func was invoked
 function getTimeDiff() {
 	return new Date().getTime() - performance.timing.navigationStart;
 }
 
-var debugOn = true;
-var $log, assetsLoaded = false;
-
+// log message to console and add
+// performance measuring information
 function logPerf(msg) {
 	if (debugOn) {
-		if (assetsLoaded) {
-			if (!$('#jslogPerf').length) {
-				$('body').prepend('<div id="jslogPerf" style="position:fixed;bottom:8px;right:16px;z-index:1000;padding:8px;background:rgb(0,255,255,.5)"></div>')
+		if (debugOnScreen && assetsLoaded) {
+			if (!$('#jsLogPerf').length) {
+				$('<div><div></div></div>')
+				.css('position', 'relative')
+				.find('div')
+				.attr('id', 'jsLogPerf')
+				.css({
+					position: 'fixed',
+					bottom: '4px',
+					right: '40px',
+					zIndex: '1000',
+					padding: '0 8px',
+					background: 'rgba(255,255,255,.8)',
+					color: 'rgb(128)',
+					fontSize: '12px'
+				})
+				.end()
+				.prependTo('body');
+				// $('body').prepend('<div style="position:relative;"></div>');
+				// $('div').first().prepend('<div id="jslogPerf" style="position:fixed;bottom:8px;right:16px;z-index:1000;padding:8px;background:rgb(0,255,255,.5)"></div>');
 			}
-			$log = $log || $('#jslogPerf');
-			$log.append('<p style="margin-bottom:4px;font-size:.75em;"><b>' + getTimeDiff() + '</b>ms :: ' + msg);
+			$('#jsLogPerf').append('<p><b>' + getTimeDiff() + '</b>ms :: ' + msg);
+			// Alternative short-circuit evaluation
+			// needs element in document but prevents error if not
+			// $log = $log || $('#jslogPerf');
+			// $log.append('<p style="margin-bottom:4px;font-size:.75em;"><b>' + getTimeDiff() + '</b>ms :: ' + msg);
 		}
 		if (window.console) {
 			console.log(getTimeDiff() + 'ms :: ' + msg);
-			if (console.timeStamp){
+			// NOTE Non standard feature. Not available on IE
+			if (console.timeStamp) {
 				console.timeStamp(msg);
 			}
 		}
 	}
 }
+document.addEventListener('DOMContentLoaded', function() {
+	logPerf('Document \'DOMContentLoaded\' event fired.');
+});
 logPerf('On HEAD, starting...');
 </script>

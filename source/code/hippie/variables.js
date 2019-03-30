@@ -1,16 +1,20 @@
 var hippie = {
-  brand: "|-| | |^ |^ | [- "
+	brand: "|-| | |^ |^ | [- ",
+	screen: {
+		w: Math.max(document.documentElement.offsetWidth, document.documentElement.clientWidth, window.innerWidth, 0),
+		vh: Math.max(document.documentElement.clientHeight, window.innerHeight, 0),
+		dh: Math.max(document.documentElement.offsetHeight, document.documentElement.clientHeight, 0),
+		y: Math.min($(document).scrollTop(), document.documentElement.scrollTop)
+		// hippie.screen.y: document.documentElement.scrollTop
+	},
+	body: {
+		w: Math.max(document.body.offsetWidth, document.body.clientWidth, window.innerWidth, 0),
+		h: Math.max(document.body.offsetHeight, document.body.clientHeight, 0),
+	}
 };
 
-var viewW = Math.max(document.documentElement.offsetWidth, document.documentElement.clientWidth, window.innerWidth, 0);
-var viewH = Math.max(document.documentElement.clientHeight, window.innerHeight, 0);
-var htmlH = Math.max(document.documentElement.offsetHeight, document.documentElement.clientHeight, 0);
-var bodyW = Math.max(document.body.offsetWidth, document.body.clientWidth, window.innerWidth, 0);
-var bodyH = Math.max(document.body.offsetHeight, document.body.clientHeight, 0);
-
-var docPosY = 0;
-var docInitleft = false;
-var docInitY = viewH;
+var initLeft = false;
+var initY = hippie.screen.vh;
 
 var viewHover = true;
 var basicEase = 600;

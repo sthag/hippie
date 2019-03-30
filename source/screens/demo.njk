@@ -1,4 +1,4 @@
-<!-- index.page -->
+<!-- index.screen -->
 {% set pageId = "index" %}
 {% set pageClass = "h_full_view" %}
 
@@ -11,42 +11,46 @@
 
 {% block body %}
 <div class="wrap">
-  <div class="hello">
-    <h2>This is {{hippie.brand | upper}}</h2>
-    <p>You can start using it by replacing this file with your own index page.</p>
-    <p>To do this you need to create a file <code>/index.njk</code> inside the <i>source/screens</i> folder. You can also create a <code>data.json</code> file inside the <i>source/templates</i> folder as a data source for your nunjucks files.</p>
-    <p>For a very basic start you can make a copy of the demo page <code>blank.njk</code>. You can find it at <i>/source/screens/demo</i>.</p>
-    <p>The <i>source/demo</i> folder contains an overview of all HTML elements and also examples for CSS style combinations and even whole page layouts.<br/>Follow the white rabbit.</p>
-    <div class="pos_rel">
-      <pre class="txt_tiny txt_white pos_abs pin_down pin_right">  ()()<br>  (..)<br>C(")(")</pre>
-      <h3>Overview</h3>
-    </div>
-    <nav>
-      <ul class="list_link">
-        <!-- Loops through "demoadditionallinks" array -->
-        {% for link in data.demoadditionallinks %}
-        <li><a href="{{link.href}}">{{link.text}}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-    <h3>Demo Pages</h3>
-    <ul class="list_link">
-      <!-- Loops through "demo-links" array -->
-      {% for link in data.demolinks %}
-      <li><a href="{{link.href}}">{{link.text}}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
+	<div class="hello">
+		<h2>This is {{hippie.brand | upper}}</h2>
+		<p>You can start using it by replacing this file with your own index page.</p>
+		<p>To do this you need to create a file <code>/index.njk</code> inside the <i>source/screens</i> folder. You can also create a <code>data.json</code> file inside the <i>source/templates</i> folder as a data source for your nunjucks files.</p>
+		<p>For a very basic start you can make a copy of the demo page <code>blank.njk</code>. You can find it at <i>/source/screens/demo</i>.</p>
+		<p>The <i>source/demo</i> folder contains an overview of all HTML elements and also examples for CSS style combinations and even whole page layouts.<br/>Follow the white rabbit.</p>
+		<div class="pos_rel">
+			<pre class="txt_tiny txt_white pos_abs pin_down pin_right">  ()()<br>  (..)<br>C(")(")</pre>
+			<h3>Overview</h3>
+		</div>
+		<nav>
+			<ul class="list_link">
+				<!-- Loops through "demoadditionallinks" array -->
+				{% for link in data.demoadditionallinks %}
+				<li><a href="{{link.href}}">{{link.text}}</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+		<h3>Demo Pages</h3>
+		<ul class="list_link">
+			<!-- Loops through "demo-links" array -->
+			{% for link in data.demolinks %}
+			<li><a href="{{link.href}}">{{link.text}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
 </div>
 {% endblock %}
 
 {% block script %}
 {{ super() }}
 <script src="./js/{{hippie.jsFile}}.min.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script>
 // Page specific
 // ------------------------------------------------------------------------------
+assetsLoaded = true;
+logPerf('SCRIPT assets loaded.');
 $( document ).ready(function() {
+	logPerf('JQ document \'ready\' event fired.');
 });
+logPerf('Application ready.');
 </script>
 {% endblock %}

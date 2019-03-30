@@ -4,8 +4,8 @@ setup();
 
 // DOM ready
 // -----------------------------------------------------------------------------
-$(document).ready(function(){
-	"use strict";
+$(document).ready(function() {
+	'use strict';
 
 	// logPerf('DOM ready.');
 
@@ -17,16 +17,16 @@ $(document).ready(function(){
 
 	// Displays explanation popup
 	$('.js_pop').hover(
-		function(){
-			// if($(this).attr('emmet')){
+		function() {
+			// if ($(this).attr('emmet')) {
 			//
 			// }
 			$(this).next('.exp_pop').show();
-		}, function(){
+		}, function() {
 			$(this).next('.exp_pop').hide();
 		}
 	).mousemove(
-		function(event){
+		function(event) {
 			$(this).next('.exp_pop').css({
 				'top': event.pageY - $(this).next('.exp_pop').outerHeight() - 4,
 				'left': event.pageX + 8
@@ -39,14 +39,14 @@ $(document).ready(function(){
 
 	// WIP Activates layer with explanation elements
 	// Besser ::after oder ::before benutzen
-	$('.js_showmeta').click(function(e){
+	$('.js_showmeta').click(function(e) {
 		var $wrap, $pop;
 
-		if(expMode !== true){
+		if (expMode !== true) {
 			expMode = true;
 
-			$('.js_pop').each(function(i, e){
-				if($(this).css('position') === 'static'){
+			$('.js_pop').each(function(i, e) {
+				if ($(this).css('position') === 'static') {
 					$(this).addClass('js_changed_pos');
 					$(this).css('position', 'relative');
 				}
@@ -57,15 +57,15 @@ $(document).ready(function(){
 			});
 
 		} else {
-			$('.js_pop').each(function(i, e){
+			$('.js_pop').each(function(i, e) {
 				$wrap = $(this).parent('.exp_wrap');
 				$pop = $wrap.next('.exp_pop').detach();
 				$wrap.find('.exp_marker_pop').remove();
 				$(this).unwrap('.exp_wrap');
 				$(this).after($pop);
-				if($(this).hasClass('js_changed_pos')){
+				if ($(this).hasClass('js_changed_pos')) {
 					$(this).css('position', '');
-					if($(this).attr('style') === ''){
+					if ($(this).attr('style') === '') {
 						$(this).removeAttr('style');
 					}
 					$(this).removeClass('js_changed_pos');
@@ -78,49 +78,10 @@ $(document).ready(function(){
 		console.log('Explanation mode', expMode);
 	});
 
-	//	WIP Scroll to top
-	$('.js_scrolltop').click(function(event){
-		event.preventDefault();
-		$('html, body').animate({
-			scrollTop: 0
-		}, basicEase);
-	});
-	$('.js_scrolldown').click(function(event){
-		event.preventDefault();
-		var pos = Math.max(htmlH, bodyH) - viewH;
-		document.documentElement.scrollTop = pos;
-		console.info('scrolled down to', pos);
-	});
-
-
-
-	$('#gameIcon').click(function(event){
+	$('#gameIcon').click(function(event) {
 		event.preventDefault();
 		$(this).clone().appendTo('#gameDetail');
 		$(this).siblings().clone().appendTo('#gameDetail');
 		$('#gameDetail').removeClass('magic');
 	});
-});
-
-
-// Scroll
-// ------------------------------------------------------------------------------
-$( document ).scroll(function(){
-	"use strict";
-
-	// Toggle navigation elements
-	docPosY = $( document ).scrollTop();
-	if(docPosY > docInitY){
-		if(!docInitleft){
-			$('.js_scrolltop').parent().removeClass('magic');
-			console.info('Initial viewport left');
-		}
-		docInitleft = true;
-	} else {
-		if(docInitleft){
-			$('.js_scrolltop').parent().addClass('magic');
-			console.info('Initial viewport left');
-		}
-		docInitleft = false;
-	}
 });

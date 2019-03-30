@@ -44,7 +44,16 @@ const input = {
   templates: 'source/templates',
   data: 'source/data/**/*.json',
   style: 'source/style/**/*.s+(a|c)ss',
-  code: ['source/code/hippie/variables.js', 'source/code/hippie/functions.js', 'source/code/hippie/global.js', 'source/code/variables.js', 'source/code/functions.js', 'source/code/global.js', 'source/code/**/*.js', '!source/vendor/**/*'],
+  code: [
+    'source/code/hippie/variables.js',
+    'source/code/hippie/functions.js',
+    'source/code/hippie/global.js',
+    'source/code/variables.js',
+    'source/code/functions.js',
+    'source/code/global.js',
+    'source/code/**/*.js',
+    '!source/vendor/**/*'
+  ],
   fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
   art: {
     favicons: 'source/art/favicons/**/*.+(ico|png)',
@@ -70,10 +79,10 @@ const output = {
 };
 
 //Check for index file and deactivate demo content
-if (fs.existsSync('source/screens/index.njk')){
+if (fs.existsSync('source/screens/index.njk')) {
   hippie.index = 'index.html';
 }
-if (fs.existsSync('source/templates/data.json')){
+if (fs.existsSync('source/templates/data.json')) {
   hippie.data = 'data.json';
 }
 
@@ -151,7 +160,7 @@ function style() {
 // Linting
 function styleLint() {
   var dir = output.reports;
-  if (!fs.existsSync(dir)){
+  if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
   var file = fs.createWriteStream(output.reports +'/sass-lint.html');
