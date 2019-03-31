@@ -1,7 +1,7 @@
 <!-- head.script.partial -->
 <script>
 //Entry script at page init
-var debugOn = true;
+var debugOn = false;
 var debugOnScreen = true;
 var assetsLoaded = false;
 
@@ -51,8 +51,4 @@ function logPerf(msg) {
 		}
 	}
 }
-document.addEventListener('DOMContentLoaded', function() {
-	logPerf('Document \'DOMContentLoaded\' event fired.');
-});
-logPerf('On HEAD, starting...');
 </script>

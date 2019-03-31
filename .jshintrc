@@ -88,14 +88,10 @@
 
     // Custom Globals
     "globals"       : {
+      "debugOn": true,
       "hippie": true,
-      "viewW": true,
-      "viewH": true,
-      "htmlH": true,
-      "bodyW": true,
-      "bodyH": true,
-      "docPosY": true,
-      "docInitleft": true,
+      "initLeft": true,
+      "initY": true,
       "viewHover": true,
       "basicEase": true
       }        // additional predefined global variables

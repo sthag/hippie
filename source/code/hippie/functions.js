@@ -1,6 +1,6 @@
-'use strict';
-
+// This is called everytime
 function setup() {
+	'use strict';
 	console.info('\n', hippie.brand, '\n\n');
 	if (debugOn) {
 		console.log('Debug information:\n', 'HTML:', hippie.screen, 'BODY:', hippie.body);
@@ -14,6 +14,9 @@ function setup() {
 // MODULE Scroll navigation
 function HippieScroll($el) {
 	'use strict';
+	// this.$el = $el;
+	// console.log('Elements:', $el, this.$el);
+	
 	// Toggle display on scroll position
 	// console.log('Scroll object added');
 	this.check = function() {
@@ -32,7 +35,7 @@ function HippieScroll($el) {
 			}
 			initLeft = false;
 		}
-	}
+	};
 	// Add events to navigation elements
 	$('.js_scrolltop').click(function(event) {
 		event.preventDefault();
@@ -61,29 +64,30 @@ function HippieScroll($el) {
 // }
 
 // https://stackoverflow.com/a/488073/1444149
-function Utils() {}
-
-Utils.prototype = {
-	constructor: Utils,
-	isElementInView: function (element, fullyInView) {
-		var pageTop = $(window).scrollTop();
-		var pageBottom = pageTop + $(window).height();
-		var elementTop = $(element).offset().top;
-		var elementBottom = elementTop + $(element).height();
-
-		if (fullyInView === true) {
-			return ((pageTop < elementTop) && (pageBottom > elementBottom));
-		} else {
-			return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-		}
-	}
-};
-
-var Utils = new Utils();
+// function Utils() {}
+//
+// Utils.prototype = {
+// 	constructor: Utils,
+// 	isElementInView: function (element, fullyInView) {
+// 		var pageTop = $(window).scrollTop();
+// 		var pageBottom = pageTop + $(window).height();
+// 		var elementTop = $(element).offset().top;
+// 		var elementBottom = elementTop + $(element).height();
+//
+// 		if (fullyInView === true) {
+// 			return ((pageTop < elementTop) && (pageBottom > elementBottom));
+// 		} else {
+// 			return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+// 		}
+// 	}
+// };
+//
+// var Utils = new Utils();
 
 // TEST
 
 function scrollNav() {
+	'use strict';
 	$('.nav a').click(function() {
 		//Toggle Class
 		$(".active").removeClass("active");

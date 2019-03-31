@@ -11,6 +11,13 @@
 	{% block meta %}{% endblock %}
 
 	{% include "hippie/partials/_head_script.njk" %}
+	<script>
+	debugOn = true;
+	document.addEventListener('DOMContentLoaded', function() {
+		logPerf('Document \'DOMContentLoaded\' event fired.');
+	});
+	logPerf('On HEAD, starting...');
+	</script>
 
 	{% include "demo/partials/_links.njk" %}
 	{% block links %}

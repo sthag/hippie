@@ -34,6 +34,7 @@ const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
+const babel = require('gulp-babel');
 // const buffer = require('vinyl-buffer');
 // const imagemin = require('gulp-imagemin');
 
@@ -190,6 +191,7 @@ function code(cb) {
     }),
     plumber(),
     // cache('code'),
+    babel(),
     concat(hippie.jsFile +'.js'),
     dest(output.code),
     uglify(),
