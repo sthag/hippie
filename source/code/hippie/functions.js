@@ -1,5 +1,5 @@
 // This is called everytime
-function setup() {
+function setup () {
 	'use strict';
 	console.info('\n', hippie.brand, '\n\n');
 	if (debugOn) {
@@ -12,14 +12,14 @@ function setup() {
 }
 
 // MODULE Scroll navigation
-function HippieScroll($el) {
+function HippieScroll ($el) {
 	'use strict';
 	// this.$el = $el;
 	// console.log('Elements:', $el, this.$el);
-	
+
 	// Toggle display on scroll position
 	// console.log('Scroll object added');
-	this.check = function() {
+	this.check = function () {
 		// console.log('Scroll position checked');
 		hippie.screen.y = Math.min($(document).scrollTop(), document.documentElement.scrollTop);
 		if (hippie.screen.y > initY) {
@@ -37,14 +37,14 @@ function HippieScroll($el) {
 		}
 	};
 	// Add events to navigation elements
-	$('.js_scrolltop').click(function(event) {
+	$('.js_scrolltop').click(function (event) {
 		event.preventDefault();
 		$('html, body').animate({
 			scrollTop: 0
 		}, basicEase);
 		// console.log('Scrolled to top');
 	});
-	$('.js_scrolldown').click(function(event) {
+	$('.js_scrolldown').click(function (event) {
 		event.preventDefault();
 		var pos = Math.max(hippie.screen.dh, hippie.body.h) - hippie.screen.vh;
 		$('html').scrollTop(pos);
@@ -54,7 +54,7 @@ function HippieScroll($el) {
 }
 
 // get document coordinates of the element
-// function getCoords(elem) {
+// function getCoords (elem) {
 // 	let box = elem.getBoundingClientRect();
 //
 // 	return {
@@ -64,7 +64,7 @@ function HippieScroll($el) {
 // }
 
 // https://stackoverflow.com/a/488073/1444149
-// function Utils() {}
+// function Utils () {}
 //
 // Utils.prototype = {
 // 	constructor: Utils,
@@ -86,9 +86,9 @@ function HippieScroll($el) {
 
 // TEST
 
-function scrollNav() {
+function scrollNav () {
 	'use strict';
-	$('.nav a').click(function() {
+	$('.nav a').click(function () {
 		//Toggle Class
 		$(".active").removeClass("active");
 		$(this).closest('li').addClass("active");

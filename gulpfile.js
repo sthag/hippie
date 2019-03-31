@@ -90,34 +90,34 @@ if (fs.existsSync('source/templates/data.json')) {
 // Create tasks
 
 // Clean build folder
-function clean() {
+function clean () {
   // You can use multiple globbing patterns as you would with `gulp.src`,
   // for example if you are using del 2.0 or above, return its promise
   return del(output.root +'/**');
 }
 
 // Automagically reload browsers
-function reload(done) {
+function reload (done) {
   server.reload();
 
   done();
 }
 
 // Concatenate JSON files
-function json() {
+function json () {
   return src(input.data)
   .pipe(plumber())
-  .pipe(jsonConcat(hippie.jsonFile +'.json', function(data) {
+  .pipe(jsonConcat(hippie.jsonFile +'.json', function (data) {
     return new Buffer.from(JSON.stringify(data));
   }))
   .pipe(dest(output.data));
 }
 
 // Transpile HTML
-function nunjucks() {
+function nunjucks () {
 	return src(input.screens)
   .pipe(plumber())
-  .pipe(data(function() {
+  .pipe(data(function () {
     let data = JSON.parse(fs.readFileSync(input.templates +'/'+ hippie.data));
     object = {hippie, data};
     return object;
@@ -132,7 +132,7 @@ function nunjucks() {
 }
 
 // Serve files to the browser
-function serve(done) {
+function serve (done) {
   server.init({
     index: hippie.index,
     open: false,
@@ -143,7 +143,7 @@ function serve(done) {
 }
 
 // This is for the looks
-function style() {
+function style () {
   return src(input.style)
   .pipe(plumber())
   // .pipe(plumbError('STYLE PROBLEM'))
@@ -159,7 +159,7 @@ function style() {
   .pipe(dest(output.style));
 }
 // Linting
-function styleLint() {
+function styleLint () {
   var dir = output.reports;
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
@@ -175,7 +175,7 @@ function styleLint() {
   }))
   .pipe(sassLint.format(file));
 
-  stream.on('finish', function() {
+  stream.on('finish', function () {
     file.end();
   });
 
@@ -183,7 +183,7 @@ function styleLint() {
 }
 
 // Javascript for the win
-function code(cb) {
+function code (cb) {
   pump([
     src(input.code, {
       sourcemaps: true,
@@ -203,7 +203,7 @@ function code(cb) {
   ], cb);
 }
 // Linting
-function codeLint() {
+function codeLint () {
   return src(input.code, { allowEmpty: true })
   .pipe(plumber())
   .pipe(jshint())
@@ -215,14 +215,14 @@ function codeLint() {
 }
 
 // Fonts
-function fonts() {
+function fonts () {
   return src(input.fonts)
   .pipe(plumber())
   .pipe(dest(output.fonts))
 }
 
 // Add art
-function art() {
+function art () {
   // Move favicons to the root folder
   let favicons = src(input.art.favicons)
   .pipe(plumber())
@@ -238,7 +238,7 @@ function art() {
   return merge(favicons, images)
 }
 
-function sprites() {
+function sprites () {
   // Assemble sprites
   let sprites = src(input.art.sprites)
   .pipe(plumber())
@@ -262,13 +262,13 @@ function sprites() {
 }
 
 // Gather dependencies for tools
-function vendor() {
+function vendor () {
   return src(input.vendor)
   .pipe(plumber())
   .pipe(dest(output.vendor))
 }
 
-function overview() {
+function overview () {
   watch([input.templates, input.screens, input.demo.data], series(nunjucks, reload));
   watch(input.style, series(styleLint, style, reload));
   watch(input.code, series(codeLint, code, reload));

@@ -592,11 +592,11 @@ logPerf('Assets loaded.');
 // Create instance of object made by contructor function
 var scrollUi = new HippieScroll($('.js_scrolltop'));
 
-$(document).ready(function() {
+$(document).ready(function () {
 	logPerf('JQ document ready event fired.');
 });
 
-$(document).scroll(function() {
+$(document).scroll(function () {
 	scrollUi.check();
 });
 logPerf('Application ready.');

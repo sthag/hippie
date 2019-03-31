@@ -7,13 +7,13 @@ var assetsLoaded = false;
 
 // Get the current time difference between page
 // load and when this func was invoked
-function getTimeDiff() {
+function getTimeDiff () {
 	return new Date().getTime() - performance.timing.navigationStart;
 }
 
 // log message to console and add
 // performance measuring information
-function logPerf(msg) {
+function logPerf (msg) {
 	if (debugOn) {
 		if (debugOnScreen && assetsLoaded) {
 			if (!$('#jsLogPerf').length) {

@@ -4,7 +4,7 @@ setup();
 
 // DOM ready
 // -----------------------------------------------------------------------------
-$(document).ready(function() {
+$(document).ready(function () {
 	'use strict';
 
 	// logPerf('DOM ready.');
@@ -17,16 +17,16 @@ $(document).ready(function() {
 
 	// Displays explanation popup
 	$('.js_pop').hover(
-		function() {
+		function () {
 			// if ($(this).attr('emmet')) {
 			//
 			// }
 			$(this).next('.exp_pop').show();
-		}, function() {
+		}, function () {
 			$(this).next('.exp_pop').hide();
 		}
 	).mousemove(
-		function(event) {
+		function (event) {
 			$(this).next('.exp_pop').css({
 				'top': event.pageY - $(this).next('.exp_pop').outerHeight() - 4,
 				'left': event.pageX + 8
@@ -39,13 +39,13 @@ $(document).ready(function() {
 
 	// WIP Activates layer with explanation elements
 	// Besser ::after oder ::before benutzen
-	$('.js_showmeta').click(function(e) {
+	$('.js_showmeta').click(function (e) {
 		var $wrap, $pop;
 
 		if (expMode !== true) {
 			expMode = true;
 
-			$('.js_pop').each(function(i, e) {
+			$('.js_pop').each(function (i, e) {
 				if ($(this).css('position') === 'static') {
 					$(this).addClass('js_changed_pos');
 					$(this).css('position', 'relative');
@@ -57,7 +57,7 @@ $(document).ready(function() {
 			});
 
 		} else {
-			$('.js_pop').each(function(i, e) {
+			$('.js_pop').each(function (i, e) {
 				$wrap = $(this).parent('.exp_wrap');
 				$pop = $wrap.next('.exp_pop').detach();
 				$wrap.find('.exp_marker_pop').remove();
@@ -78,7 +78,7 @@ $(document).ready(function() {
 		console.log('Explanation mode', expMode);
 	});
 
-	$('#gameIcon').click(function(event) {
+	$('#gameIcon').click(function (event) {
 		event.preventDefault();
 		$(this).clone().appendTo('#gameDetail');
 		$(this).siblings().clone().appendTo('#gameDetail');
