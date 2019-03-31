@@ -59,7 +59,7 @@ const input = {
   art: {
     favicons: 'source/art/favicons/**/*.+(ico|png)',
     sprites: 'source/art/sprites/**/*.png',
-    images: 'source/art/images/**/*.+(png|gif|jpg|webp)'
+    images: 'source/art/images/**/*.+(png|gif|jpg|svg|webp)'
   },
   vendor: 'vendor/**/*',
   demo: {
