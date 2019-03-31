@@ -1,58 +1,50 @@
 {
-  "demoadditionallinks": [
-    {
-      "href": "/demo.html",
-      "text": "Index"
-    },
-    {
-      "href": "/demo/intro.html",
-      "text": "Intro"
-    },
-    {
-      "href": "/demo/elements.html",
-      "text": "Elements"
-    },
-    {
-      "href": "/demo/examples.html",
-      "text": "Examples"
-    },
-    {
-      "href": "/demo/tests.html",
-      "text": "Tests"
-    }
-  ],
-  "demolinks": [
-    {
-      "href": "demo/blank.html",
-      "text": "Blank"
-    },
-    {
-      "href": "demo/maintenance.html",
-      "text": "Maintenance"
-    },
-    {
-      "href": "demo/error/304.html",
-      "text": "304"
-    },
-    {
-      "href": "demo/error/404.html",
-      "text": "404"
-    },
-    {
-      "href": "demo/error/403.html",
-      "text": "403"
-    },
-    {
-      "href": "demo/error/400.html",
-      "text": "400"
-    },
-    {
-      "href": "demo/error/500.html",
-      "text": "500"
-    },
-    {
-      "href": "demo/os.html",
-      "text": "OS"
-    }
-  ]
+	"demoadditionallinks": [
+		{
+			"href": "/demo.html",
+			"text": "Index"
+		},
+		{
+			"href": "/demo/intro.html",
+			"text": "Intro"
+		},
+		{
+			"href": "/demo/elements.html",
+			"text": "Elements"
+		},
+		{
+			"href": "/demo/examples.html",
+			"text": "Examples"
+		}
+	],
+	"demolinks": [
+		{
+			"href": "demo/blank.html",
+			"text": "Blank"
+		},
+		{
+			"href": "demo/maintenance.html",
+			"text": "Maintenance"
+		},
+		{
+			"href": "demo/error/304.html",
+			"text": "304"
+		},
+		{
+			"href": "demo/error/404.html",
+			"text": "404"
+		},
+		{
+			"href": "demo/error/403.html",
+			"text": "403"
+		},
+		{
+			"href": "demo/error/400.html",
+			"text": "400"
+		},
+		{
+			"href": "demo/error/500.html",
+			"text": "500"
+		}
+	]
 }
