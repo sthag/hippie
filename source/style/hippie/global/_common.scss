@@ -29,7 +29,7 @@
 	display: none;
 }
 
-.magic {
+.hide {
 	@extend %hidden;
 }
 
@@ -236,7 +236,7 @@
 	}
 }
 
-.hover_full_view_change {
+.mouse_over {
 	@extend %viewport_fixed;
 	z-index: $z_heaven;
 	background-color: transparentize($color_darkest, 0.5);

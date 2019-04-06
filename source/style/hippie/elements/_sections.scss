@@ -40,7 +40,7 @@ body {
 
 	&:hover {
 
-		.layer_hover {
+		.mouse_over {
 			background-color: transparent !important;
 			transition: background-color $duration_double $timing_basic 0s !important;
 		}

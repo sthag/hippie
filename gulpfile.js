@@ -191,7 +191,7 @@ function code (cb) {
     }),
     plumber(),
     // cache('code'),
-    babel(),
+    babel({ presets: ['@babel/env']}),
     concat(hippie.jsFile +'.js'),
     dest(output.code),
     uglify(),

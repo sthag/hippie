@@ -2,75 +2,75 @@
 // ------------------------------------------------------------------------------
 
 .html_card {
-  @extend %h_content_full;
+	@extend %h_content_full;
 
-  body {
+	body {
 
-    .card_bkg {
-      @extend %full_parent;
-      transition-duration: 800ms;
-      overflow: hidden;
-      vertical-align: top;
-      z-index: -1;
+		.card_bkg {
+			@extend %full_parent;
+			transition-duration: 800ms;
+			overflow: hidden;
+			vertical-align: top;
+			z-index: -1;
 
-      & > svg {
-        position: relative;
-      }
-    }
+			& > svg {
+				position: relative;
+			}
+		}
 
-    .card_box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+		.card_box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
 
-      * {
-        font-family: $family_text_card;
-        // text-align: center;
-      }
+			* {
+				font-family: $family_text_card;
+				// text-align: center;
+			}
 
-      & > div {
-        position: relative;
-        padding: 64px 64px 24px 64px;
-        border: 1px solid #FFF;
-        background-color: #F5F5F5;
-        z-index: 40;
-      }
-    }
+			& > div {
+				position: relative;
+				padding: 64px 64px 24px 64px;
+				border: 1px solid #FFF;
+				background-color: #F5F5F5;
+				z-index: 40;
+			}
+		}
 
-    h1 {
-      margin: 16px 0;
-      color: #1E1E1E;
-      font-size: 24px;
-      line-height: 1.4em;
-      font-weight: normal;
-    }
+		h1 {
+			margin: 16px 0;
+			color: #1E1E1E;
+			font-size: 24px;
+			line-height: 1.4em;
+			font-weight: normal;
+		}
 
-    p {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 12px;
-      line-height: 1.4em;
-    }
+		p {
+			margin-top: 0;
+			margin-bottom: 16px;
+			font-size: 12px;
+			line-height: 1.4em;
+		}
 
-    .marked {
-      // padding-left: 1em;
-      // text-indent: -1em;
+		.marked {
+			// padding-left: 1em;
+			// text-indent: -1em;
 
-      &::before { content: "*\0000a0" }
-    }
+			&::before { content: "*\0000a0" }
+		}
 
-    .decent { color: #666 }
+		.decent { color: #666 }
 
-    a {
-      color: #000;
-      text-decoration: none;
+		a {
+			color: #000;
+			text-decoration: none;
 
-      &:hover {
-        color: #F4F9FA;
-        background-color: #0C85FF;
-        text-decoration: none;
-      }
-    }
-  }
+			&:hover {
+				color: #F4F9FA;
+				background-color: #0C85FF;
+				text-decoration: none;
+			}
+		}
+	}
 }

@@ -87,12 +87,11 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : {
+    "globals" : {
       "debugOn": true,
       "hippie": true,
-      "initLeft": true,
-      "initY": true,
       "viewHover": true,
       "basicEase": true
-      }        // additional predefined global variables
+    },
+    "esversion" : 6             // additional predefined global variables
 }

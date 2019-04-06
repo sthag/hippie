@@ -7,109 +7,114 @@
 // ------------------------------------------------------------------------------
 
 %expose_after {
-  &::after {
-    content: "";
-    display: block;
-    height: 48px;
-    background-color: rgba($delta_color, 0.1) !important;
-  }
+	&::after {
+		content: "";
+		display: block;
+		height: 48px;
+		background-color: rgba($delta_color, 0.1) !important;
+	}
 }
 %expose_before {
-  &::before {
-    content: "";
-    display: block;
-    height: 48px;
-    background-color: rgba($delta_color, 0.1) !important;
-  }
+	&::before {
+		content: "";
+		display: block;
+		height: 48px;
+		background-color: rgba($delta_color, 0.1) !important;
+	}
 }
 %expose {
-  &::before, &::after {
-    content: "";
-    display: block;
-    height: 48px;
-    background-color: rgba($delta_color, 0.1) !important;
-  }
+	&::before, &::after {
+		content: "";
+		display: block;
+		height: 48px;
+		background-color: rgba($delta_color, 0.1) !important;
+	}
 }
 %exp {
 }
 %exp_hidden {
-  display: none;
+	display: none;
 }
 
 .exp_wrap {
-  position: relative;
+	position: relative;
+}
+
+.exp_overlay {
+	@extend %full_parent;
+	background-color: transparentize($alpha_color, .6);
 }
 
 .exp_pop {
-  @extend %exp_hidden !optional;
-  position: absolute;
-  z-index: 100;
-  top: $space_large;
-  left: $space_large;
-  padding: $space_half;
-  border: 4px solid $color_back_basic;
-  border-radius: 4px;
-  background-color: $color_back_basic;
-  pointer-events: none;
+	@extend %exp_hidden !optional;
+	position: absolute;
+	z-index: 100;
+	top: $space_large;
+	left: $space_large;
+	padding: $space_half;
+	border: 4px solid $color_back_basic;
+	border-radius: 4px;
+	background-color: $color_back_basic;
+	pointer-events: none;
 }
 .exp_marker_pop {
-  position: absolute;
-  top: -$size_text_basic / 4 * 3;
-  right: -$size_text_basic / 2;
-  width: $size_text_basic;
-  height: $size_text_basic;
-  border: $space_tiny solid $color_highlight_basic;
-  border-radius: $size_text_basic;
-  color: $color_highlight_basic;
-  background-color: $color_darkest;
+	position: absolute;
+	top: -$size_text_basic / 4 * 3;
+	right: -$size_text_basic / 2;
+	width: $size_text_basic;
+	height: $size_text_basic;
+	border: $space_tiny solid $color_highlight_basic;
+	border-radius: $size_text_basic;
+	color: $color_highlight_basic;
+	background-color: $color_darkest;
 }
 
 .exp_expose {
-  @extend %expose !optional;
+	@extend %expose !optional;
 }
 .exp_expose_pre {
-  @extend %expose_after;
+	@extend %expose_after;
 }
 .exp_expose_post {
-  @extend %expose_before;
+	@extend %expose_before;
 }
 
 .exp_overlay_btn {
-  position: fixed;
-  width: 3em;
-  height: 2em;
+	position: fixed;
+	width: 3em;
+	height: 2em;
 	// padding: $space_basic $space_basic * 2;
-  cursor: pointer;
+	cursor: pointer;
 }
 .exp_help_btn {
-  display: table;
-  right: $space_double;
-  bottom: $space_double;
-  background-color: rgba($color_darkest, 0.4);
-  &:hover {
-    background-color: $color_brightest;
-    > .span_solo {
-      color: $color_darkest;
-    }
-  }
-  .span_solo {
-    display: table-cell;
-    color: rgba($color_brightest, 0.8);
+	display: table;
+	right: $space_double;
+	bottom: $space_double;
+	background-color: rgba($color_darkest, 0.4);
+	&:hover {
+		background-color: $color_brightest;
+		> .span_solo {
+			color: $color_darkest;
+		}
+	}
+	.span_solo {
+		display: table-cell;
+		color: rgba($color_brightest, 0.8);
 		font-family: $family_text_mono;
 		font-size: 1.4em;
-    text-align: center;
-    vertical-align: middle;
-  }
+		text-align: center;
+		vertical-align: middle;
+	}
 }
 
 
 
 .expose_height {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba($delta_color, 0.1) !important;
-  @include vendor-prefix(transition, height 0.5s ease);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba($delta_color, 0.1) !important;
+	@include vendor-prefix(transition, height 0.5s ease);
 }

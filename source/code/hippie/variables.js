@@ -13,9 +13,6 @@ var hippie = {
 	}
 };
 
-var initLeft = false;
-var initY = hippie.screen.vh;
-
 var viewHover = true;
 var basicEase = 600;
 
