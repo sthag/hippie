@@ -113,7 +113,7 @@ function HippieMeta ($ma, $pp) {
 							// 'left': event.pageX - $(this).offset().left + 8
 						});
 					}
-				})
+				});
 			});
 
 		} else {
