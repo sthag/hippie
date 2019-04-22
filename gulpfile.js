@@ -145,11 +145,10 @@ function serve (done) {
 // This is for the looks
 function style () {
   return src(input.style)
-  .pipe(plumber())
   // .pipe(plumbError('STYLE PROBLEM'))
-  .pipe(sass({
+	.pipe(sass({
     includePaths: [input.vendor +'/**/*.s+(a|c)ss']
-  }))
+  }).on('error', sass.logError))
   .pipe(autoprefixer(['>= 4%', 'last 2 version']))
   .pipe(dest(output.style))
   .pipe(cleanCss())
