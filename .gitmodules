@@ -1,3 +1,5 @@
 [submodule "source/style/hippie-style"]
 	path = source/style/hippie-style
 	url = https://github.com/sthag/hippie-style.git
+[submodule "hippie-style"]
+	branch = development
