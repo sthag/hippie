@@ -258,7 +258,7 @@ function sprites () {
 	.pipe(dest(output.art));
 
 	var cssStream = sprites.css
-	.pipe(dest('source/style/hippie/mixins/'));
+	.pipe(dest('source/style/hippie-style/mixins/'));
 
 	return merge(imgStream, cssStream);
 }
