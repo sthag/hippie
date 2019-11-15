@@ -1,9 +1,0 @@
-@mixin overrideUserAgent() {
-  @if $no_agent_focus == true {
-    @each $el in $io_focus_list {
-      #{$el}:focus {
-        outline: 0;
-      }
-    }
-  }
-}
