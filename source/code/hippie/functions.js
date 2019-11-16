@@ -2,10 +2,14 @@
 function setup () {
 	'use strict';
 
+	console.group('Document information');
 	console.info('\n', hippie.brand, '\n\n');
-	console.info('Document information:\n', 'HTML:', hippie.screen, '\n', 'BODY:', hippie.body);
+	console.info('HTML:', hippie.screen, '\nBODY:', hippie.body);
+	console.groupEnd();
 	if (debugOn) {
-		console.debug('Debug information:\n', 'HIPPIE:', hippie);
+		console.group('Debug information');
+		console.dir(hippie);
+		console.groupEnd();
 	}
 
 	// WANNABE MODULE Mouse over effect
