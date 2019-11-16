@@ -13,7 +13,7 @@ function getTimeDiff () {
 
 // log message to console and add
 // performance measuring information
-function logPerf (msg) {
+function logPerf (msg, arg) {
 	if (debugOn) {
 		if (debugOnScreen && assetsLoaded) {
 			if (!$('#jsLogPerf').length) {
@@ -29,7 +29,7 @@ function logPerf (msg) {
 					padding: '0 8px',
 					background: 'rgba(255,255,255,.8)',
 					color: 'rgb(128)',
-					fontSize: '12px'
+					fontSize: '1rem'
 				})
 				.end()
 				.prependTo('body');
@@ -43,7 +43,7 @@ function logPerf (msg) {
 			// $log.append('<p style="margin-bottom:4px;font-size:.75em;"><b>' + getTimeDiff() + '</b>ms :: ' + msg);
 		}
 		if (window.console) {
-			console.log(getTimeDiff() + 'ms :: ' + msg);
+			console.debug(getTimeDiff() + 'ms :: ' + msg, (arg ? arg : ''));
 			// NOTE Non standard feature. Not available on IE
 			if (console.timeStamp) {
 				console.timeStamp(msg);

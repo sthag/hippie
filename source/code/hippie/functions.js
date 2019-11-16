@@ -3,8 +3,9 @@ function setup () {
 	'use strict';
 
 	console.info('\n', hippie.brand, '\n\n');
+	console.info('Document information:\n', 'HTML:', hippie.screen, '\n', 'BODY:', hippie.body);
 	if (debugOn) {
-		console.info('Debug information:\n', 'HTML:', hippie.screen, 'BODY:', hippie.body);
+		console.debug('Debug information:\n', 'HIPPIE:', hippie);
 	}
 
 	// WANNABE MODULE Mouse over effect

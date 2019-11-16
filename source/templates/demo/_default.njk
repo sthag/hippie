@@ -13,6 +13,7 @@
 	{% include "hippie/partials/_head_script.njk" %}
 	<script>
 	debugOn = true;
+	logPerf('Debugging performance', debugOn);
 	document.addEventListener('DOMContentLoaded', function () {
 		logPerf('Document \'DOMContentLoaded\' event fired.');
 	});
