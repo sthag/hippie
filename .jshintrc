@@ -16,7 +16,7 @@
     "newcap"        : false,    // true: Require capitalization of all constructor functions e.g. `new F()`
     "noarg"         : true,     // true: Prohibit use of `arguments.caller` and `arguments.callee`
     "noempty"       : true,     // true: Prohibit use of empty blocks
-    "nonbsp"        : true,     // true: Prohibit "non-breaking whitespace" characters.
+    "nonbsp"        : true,     // true: Prohibit `non-breaking whitespace` characters.
     "nonew"         : false,    // true: Prohibit use of constructors for side-effects (without assignment)
     "plusplus"      : false,    // true: Prohibit use of `++` and `--`
     "quotmark"      : false,    // Quotation mark consistency:
@@ -25,7 +25,7 @@
                                 //   "single" : require single quotes
                                 //   "double" : require double quotes
     "undef"         : true,     // true: Require all non-global variables to be declared (prevents global leaks)
-    "unused"        : false,     // Unused variables:
+    "unused"        : false,    // Unused variables:
                                 //   true     : all variables, last function parameter
                                 //   "vars"   : all variables only
                                 //   "strict" : all variables, all function parameters
@@ -71,7 +71,7 @@
     "devel"         : true,     // Development/debugging (alert, confirm, etc)
     "dojo"          : false,    // Dojo Toolkit
     "jasmine"       : false,    // Jasmine
-    "jquery"        : true,    // jQuery
+    "jquery"        : true,     // jQuery
     "mocha"         : true,     // Mocha
     "mootools"      : false,    // MooTools
     "node"          : false,    // Node.js
@@ -86,7 +86,7 @@
     "wsh"           : false,    // Windows Scripting Host
     "yui"           : false,    // Yahoo User Interface
 
-    // Custom Globals
+    // Custom globals
     "globals" : {
       "debugOn": true,
       "hippie": true,

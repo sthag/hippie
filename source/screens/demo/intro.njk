@@ -63,7 +63,7 @@
 		<p>Es ist auch eine unsichtbare Unterteilung möglich:</p>
 		<hr class="hr_hidden js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_hidden</code></div>
 		<p>Die Linie darf auch gepunkted sein. Zudem sind verschiedene Längen möglich. Diese sind immer ein Prozentwert der verfügbaren Breite. Hier in gleicher Reihenfolge 100%, 50% und 25%:</p>
-		<hr class="hr_dotted js_pop" emmet/><div class="exp_pop"><code class="code_solo">hr.hr_dotted</code></div><!--hr.hr_dotted-->
+		<hr class="hr_dotted js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted</code></div><!--hr.hr_dotted-->
 		<hr class="space_even_half js_pop"/><div class="exp_pop"><code class="code_solo">hr.space_even_half</code></div>
 		<hr class="hr_dotted space_even_fourth js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted.space_even_fourth</code></div>
 		<p class="column_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code_solo">p.column_2</code></div>
@@ -106,7 +106,8 @@
 		<p>Auch Inhalte, die nicht in Textform sind, können durch einen Bezug integriert werden. Wie diese Fahne werden sie mit <code>&lt;figure&gt;</code> umschlossen und tragen eine Bezeichnung, welche mit <code>&lt;figcaption&gt;</code> ausgezeichnet wird.</p>
 		<figure class="js_pop">
 			<figcaption>Fahne</figcaption>
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10%" height="10%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice" alt="Background flag">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10%" height="10%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice">
+				<desc>Flag</desc>
 				<rect id="triangle-5" y="0" fill="#273F8B" width="1920" height="1200"/>
 				<polygon id="triangle-6" fill="#8E1F68" points="0,1200 1920,458.25 1920,1200 "/>
 				<polygon id="triangle-7" fill="#D30A51" points="0,1200 1920,522.75 1920,1200 "/>
@@ -154,13 +155,13 @@
 		<p><dfn><abbr title="Hippie interweaves preeminent personal interface elements">Hippie</abbr></dfn> is an recursive acronym for <dfn>Hippie interweaves preeminent personal interface elements</dfn>.</p>
 		<p>Die besondere Auszeichnungen <code>&lt;ruby&gt;</code> <q cite="https://de.wikipedia.org/wiki/Ruby_Annotation">bezeichnet ein Anmerkungssystem, bei dem der Text zusammen mit seiner Anmerkung in einer Zeile erscheint.</q> Das System verwendet die folgenden weiteren Elemente mit spezifischer Bedeutung:</p>
 		<dl>
-			<df><code>&lt;rb&gt;</code></df>
+			<dt><code>&lt;rb&gt;</code></dt>
 			<dd>Basis Textkomponente</dd>
-			<df><code>&lt;rt&gt;</code></df>
+			<dt><code>&lt;rt&gt;</code></dt>
 			<dd>Annotation</dd>
-			<df><code>&lt;rtc&gt;</code></df>
+			<dt><code>&lt;rtc&gt;</code></dt>
 			<dd>Einzelne Komponente einer Annotation</dd>
-			<df><code>&lt;rp&gt;</code></df>
+			<dt><code>&lt;rp&gt;</code></dt>
 			<dd>Alternative bei fehlender Unterstützung</dd>
 		</dl>
 		<hr class="hr_dotted space_even_half">
@@ -177,7 +178,7 @@
 		<p>Wikipedia erklärt dies ausführlicher unter <a href="https://de.wikipedia.org/wiki/Ruby_Annotation">Ruby Annotation</a>.</p>
 		<p>Es gibt auch mehrere besondere Elemente um Maschinensprache oder Programmkode zu bezeichnen. Dabei wird unterschieden, ob der Inhalt nur für Menschen ausgezeichnet wird oder auch maschinen-lesbar sein soll. Die Elemente <code>&lt;data&gt;</code> und <code>&lt;time&gt;</code> enthalten eine maschinen-lesbare Repräsentation des Inhaltes:</p>
 		<dl>
-			<dt><data>0</data> ≠ <data>NULL</data></dt>
+			<dt><data value="0">0</data> ≠ <data value="">NULL</data></dt>
 			<dd><code>&lt;data&gt;0&lt;/data&gt; ≠ &lt;data&gt;NULL&lt;/data&gt;</code></dd>
 			<dt>Der Wert <data value="NULL">NULL</data> mit Attribut</dt>
 			<dd><code>&lt;data value="NULL"&gt;NULL&lt;/data&gt;</code></dd>
@@ -200,12 +201,10 @@
 		<p class="txt_center">Bei<mark class="mark_cursor">spiel zum mark</mark>ieren 😉.</p>
 		<p>Eine Markierung kann, mittels <code>&lt;mark&gt;</code>, auch durch den Autor geschehen. Diese stellt sich ein wenig anders dar: <mark>Diese Worte sind markiert.</mark></p>
 		<p>Um Text, dessen schreibweise nicht vorhersehbar ist, zu markieren wie z.B. Benutzernamen <bdi>كائن بشري</bdi>, die auch rechtsbündig geschrieben sein können, wird das <code>&lt;bdi&gt;</code> Element eingesetzt.<br>Die Schreibweise kann auch auch vom Author vorgegeben und expliziert geändert werden. Dies wird dem <code>&lt;bdo&gt;</code> Element umgesetzt. Die Richtung wird dann mit dem Attribut <code>dir</code> angegeben.</p>
-		<bdo dir="rtl">
-			<ul>
-				<li>كائن بشري</li>
-				<li>إنسان آلي</li>
-			</ul>
-		</bdo>
+		<ul>
+			<li><bdo dir="rtl">كائن بشري</bdo></li>
+			<li><bdo dir="rtl">إنسان آلي</bdo></li>
+		</ul>
 		<p>Neben den vielen speziellen Elementen gibt es auch ein Element, das keine vordefinierte Bedeutung hat. Es ist das <code>&lt;span&gt;</code> Element.<br>Es dient dazu ganz individuelle Auszeichnungen zu ermöglichen die eher optische Auswirkungen haben und eben keine inhaltlichen. Mit den Attributen <code>id</code> oder <code>class</code> werden dazu eigene Typen des Elements definiert. Diese Möglichkeit der Definition von individuellen Elementen ist ein Grundprinzip der Auszeichnungssprache <abbr title="Hypertext Markup Language" >HTML</abbr>.</p>
 		<p>Mit der Einführung von Absätzen wurde auch schon das <code>&lt;br&gt;</code> Element erwähnt und seitdem häufig benutzt. Es erzeugt einen Zeilenumbruch. Es wird dadurch kein neuer Absatz erstellt. Es dient auch nicht dazu optischen Abstand zu erzeugen, sondern innerhalb eines Absatzes den Text umzubrechen.</p>
 		<p>Eine besondere Form des Zeilenumbruchs kann mit <code>&lt;wbr&gt;</code> eingesetzt werden. Es stellt die Möglichkeit für einen Zeilenumbruch dar. Da das Format eines HTML-Dokumentes häufig nicht vorhersehbar ist, kann solch ein Element einen Umbruch erzeugen falls ein Wort zu lang für eine Textzeile sein sollte.</p>
@@ -240,42 +239,36 @@
 		<h1>Tabellen</h1>
 		<p>Tabellen bieten besonders geordnete Struktur. Häufig werden in ihnen Text und Daten kombiniert dargestellt. Dies erfordert individuelle Formatierungen. Einige grundlegende Eigenschaften werden im folgenden aufgezeigt. Tabellen sind in ihrer Größe entweder vordefiniert (fixiert) oder richten sich nach ihrem Inhalt. Das bedeutet, die Spaltenbreite entspricht der breitesten ihrer Zellen.</p>
 		<table class="width_full js_pop">
-			<tbody>
+			<tr>
+				<td>Eine</td>
+				<td>einfache</td>
+			</tr>
+			<tr>
+				<td colspan="2">Tabelle</td>
+			</tr>
+		</table>
+		<div class="exp_pop"><code class="code_solo">table.width_full>tr>td*2^tr>td[colspan=2]</code></div>
+		<div class="overflow">
+			<table class="float_space_left js_pop">
 				<tr>
 					<td>Eine</td>
-					<td>einfache</td>
+					<td>freie (nicht fixierte)</td>
 				</tr>
 				<tr>
 					<td colspan="2">Tabelle</td>
 				</tr>
-			</tbody>
-		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full>tbody>tr>td*2^tr>td[colspan=2]</code></div>
-		<div class="overflow">
-			<table class="float_space_left js_pop">
-				<tbody>
-					<tr>
-						<td>Eine</td>
-						<td>freie (nicht fixierte)</td>
-					</tr>
-					<tr>
-						<td colspan="2">Tabelle</td>
-					</tr>
-				</tbody>
 			</table>
-			<div class="exp_pop"><code class="code_solo">table>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+			<div class="exp_pop"><code class="code_solo">table>tr>td*2^tr>td[colspan=2]</code></div>
 			<table class="table_blank float_space_left js_pop">
-				<tbody>
-					<tr>
-						<td>Mit</td>
-						<td>ohne</td>
-					</tr>
-					<tr>
-						<td colspan="2">Linien</td>
-					</tr>
-				</tbody>
+				<tr>
+					<td>Mit</td>
+					<td>ohne</td>
+				</tr>
+				<tr>
+					<td colspan="2">Linien</td>
+				</tr>
 			</table>
-			<div class="exp_pop"><code class="code_solo">table.table_blank>tbody>tr>td*2^tr>td[colspan=2]</code></div>
+			<div class="exp_pop"><code class="code_solo">table.table_blank>tr>td*2^tr>td[colspan=2]</code></div>
 		</div>
 		<p>Die nächste Tabelle verwendet alle zur Auszeichnung verfügbaren Elemente und hat eine starre Zellverteilung:</p>
 		<table class="width_full table_fix js_pop">
@@ -287,13 +280,6 @@
 					<th>B</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<td>Fußzeile</td>
-					<td>A</td>
-					<td>B</td>
-				</tr>
-			</tfoot>
 			<tbody>
 				<tr>
 					<td>Tabelle</td>
@@ -316,8 +302,15 @@
 					<td>Fußzeile</td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td>Fußzeile</td>
+					<td>A</td>
+					<td>B</td>
+				</tr>
+			</tfoot>
 		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full.table_fix>caption+thead>tr>th*3^^tfoot>tr>td*3^^tbody>(tr>td*3)*3</code></div>
+		<div class="exp_pop"><code class="code_solo">table.width_full.table_fix>caption+thead>tr>th*3^^tbody>(tr>td*3)*3^^tfoot>tr>td*3</code></div>
 		<hr class="hr_hidden">
 		<p>Viele weitere Formate sind möglich. Hier nur einige typische Beispiele:</p>
 		<table class="width_full table_fix js_pop">
@@ -350,30 +343,28 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="exp_pop"><code class="code_solo">table.width_full.table_stripe.table_free>tbody>tr>td*3</code></div>
+		<div class="exp_pop"><code class="code_solo">table.width_full.table_stripe.table_free>tr>td*3</code></div>
 		<table class="width_full table_stripe table_fix table_free">
-			<tbody>
-				<tr>
-					<td>Tabelle</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>ohne</td>
-					<td>Rahmen</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>jedoch</td>
-					<td>mit</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td>Streifen</td>
-				</tr>
-			</tbody>
+			<tr>
+				<td>Tabelle</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>ohne</td>
+				<td>Rahmen</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>jedoch</td>
+				<td>mit</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>Streifen</td>
+			</tr>
 		</table>
 		<table>
 			<caption>Die Verteilung der Zellen ist hier von ihrem Inhalt abhängig.</caption>
@@ -384,13 +375,6 @@
 					<th>&gt;9000</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<td>Summe</td>
-					<td></td>
-					<td>9001</td>
-				</tr>
-			</tfoot>
 			<tbody>
 				<tr>
 					<td>Alpha</td>
@@ -408,6 +392,13 @@
 					<td>1</td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td>Summe</td>
+					<td></td>
+					<td>9001</td>
+				</tr>
+			</tfoot>
 		</table>
 	</article>
 	<article>
@@ -428,39 +419,35 @@
 		<div class="overflow">
 			<div class="float_left">
 				<table class="table_fix table_blank">
-					<tbody>
-						<tr>
-							<td><label for="demo__raw_a">Alpha:</label></td>
-							<td><input type="text" id="demo__raw_a"></td>
-						</tr>
-						<tr>
-							<td><label for="demo__raw_b">Beta:</label></td>
-							<td><input type="text" id="demo__raw_b"></td>
-						</tr>
-					</tbody>
+					<tr>
+						<td><label for="demo__raw_a">Alpha:</label></td>
+						<td><input type="text" id="demo__raw_a"></td>
+					</tr>
+					<tr>
+						<td><label for="demo__raw_b">Beta:</label></td>
+						<td><input type="text" id="demo__raw_b"></td>
+					</tr>
 				</table>
 			</div>
 			<table class="float_right">
-				<tbody>
-					<tr>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_d" value="11.966504" size="10"></td>
-						<td class="demo__td_pr"><label for="demo__io_a">x</label></td>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_a" value="10" min="0" max="1000"></td>
-						<td class="demo__td_pr"><label for="demo__io_a">Breite</label></td>
-					</tr>
-					<tr>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_e" value="51.503491" size="10"></td>
-						<td class="demo__td_pr"><label for="demo__io_b">y</label></td>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_b" value="10" min="0" max="1000"></td>
-						<td class="demo__td_pr"><label for="demo__io_b">Tiefe</label></td>
-					</tr>
-					<tr>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_f" value="88" size="10"></td>
-						<td class="demo__td_pr"><label for="demo__io_c">z</label></td>
-						<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_c" value="48" min="0" max="1000"></td>
-						<td class="demo__td_pr"><label for="demo__io_c">Höhe</label></td>
-					</tr>
-				</tbody>
+				<tr>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_d" value="11.966504" size="10"></td>
+					<td class="demo__td_pr"><label for="demo__io_a">x</label></td>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_a" value="10" min="0" max="1000"></td>
+					<td class="demo__td_pr"><label for="demo__io_a">Breite</label></td>
+				</tr>
+				<tr>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_e" value="51.503491" size="10"></td>
+					<td class="demo__td_pr"><label for="demo__io_b">y</label></td>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_b" value="10" min="0" max="1000"></td>
+					<td class="demo__td_pr"><label for="demo__io_b">Tiefe</label></td>
+				</tr>
+				<tr>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="text" id="demo__io_f" value="88" size="10"></td>
+					<td class="demo__td_pr"><label for="demo__io_c">z</label></td>
+					<td class="txt_right demo__td_no_br demo__td_pl"><input class="io_input" type="number" id="demo__io_c" value="48" min="0" max="1000"></td>
+					<td class="demo__td_pr"><label for="demo__io_c">Höhe</label></td>
+				</tr>
 			</table>
 		</div>
 		<p>Zusätzlich zur Beschriftung einzelner Elemente gibt es auch die Möglichkeit Gruppierungen zu schaffen. Diese werden mit <code>&lt;fieldset&gt;</code> realisiert.</p>
@@ -522,20 +509,20 @@
 			<p>Innerhalb einer Gruppe können nicht nur Ein- und Ausgabefelder platziert werden. Andere Elemente ergänzen Information oder lockern das Erscheinungsbild auf.</p>
 			<p>Hier nun eine Liste weiterer Arten von Eingabefeldern:</p>
 			<div class="grid grid_column_2">
-				<label for="" class="">Farbauswahl<br><code>&lt;input[type="color"]&gt;</code></label><div><input class="" type="color"></div>
-				<label for="" class="">Bereichsauswahl<br><code>&lt;input[type="range"]&gt;</code></label><div><input class="" type="range"></div>
-				<label for="" class="">Datum<br><code>&lt;input[type="date"]&gt;</code></label><div><input class="io_input" type="date"></div>
-				<label for="" class="">Uhrzeit<br><code>&lt;input[type="time"]&gt;</code></label><div><input class="io_input" type="time"></div>
-				<label for="" class="">Datum und Zeit<br><code>&lt;input[type="datetime-local"]&gt;</code></label><div><input class="io_input" type="datetime-local"></div>
-				<label for="" class="">Kalendermonat<br><code>&lt;input[type="month"]&gt;</code></label><div><input class="io_input" type="month"></div>
-				<label for="" class="">Kalenderwoche<br><code>&lt;input[type="week"]&gt;</code></label><div><input class="io_input" type="week"></div>
-				<label for="" class="">@dresse<br><code>&lt;input[type="email"]&gt;</code></label><div><input class="io_input" type="email" placeholder="@"></div>
-				<label for="" class="">Passwort<br><code>&lt;input[type="password"]&gt;</code></label><div><input class="io_input" type="password" value="admin"></div>
-				<label for="" class="">Telefonnummer<br><code>&lt;input[type="tel"]&gt;</code></label><div><input class="io_input" type="tel" value="0190123456"></div>
-				<label for="" class="">URL<br><code>&lt;input[type="url"]&gt;</code></label><div><input class="io_input" type="url" placeholder="url://"></div>
-				<label for="" class="">Suche<br><code>&lt;input[type="search"]&gt;</code></label><div><input class="io_input" type="search"></div>
-				<label for="" class="">Datei<br><code>&lt;input[type="file"]&gt;</code></label><div><input class="" type="file"></div>
-				<label for="" class="">Bild</label><input class="" type="image" value="Alternativer Text"/>
+				<label class="">Farbauswahl<br><code>&lt;input[type="color"]&gt;</code></label><div><input class="" type="color"></div>
+				<label class="">Bereichsauswahl<br><code>&lt;input[type="range"]&gt;</code></label><div><input class="" type="range"></div>
+				<label class="">Datum<br><code>&lt;input[type="date"]&gt;</code></label><div><input class="io_input" type="date"></div>
+				<label class="">Uhrzeit<br><code>&lt;input[type="time"]&gt;</code></label><div><input class="io_input" type="time"></div>
+				<label class="">Datum und Zeit<br><code>&lt;input[type="datetime-local"]&gt;</code></label><div><input class="io_input" type="datetime-local"></div>
+				<label class="">Kalendermonat<br><code>&lt;input[type="month"]&gt;</code></label><div><input class="io_input" type="month"></div>
+				<label class="">Kalenderwoche<br><code>&lt;input[type="week"]&gt;</code></label><div><input class="io_input" type="week"></div>
+				<label class="">@dresse<br><code>&lt;input[type="email"]&gt;</code></label><div><input class="io_input" type="email" placeholder="@"></div>
+				<label class="">Passwort<br><code>&lt;input[type="password"]&gt;</code></label><div><input class="io_input" type="password" value="admin"></div>
+				<label class="">Telefonnummer<br><code>&lt;input[type="tel"]&gt;</code></label><div><input class="io_input" type="tel" value="0190123456"></div>
+				<label class="">URL<br><code>&lt;input[type="url"]&gt;</code></label><div><input class="io_input" type="url" placeholder="url://"></div>
+				<label class="">Suche<br><code>&lt;input[type="search"]&gt;</code></label><div><input class="io_input" type="search"></div>
+				<label class="">Datei<br><code>&lt;input[type="file"]&gt;</code></label><div><input class="" type="file"></div>
+				<label class="">Bild</label><input class="" type="image" alt="Alternativer Text"/>
 			</div>
 		</fieldset>
 

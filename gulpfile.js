@@ -35,10 +35,11 @@ const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
 const babel = require('gulp-babel');
+const htmlValidator = require('gulp-w3c-html-validator');
 // const buffer = require('vinyl-buffer');
 // const imagemin = require('gulp-imagemin');
 
-// Paths to data
+// Data variables
 const input = {
 	root: 'source',
 	screens: 'source/screens/**/*.+(njk|html)',
@@ -94,8 +95,6 @@ if (fs.existsSync('source/data/data.json')) {
 
 // Clean build folder
 function clean () {
-	// You can use multiple globbing patterns as you would with `gulp.src`,
-	// for example if you are using del 2.0 or above, return its promise
 	return del(output.root +'/**');
 }
 
@@ -132,6 +131,12 @@ function nunjucks () {
 		}
 	}))
 	.pipe(dest(output.root));
+}
+
+function validate () {
+	return src('build/**/*.html')
+	.pipe(htmlValidator())
+	.pipe(htmlValidator.reporter());
 }
 
 // Serve files to the browser
@@ -285,6 +290,7 @@ const build = series(clean, assets, parallel(nunjucks, style, code));
 const dev = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
 
 exports.lint = parallel(series(style, styleLint), series(code, codeLint));
+exports.validate = series(nunjucks, validate);
 exports.assets = assets;
 exports.build = build;
 exports.dev = dev;
