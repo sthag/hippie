@@ -1,4 +1,5 @@
 <!-- intro.screen -->
+{% set pageBase = "../" %}
 {% set pageId = "intro" %}
 
 {% extends "demo/_extended.njk" %}
@@ -136,7 +137,7 @@
 		</nav>
 		<nav class="nav_center_old">
 			<ul>
-				<li><a href="../demo.html" class="a_button">Startseite</a></li>
+				<li><a href="{{ pageBase }}demo.html" class="a_button">Startseite</a></li>
 				<li><a href="" class="a_button a_internal">Hilfe</a></li>
 				<li><a href="" class="a_button">⌨</a></li>
 				<li><a href="" class="a_button">⋯</a></li>
@@ -231,8 +232,8 @@
 		<p>Dies ist ein Bild. Es wird mit dem Element <code>&lt;img&gt;</code> eingebunden. Solch ein Bild hat üblicherweise die Attribute <code>width</code> und <code>height</code>. Mit ihnen werden die Abmessungen (Breite und Höhe) festgelegt. Außerdem sollte immer das Attribut <code>alt</code> für eine alternative Beschreibung in Textform verwendet werden.</p>
 		<p>Das Bild selbst liegt normalerweise als Datei vor. Die Quelle wird mit dem Attribut <code>src</code> angegeben. Es können einige Alternativen zur Angabe einer konkreten Datei eingesetzt werden. Zum Beispiel können mehrere Dateien in Abhängigkeit zur Darstellung oder dem unterstützen Format angegeben werden. Dafür können dann die Elemente <code>&lt;source&gt;</code> und <code>&lt;picture&gt;</code> in Kombination verwendet werden.</p>
 		<picture>
-			<source srcset="../art/demo/flag_websafe_128x80.webp" type="image/webp"/>
-			<img src="../art/demo/flag_websafe_128x80.gif" alt="" width="128" height="80"/>
+			<source srcset="{{ pageBase }}art/demo/flag_websafe_128x80.webp" type="image/webp"/>
+			<img src="{{ pageBase }}art/demo/flag_websafe_128x80.gif" alt="" width="128" height="80"/>
 		</picture>
 	</article>
 	<article>
@@ -570,7 +571,7 @@
 
 {% block script %}
 {{ super() }}
-<script src="../js/{{hippie.jsFile}}.min.js" type="text/javascript"></script>
+<script src="{{ pageBase }}js/{{hippie.jsFile}}.min.js" type="text/javascript"></script>
 <script>
 // Page specific
 // ------------------------------------------------------------------------------

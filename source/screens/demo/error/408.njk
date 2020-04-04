@@ -1,6 +1,6 @@
 <!-- error-404.page -->
 {% set pageBase = "../../" %}
-{% set pageId = "404" %}
+{% set pageId = "408" %}
 {% set bodyClass = "body_status" %}
 
 {% extends "demo/_maintenance.njk" %}
@@ -14,9 +14,9 @@
 <main class="main_site">
   <h1>{{ pageId }}</h1>
   <h3>Client-Fehler</h3>
-  <p>Hier ist nichts. <dfn>Not Found</dfn></p>
+  <p>Zeitüberschreitung der Anforderung. <dfn>Request Timeout</dfn></p>
   <blockquote cite="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">
-    <p>Die angeforderte Ressource wurde nicht gefunden. Dieser Statuscode kann ebenfalls verwendet werden, um eine Anfrage ohne näheren Grund abzuweisen. Links, welche auf solche Fehlerseiten verweisen, werden auch als Tote Links bezeichnet.</p>
+    <p>Innerhalb der vom Server erlaubten Zeitspanne wurde keine vollständige Anfrage des Clients empfangen.</p>
     <p class="quote_source"><a href="https://de.wikipedia.org/wiki/HTTP-Statuscode#4xx_.E2.80.93_Client-Fehler">Wikipedia</a></p>
   </blockquote>
 </main>

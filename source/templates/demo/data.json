@@ -1,19 +1,19 @@
 {
 	"demoadditionallinks": [
 		{
-			"href": "/demo.html",
+			"href": "demo.html",
 			"text": "Index"
 		},
 		{
-			"href": "/demo/intro.html",
+			"href": "demo/intro.html",
 			"text": "Intro"
 		},
 		{
-			"href": "/demo/elements.html",
+			"href": "demo/elements.html",
 			"text": "Elements"
 		},
 		{
-			"href": "/demo/examples.html",
+			"href": "demo/examples.html",
 			"text": "Examples"
 		}
 	],
@@ -21,6 +21,10 @@
 		{
 			"href": "demo/blank.html",
 			"text": "Blank"
+		},
+		{
+			"href": "demo/card.html",
+			"text": "Card"
 		},
 		{
 			"href": "demo/maintenance.html",
@@ -31,16 +35,24 @@
 			"text": "304"
 		},
 		{
-			"href": "demo/error/404.html",
-			"text": "404"
+			"href": "demo/error/400.html",
+			"text": "400"
+		},
+		{
+			"href": "demo/error/401.html",
+			"text": "401"
 		},
 		{
 			"href": "demo/error/403.html",
 			"text": "403"
 		},
 		{
-			"href": "demo/error/400.html",
-			"text": "400"
+			"href": "demo/error/404.html",
+			"text": "404"
+		},
+		{
+			"href": "demo/error/408.html",
+			"text": "408"
 		},
 		{
 			"href": "demo/error/500.html",

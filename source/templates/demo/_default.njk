@@ -5,9 +5,10 @@
 	<meta charset="utf-8">
 
 	{% block head %}
-	<title>{% block title %}{% endblock %} - HIPPIE</title>
+	<title>{% block title %}{% endblock %}{{ hippie.titlePrefix }}</title>
 
 	{% include "demo/partials/_meta.njk" %}
+	{# <base href="/"> #}
 	{% block meta %}{% endblock %}
 
 	{% include "hippie/partials/_head_script.njk" %}
@@ -22,7 +23,9 @@
 
 	{% include "demo/partials/_links.njk" %}
 	{% block links %}
-	<link rel="stylesheet" type="text/css" media="all" href="/css/demo.css"/>
+	{# <link rel="stylesheet" type="text/css" media="all" href="css/demo.css"/> #}
+	{# <link rel="stylesheet" type="text/css" media="all" href="{{ hippie.pageBase | subdir(2) }}css/demo.css"/> #}
+	<link rel="stylesheet" type="text/css" media="all" href="{{ pageBase }}css/demo.css"/>
 	{% endblock %}
 	{% endblock %}
 </head>
