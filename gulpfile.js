@@ -98,7 +98,7 @@ if (fs.existsSync('source/data/data.json')) {
 
 // Clean build folder
 function clean() {
-  return del(output.root + '/**');
+  return del([output.root + '/**', output.reports + '/**']);
 }
 
 // Automagically reload browsers
@@ -289,8 +289,10 @@ function vendor() {
 
 function overview() {
   watch([input.templates, input.screens, input.demo.data], series(nunjucks, reload));
-  watch(input.style, series(styleLint, style, reload));
-  watch(input.code, series(codeLint, code, reload));
+  // watch(input.style, series(styleLint, style, reload));
+  watch(input.style, series(style, reload));
+  // watch(input.code, series(codeLint, code, reload));
+  watch(input.code, series(code, reload));
   watch(input.fonts, series(fonts, reload));
   watch(input.art.sprites, series(parallel(sprites, style), reload));
   watch([input.art.favicons, input.art.images], series(art, reload));
@@ -299,7 +301,8 @@ function overview() {
 
 const assets = parallel(fonts, art, sprites, json, vendor);
 const build = series(clean, assets, parallel(nunjucks, style, code));
-const dev = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
+// const dev = series(clean, assets, parallel(nunjucks, series(styleLint, style), series(codeLint, code)));
+const dev = series(clean, assets, parallel(nunjucks, style, code));
 
 exports.lint = parallel(series(style, styleLint), series(code, codeLint));
 exports.validate = series(nunjucks, validate);
