@@ -1,13 +1,16 @@
 // Setup project
-const hippie = {
+let hippie = {
   brand: 'hippie',
+  titlePrefix: ' - HIPPIE',
+  pageBase: './',
+  index: 'index.html',
   jsFile: 'main',
   jsonFile: 'db',
-  index: 'demo.html',
-  data: 'demo/data.json',
-  titlePrefix: ' - HIPPIE',
-  pageBase: './'
+  data: 'data.json',
+  source: 'source/',
+  demoContent: true
 }
+
 // Gulp requirements
 const { watch, series, parallel } = require('gulp');
 const { src, dest } = require('gulp');
@@ -28,12 +31,12 @@ const sassLint = require('gulp-sass-lint');
 const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 const pump = require('pump');
-const cache = require('gulp-cached');
-const remember = require('gulp-remember');
+// const cache = require('gulp-cached');
+// const remember = require('gulp-remember');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const jshint = require('gulp-jshint');
-const gulpif = require('gulp-if');
+// const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
@@ -43,6 +46,34 @@ const htmlValidator = require('gulp-w3c-html-validator');
 // const imagemin = require('gulp-imagemin');
 
 // Data variables
+const demo = {
+  root: 'demo',
+  screens: 'source/screens/**/*.+(njk|html)',
+  templates: 'source/templates',
+  data: 'source/data/**/*.json',
+  style: 'source/style/**/*.s+(a|c)ss',
+  code: [
+    'source/code/hippie/variables.js',
+    'source/code/hippie/functions.js',
+    'source/code/hippie/global.js',
+    'source/code/variables.js',
+    'source/code/functions.js',
+    'source/code/global.js',
+    'source/code/**/*.js',
+    '!source/vendor/**/*'
+  ],
+  fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
+  art: {
+    favicons: 'source/art/favicons/**/*.+(ico|png)',
+    sprites: 'source/art/sprites/**/*.png',
+    images: 'source/art/images/**/*.+(png|gif|jpg|svg|webp)'
+  },
+  vendor: 'vendor/**/*',
+  demo: {
+    data: 'source/templates/demo/data.json'
+  }
+};
+
 const input = {
   root: 'source',
   screens: 'source/screens/**/*.+(njk|html)',
@@ -84,11 +115,11 @@ const output = {
 };
 
 //Check for index file and deactivate demo content
-if (fs.existsSync('source/screens/index.njk')) {
-  hippie.index = 'index.html';
+if (!fs.existsSync('source/screens/index.njk')) {
+  hippie.index = 'demo.html';
 }
-if (fs.existsSync('source/templates/data.json')) {
-  hippie.data = 'data.json';
+if (!fs.existsSync('source/templates/data.json')) {
+  hippie.data = 'demo/data.json';
 }
 if (fs.existsSync('source/data/data.json')) {
   input.data = ['source/data/**/*.json', '!source/data/demo.json'];

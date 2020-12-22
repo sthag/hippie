@@ -69,7 +69,7 @@
 		<hr class="hr_dotted space_even_fourth js_pop"/><div class="exp_pop"><code class="code_solo">hr.hr_dotted.space_even_fourth</code></div>
 		<p class="column_2 js_pop">Zur horizontalen Unterteilung kommt natürlich auch eine vertikale Trennung hinzu. Text kann so zum Beispiel in mehrere Spalten unterteilt werden. Dies ist hilfreich, wenn ein Text durch eine breite Fläche sehr lange Zeilen bekommen würde. Es ist dann schwer den neuen Zeilanfang zu finden. Die vertikale Trennung dient in erster Linie dazu, diesem Umstand zu begegnen. Auch hier kann die Unterteilung viele Formen annehmen.</p><div class="exp_pop"><code class="code_solo">p.column_2</code></div>
 		<p class="column_3 column_line js_pop">Drei Spalten gilt es jetzt also zu Füllen. Dann erst wird die Trennung der Spalten durch eine Linie sichtbar.</p><div class="exp_pop"><code class="code_solo">p.column_3.column_line</code></div>
-		<p class="column_3 column_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter. Ach das ziegen diese beiden Absätze ganz gut.</p>
+		<p class="column_3 column_line">Ist der Text nicht lang genug bleibt eventuell eine Spalte leer. Diesmal wird dies aber nicht passieren, denn das Anschauungsbeispiel ist ja nun durch den vorherigen Absatz schon gegeben.<br>Oft ist es sinnvoll, Absätze mit mehreren Spalten deutlich von nachfolgenden Absätzen zu trennen. Da der Textfluss spaltenweise verläuft, liest man eventuell an der falschen Stelle weiter.<br>Auch das zeigen diese beiden Absätze ganz gut.</p>
 		<p>Es gibt die Möglichkeit vorformatierten Text darzustellen <code>&lt;pre&gt;</code>.</p>
 		<pre>Dadurch<br>	bleiben<br>		Einrückungen<br>			durch<br>				Tabulatoren<br>					erhalten.</pre>
 		<p>Wird Bezug auf fremde Inhalte genommen, kommt ein Zitat <code>&lt;blockquote&gt;</code> zur Anwendung. Es besteht aus der Aussage und der Quelle.</p>
@@ -146,14 +146,14 @@
 		<h2>Formatierungen</h2>
 		<p>Texte, Wörter oder Zeichen können vielfältig formatiert werden.</p>
 		<p>Sie können <b>fett</b> <code>&lt;b&gt;</code> oder <i>kursiv</i> <code>&lt;i&gt;</code> geschrieben sein. <b><i>Auch beides ist möglich!</i>?</b>! Sollen sie nicht nur anders <strong>aussehen</strong>, sondern auch <em>eine besondere inhaltliche Bedeutung</em> bekommen, werden sie mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code> ausgezeichnet.</p>
-		<p>Das <code>&lt;u&gt;</code> Element stellt eine Spanne von Text mit einer unartikulierten, wenn auch explizit dargestellten, nicht-textuellen Anmerkung dar, wie z.B. die Beschriftung des Textes als Eigenname wie <u>Interaktionsweise</u>, oder die Beschriftung des Textes als falsch geschrieben.</p>
+		<p>Das <code>&lt;u&gt;</code> Element stellt eine Spanne von Text mit einer unartikulierten, wenn auch explizit dargestellten, nicht-textuellen Anmerkung dar, wie z.B. die Beschriftung des Textes als Eigenname wie <u>Interaktionsweise</u>, oder die Beschriftung des Textes als <u>flasch</u> (falsch) geschrieben.</p>
 		<p>Ähnlich ist es mit dem Element <code>&lt;small&gt;</code>. <small>Es steht für Randnotizen wird aber häufig auch kleiner dargestellt.</small></p>
 		<p>Ist ein Text nicht mehr korrekt oder relevant kann er mit <code>&lt;s&gt;</code> markiert werden:<br><s>Die Erde ist eine Scheibe.</s></p>
 		<p>Ein besonderer inhaltlicher Bezug ist der Titel eines Werkes. Sowas kann mit <code>&lt;cite&gt;</code> ausgezeichnet werden. <cite>Pulp Fiction</cite>, ist ein super Film - zum Beispiel.</p>
 		<p>Um ein Zitat direkt im Text zu verwenden benutzt man das <code>&lt;q&gt;</code> Element. Es platziert Anführungszeichen um die Aussage:</p>
 		<p>Sie sagte: <q>Du wolltest staubsaugen!</q><br>Er sagte: <q>Mach' ich morgen.</q></p>
 		<p>Mit dem <code>&lt;dfn&gt;</code> Element werden Begriffe definiert. Es wird häufig mit dem Element für Abkürzungen <code>&lt;abbr&gt;</code> gemeinsam verwendet. Die eigentliche Definition kann dabei auch im Attribut <code>title</code> stehen.</p>
-		<p><dfn><abbr title="Hippie interweaves preeminent personal interface elements">Hippie</abbr></dfn> is an recursive acronym for <dfn>Hippie interweaves preeminent personal interface elements</dfn>.</p>
+		<p><dfn><abbr title="Hippie interweaves preeminent personal interface elements">HIPPIE</abbr></dfn> is an recursive acronym for <dfn>Hippie interweaves preeminent personal interface elements</dfn>.</p>
 		<p>Die besondere Auszeichnungen <code>&lt;ruby&gt;</code> <q cite="https://de.wikipedia.org/wiki/Ruby_Annotation">bezeichnet ein Anmerkungssystem, bei dem der Text zusammen mit seiner Anmerkung in einer Zeile erscheint.</q> Das System verwendet die folgenden weiteren Elemente mit spezifischer Bedeutung:</p>
 		<dl>
 			<dt><code>&lt;rb&gt;</code></dt>
@@ -177,7 +177,7 @@
 		</div>
 		<hr class="hr_dotted space_even_half">
 		<p>Wikipedia erklärt dies ausführlicher unter <a href="https://de.wikipedia.org/wiki/Ruby_Annotation">Ruby Annotation</a>.</p>
-		<p>Es gibt auch mehrere besondere Elemente um Maschinensprache oder Programmkode zu bezeichnen. Dabei wird unterschieden, ob der Inhalt nur für Menschen ausgezeichnet wird oder auch maschinen-lesbar sein soll. Die Elemente <code>&lt;data&gt;</code> und <code>&lt;time&gt;</code> enthalten eine maschinen-lesbare Repräsentation des Inhaltes:</p>
+		<p>Es gibt auch mehrere besondere Elemente um Maschinensprache oder Programmiersprache zu bezeichnen. Dabei wird unterschieden, ob der Inhalt nur für Menschen ausgezeichnet wird oder auch maschinen-lesbar sein soll. Die Elemente <code>&lt;data&gt;</code> und <code>&lt;time&gt;</code> enthalten eine maschinen-lesbare Repräsentation des Inhaltes:</p>
 		<dl>
 			<dt><data value="0">0</data> ≠ <data value="">NULL</data></dt>
 			<dd><code>&lt;data&gt;0&lt;/data&gt; ≠ &lt;data&gt;NULL&lt;/data&gt;</code></dd>
@@ -193,7 +193,7 @@
 		<pre class="pre_code"><code>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;Hyper Text Markup Language&lt;/title&gt;<br>  &lt;/head&gt;<br>  &lt;body id="root"&gt;<br>    &lt;!-- Content goes here --&gt;<br>    &lt;p class="example"&gt;Just like this.&lt;/p&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</code></pre>
 		<p>Dabei bleiben vorhandene Textformatierungen wie Zeilenumbrüche und Einrückung erhalten.</p>
 		<p><code>var def = "Definition einer Variablen";</code></p>
-		<p>In diesem Beispiel wird die Variable <var>def</var> definiert. Solch ein spezieller Typ Programmkode kann mit dem dafür vorgesehenen Element <code>&lt;var&gt;</code> ausgezeichnet werden.</p>
+		<p>In diesem Beispiel wird die Variable <var>def</var> definiert. Solch ein spezieller Typ Text kann mit dem dafür vorgesehenen Element <code>&lt;var&gt;</code> ausgezeichnet werden.</p>
 		<p>Soll beispielhaft auf Ausgaben von Computern verwiesen werden, wird das <code>&lt;samp&gt;</code> Element verwendet. Der Computer hat gesagt: <samp>Ich kann das angegebene Objekt nicht finden</samp>.</p>
 		<p>Benutzereingaben haben ebenfalls ein eigenes Element <code>&lt;kbd&gt;</code>. Damit werden Eingaben durch den Nutzer, wie zum Beispiel <q>Drücken Sie gleichzeitig <kbd>Strg</kbd> und <kbd>A</kbd></q>, gekennzeichnet.</p>
 		<p>Hoch- und Tiefgestellte Zeichen werden durch die Elemente <code>&lt;sup&gt;</code> und <code>&lt;sub&gt;</code> repräsentiert. Sie dienen nicht dazu rein optische Auszeichnungen zu erreichen sondern werden für ihren jeweiligen Zweck eingesetzt. In der Mathematik oder Chemie sind sie üblich:</p>
