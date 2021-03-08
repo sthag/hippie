@@ -287,6 +287,17 @@ function art() {
 
   return merge(favicons, images)
 }
+// function art() {
+//   // Move favicons and images to the root folder
+//   return src(input.art.favicons)
+//     .pipe(plumber())
+//     .pipe(changed(output.root))
+//     .pipe(dest(output.root))
+//     .pipe(src(input.art.images))
+//     .pipe(changed(output.art))
+//     .pipe(dest(output.art));
+// }
+
 
 function sprites() {
   // Assemble sprites
