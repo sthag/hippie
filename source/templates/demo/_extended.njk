@@ -1,64 +1,67 @@
 <!-- extended.template -->
 <!DOCTYPE html>
 <html lang="de" class="{{ pageClass }}" id="{{ pageId }}">
-<head>
-	<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-	{% block head %}
-	<title>{% block title %}{% endblock %} - HIPPIE</title>
+    {% block head %}
+      <title>
+        {% block title %}{% endblock %}
+        - HIPPIE</title>
 
-	{% include "demo/partials/_meta.njk" %}
-	{% block meta %}{% endblock %}
+      {% include "demo/partials/_meta.njk" %}
+      {% block meta %}{% endblock %}
 
-	{% include "hippie/partials/_head_script.njk" %}
-	<script>
-	debugOn = true;
-	logPerf('Debugging performance', debugOn);
-document.addEventListener('DOMContentLoaded', function () {
-		logPerf('Document \'DOMContentLoaded\' event fired.');
-	});
-	logPerf('On HEAD, starting...');
-	</script>
+      {% include "hippie/partials/_head_script.njk" %}
+      <script>
+        debugOn = true;
+        document.addEventListener('DOMContentLoaded', function () {
+          logPerf('EVENT       :: Document \'DOMContentLoaded\' event fired.');
+        });
+        logPerf('HEAD start  :: Debugging performance...', debugOn);
+      </script>
 
-	{% include "demo/partials/_links.njk" %}
-	{% block links %}
-	<!--[if lte IE 9]>
-	<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<![endif]-->
-	<!--[if lte IE 9]>
-	<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-	<![endif]-->
-	<!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
-	<!--Only use one of the above!-->
+      {% include "demo/partials/_links.njk" %}
+      {% block links %}
+        <!--[if lte IE 9]> <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> <![endif]-->
+        <!--[if lte IE 9]> <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script> <![endif]-->
+        <!--Local alternative: <script src="./code/html5shiv.min.js"></script>-->
+        <!--Only use one of the above!-->
 
-	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'> -->
-	<link rel="stylesheet" type="text/css" media="all" href="{{ pageBase }}css/demo.css"/>
-	<!-- <link rel="stylesheet" type="text/css" media="print" href="{{ pageBase }}css/print.css"/> -->
-	{% endblock %}
-	{% endblock %}
-</head>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700' rel='stylesheet' type='text/css'> -->
+        <link rel="stylesheet" type="text/css" media="all" href="{{ pageBase }}css/demo.css"/>
+        <!-- <link rel="stylesheet" type="text/css" media="print" href="{{ pageBase }}css/print.css"/> -->
+      {% endblock %}
+      <script>
+        logPerf('HEAD end    :: Links loaded.');
+      </script>
+    {% endblock %}
+  </head>
 
-<body class="{{ bodyClass }}">
-	{% include "hippie/partials/_body_hover.njk" %}
-	<div id="root">
-		{% include "hippie/partials/_header.njk" %}
+  <body class="{{ bodyClass }}">
+    <script>
+      logPerf('BODY start');
+    </script>
+    {% include "hippie/partials/_body_hover.njk" %}
+    <div id="root">
+      {% include "hippie/partials/_header.njk" %}
 
-		<main class="main_site">
-			{% block main %}{% endblock %}
-		</main>
+      <main class="main_site">
+        {% block main %}{% endblock %}
+      </main>
 
-		{% include "hippie/partials/_footer.njk" %}
-	</div>
+      {% include "hippie/partials/_footer.njk" %}
+    </div>
 
-	{% block script %}
-	<script>
-	logPerf('Inline JS at bottom of BODY. Loading assets...');
-	</script>
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-	{# <script src="bower_components/jquery/dist/jquery.js"></script> #}
-	{% endblock %}
-</body>
+    {% block script %}
+      <script>
+        logPerf('BODY        :: Loading script assets...');
+      </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      {# <script src="bower_components/jquery/dist/jquery.js"></script> #}
+    {% endblock %}
+    <script>
+      logPerf('BODY end    :: Page script loaded.');
+    </script>
+  </body>
 </html>
