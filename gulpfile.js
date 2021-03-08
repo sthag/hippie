@@ -1,15 +1,5 @@
 // Setup project
-let hippie = {
-  brand: 'hippie',
-  titlePrefix: ' - HIPPIE',
-  pageBase: './',
-  index: 'index.html',
-  jsFile: 'main',
-  jsonFile: 'db',
-  data: 'data.json',
-  source: 'source/',
-  demoContent: true
-}
+let config = require('./gulp/config');
 
 // Gulp requirements
 const { watch, series, parallel } = require('gulp');
@@ -46,90 +36,55 @@ const htmlValidator = require('gulp-w3c-html-validator');
 // const imagemin = require('gulp-imagemin');
 
 // Data variables
-const demo = {
-  root: 'demo',
-  screens: 'source/screens/**/*.+(njk|html)',
-  templates: 'source/templates',
-  data: 'source/data/**/*.json',
-  style: 'source/style/**/*.s+(a|c)ss',
-  code: [
-    'source/code/hippie/variables.js',
-    'source/code/hippie/functions.js',
-    'source/code/hippie/global.js',
-    'source/code/variables.js',
-    'source/code/functions.js',
-    'source/code/global.js',
-    'source/code/**/*.js',
-    '!source/vendor/**/*'
-  ],
-  fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
-  art: {
-    favicons: 'source/art/favicons/**/*.+(ico|png)',
-    sprites: 'source/art/sprites/**/*.png',
-    images: 'source/art/images/**/*.+(png|gif|jpg|svg|webp)'
-  },
-  vendor: 'vendor/**/*',
-  demo: {
-    data: 'source/templates/demo/data.json'
-  }
-};
-
 const input = {
-  root: 'source',
-  screens: 'source/screens/**/*.+(njk|html)',
-  templates: 'source/templates',
-  data: 'source/data/**/*.json',
-  style: 'source/style/**/*.s+(a|c)ss',
+  screens: config.src + 'screens/**/*.+(njk|html)',
+  templates: config.src + 'templates',
+  data: config.src + 'data/**/*.json',
+  style: config.src + 'style/**/*.s+(a|c)ss',
   code: [
-    'source/code/hippie/variables.js',
-    'source/code/hippie/functions.js',
-    'source/code/hippie/global.js',
-    'source/code/variables.js',
-    'source/code/functions.js',
-    'source/code/global.js',
-    'source/code/**/*.js',
-    '!source/vendor/**/*'
+    config.src + 'code/hippie/variables.js',
+    config.src + 'code/hippie/functions.js',
+    config.src + 'code/hippie/global.js',
+    config.src + 'code/variables.js',
+    config.src + 'code/functions.js',
+    config.src + 'code/global.js',
+    config.src + 'code/**/*.js',
+    '!' + config.src + 'vendor/**/*'
   ],
   fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
   art: {
-    favicons: 'source/art/favicons/**/*.+(ico|png)',
-    sprites: 'source/art/sprites/**/*.png',
-    images: 'source/art/images/**/*.+(png|gif|jpg|svg|webp)'
+    favicons: config.src + 'art/favicons/**/*.+(ico|png)',
+    sprites: config.src + 'art/sprites/**/*.png',
+    images: config.src + 'art/images/**/*.+(png|gif|jpg|svg|webp)'
   },
   vendor: 'vendor/**/*',
-  demo: {
-    data: 'source/templates/demo/data.json'
-  }
 };
 
 const output = {
-  root: 'build',
-  screens: 'build/**/*.html',
-  data: 'build/json',
-  style: 'build/css',
-  code: 'build/js',
-  fonts: 'build/fonts',
-  art: 'build/art',
-  reports: 'reports',
-  vendor: 'build/vendor'
+  root: config.dest,
+  screens: config.dest + '**/*.html',
+  data: config.dest + 'json',
+  style: config.dest + 'css',
+  code: config.dest + 'js',
+  fonts: config.dest + 'fonts',
+  art: config.dest + 'art',
+  reports: 'reports/',
+  vendor: config.dest + 'vendor'
 };
 
-//Check for index file and deactivate demo content
-if (!fs.existsSync('source/screens/index.njk')) {
-  hippie.index = 'demo.html';
-}
-if (!fs.existsSync('source/templates/data.json')) {
-  hippie.data = 'demo/data.json';
-}
-if (fs.existsSync('source/data/data.json')) {
-  input.data = ['source/data/**/*.json', '!source/data/demo.json'];
+// Show demo content if configured
+if (config.demo === true) {
+  config.index = 'demo.html';
+  config.templateData = config.src + '/templates/demo/data.json';
+} else {
+  config.frontendData = [config.src + 'data/**/*.json', '!' + config.src + 'data/demo.json'];
 }
 
 // Create tasks
 
-// Clean build folder
+// Clean output folders
 function clean() {
-  return del([output.root + '/**', output.reports + '/**']);
+  return del([output.root + '**', output.reports + '**']);
 }
 
 // Automagically reload browsers
@@ -141,20 +96,20 @@ function reload(done) {
 
 // Concatenate JSON files
 function json() {
-  return src(input.data)
+  return src(config.frontendData)
     .pipe(plumber())
-    .pipe(jsonConcat(hippie.jsonFile + '.json', function (data) {
+    .pipe(jsonConcat(config.hippie.jsonFile + '.json', function (data) {
       return new Buffer.from(JSON.stringify(data));
     }))
     .pipe(dest(output.data));
 }
 
-const manageEnvironment = function(environment) {
-  environment.addFilter('slug', function(str) {
+const manageEnvironment = function (environment) {
+  environment.addFilter('slug', function (str) {
     return str && str.replace(/\s/g, '-', str).toLowerCase();
   });
 
-  environment.addGlobal('titlePrefix', hippie.titlePrefix)
+  environment.addGlobal('titlePrefix', config.hippie.titlePrefix)
 }
 
 // Transpile HTML
@@ -162,9 +117,10 @@ function nunjucks() {
   return src(input.screens)
     .pipe(plumber())
     .pipe(data(function () {
-      let data = JSON.parse(fs.readFileSync(input.templates + '/' + hippie.data));
-      object = { hippie, data };
-      return object;
+      let t = JSON.parse(fs.readFileSync(config.templateData));
+      let h = config.hippie;
+      data = { h, t };
+      return data;
     }))
     .pipe(nunjucksRender({
       path: input.templates,
@@ -177,7 +133,7 @@ function nunjucks() {
 }
 
 function validate() {
-  return src('build/**/*.html')
+  return src(output.screens)
     .pipe(htmlValidator())
     .pipe(htmlValidator.reporter());
 }
@@ -185,7 +141,7 @@ function validate() {
 // Serve files to the browser
 function serve(done) {
   server.init({
-    index: hippie.index,
+    index: config.index,
     open: false,
     server: output.root
   });
@@ -214,7 +170,7 @@ function styleLint() {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
-  let file = fs.createWriteStream(output.reports + '/sass-lint.html');
+  let file = fs.createWriteStream(output.reports + 'sass-lint.html');
   let stream = src(input.style)
     .pipe(plumber())
     .pipe(sassLint({
@@ -242,7 +198,7 @@ function code(cb) {
     plumber(),
     // cache('code'),
     babel({ presets: ['@babel/env'] }),
-    concat(hippie.jsFile + '.js'),
+    concat(config.hippie.jsFile + '.js'),
     dest(output.code),
     uglify(),
     // remember('code'),
@@ -317,7 +273,7 @@ function sprites() {
     .pipe(dest(output.art));
 
   const cssStream = sprites.css
-    .pipe(dest('source/style/hippie-style/mixins/'));
+    .pipe(dest(config.src + 'style/hippie-style/mixins/'));
 
   return merge(imgStream, cssStream);
 }
@@ -330,7 +286,7 @@ function vendor() {
 }
 
 function overview() {
-  watch([input.templates, input.screens, input.demo.data], series(nunjucks, reload));
+  watch([input.templates, input.screens, config.frontendData], series(nunjucks, reload));
   // watch(input.style, series(styleLint, style, reload));
   watch(input.style, series(style, reload));
   // watch(input.code, series(codeLint, code, reload));
@@ -338,7 +294,7 @@ function overview() {
   watch(input.fonts, series(fonts, reload));
   watch(input.art.sprites, series(parallel(sprites, style), reload));
   watch([input.art.favicons, input.art.images], series(art, reload));
-  watch(input.data, series(json, reload));
+  watch(config.frontendData, series(json, reload));
 }
 
 const assets = parallel(fonts, art, sprites, json, vendor);
