@@ -6,75 +6,76 @@
 
 {% block title %}Elements{% endblock %}
 {% block head %}
-{{ super() }}
+  {{ super() }}
 {% endblock %}
 
 {% block main %}
-<div class="temp_layer">
-	<!-- <div class="exp_overlay_btn exp_help_btn">
-	<span class="span_solo">?</span>
-</div> -->
-{% include "hippie/partials/_body_nav.njk" %}
-</div>
-<div id="begin" class="">
-	<section class="sec_main_center">
-		<header class="header_txt">
-			<h1>Medienformat Abfragen</h1>
-		</header>
-		<article>
-			<div class="demo__query_example">Umbruch bei&nbsp;</div>
-			<div class="demo__queries">
-				<p class="query_phoneUp">Telefone und größer</p>
-				<p class="query_phoneOnly">Nur Telefone</p>
-				<p class="query_tabletPortaitOnly">Nur Schreibtafeln hochkant</p>
-				<p class="query_tabletPortraitUp">Schreibtafeln und größer</p>
-				<p class="query_tabletLandscapeOnly">Schreibtafeln im Querformat</p>
-				<p class="query_tabletLandscapeUp">Schreibtafeln quer und größer</p>
-				<p class="query_desktopOnly">Nur Arbeitsplatzrechner</p>
-				<p class="query_desktopUp">Arbeitsplatzrechner und größer</p>
-				<p class="query_bigDesktopUp">Richtige Monitore und größer</p>
-			</div>
-		</article>
-	</section>
+  <div class="temp_layer">
+    <!-- <div class="exp_overlay_btn exp_help_btn"> <span class="span_solo">?</span> </div> -->
+    {% include "hippie/partials/_body_nav.njk" %}
+  </div>
+  <div id="begin" class="">
+    <section class="sec_main_center">
+      <header class="header_txt">
+        <h1>Medienformat Abfragen</h1>
+      </header>
+      <article>
+        <div class="demo__query_example">Umbruch bei&nbsp;</div>
+        <div class="demo__queries">
+          <p class="query_phoneUp">Telefone und größer</p>
+          <p class="query_phoneOnly">Nur Telefone</p>
+          <p class="query_tabletPortaitOnly">Nur Schreibtafeln hochkant</p>
+          <p class="query_tabletPortraitUp">Schreibtafeln und größer</p>
+          <p class="query_tabletLandscapeOnly">Schreibtafeln im Querformat</p>
+          <p class="query_tabletLandscapeUp">Schreibtafeln quer und größer</p>
+          <p class="query_desktopOnly">Nur Arbeitsplatzrechner</p>
+          <p class="query_desktopUp">Arbeitsplatzrechner und größer</p>
+          <p class="query_bigDesktopUp">Richtige Monitore und größer</p>
+        </div>
+      </article>
+    </section>
 
-	<section class="sec_main_center">
-		<header class="header_txt">
-			<h1>Übersicht aller Elemente</h1>
-			<p>Es werden alle grundlegenden Elemente sowie ihre gestalteten Varianten angegeben. Die Elemente sind in Gruppen eingeteilt, die auch das W3Consortium (<a href="https://www.w3.org/TR/2017/REC-html52-20171214/index.html#contents">www.w3.org/TR/2017/REC-html52-20171214/index.html#contents</a>) verwendet.</p>
-			<p>Zu jedem Element werden alle Attribute aufgelistet und die Umsetzung im HTML Dokument als Emmet Syntax dargestellt.</p>
-		</header>
-		<article>
-			<h1>Bereiche</h1>
-			<p>Elemente:</p>
-			<pre>// body<br>// article<br>// section<br>// nav<br>// aside<br>// h1-h6<br>// header<br>// footer</pre>
-			<h2>&lt;body&gt;</h2>
-			<p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
-			<h2>&lt;article&gt;</h2>
-			<p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
-			<h2>&lt;section&gt;</h2>
-			<p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
-			<h4>Varianten</h4>
-			<pre class="pre_code"><code>section.sec_main_center</code></pre>
-			<pre class="pre_code"><code>section.sec_main_status</code></pre>
-			<h2>&lt;h3&gt;</h2>
-			<h2>&lt;h4&gt;</h2>
-		</article>
-	</section>
-</div>
+    <section class="sec_main_center">
+      <header class="header_txt">
+        <h1>Übersicht aller Elemente</h1>
+        <p>Es werden alle grundlegenden Elemente sowie ihre gestalteten Varianten angegeben. Die Elemente sind in Gruppen eingeteilt, die auch das W3Consortium (<a href="https://www.w3.org/TR/2017/REC-html52-20171214/index.html#contents">www.w3.org/TR/2017/REC-html52-20171214/index.html#contents</a>) verwendet.</p>
+        <p>Zu jedem Element werden alle Attribute aufgelistet und die Umsetzung im HTML Dokument als Emmet Syntax dargestellt.</p>
+      </header>
+      <article>
+        <h1>Bereiche</h1>
+        <p>Elemente:</p>
+        <pre>// body<br>// article<br>// section<br>// nav<br>// aside<br>// h1-h6<br>// header<br>// footer</pre>
+        <h2>&lt;body&gt;</h2>
+        <p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
+        <h2>&lt;article&gt;</h2>
+        <p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
+        <h2>&lt;section&gt;</h2>
+        <p>Keine speziellen Attribute. Bekommt überlicherweise allgemeine Klassen zur Steuerung der Abmessungen zugewiesen.</p>
+        <h4>Varianten</h4>
+        <pre class="pre_code"><code>section.sec_main_center</code></pre>
+        <pre class="pre_code"><code>section.sec_main_status</code></pre>
+        <h2>&lt;h3&gt;</h2>
+        <h2>&lt;h4&gt;</h2>
+      </article>
+    </section>
+  </div>
 {% endblock %}
 
 {% block script %}
-{{ super() }}
-<script src="{{ pageBase }}vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
-<script src="{{ pageBase }}js/{{hippie.jsFile}}.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-// Page specific
-// ------------------------------------------------------------------------------
-$( document ).ready(function () {
-	// jq-sticky-anything
-	$('#js_demo_fix').stickThis({
-		pushup: '#js_demo_stop'
-	});
-});
-</script>
+  {{ super() }}
+  <script src="{{ pageBase }}vendor/jq-sticky-anything.min.js"></script>
+  {# <script src="{{ pageBase }}js/{{hippie.jsFile}}.min.js" type="text/javascript"></script> #}
+  <!-- build:js js/main.concat.min.js -->
+  <script src="{{ pageBase }}js/variables.js"></script>
+  <script src="{{ pageBase }}js/functions.js"></script>
+  <script src="{{ pageBase }}js/global.js"></script>
+  <!-- endbuild -->
+  <script>
+    // Page specific
+    // ------------------------------------------------------------------------------
+    $(document).ready(function () {
+      // jq-sticky-anything
+      $('#js_demo_fix').stickThis({pushup: '#js_demo_stop'});
+    });
+  </script>
 {% endblock %}

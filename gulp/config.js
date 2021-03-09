@@ -1,23 +1,24 @@
 const src = 'source/';
-const dest = 'build/';
+const dev = 'build/';
+const dpl = 'deploy/';
+const rep = 'reports/';
 
 const config = {
   src: src,
-  dest: dest,
+  dev: dev,
+  dpl: dpl,
+  rep: rep,
 
   demo: true,
-  
+  //these are not used while demo: true is set
   index: 'index.html',
-
   templateData: src + 'templates/data.json',
   frontendData: src + 'data/**/*.json',
 
   hippie: {
     brand: 'hippie',
     titlePrefix: ' - HIPPIE',
-    pageBase: './',
-    jsFile: 'main',
-    jsonFile: 'db'
+    pageBase: './'
   }
 }
 

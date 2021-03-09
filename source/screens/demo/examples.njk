@@ -6,239 +6,329 @@
 
 {% block title %}Examples{% endblock %}
 {% block head %}
-{{ super() }}
+  {{ super() }}
 {% endblock %}
 
 {% block main %}
-<div class="temp_layer">
-	<!-- <div class="exp_overlay_btn exp_help_btn">
-	<span class="span_solo">?</span>
-</div> -->
-{% include "hippie/partials/_body_nav.njk" %}
-</div>
-<div id="begin" class="">
-	<section class="sec_main_center">
-		<header class="header_txt">
-			<h1>Sammlung formatierter Elemente</h1>
-			<p>Die Elemente werden fortlaufend komplexer</p>
-		</header>
-		<article>
-			<h2>&lt;h3&gt;</h2>
-			<h4>Beispiele</h4>
-			<pre class="pre_code"><code>h3.txt_color_dark+p</code></pre>
-			<h3 class="txt_color_dark">Dunkle Überschrift</h3>
-			<p>Mit normalem Textabsatz</p>
-			<h2>&lt;h4&gt;</h2>
-			<h4>Beispiele</h4>
-			<pre class="pre_code"><code>a>h4</code></pre>
-			<a href=""><h4>Überschrift als Block-Verweis</h4></a>
-			<h2>&lt;section&gt;</h2>
-			<pre class="pre_code"><code>section>div.float_space_left>img^p+p</code></pre>
-			<section class="overflow">
-				<div class="float_space_left demo__avatar"><img src="{{ pageBase }}art/demo/flag_websafe_128x80.gif" width="256" height="160" alt="Fahne von interaktionsweise"></div>
-				<p>Vorname Name<br>Straße 1, 01234 Stadt</p><p>+49 (0)123 1337 0000<br><a class="lineLink" href="mailto:name@domain.tld">name@domain.tld</a></p>
-			</section>
-			<pre class="pre_code"><code>div.space_left_fourth</code></pre>
-			<div class="space_left_fourth">
-				<hr/>
-				<p>Eingerückter Inhalt</p>
-				<hr/>
-			</div>
-			<pre class="pre_code"><code>nav>ul>(li>a.a_button{Punkt $})*4nav>ul>(li>a.a_button_border{Stufe $})*4</code></pre>
-			<div class="overflow">
-				<nav class="float_space_left">
-					<ul>
-						<li><a href="" class="a_button" data-hippie-button-value="1">Erster Punkt</a></li>
-						<li><a href="" class="a_button" data-hippie-button-value="2">Zweiter Punkt</a></li>
-						<li><a href="" class="a_button" data-hippie-button-value="3">Dritter Punkt</a></li>
-						<li><a href="" class="a_button" data-hippie-button-value="4">Vierter Punkt</a></li>
-					</ul>
-				</nav>
-				<nav>
-					<ul>
-						<li><a href="" class="a_button_border">Stufe 1</a></li>
-						<li><a href="" class="a_button_border">Stufe 2</a></li>
-						<li><a href="" class="a_button_border">Stufe 3</a></li>
-						<li><a href="" class="a_button_border">Stufe 4</a></li>
-					</ul>
-				</nav>
-			</div>
-			<pre class="pre_code"><code>nav.nav_horizontal>ul>(li>a.a_button{Abschnitt $})*4nav.nav_center_old>ul>(li>a.a_button{Typ $})*4</code></pre>
-			<nav class="nav_horizontal">
-				<ul>
-					<li><a href="" class="a_button">Abschnitt 1</a></li>
-					<li><a href="" class="a_button">Abschnitt 2</a></li>
-					<li><a href="" class="a_button">Abschnitt 3</a></li>
-					<li><a href="" class="a_button">Abschnitt 4</a></li>
-				</ul>
-			</nav>
-			<div class="overflow">
-				<nav class="nav_center_old">
-					<ul>
-						<li><a href="" class="a_button">Typ 1</a></li>
-						<li><a href="" class="a_button">Typ 2</a></li>
-						<li><a href="" class="a_button">Typ 3</a></li>
-						<li><a href="" class="a_button">Typ 4</a></li>
-					</ul>
-				</nav>
-			</div>
-			<pre class="pre_code"><code>header.header_page>h1+p+nav.nav_separate_right>ul>(li>a.a_button{Nav $})*4^+nav.nav_right>ul>(li>a.a_button{Nav $})*4</code></pre>
-			<header class="header_page demo__header header_fancy">
-				<h1>Aufmacher</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec consectetur diam. Sed nisl odio, volutpat nec nisi sit amet, commodo faucibus est. Donec lacinia vestibulum sapien. Morbi porttitor nibh quis imperdiet scelerisque. Praesent rutrum quam eu sodales luctus.</p>
-				<nav class="nav_separate_right">
-					<ul>
-						<li><a href="" class="a_button">Mensch</a></li>
-						<li><a href="" class="a_button">Pflanze</a></li>
-					</ul>
-				</nav>
-				<nav class="nav_right">
-					<ul>
-						<li><a href="" class="a_button">Blau</a></li>
-						<li><a href="" class="a_button">Gelb</a></li>
-					</ul>
-				</nav>
-			</header>
-			<pre class="pre_code"><code>header.header_page>nav.nav_right>ul>(li>a.a_button{Nav $})*4</code></pre>
-			<div class="box_space h_basic">
-				<header id="js_demo_fix" class="header_page demo__header header_fix">
-					<nav class="nav_right">
-						<ul>
-							<li><a href="" class="a_button">Eins</a></li>
-							<li><a href="" class="a_button">Zwei</a></li>
-						</ul>
-					</nav>
-				</header>
-				<div class="pos_abs pin_bottom width_full">
-					<pre class="pre_code"><code>footer.pos_abs.pin_bottom>nav.nav_column>ul>(li>a.a_button_text)*4</code></pre>
-					<footer id="js_demo_stop" class="demo_footer">
-						<nav class="nav_column nav_separate">
-							<ul>
-								<li><a href="" class="a_button_text">Alpha</a></li>
-								<li><a href="" class="a_button_text">Bravo</a></li>
-								<li><a href="" class="a_button_text">Charlie</a></li>
-								<li><a href="" class="a_button_text">Delta</a></li>
-							</ul>
-						</nav>
-						<p class="txt_center demo__credits"><i class="i_bright">👨‍💻</i> mit <i class="i_bright">❤</i> von <a href="https://interaktionsweise.de">Interaktionsweise</a></p>
-					</footer>
-				</div>
-			</div>
-			<div class="flex">
-				<div class="flex_child"></div>
-				<div class="flex_child"></div>
-				<div class="flex_child"></div>
-				<div class="flex_child"></div>
-				<div class="flex_child"></div>
-			</div>
-			<div class="flex_column_wrap">
-				<div class="flex_column"><input value="Undefiniert"/></div>
-				<div class="flex_column"><input type="text" size="8" value="Text"/></div>
-				<div class="flex_column"><input type="text" size="8" value="Deaktiviert" disabled/></div>
-				<div class="flex_column"><input type="button" value="Auswählen"></div>
-				<div class="flex_column"><input type="submit" value="Senden" disabled/></div>
-			</div>
-			<form method="get">
-				<p class="label">
-					Show me a <select name="F">
-						<option value="0"> Plain list</option>
-						<option value="1" selected="selected"> Fancy list</option>
-						<option value="2"> Table list</option>
-					</select>
-					Sorted by <select name="C">
-						<option value="N" selected="selected"> Name</option>
-						<option value="M"> Date Modified</option>
-						<option value="S"> Size</option>
-						<option value="D"> Description</option>
-					</select>
-					<select name="O">
-						<option value="A" selected="selected"> Ascending</option>
-						<option value="D"> Descending</option>
-					</select>
-					<select name="V">
-						<option value="0" selected="selected"> in Normal order</option>
-						<option value="1"> in Version order</option>
-					</select>
-					Matching <input type="text" name="P" value="*" />
-					<input type="submit" name="X" value="Go" />
-				</p>
-			</form>
+  <div class="temp_layer">
+    <!-- <div class="exp_overlay_btn exp_help_btn"> <span class="span_solo">?</span> </div> -->
+    {% include "hippie/partials/_body_nav.njk" %}
+  </div>
+  <div id="begin" class="">
+    <section class="sec_main_center">
+      <header class="header_txt">
+        <h1>Sammlung formatierter Elemente</h1>
+        <p>Die Elemente werden fortlaufend komplexer</p>
+      </header>
+      <article>
+        <h2>&lt;h3&gt;</h2>
+        <h4>Beispiele</h4>
+        <pre class="pre_code"><code>h3.txt_color_dark+p</code></pre>
+        <h3 class="txt_color_dark">Dunkle Überschrift</h3>
+        <p>Mit normalem Textabsatz</p>
+        <h2>&lt;h4&gt;</h2>
+        <h4>Beispiele</h4>
+        <pre class="pre_code"><code>a>h4</code></pre>
+        <a href="">
+          <h4>Überschrift als Block-Verweis</h4>
+        </a>
+        <h2>&lt;section&gt;</h2>
+        <pre class="pre_code"><code>section>div.float_space_left>img^p+p</code></pre>
+        <section class="overflow">
+          <div class="float_space_left demo__avatar"><img src="{{ pageBase }}art/demo/flag_websafe_128x80.gif" width="256" height="160" alt="Fahne von interaktionsweise"></div>
+          <p>Vorname Name<br>Straße 1, 01234 Stadt</p>
+          <p>+49 (0)123 1337 0000<br>
+            <a class="lineLink" href="mailto:name@domain.tld">name@domain.tld</a>
+          </p>
+        </section>
+        <pre class="pre_code"><code>div.space_left_fourth</code></pre>
+        <div class="space_left_fourth">
+          <hr/>
+          <p>Eingerückter Inhalt</p>
+          <hr/>
+        </div>
+        <pre class="pre_code"><code>nav>ul>(li>a.a_button{punkt $})*4nav>ul>(li>a.a_button_border{stufe $})*4</code></pre>
+        <div class="overflow">
+          <nav class="float_space_left">
+            <ul>
+              <li>
+                <a href="" class="a_button" data-hippie-button-value="1">Erster Punkt</a>
+              </li>
+              <li>
+                <a href="" class="a_button" data-hippie-button-value="2">Zweiter Punkt</a>
+              </li>
+              <li>
+                <a href="" class="a_button" data-hippie-button-value="3">Dritter Punkt</a>
+              </li>
+              <li>
+                <a href="" class="a_button" data-hippie-button-value="4">Vierter Punkt</a>
+              </li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li>
+                <a href="" class="a_button_border">Stufe 1</a>
+              </li>
+              <li>
+                <a href="" class="a_button_border">Stufe 2</a>
+              </li>
+              <li>
+                <a href="" class="a_button_border">Stufe 3</a>
+              </li>
+              <li>
+                <a href="" class="a_button_border">Stufe 4</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <pre class="pre_code"><code>nav.nav_horizontal>ul>(li>a.a_button{abschnitt $})*4nav.nav_center_old>ul>(li>a.a_button{typ $})*4</code></pre>
+        <nav class="nav_horizontal">
+          <ul>
+            <li>
+              <a href="" class="a_button">Abschnitt 1</a>
+            </li>
+            <li>
+              <a href="" class="a_button">Abschnitt 2</a>
+            </li>
+            <li>
+              <a href="" class="a_button">Abschnitt 3</a>
+            </li>
+            <li>
+              <a href="" class="a_button">Abschnitt 4</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="overflow">
+          <nav class="nav_center_old">
+            <ul>
+              <li>
+                <a href="" class="a_button">Typ 1</a>
+              </li>
+              <li>
+                <a href="" class="a_button">Typ 2</a>
+              </li>
+              <li>
+                <a href="" class="a_button">Typ 3</a>
+              </li>
+              <li>
+                <a href="" class="a_button">Typ 4</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <pre class="pre_code"><code>header.header_page>h1+p+nav.nav_separate_right>ul>(li>a.a_button{nav $})*4^+nav.nav_right>ul>(li>a.a_button{nav $})*4</code></pre>
+        <header class="header_page demo__header header_fancy">
+          <h1>Aufmacher</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec consectetur diam. Sed nisl odio, volutpat nec nisi sit amet, commodo faucibus est. Donec lacinia vestibulum sapien. Morbi porttitor nibh quis imperdiet scelerisque. Praesent rutrum quam eu sodales luctus.</p>
+          <nav class="nav_separate_right">
+            <ul>
+              <li>
+                <a href="" class="a_button">Mensch</a>
+              </li>
+              <li>
+                <a href="" class="a_button">Pflanze</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="nav_right">
+            <ul>
+              <li>
+                <a href="" class="a_button">Blau</a>
+              </li>
+              <li>
+                <a href="" class="a_button">Gelb</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <pre class="pre_code"><code>header.header_page>nav.nav_right>ul>(li>a.a_button{nav $})*4</code></pre>
+        <div class="box_space h_basic">
+          <header id="js_demo_fix" class="header_page demo__header header_fix">
+            <nav class="nav_right">
+              <ul>
+                <li>
+                  <a href="" class="a_button">Eins</a>
+                </li>
+                <li>
+                  <a href="" class="a_button">Zwei</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <div class="pos_abs pin_bottom width_full">
+            <pre class="pre_code"><code>footer.pos_abs.pin_bottom>nav.nav_column>ul>(li>a.a_button_text)*4</code></pre>
+            <footer id="js_demo_stop" class="demo_footer">
+              <nav class="nav_column nav_separate">
+                <ul>
+                  <li>
+                    <a href="" class="a_button_text">Alpha</a>
+                  </li>
+                  <li>
+                    <a href="" class="a_button_text">Bravo</a>
+                  </li>
+                  <li>
+                    <a href="" class="a_button_text">Charlie</a>
+                  </li>
+                  <li>
+                    <a href="" class="a_button_text">Delta</a>
+                  </li>
+                </ul>
+              </nav>
+              <p class="txt_center demo__credits">
+                <i class="i_bright">👨‍💻</i>
+                mit
+                <i class="i_bright">❤</i>
+                von
+                <a href="https://interaktionsweise.de">Interaktionsweise</a>
+              </p>
+            </footer>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex_child"></div>
+          <div class="flex_child"></div>
+          <div class="flex_child"></div>
+          <div class="flex_child"></div>
+          <div class="flex_child"></div>
+        </div>
+        <div class="flex_column_wrap">
+          <div class="flex_column"><input value="Undefiniert"/></div>
+          <div class="flex_column"><input type="text" size="8" value="Text"/></div>
+          <div class="flex_column"><input type="text" size="8" value="Deaktiviert" disabled="disabled"/></div>
+          <div class="flex_column"><input type="button" value="Auswählen"></div>
+          <div class="flex_column"><input type="submit" value="Senden" disabled="disabled"/></div>
+        </div>
+        <form method="get">
+          <p class="label">
+            Show me a
+            <select name="F">
+              <option value="0">
+                Plain list</option>
+              <option value="1" selected="selected">
+                Fancy list</option>
+              <option value="2">
+                Table list</option>
+            </select>
+            Sorted by
+            <select name="C">
+              <option value="N" selected="selected">
+                Name</option>
+              <option value="M">
+                Date Modified</option>
+              <option value="S">
+                Size</option>
+              <option value="D">
+                Description</option>
+            </select>
+            <select name="O">
+              <option value="A" selected="selected">
+                Ascending</option>
+              <option value="D">
+                Descending</option>
+            </select>
+            <select name="V">
+              <option value="0" selected="selected">
+                in Normal order</option>
+              <option value="1">
+                in Version order</option>
+            </select>
+            Matching
+            <input type="text" name="P" value="*"/>
+            <input type="submit" name="X" value="Go"/>
+          </p>
+        </form>
 
-			<h2>Gruppierung</h2>
-			<pre class="pre_code"><code>ul.list_link>(li>a>img)*2+li>a</code></pre>
-			<ul class="list_link">
-				<li><a href=""><img src="{{ pageBase }}art/letter.gif" alt="">name@domain.tld</a></li>
-				<li><a href="">Work</a></li>
-				<li><a href="">Projects</a></li>
-			</ul>
+        <h2>Gruppierung</h2>
+        <pre class="pre_code"><code>ul.list_link>(li>a>img)*2+li>a</code></pre>
+        <ul class="list_link">
+          <li>
+            <a href=""><img src="{{ pageBase }}art/letter.gif" alt="">name@domain.tld</a>
+          </li>
+          <li>
+            <a href="">Work</a>
+          </li>
+          <li>
+            <a href="">Projects</a>
+          </li>
+        </ul>
 
-			<h2>Tabellen</h2>
-			<pre class="pre_code"><code>table.table_link>thead>tr>th{&amp;nbsp;}+th{Ab / Zy}+th{Neu / Alt}^^(tbody>tr>td.cell_icon[rowspan="2"]>img[width=16  height=16]^+td.cell_link>a[target=_blank]{Name}+a[target=_blank]{URL}^+td.cell_date[rowspan="2"]{YYY-MM-DD}^tr>td.cell_text>div.shorten{Beschreibung})*2</code></pre>
-			<table class="table_link js_pop">
-				<thead>
-					<tr>
-						<th>&nbsp;</th>
-						<th>Ab / Zy</th>
-						<th>Neu / Alt</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="cell_icon" rowspan="2"><img src="/art/bullet.gif" alt="" width="16" height="16"></td>
-						<td class="cell_link"><a href="" target="_blank">Name</a><a href="" target="_blank">URL</a></td>
-						<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
-					</tr>
-					<tr>
-						<td class="cell_text">
-							<div class="shorten">Beschreibung</div>
-						</td>
-					</tr>
-				</tbody>
-				<tbody>
-					<tr>
-						<td class="cell_icon" rowspan="2"><img src="/art/bullet.gif" alt="" width="16" height="16"></td>
-						<td class="cell_link"><a href="" target="_blank">Name</a><a href="" target="_blank">URL</a></td>
-						<td class="cell_date" rowspan="2">YYYY-MM-DD</td>
-					</tr>
-					<tr>
-						<td class="cell_text">
-							<div class="shorten">Beschreibung</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<h2>Eingebettet</h2>
-			<div class="demo__flag">
-				<svg version="1.1" id="vector" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1920 1200" preserveAspectRatio="xMinYMax slice">
-					<desc>Background flag</desc>
-					<rect id="triangle-5" y="0" fill="#273F8B" width="1920" height="1200"></rect>
-					<polygon id="triangle-6" fill="#8E1F68" points="0,1200 1920,458.25 1920,1200 "></polygon>
-					<polygon id="triangle-7" fill="#D30A51" points="0,1200 1920,522.75 1920,1200 "></polygon>
-					<polygon id="triangle-8" fill="#F2AF13" points="0,1200 1920,741.75 1920,1200 "></polygon>
-					<polygon id="triangle-9" fill="#FAD803" points="0,1200 1920,787.5 1920,1200 "></polygon>
-					<polygon id="triangle-4" fill="#3C579A" points="0,1200 0,0 733.5,0 "></polygon>
-					<polygon id="triangle-3" fill="#B7E0F0" points="0,1200 0,0 688.5,0 "></polygon>
-					<polygon id="triangle-2" fill="#6BC7D9" points="0,1200 0,0 453,0 "></polygon>
-					<polygon id="triangle-1" fill="#52BED1" points="0,1200 0,0 370.5,0 "></polygon>
-				</svg>
-			</div>
-		</article>
-	</section>
-</div>
+        <h2>Tabellen</h2>
+        <pre class="pre_code"><code>table.table_link>thead>tr>th{&amp;nbsp;}+th{ab / zy}+th{neu / alt}^^(tbody>tr>td.cell_icon[rowspan="2"]>img[width=16  height=16]^+td.cell_link>a[target=_blank]{name}+a[target=_blank]{url}^+td.cell_date[rowspan="2"]{yyy-mm-dd}^tr>td.cell_text>div.shorten{beschreibung})*2</code></pre>
+        <table class="table_link js_pop">
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>Ab / Zy</th>
+              <th>Neu / Alt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell_icon" rowspan="2"><img src="/art/bullet.gif" alt="" width="16" height="16"></td>
+              <td class="cell_link">
+                <a href="" target="_blank">Name</a>
+                <a href="" target="_blank">URL</a>
+              </td>
+              <td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+            </tr>
+            <tr>
+              <td class="cell_text">
+                <div class="shorten">Beschreibung</div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td class="cell_icon" rowspan="2"><img src="/art/bullet.gif" alt="" width="16" height="16"></td>
+              <td class="cell_link">
+                <a href="" target="_blank">Name</a>
+                <a href="" target="_blank">URL</a>
+              </td>
+              <td class="cell_date" rowspan="2">YYYY-MM-DD</td>
+            </tr>
+            <tr>
+              <td class="cell_text">
+                <div class="shorten">Beschreibung</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Eingebettet</h2>
+        <div class="demo__flag">
+          <svg version="1.1" id="vector" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewbox="0 0 1920 1200" preserveaspectratio="xMinYMax slice">
+            <desc>Background flag</desc>
+            <rect id="triangle-5" y="0" fill="#273F8B" width="1920" height="1200"></rect>
+            <polygon id="triangle-6" fill="#8E1F68" points="0,1200 1920,458.25 1920,1200 "></polygon>
+            <polygon id="triangle-7" fill="#D30A51" points="0,1200 1920,522.75 1920,1200 "></polygon>
+            <polygon id="triangle-8" fill="#F2AF13" points="0,1200 1920,741.75 1920,1200 "></polygon>
+            <polygon id="triangle-9" fill="#FAD803" points="0,1200 1920,787.5 1920,1200 "></polygon>
+            <polygon id="triangle-4" fill="#3C579A" points="0,1200 0,0 733.5,0 "></polygon>
+            <polygon id="triangle-3" fill="#B7E0F0" points="0,1200 0,0 688.5,0 "></polygon>
+            <polygon id="triangle-2" fill="#6BC7D9" points="0,1200 0,0 453,0 "></polygon>
+            <polygon id="triangle-1" fill="#52BED1" points="0,1200 0,0 370.5,0 "></polygon>
+          </svg>
+        </div>
+      </article>
+    </section>
+  </div>
 {% endblock %}
 
 {% block script %}
-{{ super() }}
-<script src="{{ pageBase }}vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
-<script src="{{ pageBase }}js/{{hippie.jsFile}}.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-// Page specific
-// ------------------------------------------------------------------------------
-$( document ).ready(function () {
-	// jq-sticky-anything
-	$('#js_demo_fix').stickThis({
-		pushup: '#js_demo_stop'
-	});
-});
-</script>
+  {{ super() }}
+  <script src="{{ pageBase }}vendor/jq-sticky-anything.min.js" type="text/javascript"></script>
+  {# <script src="{{ pageBase }}js/{{hippie.jsFile}}.min.js" type="text/javascript"></script> #}
+  <!-- build:js js/main.concat.min.js -->
+  <script src="{{ pageBase }}js/variables.js"></script>
+  <script src="{{ pageBase }}js/functions.js"></script>
+  <script src="{{ pageBase }}js/global.js"></script>
+  <!-- endbuild -->
+  <script>
+    // Page specific
+    // ------------------------------------------------------------------------------
+    $(document).ready(function () {
+      // jq-sticky-anything
+      $('#js_demo_fix').stickThis({pushup: '#js_demo_stop'});
+    });
+  </script>
 {% endblock %}

@@ -1,20 +1,22 @@
 // Setup project
 const config = require('./gulp/config');
 
+const hello = require('./gulp/tasks/hello');
+const plumber = require('./gulp/modules/plumber');
+const { serve, reload } = require('./gulp/tasks/sync');
+const clean = require('./gulp/tasks/clean');
+const validate = require("./gulp/tasks/validate");
+
 // Gulp requirements
 const { watch, series, parallel } = require('gulp');
 const { src, dest } = require('gulp');
 
 const fs = require('fs');
-const del = require('del');
-const plumber = require('gulp-plumber');
-// const notify = require('gulp-notify');
 
 const nunjucksRender = require('gulp-nunjucks-render');
 // const nunjucks = require('gulp-nunjucks');
 const data = require('gulp-data');
 const jsonConcat = require('gulp-json-concat');
-const browserSync = require('browser-sync'), server = browserSync.create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sassLint = require('gulp-sass-lint');
@@ -30,8 +32,7 @@ const gulpIf = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
-const babel = require('gulp-babel');
-const htmlValidator = require('gulp-w3c-html-validator');
+// const babel = require('gulp-babel');
 // const buffer = require('vinyl-buffer');
 // const imagemin = require('gulp-imagemin');
 const useref = require('gulp-useref');
@@ -61,15 +62,12 @@ const input = {
 };
 
 const output = {
-  root: config.dest,
-  screens: config.dest + '**/*.html',
-  data: config.dest + 'json',
-  style: config.dest + 'css',
-  code: config.dest + 'js',
-  fonts: config.dest + 'fonts',
-  art: config.dest + 'art',
-  reports: 'reports/',
-  vendor: config.dest + 'vendor'
+  data: config.dev + 'json',
+  style: config.dev + 'css',
+  code: config.dev + 'js',
+  fonts: config.dev + 'fonts',
+  art: config.dev + 'art',
+  vendor: config.dev + 'vendor'
 };
 
 // Show demo content if configured
@@ -82,23 +80,11 @@ if (config.demo === true) {
 
 // Create tasks
 
-// Clean output folders
-function clean() {
-  return del([output.root + '**', output.reports + '**', 'dist/']);
-}
-
-// Automagically reload browsers
-function reload(done) {
-  server.reload();
-
-  done();
-}
-
 // Concatenate JSON files
 function json() {
   return src(config.frontendData)
     .pipe(plumber())
-    .pipe(jsonConcat(config.hippie.jsonFile + '.json', function (data) {
+    .pipe(jsonConcat('db.json', function (data) {
       return new Buffer.from(JSON.stringify(data));
     }))
     .pipe(dest(output.data));
@@ -118,7 +104,7 @@ function manageEnvironment(environment) {
 //   // console.log(file.relative);
 //   return { hippie, template };
 // }
-function getDataForTemplates(file) {
+function getDataForTemplates() {
   const data = JSON.parse(fs.readFileSync(config.templateData));
   return { data };
 }
@@ -126,8 +112,7 @@ function getDataForTemplates(file) {
 // Transpile HTML
 function nunjucks() {
   return src(input.screens)
-    // .pipe(plumber())
-    .pipe(customPlumber())
+    .pipe(plumber())
     // TODO only add data to pipe for necessary files
     .pipe(data(getDataForTemplates))
     .pipe(nunjucksRender({
@@ -137,30 +122,13 @@ function nunjucks() {
       },
       manageEnv: manageEnvironment
     }))
-    .pipe(dest(output.root));
-}
-
-function validate() {
-  return src(output.screens)
-    .pipe(htmlValidator())
-    .pipe(htmlValidator.reporter());
-}
-
-// Serve files to the browser
-function serve(done) {
-  server.init({
-    index: config.index,
-    open: false,
-    server: output.root
-  });
-
-  done();
+    .pipe(dest(config.dev));
 }
 
 // This is for the looks
 function style() {
   return src(input.style)
-    // .pipe(plumbError('STYLE PROBLEM'))
+    .pipe(plumber())
     .pipe(sass({
       includePaths: [input.vendor + '/**/*.s+(a|c)ss']
     }).on('error', sass.logError))
@@ -174,11 +142,11 @@ function style() {
 }
 // Linting
 function styleLint() {
-  const dir = output.reports;
+  const dir = config.rep;
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
-  let file = fs.createWriteStream(output.reports + 'sass-lint.html');
+  let file = fs.createWriteStream(config.rep + 'sass-lint.html');
   let stream = src(input.style)
     .pipe(plumber())
     .pipe(sassLint({
@@ -206,7 +174,7 @@ function code(cb) {
     plumber(),
     // cache('code'),
     // babel({ presets: ['@babel/env'] }),
-    concat(config.hippie.jsFile + '.js'),
+    // concat(config.hippie.jsFile + 'main.js'),
     dest(output.code),
     uglify(),
     // remember('code'),
@@ -242,7 +210,7 @@ function art() {
   let favicons = src(input.art.favicons)
     .pipe(plumber())
     .pipe(changed(output.art))
-    .pipe(dest(output.root))
+    .pipe(dest(config.dev))
 
   // Move images to the root folder
   let images = src(input.art.images)
@@ -256,8 +224,8 @@ function art() {
 //   // Move favicons and images to the root folder
 //   return src(input.art.favicons)
 //     .pipe(plumber())
-//     .pipe(changed(output.root))
-//     .pipe(dest(output.root))
+//     .pipe(changed(config.dev))
+//     .pipe(dest(config.dev))
 //     .pipe(src(input.art.images))
 //     .pipe(changed(output.art))
 //     .pipe(dest(output.art));
@@ -295,8 +263,8 @@ function vendor() {
 }
 
 // TODO for distribution
-function code2 () {
-  return src(output.screens)
+function code2() {
+  return src(config.dev + '**/*.html')
     .pipe(useref())
     .pipe(cached('useref'))
     .pipe(gulpIf('*.js', uglify()))
@@ -328,25 +296,6 @@ exports.assets = assets;
 exports.build = build;
 exports.dev = dev;
 exports.dist = series(clean, assets, parallel(nunjucks, style), code2);
-exports.serve = series(dev, serve);
 exports.default = series(dev, serve, overview);
 
-// function plumbError(errTitle) {
-//   return plumber({
-//     errorHandler: notify.onError({
-//       // Customizing error title
-//       title: errTitle || "GULP GENERAL PROBLEM",
-//       message: "<%= error.message %>"
-//     })
-//   });
-// }
-function customPlumber() {
-  return plumber({
-    errorHandler: function (err) {
-      // Logs error in console
-      console.log(err.message);
-      // Ends the current pipe, so Gulp watch doesn't break
-      this.emit('end');
-    }
-  });
-}
+exports.hello = hello;

@@ -60,10 +60,11 @@
 
 {% block script %}
   {{ super() }}
-  <script src="{{ pageBase }}js/{{ hippie.jsFile }}.min.js"></script>
+  {# <script src="{{ pageBase }}js/{{ hippie.jsFile }}.min.js"></script> #}
   <!-- build:js js/main.concat.min.js -->
-  {# <script src="{{ pageBase }}js/config.min.js" type="module"></script> #}
-  {# <script src="{{ pageBase }}js/main.min.js"></script> #}
+  <script src="{{ pageBase }}js/variables.js"></script>
+  <script src="{{ pageBase }}js/functions.js"></script>
+  <script src="{{ pageBase }}js/global.js"></script>
   <!-- endbuild -->
   <script>
     // Page specific
