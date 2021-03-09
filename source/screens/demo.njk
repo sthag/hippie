@@ -1,5 +1,5 @@
 <!-- index.screen -->
-{% set pageBase = "./" %}
+{% set pageBase = hippie.pageBase %}
 {% set pageId = "index" %}
 {% set pageClass = "h_full_view" %}
 
@@ -60,10 +60,10 @@
 
 {% block script %}
   {{ super() }}
-  <script src="{{ hippie.pageBase }}js/{{ hippie.jsFile }}.min.js"></script>
+  <script src="{{ pageBase }}js/{{ hippie.jsFile }}.min.js"></script>
   <!-- build:js js/main.concat.min.js -->
-  {# <script src="{{ hippie.pageBase }}js/config.min.js" type="module"></script> #}
-  {# <script src="{{ hippie.pageBase }}js/main.min.js"></script> #}
+  {# <script src="{{ pageBase }}js/config.min.js" type="module"></script> #}
+  {# <script src="{{ pageBase }}js/main.min.js"></script> #}
   <!-- endbuild -->
   <script>
     // Page specific

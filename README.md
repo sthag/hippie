@@ -12,6 +12,9 @@ Clone the repo `https://github.com/sthag/hippie.git` to a folder to create your 
 
 Change to the newly created folder. By default this would be *hippie*.
 
+Run the command `git submodule update --init`.
+This will load the submodules.
+
 Run the command `npm install`.
 This will install all node.js dependencies into the folder *node_modules*.
 

@@ -21,12 +21,12 @@ const sassLint = require('gulp-sass-lint');
 const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 const pump = require('pump');
-const cache = require('gulp-cached');
+const cached = require('gulp-cached');
 // const remember = require('gulp-remember');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const jshint = require('gulp-jshint');
-const gulpif = require('gulp-if');
+const gulpIf = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
@@ -34,6 +34,7 @@ const babel = require('gulp-babel');
 const htmlValidator = require('gulp-w3c-html-validator');
 // const buffer = require('vinyl-buffer');
 // const imagemin = require('gulp-imagemin');
+const useref = require('gulp-useref');
 
 // Data variables
 const input = {
@@ -47,9 +48,6 @@ const input = {
     config.src + 'code/hippie/variables.js',
     config.src + 'code/hippie/functions.js',
     config.src + 'code/hippie/global.js',
-    // config.src + 'code/variables.js',
-    // config.src + 'code/functions.js',
-    // config.src + 'code/global.js',
     // config.src + 'code/**/*.js',
     '!' + config.src + 'vendor/**/*'
   ],
@@ -86,7 +84,7 @@ if (config.demo === true) {
 
 // Clean output folders
 function clean() {
-  return del([output.root + '**', output.reports + '**']);
+  return del([output.root + '**', output.reports + '**', 'dist/']);
 }
 
 // Automagically reload browsers
@@ -112,7 +110,6 @@ function manageEnvironment(environment) {
   });
 
   environment.addGlobal('hippie', config.hippie);
-  environment.addGlobal('titlePrefix', config.hippie.titlePrefix);
 }
 
 // function getDataForTemplates (file) {
@@ -121,7 +118,7 @@ function manageEnvironment(environment) {
 //   // console.log(file.relative);
 //   return { hippie, template };
 // }
-function getDataForTemplates (file) {
+function getDataForTemplates(file) {
   const data = JSON.parse(fs.readFileSync(config.templateData));
   return { data };
 }
@@ -219,6 +216,7 @@ function code(cb) {
     dest(output.code, { sourcemaps: '.' }),
   ], cb);
 }
+
 // Linting
 function codeLint() {
   return src(input.code, { allowEmpty: true })
@@ -296,6 +294,17 @@ function vendor() {
     .pipe(dest(output.vendor))
 }
 
+// TODO for distribution
+function code2 () {
+  return src(output.screens)
+    .pipe(useref())
+    .pipe(cached('useref'))
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(dest('dist'));
+}
+
+
+
 function overview() {
   watch([input.templates, input.screens, config.frontendData], series(nunjucks, reload));
   // watch(input.style, series(styleLint, style, reload));
@@ -318,6 +327,7 @@ exports.validate = series(nunjucks, validate);
 exports.assets = assets;
 exports.build = build;
 exports.dev = dev;
+exports.dist = series(clean, assets, parallel(nunjucks, style), code2);
 exports.serve = series(dev, serve);
 exports.default = series(dev, serve, overview);
 
