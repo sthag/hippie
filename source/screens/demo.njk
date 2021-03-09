@@ -60,7 +60,11 @@
 
 {% block script %}
   {{ super() }}
-  <script src="{{ pageBase }}js/{{ hippie.jsFile }}.min.js"></script>
+  <script src="{{ hippie.pageBase }}js/{{ hippie.jsFile }}.min.js"></script>
+  <!-- build:js js/main.concat.min.js -->
+  {# <script src="{{ hippie.pageBase }}js/config.min.js" type="module"></script> #}
+  {# <script src="{{ hippie.pageBase }}js/main.min.js"></script> #}
+  <!-- endbuild -->
   <script>
     // Page specific
     // ------------------------------------------------------------------------------
@@ -68,6 +72,7 @@
     logPerf('BODY        :: Assets loaded, running page specific script...');
     $(document).ready(function () {
       logPerf('EVENT       :: jQuery \'ready\' event fired.');
+      setup();
       logPerf('Application ready.');
     });
   </script>

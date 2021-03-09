@@ -1,5 +1,5 @@
 // Setup project
-let config = require('./gulp/config');
+const config = require('./gulp/config');
 
 // Gulp requirements
 const { watch, series, parallel } = require('gulp');
@@ -21,12 +21,12 @@ const sassLint = require('gulp-sass-lint');
 const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 const pump = require('pump');
-// const cache = require('gulp-cached');
+const cache = require('gulp-cached');
 // const remember = require('gulp-remember');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const jshint = require('gulp-jshint');
-// const gulpif = require('gulp-if');
+const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const merge = require('merge-stream');
 const spritesmith = require('gulp.spritesmith');
@@ -38,17 +38,19 @@ const htmlValidator = require('gulp-w3c-html-validator');
 // Data variables
 const input = {
   screens: config.src + 'screens/**/*.+(njk|html)',
-  templates: config.src + 'templates',
+  templates: config.src + 'templates/',
   data: config.src + 'data/**/*.json',
   style: config.src + 'style/**/*.s+(a|c)ss',
   code: [
+    // config.src + 'code/hippie/config.js',
+    // config.src + 'code/hippie/main.js',
     config.src + 'code/hippie/variables.js',
     config.src + 'code/hippie/functions.js',
     config.src + 'code/hippie/global.js',
-    config.src + 'code/variables.js',
-    config.src + 'code/functions.js',
-    config.src + 'code/global.js',
-    config.src + 'code/**/*.js',
+    // config.src + 'code/variables.js',
+    // config.src + 'code/functions.js',
+    // config.src + 'code/global.js',
+    // config.src + 'code/**/*.js',
     '!' + config.src + 'vendor/**/*'
   ],
   fonts: 'node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
@@ -75,7 +77,7 @@ const output = {
 // Show demo content if configured
 if (config.demo === true) {
   config.index = 'demo.html';
-  config.templateData = config.src + '/templates/demo/data.json';
+  config.templateData = config.src + 'templates/demo/data.json';
 } else {
   config.frontendData = [config.src + 'data/**/*.json', '!' + config.src + 'data/demo.json'];
 }
@@ -104,24 +106,33 @@ function json() {
     .pipe(dest(output.data));
 }
 
-const manageEnvironment = function (environment) {
+function manageEnvironment(environment) {
   environment.addFilter('slug', function (str) {
     return str && str.replace(/\s/g, '-', str).toLowerCase();
   });
 
-  environment.addGlobal('titlePrefix', config.hippie.titlePrefix)
+  environment.addGlobal('hippie', config.hippie);
+  environment.addGlobal('titlePrefix', config.hippie.titlePrefix);
+}
+
+// function getDataForTemplates (file) {
+//   const template = JSON.parse(fs.readFileSync(config.templateData));
+//   const hippie = config.hippie;
+//   // console.log(file.relative);
+//   return { hippie, template };
+// }
+function getDataForTemplates (file) {
+  const data = JSON.parse(fs.readFileSync(config.templateData));
+  return { data };
 }
 
 // Transpile HTML
 function nunjucks() {
   return src(input.screens)
-    .pipe(plumber())
-    .pipe(data(function () {
-      let t = JSON.parse(fs.readFileSync(config.templateData));
-      let h = config.hippie;
-      data = { h, t };
-      return data;
-    }))
+    // .pipe(plumber())
+    .pipe(customPlumber())
+    // TODO only add data to pipe for necessary files
+    .pipe(data(getDataForTemplates))
     .pipe(nunjucksRender({
       path: input.templates,
       envOptions: {
@@ -197,7 +208,7 @@ function code(cb) {
     }),
     plumber(),
     // cache('code'),
-    babel({ presets: ['@babel/env'] }),
+    // babel({ presets: ['@babel/env'] }),
     concat(config.hippie.jsFile + '.js'),
     dest(output.code),
     uglify(),
@@ -307,6 +318,7 @@ exports.validate = series(nunjucks, validate);
 exports.assets = assets;
 exports.build = build;
 exports.dev = dev;
+exports.serve = series(dev, serve);
 exports.default = series(dev, serve, overview);
 
 // function plumbError(errTitle) {
@@ -318,3 +330,13 @@ exports.default = series(dev, serve, overview);
 //     })
 //   });
 // }
+function customPlumber() {
+  return plumber({
+    errorHandler: function (err) {
+      // Logs error in console
+      console.log(err.message);
+      // Ends the current pipe, so Gulp watch doesn't break
+      this.emit('end');
+    }
+  });
+}
