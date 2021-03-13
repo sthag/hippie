@@ -283,7 +283,7 @@ function overview() {
   // watch(input.code, series(codeLint, code, reload));
   watch(input.code, series(code, reload));
   watch(input.fonts, series(fonts, reload));
-  watch(input.art.sprites, series(parallel(sprites, style), reload));
+  watch(input.art.sprites, series(sprites, style, reload));
   watch([input.art.favicons, input.art.images], series(art, reload));
   watch(config.frontendData, series(json, reload));
 }
