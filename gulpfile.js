@@ -1,3 +1,6 @@
+// Use hippie
+// const hippie = require('hippie/hippie');
+
 // Setup project
 const config = require('./gulp/config');
 
@@ -274,7 +277,7 @@ function code2() {
 
 
 function overview() {
-  watch([input.templates, input.screens, config.frontendData], series(nunjucks, reload));
+  watch([input.templates, input.screens, config.frontendData + 'data/**/*.json'], series(nunjucks, reload));
   // watch(input.style, series(styleLint, style, reload));
   watch(input.style, series(style, reload));
   // watch(input.code, series(codeLint, code, reload));
