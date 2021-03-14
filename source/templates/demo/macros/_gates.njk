@@ -1,0 +1,31 @@
+<!-- gates.macro -->
+{% macro list(name, url, image, links) %}
+  <article class="portal__entry">
+    <section>
+      <h2>
+        <a class="a_discreet" href="{{ url }}">{{ name }}</a>
+      </h2>
+      <a class="portal__link portal__link--{{ name | slug }}" href="{{ url }}">
+        <img src="{{ image.src }}" alt="{{ image.alt }}"/>
+      </a>
+      {% if links %}
+        <ul class="portal__list">
+          {% for link in links %}
+            <li>
+              <a href="{{ link.href }}"><img src="{{ link.img }}" width="16" height="16"/>{{ link.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  </article>
+{% endmacro %}
+{% macro simple(name, url) %}
+  <article class="portal__entry">
+    <section>
+      <h2>
+        <a class="a_discreet" href="{{ url }}">{{ name }}</a>
+      </h2>
+    </section>
+  </article>
+{% endmacro %}

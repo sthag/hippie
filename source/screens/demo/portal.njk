@@ -1,0 +1,37 @@
+<!-- portal.page -->
+{% set pageBase = "../" %}
+{% set pageId = "index" %}
+{% set bodyClass = "body_portal" %}
+
+{% extends "demo/_default.njk" %}
+
+{% import "demo/macros/_gates.njk" as gate %}
+
+{% block title %}Portal{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block body %}
+  <div class="portal">
+    {{ gate.list(
+    'Tor mit Symbol und Liste',
+    '../demo', {
+      src: '/art/demo/flag_websafe_128x80.gif',
+      alt: 'Flag of Interaktionsweise'
+    }, [
+      {
+        name: '1',
+        href: 'http://domain.tld',
+        img: '../art/bullet.gif'
+      }, {
+        name: 'Zwei',
+        href: 'http://domain.tld',
+        img: '../art/bullet.gif'
+      }
+    ]
+    ) }}
+    {{ gate.simple('Tor', '../demo') }}
+  </div>
+{% endblock %}

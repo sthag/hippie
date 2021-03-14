@@ -5,10 +5,11 @@
 @import "demo_config";
 @import "hippie-style/hippie";
 
-
 // Additional Modules and variables
 // in dependency to other basic styles
 // could be defined here
 // -----------------------------------------------------------------------------
+@import "modules/card/card_module";
+@import "modules/portal/portal_module";
 @import "modules/demo/demo_module";
 // @import "modules/YOUR-MODULE/YOUR-FILES";

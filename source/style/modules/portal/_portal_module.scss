@@ -1,0 +1,150 @@
+$portal_highlight: $color_highlight_basic;
+$portal_margin: $space_double;
+$portal_link_size: 128px;
+$portal_icon_size: 64px;
+
+.body_portal {
+  @extend .h_full_view;
+}
+
+.portal {
+  display: flex;
+  height: 100vh;
+}
+
+.portal__entry {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-right: $portal_margin;
+  padding-left: $portal_margin;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  transition: flex 500ms cubic-bezier(0, 0, 0.2, 1.4), background 800ms ease;
+
+  &:hover {
+    flex: 2;
+    background-color: #999;
+
+    // h2 {
+    //   color: $portal_highlight;
+    // }
+
+    .portal__list {
+      display: block;
+    }
+  }
+
+  section {
+    width: 100%;
+    padding: 32px 0;
+  }
+
+  h2 {
+    @extend h4;
+
+    position: relative;
+    margin-top: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.portal__link {
+  display: block;
+  position: relative;
+  width: $portal_link_size;
+  height: $portal_link_size;
+  margin: 0 auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    background-color: transparentize($portal_highlight, $amount: 0.2);
+    border-color: $portal_highlight;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $portal_icon_size;
+    height: $portal_icon_size;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: 0 0;
+  }
+}
+
+.portal__link--bibo {
+  background-image: url(../../art/portal/bibo.png);
+}
+
+.portal__link--portfolio {
+  background-image: url(../../art/portal/portfolio.png);
+}
+
+.portal__link--found {
+  background-image: url(../../art/portal/gems.png);
+}
+
+.portal__link--flux {
+  background-image: url(../../art/portal/flux.png);
+}
+
+.portal__link--blog {
+  background-image: url(../../art/portal/notes.png);
+}
+
+.portal__link--tools {
+  background-image: url(../../art/portal/tools.png);
+}
+
+.portal__link--safe {
+  background-image: url(../../art/portal/safe.png);
+}
+
+.portal__link--game {
+  &:hover {
+    background-image: url(../../art/portal/games.png);
+
+    & > img {
+      display: none;
+    }
+  }
+}
+
+.portal__list {
+  @extend .list_link;
+
+  display: none;
+  position: relative;
+  width: 80%;
+  margin: 48px auto 0 auto;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+
+    a {
+      overflow: hidden;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      img {
+        width: 16px;
+        height: auto;
+      }
+    }
+  }
+}
